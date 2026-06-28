@@ -6,10 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google tag (gtag.js) — GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJDNXSSB3K"></script>
 <script>
+  const isProd = window.location.hostname === 'simplesmei.net' || window.location.hostname === 'www.simplesmei.net';
+  
+  if (isProd) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-FJDNXSSB3K";
+    document.head.appendChild(script);
+  }
+
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){
+    if (isProd) {
+      dataLayer.push(arguments);
+    } else {
+      console.log('[Google Analytics Log]', Array.from(arguments));
+    }
+  }
   gtag('js', new Date());
   gtag('config', 'G-FJDNXSSB3K');
 </script>
