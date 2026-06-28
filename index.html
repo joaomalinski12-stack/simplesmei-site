@@ -4,18 +4,35 @@
 <meta charset="utf-8">
 <title>SimplesMEI · Seu fiscal do MEI no WhatsApp</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google tag (gtag.js) — GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FJDNXSSB3K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FJDNXSSB3K');
+</script>
 <meta name="description" content="A IA que cuida do fiscal do seu MEI dentro do WhatsApp. Você manda a mensagem do seu jeito, ela emite a nota, cuida do DAS, da recorrência e do teto. Sem portal, sem app, sem contador.">
 <meta name="theme-color" content="#F87453">
+<link rel="canonical" href="https://simplesmei.net/">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F87453'/%3E%3Ctext x='16' y='23' font-family='Manrope,Arial,sans-serif' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <!-- Open Graph / compartilhamento -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="SimplesMEI">
+<meta property="og:url" content="https://simplesmei.net/">
 <meta property="og:title" content="SimplesMEI · Seu fiscal do MEI no WhatsApp">
 <meta property="og:description" content="A IA que emite sua nota, cuida do DAS e vigia o teto do MEI. Tudo numa conversa de WhatsApp.">
+<meta property="og:image" content="https://simplesmei.net/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SimplesMEI — a IA que cuida do fiscal do MEI no WhatsApp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SimplesMEI · Seu fiscal do MEI no WhatsApp">
 <meta name="twitter:description" content="A IA que emite sua nota, cuida do DAS e vigia o teto do MEI. Tudo numa conversa de WhatsApp.">
+<meta name="twitter:image" content="https://simplesmei.net/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -96,6 +113,62 @@
   @keyframes v5-firefly { from { opacity: 0; transform: translate(var(--fx,0), 8px) scale(.8); } to { opacity: 1; transform: translate(0,0) scale(1); } }
   @keyframes v5-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 </style>
+
+<!-- Dados estruturados (JSON-LD) — Organization + WebSite + SoftwareApplication.
+     Preços espelham src/preco_cta.jsx (fonte de verdade). FAQPage só quando houver FAQ visível na página. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://simplesmei.net/#organization",
+      "name": "SimplesMEI",
+      "url": "https://simplesmei.net/",
+      "description": "IA que cuida do fiscal do MEI dentro do WhatsApp: emite NFS-e, cuida do DAS, da recorrência e vigia o teto.",
+      "taxID": "62.225.090/0001-76",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://simplesmei.net/og-image.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://simplesmei.net/#website",
+      "url": "https://simplesmei.net/",
+      "name": "SimplesMEI",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://simplesmei.net/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "SimplesMEI",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "WhatsApp, Web",
+      "inLanguage": "pt-BR",
+      "url": "https://simplesmei.net/",
+      "description": "Emita nota fiscal (NFS-e) do MEI, cuide do DAS, configure recorrência automática e vigie o teto — tudo por uma conversa no WhatsApp, com IA.",
+      "publisher": { "@id": "https://simplesmei.net/#organization" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Plano anual",
+          "price": "39.00",
+          "priceCurrency": "BRL",
+          "description": "Plano anual (12×) — R$ 39/mês."
+        },
+        {
+          "@type": "Offer",
+          "name": "Plano mensal",
+          "price": "49.90",
+          "priceCurrency": "BRL",
+          "description": "Plano mensal — R$ 49,90/mês."
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

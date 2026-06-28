@@ -1,0 +1,6 @@
+# robots.txt — SimplesMEI
+# Libera todo o site para indexação e aponta o sitemap.
+User-agent: *
+Allow: /
+
+Sitemap: https://simplesmei.net/sitemap.xml
