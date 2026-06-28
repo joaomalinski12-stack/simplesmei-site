@@ -26,4 +26,6 @@ pnpm-debug.log*
 
 # mcp — config do Ubersuggest MCP (conexão via OAuth na conta; nunca commitar)
 .mcp.json
-.claude/
+
+# claude code — só as settings pessoais (rules/ e skills/ SÃO versionados)
+.claude/settings.local.json
