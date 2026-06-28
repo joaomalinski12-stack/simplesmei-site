@@ -116,3 +116,25 @@ Um HTML self-contained `@dsCard` em `site/` (ex.: `site/faq.html`), no padrão d
 3. **Formato:** acordeão (1 aberto por vez? primeiro já aberto?) ou tudo aberto (lista)? Recomende pensando no
    mobile.
 4. **Tom do DAS:** confirme o fraseado honesto (lembrete, não automação), pra não furar o `PRODUTO.md`.
+
+---
+
+## ✅ Implementado no repo (estado final · espelho pro Design)
+
+A FAQ está **no ar** (`src/preco_cta.jsx` → `FaqV5` + `FAQPage` no `index.html`). A copy final
+afinou pra busca real (validada na Ubersuggest). **8 perguntas finais:**
+
+1. MEI precisa emitir nota fiscal? · *mei precisa emitir nota fiscal · SD 8*
+2. Como emitir nota fiscal de MEI pelo WhatsApp? · *como emitir nota fiscal mei · 40k*
+3. MEI precisa de contador? · *mei precisa de contador · 880 · SD 10 (substituiu a de app/portal)*
+4. O que é o DAS do MEI e como pagar? · *o que é das mei · SD 9*
+5. Qual é o limite do MEI e o que acontece se passar? · *qual o limite do mei · SD 10*
+6. Como abrir o MEI? Vocês fazem pra mim? · *como abrir mei · 18k*
+7. O SimplesMEI é seguro? E meus dados (LGPD)?
+8. Quanto custa o SimplesMEI?
+
+**Outras mudanças no repo que o mock do Design precisa espelhar:**
+- O **H1 do hero** virou "O trabalho do contador. Sem a conta do contador.", então o **H2 do
+  bento** mudou pra **"Tudo do fiscal do MEI, no automático."** (pra não duplicar H1==H2). O mock
+  do bento no Design ainda está com o texto antigo — atualizar quando puder.
+- As anotações internas de SEO da FAQ (volumes por item) **não foram** pro site (eram só handoff).
