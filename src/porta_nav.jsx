@@ -8,8 +8,8 @@ import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
    O texto pré-carregado muda por cena — sempre apontado pro que a
    pessoa acabou de ver. */
 
-/* ⚠ número placeholder — o time troca pelo número de produção do WhatsApp Business */
-const WA_NUMBER = '5511990000000';
+/* número de produção do WhatsApp Business (formato 55 + DDD + número, sem + nem espaços) */
+const WA_NUMBER = '5511978024355';
 const DOOR_GREEN = '#25D366';
 const DOOR_GREEN_DEEP = '#1fae54';
 
