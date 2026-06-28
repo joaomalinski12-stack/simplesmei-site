@@ -17,10 +17,25 @@ if (!rootRe.test(template)) {
   process.exit(1);
 }
 
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import fm from 'front-matter';
 
-const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato'];
+const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/blog'];
+
+// Lê os posts para gerar rotas dinâmicas
+const postsDir = resolve(__dirname, 'src/posts');
+const postFiles = readdirSync(postsDir).filter(f => f.endsWith('.md'));
+const blogMeta = {};
+
+for (const file of postFiles) {
+  const slug = file.replace('.md', '');
+  routes.push(`/blog/${slug}`);
+  
+  const content = readFileSync(join(postsDir, file), 'utf-8');
+  const parsed = fm(content);
+  blogMeta[slug] = parsed.attributes;
+}
 
 for (const route of routes) {
   const appHtml = render(route);
@@ -49,6 +64,45 @@ for (const route of routes) {
   } else if (route === '/contato') {
     title = 'Contato | SimplesMEI';
     description = 'Fale com o suporte da SimplesMEI via WhatsApp ou E-mail. Estamos aqui para ajudar o seu MEI.';
+  } else if (route === '/blog') {
+    title = 'Blog | SimplesMEI';
+    description = 'Dicas, tutoriais e novidades para facilitar a vida do Microempreendedor Individual.';
+  } else if (route.startsWith('/blog/')) {
+    const slug = route.replace('/blog/', '');
+    if (blogMeta[slug]) {
+      title = `${blogMeta[slug].title} | SimplesMEI`;
+      description = blogMeta[slug].description || title;
+      
+      // Injeta JSON-LD de Artigo
+      const schemas = [];
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": blogMeta[slug].title,
+        "description": description,
+        "datePublished": blogMeta[slug].date,
+        "author": {
+          "@type": "Person",
+          "name": blogMeta[slug].author || "Equipe SimplesMEI"
+        }
+      });
+      
+      if (blogMeta[slug].faq && blogMeta[slug].faq.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": blogMeta[slug].faq.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a }
+          }))
+        });
+      }
+      
+      // Se houver mais de um, podemos gerar uma string combinada (embora array no JSON-LD seja válido, o ideal é injetar separados ou num graph)
+      const jsonLdString = schemas.map(s => `<script type="application/ld+json">\n${JSON.stringify(s, null, 2)}\n</script>`).join('\n');
+      html = html.replace('</head>', `${jsonLdString}\n</head>`);
+    }
   }
 
   // Substituições de SEO no HTML gerado
@@ -68,4 +122,29 @@ for (const route of routes) {
   
   writeFileSync(outPath, html);
   console.log(`✅ prerender: rota ${route} injetada (${appHtml.length} chars)`);
+}
+
+// Injeta rotas dinâmicas do blog no sitemap.xml
+try {
+  const sitemapPath = join(resolve(__dirname, 'dist'), 'sitemap.xml');
+  let sitemap = readFileSync(sitemapPath, 'utf-8');
+  
+  // Remove o fechamento da tag
+  sitemap = sitemap.replace('</urlset>', '');
+  
+  // Adiciona a listagem principal do blog
+  sitemap += `  <url>\n    <loc>https://simplesmei.net/blog</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
+
+  // Adiciona os posts individuais
+  for (const slug of Object.keys(blogMeta)) {
+    const date = blogMeta[slug].date ? new Date(blogMeta[slug].date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
+    sitemap += `  <url>\n    <loc>https://simplesmei.net/blog/${slug}</loc>\n    <lastmod>${date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  }
+  
+  // Fecha a tag novamente
+  sitemap += '</urlset>\n';
+  writeFileSync(sitemapPath, sitemap);
+  console.log('✅ prerender: sitemap.xml atualizado com rotas do blog');
+} catch (e) {
+  console.error('❌ Erro ao atualizar sitemap.xml', e);
 }

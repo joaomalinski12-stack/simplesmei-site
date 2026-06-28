@@ -28,20 +28,28 @@ function Logo({ size = 28, inverted = false }) {
 /* ─────────────────────────────────────────────
    Nav bar
    ───────────────────────────────────────────── */
-function NavBar({ inverted, links = ['Como funciona', 'Preço', 'Segurança', 'Sobre'] }) {
+function NavBar({ inverted, links = [
+  { label: 'Como funciona', href: '/#como-funciona' },
+  { label: 'Preço', href: '/#preco' },
+  { label: 'Segurança', href: '/#seguranca' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Sobre', href: '/sobre' }
+] }) {
   const txt = inverted ? '#DCDDE6' : BRAND.ink;
   return (
     <nav style={{
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: '22px 56px', borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
     }}>
-      <Logo inverted={inverted} size={26}/>
+      <a href="/" style={{ textDecoration: 'none' }}>
+        <Logo inverted={inverted} size={26}/>
+      </a>
       <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
-        {links.map(l => (
-          <a key={l} style={{
+        {links.map(item => (
+          <a key={item.label} href={item.href} style={{
             fontSize: 13.5, fontWeight: 500, color: txt, textDecoration: 'none',
             fontFamily: FONTS.body, opacity: 0.85,
-          }}>{l}</a>
+          }}>{item.label}</a>
         ))}
       </div>
       <button style={{
@@ -378,7 +386,7 @@ function Footer() {
         </div>
         {[
           { h: 'Produto', l: [{label: 'Como funciona', href: '/#como-funciona'}, {label: 'Preço', href: '/#preco'}, {label: 'Segurança', href: '/#seguranca'}] },
-          { h: 'Empresa', l: [{label: 'Sobre', href: '/sobre'}, {label: 'Imprensa', href: '/imprensa'}, {label: 'Carreiras', href: '/carreiras'}, {label: 'Contato', href: '/contato'}] },
+          { h: 'Empresa', l: [{label: 'Sobre', href: '/sobre'}, {label: 'Blog', href: '/blog'}, {label: 'Imprensa', href: '/imprensa'}, {label: 'Carreiras', href: '/carreiras'}, {label: 'Contato', href: '/contato'}] },
           { h: 'Legal', l: [{label: 'Termos de uso', href: '/termos'}, {label: 'Política de privacidade', href: '/privacidade'}, {label: 'CNPJ 62.225.090/0001-76'}] },
         ].map(col => (
           <div key={col.h}>

@@ -6,9 +6,7 @@ import { NavBar, Footer } from './logo_footer.jsx';
 function InstitucionalLayout({ title, children }) {
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <NavBar inverted={false} links={[]} />
-      </a>
+      <NavBar inverted={false} />
       <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
         <h1 style={{ fontFamily: FONTS.display, fontSize: 36, letterSpacing: -1, marginBottom: 40, color: BRAND.coral }}>{title}</h1>
         <div style={{ fontSize: 16 }}>
@@ -49,8 +47,8 @@ export function Imprensa() {
         Se você precisa de entrevistas com nossos fundadores, dados sobre o uso de IA na gestão de Microempreendedores Individuais ou busca o nosso <strong>Media Kit (Logotipos, Assets e Brand Guidelines)</strong>, entre em contato com a nossa assessoria.
       </p>
       <div style={{ padding: 24, background: 'rgba(248,116,83,0.05)', borderRadius: 12, border: `1px solid rgba(248,116,83,0.1)` }}>
-        <p style={{ margin: 0, fontWeight: 600 }}>Contato para Imprensa:</p>
-        <a href="mailto:press@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 700 }}>press@simplesmei.net</a>
+        Precisa de dados sobre o ecossistema MEI ou entrevistas com nossos fundadores? Fale com a gente: <br/>
+        <a href="mailto:contato@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 700 }}>contato@simplesmei.net</a>
       </div>
     </InstitucionalLayout>
   );
@@ -69,7 +67,7 @@ export function Carreiras() {
         </p>
       </div>
       <p>
-        Quer deixar seu currículo no nosso banco de talentos? Envie um e-mail com seu portfólio ou LinkedIn para <a href="mailto:vagas@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 600 }}>vagas@simplesmei.net</a>. Avisaremos você assim que abrirmos novas oportunidades.
+        Quer deixar seu currículo no nosso banco de talentos? Envie um e-mail com seu portfólio ou LinkedIn para <a href="mailto:contato@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 600 }}>contato@simplesmei.net</a>. Avisaremos você assim que abrirmos novas oportunidades.
       </p>
     </InstitucionalLayout>
   );
@@ -86,7 +84,7 @@ export function Contato() {
         <div style={{ padding: 24, border: '1px solid #E5E7EB', borderRadius: 12 }}>
           <h3 style={{ margin: '0 0 12px 0', fontSize: 18 }}>Suporte por E-mail</h3>
           <p style={{ color: '#575A66', marginBottom: 16, fontSize: 14 }}>Tempo de resposta estimado: 24 horas úteis.</p>
-          <a href="mailto:suporte@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 600 }}>suporte@simplesmei.net</a>
+          <a href="mailto:contato@simplesmei.net" style={{ color: BRAND.coral, textDecoration: 'none', fontWeight: 600 }}>contato@simplesmei.net</a>
         </div>
         
         <div style={{ padding: 24, border: '1px solid #E5E7EB', borderRadius: 12 }}>

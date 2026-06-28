@@ -120,6 +120,7 @@ function NavV5() {
     ['Como funciona', '#como-funciona'],
     ['Recorrência', '#recorrencia'],
     ['Preço', '#preco'],
+    ['Blog', '/blog'],
     ['Segurança', '#seguranca'],
   ];
   return (

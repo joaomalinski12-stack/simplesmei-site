@@ -5,11 +5,9 @@ import { NavBar, Footer } from './logo_footer.jsx';
 export function Termos() {
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <NavBar inverted={false} links={[]} />
-      </a>
+      <NavBar inverted={false} />
       
-      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7 }}>
+      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
         <h1 style={{ fontFamily: FONTS.display, fontSize: 36, letterSpacing: -1, marginBottom: 16 }}>Termos de Uso</h1>
         <p style={{ color: BRAND.inkSoft, fontSize: 15, marginBottom: 48 }}>Última atualização: 28 de junho de 2026</p>
 
@@ -86,7 +84,7 @@ export function Termos() {
         <section style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>8. Contato e Foro</h2>
           <p style={{ marginBottom: 16 }}>
-            Quaisquer dúvidas devem ser direcionadas ao suporte via WhatsApp ou pelo e-mail <strong>suporte@simplesmei.net</strong>. Fica eleito o foro da comarca de São Paulo/SP para dirimir questões relacionadas a estes termos.
+            Quaisquer dúvidas devem ser direcionadas ao suporte via WhatsApp ou pelo e-mail <strong>contato@simplesmei.net</strong>. Fica eleito o foro da comarca de São Paulo/SP para dirimir questões relacionadas a estes termos.
           </p>
         </section>
       </main>
