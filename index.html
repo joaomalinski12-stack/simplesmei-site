@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>SimplesMEI · Seu fiscal do MEI no WhatsApp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A IA que cuida do fiscal do seu MEI dentro do WhatsApp. Você manda a mensagem do seu jeito, ela emite a nota, cuida do DAS, da recorrência e do teto. Sem portal, sem app, sem contador.">
+<meta name="theme-color" content="#F87453">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23F87453'/%3E%3Ctext x='16' y='23' font-family='Manrope,Arial,sans-serif' font-size='20' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<!-- Open Graph / compartilhamento -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="SimplesMEI">
+<meta property="og:title" content="SimplesMEI · Seu fiscal do MEI no WhatsApp">
+<meta property="og:description" content="A IA que emite sua nota, cuida do DAS e vigia o teto do MEI. Tudo numa conversa de WhatsApp.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SimplesMEI · Seu fiscal do MEI no WhatsApp">
+<meta name="twitter:description" content="A IA que emite sua nota, cuida do DAS e vigia o teto do MEI. Tudo numa conversa de WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #FCFAF6;
+    font-family: "Manrope", system-ui, sans-serif;
+    color: #10111A;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  #root { width: 100%; }
+  a { cursor: pointer; }
+  button { font-family: inherit; }
+  /* sticky-nav offset for anchor jumps */
+  [data-anchor] { scroll-margin-top: 88px; }
+
+  /* ── The door (single CTA type) ── */
+  .v5-door {
+    transition: transform .16s cubic-bezier(.2,.7,.3,1), box-shadow .16s ease, filter .16s ease;
+  }
+  .v5-door:hover { transform: translateY(-2px); filter: brightness(1.04); box-shadow: 0 16px 34px -10px rgba(37,211,102,0.52); }
+  .v5-door:active { transform: translateY(0); }
+
+  /* ── Bento cell = a door ── */
+  @property --v5-angle { syntax: "<angle>"; initial-value: 0deg; inherits: true; }
+  .v5-cell {
+    transition: transform .2s cubic-bezier(.2,.7,.3,1), box-shadow .2s ease, border-color .2s ease;
+  }
+  /* borda em gradiente coral→mint, contornando o card, que gira (acelerada) no hover */
+  .v5-cell::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from var(--v5-angle),
+      #F87453 0deg,
+      #F87453 264deg,
+      #56D1A3 332deg,
+      #8FE9C8 356deg,
+      #F87453 360deg);
+    filter: drop-shadow(0 0 5px rgba(143,233,200,0.60));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    opacity: 0; transition: opacity .22s ease;
+    pointer-events: none; z-index: 3;
+  }
+  .v5-cell:hover {
+    transform: translateY(-4px);
+    border-color: transparent !important;
+    box-shadow: 0 26px 56px -30px rgba(248,116,83,0.42), 0 3px 12px -6px rgba(16,17,26,0.12) !important;
+  }
+  .v5-cell:hover::before { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) { .v5-cell:hover::before { opacity: 0.9; } }
+  .v5-cell .v5-cell-door { opacity: 0; transform: translateY(4px); transition: opacity .2s ease, transform .2s ease; }
+  .v5-cell:hover .v5-cell-door { opacity: 1; transform: translateY(0); }
+  .v5-cell .v5-cell-hint { opacity: 0; transition: opacity .2s ease; }
+  .v5-cell:hover .v5-cell-hint { opacity: 1; }
+
+  /* ── Signature animation keyframes ── */
+  @keyframes v5-rise { from { opacity: 0; transform: translateY(-9px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* traço estático: gradiente coral→mint fixo (acentos fora do bento) */
+  .v5-comet-line {
+    background-image: linear-gradient(90deg,
+      #F87453 0%,
+      #56D1A3 70%,
+      #8FE9C8 100%);
+  }
+
+  @keyframes v5-pop  { 0% { transform: scale(.94); opacity: 0; } 60% { transform: scale(1.015); } 100% { transform: scale(1); opacity: 1; } }
+  @keyframes v5-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes v5-bounce { 0%,60%,100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-4px); opacity: .9; } }
+  @keyframes v5-ann { from { opacity: 0; transform: translateX(var(--ax, 0)) translateY(6px); } to { opacity: 1; transform: translateX(0) translateY(0); } }
+  @keyframes v5-firefly { from { opacity: 0; transform: translate(var(--fx,0), 8px) scale(.8); } to { opacity: 1; transform: translate(0,0) scale(1); } }
+  @keyframes v5-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<!-- App React (Vite + @vitejs/plugin-react) -->
+<script type="module" src="/src/main.jsx"></script>
+
+<!-- Motor do cometa: velocidade aleatória por arco (retas + curvas), com teto/piso -->
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Limites (graus/seg): teto = velocidade máxima atual; piso = não tão lento.
+  var V_MAX = 122;            // nunca mais rápido que isto
+  var CURVE = [90, 122];      // curvas (cantos) — rápidas, sorteadas
+  var STRAIGHT = [56, 86];    // retas — mais calmas, sorteadas
+  function rand(a, b) { return a + Math.random() * (b - a); }
+  function pickSpeed(arc) {
+    // arcos ímpares = curvas/cantos; pares = retas
+    var r = (arc % 2 === 1) ? rand(CURVE[0], CURVE[1]) : rand(STRAIGHT[0], STRAIGHT[1]);
+    return Math.min(r, V_MAX);
+  }
+
+  var active = new Map(); // cell -> state
+
+  function start(cell) {
+    if (reduce || active.has(cell)) return;
+    var st = { angle: 0, arc: -1, speed: 0, last: null, raf: 0 };
+    active.set(cell, st);
+    function frame(t) {
+      if (st.last == null) st.last = t;
+      var dt = (t - st.last) / 1000;
+      st.last = t;
+      if (dt > 0.1) dt = 0.1; // evita salto após aba inativa
+      var arc = Math.floor(st.angle / 45) % 8;
+      if (arc !== st.arc) { st.arc = arc; st.speed = pickSpeed(arc); }
+      st.angle += st.speed * dt;
+      if (st.angle >= 360) { st.angle -= 360; st.arc = -1; } // nova volta → re-sorteia
+      cell.style.setProperty('--v5-angle', st.angle.toFixed(2) + 'deg');
+      st.raf = requestAnimationFrame(frame);
+    }
+    st.raf = requestAnimationFrame(frame);
+  }
+  function stop(cell) {
+    var st = active.get(cell);
+    if (!st) return;
+    cancelAnimationFrame(st.raf);
+    active.delete(cell);
+    cell.style.setProperty('--v5-angle', '0deg');
+  }
+
+  // Delegação: funciona mesmo com os cards renderizados depois pelo React.
+  document.addEventListener('mouseover', function (e) {
+    var cell = e.target.closest && e.target.closest('.v5-cell');
+    if (cell && !active.has(cell)) start(cell);
+  });
+  document.addEventListener('mouseout', function (e) {
+    var cell = e.target.closest && e.target.closest('.v5-cell');
+    if (cell && (!e.relatedTarget || !cell.contains(e.relatedTarget))) stop(cell);
+  });
+})();
+</script>
+
+</body>
+</html>
