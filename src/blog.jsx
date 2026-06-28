@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeSlug from 'rehype-slug';
 import { useState } from 'react';
 import { Footer, Logo, NavBar } from './logo_footer.jsx';
+import { waHref } from './porta_nav.jsx';
 import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 // Importa todos os posts de forma eager como string bruta
@@ -116,9 +117,9 @@ function PostCTA() {
       <p style={{ fontSize: 16, color: '#DCDDE6', margin: '0 0 32px', maxWidth: 480, marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
         A IA que emite sua nota fiscal, cuida do DAS e vigia o seu teto direto pelo WhatsApp. Sem burocracia.
       </p>
-      <button style={{ background: BRAND.coral, color: '#fff', border: 'none', padding: '14px 28px', borderRadius: 12, fontSize: 16, fontWeight: 700, fontFamily: FONTS.body, cursor: 'pointer', boxShadow: '0 4px 12px rgba(228,88,68,0.3)' }}>
+      <a href={waHref('quero abrir meu MEI de graça pelo SimplesMEI')} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', textDecoration: 'none', background: BRAND.coral, color: '#fff', border: 'none', padding: '14px 28px', borderRadius: 12, fontSize: 16, fontWeight: 700, fontFamily: FONTS.body, cursor: 'pointer', boxShadow: '0 4px 12px rgba(228,88,68,0.3)' }}>
         Testar no WhatsApp agora
-      </button>
+      </a>
     </div>
   );
 }
