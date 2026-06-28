@@ -136,10 +136,19 @@
   @keyframes v5-ann { from { opacity: 0; transform: translateX(var(--ax, 0)) translateY(6px); } to { opacity: 1; transform: translateX(0) translateY(0); } }
   @keyframes v5-firefly { from { opacity: 0; transform: translate(var(--fx,0), 8px) scale(.8); } to { opacity: 1; transform: translate(0,0) scale(1); } }
   @keyframes v5-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+  /* ── FAQ (acordeão · espelha src/preco_cta.jsx FaqV5) ── */
+  .faq-q { transition: background .15s ease; outline: none; }
+  .faq-q:hover { background: #FCFAF6; }
+  .faq-q:focus-visible { box-shadow: inset 0 0 0 2px #F87453; border-radius: 16px; }
+  .faq-chev { transition: transform .26s cubic-bezier(.2,.7,.3,1); }
+  /* painel da resposta SEMPRE no DOM — colapsa por altura (grid 1fr/0fr), nunca removido (SEO) */
+  .faq-a { display: grid; transition: grid-template-rows .3s cubic-bezier(.4,0,.2,1), opacity .24s ease; }
+  .faq-a > .faq-a-clip { overflow: hidden; min-height: 0; }
 </style>
 
-<!-- Dados estruturados (JSON-LD) — Organization + WebSite + SoftwareApplication.
-     Preços espelham src/preco_cta.jsx (fonte de verdade). FAQPage só quando houver FAQ visível na página. -->
+<!-- Dados estruturados (JSON-LD) — Organization + WebSite + SoftwareApplication + FAQPage.
+     Preços espelham src/preco_cta.jsx (fonte de verdade); o FAQPage espelha a seção FAQ visível (FaqV5). -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -188,6 +197,52 @@
           "price": "49.90",
           "priceCurrency": "BRL",
           "description": "Plano mensal — R$ 49,90/mês."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://simplesmei.net/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O MEI é obrigado a emitir nota fiscal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pra empresa (CNPJ) é obrigatório. Pra pessoa física, é opcional, mas sempre vale a pena. Com o SimplesMEI tanto faz: você pede no WhatsApp e a nota sai em segundos, sempre certa." }
+        },
+        {
+          "@type": "Question",
+          "name": "Como o SimplesMEI emite a nota pelo WhatsApp?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Você manda a mensagem do seu jeito, tipo 'emite 480 pra Marina, consultoria'. A IA acha o cliente, classifica o serviço, confere o teto e emite a NFS-e oficial com QR Code. Devolve número e PDF na conversa, em geral em menos de 30 segundos." }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso baixar algum app ou aprender a usar um portal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Não. É só o WhatsApp que você já usa, conversa normal. Sem app pra instalar, sem portal travando, sem mais um login pra decorar." }
+        },
+        {
+          "@type": "Question",
+          "name": "E o DAS, como fica?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A IA te ajuda a não esquecer o DAS: te manda o resumo do mês e responde na hora quando você pergunta quando vence ou quanto é. O boleto é o oficial, e quem paga é você, no seu tempo." }
+        },
+        {
+          "@type": "Question",
+          "name": "O que acontece quando eu chego perto do teto de R$ 81 mil?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A IA soma o seu faturamento do ano e te avisa antes de estourar. Se uma nota for passar do limite, ela segura e te conta o que está em jogo, você decide emitir mesmo assim ou não." }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês abrem o meu MEI?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sim, e a abertura é de graça. A IA conduz o passo a passo, sugere o CNAE certo pra sua atividade, confere os dados e te leva até o cadastro no Portal do Empreendedor (gov.br). Se cobrarem pra abrir, é golpe." }
+        },
+        {
+          "@type": "Question",
+          "name": "Meus dados e meu dinheiro estão seguros?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tudo sob a LGPD: você pede, a gente apaga. E a IA nunca toca no seu dinheiro, sem acesso a conta, sem PIX no seu nome. Ela só emite a nota e organiza o seu fiscal." }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No plano anual sai R$ 39,90/mês (12×), com o certificado digital já incluso. No mensal, R$ 49,90/mês, com o certificado cobrado à parte. Sem fidelidade, cancela quando quiser." }
         }
       ]
     }

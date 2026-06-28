@@ -127,6 +127,184 @@ function SegurancaV5() {
   );
 }
 
+/* ─── FAQ — acordeão (painel sempre no DOM p/ SEO) + porta de fechamento ───
+   Veio do Claude Design (site/faq.html). O FAQPage (JSON-LD) que espelha estas
+   respostas vive no index.html. Posição: entre Segurança e CTA final. */
+const FAQ_ITEMS = [
+  {
+    q: 'O MEI é obrigado a emitir nota fiscal?',
+    a: (
+      <>
+        Pra empresa (CNPJ) é obrigatório. Pra pessoa física, é opcional, mas sempre vale a pena.
+        Com o SimplesMEI tanto faz: você pede no WhatsApp e a nota sai em segundos, sempre certa.
+      </>
+    ),
+  },
+  {
+    q: 'Como o SimplesMEI emite a nota pelo WhatsApp?',
+    a: (
+      <>
+        Você manda a mensagem do seu jeito, tipo <b>"emite 480 pra Marina, consultoria"</b>. A IA
+        acha o cliente, classifica o serviço, confere o teto e emite a NFS-e oficial com QR Code.
+        Devolve número e PDF na conversa, em geral em menos de 30 segundos.
+      </>
+    ),
+  },
+  {
+    q: 'Preciso baixar algum app ou aprender a usar um portal?',
+    a: (
+      <>
+        Não. É só o WhatsApp que você já usa, conversa normal. Sem app pra instalar, sem portal
+        travando, sem mais um login pra decorar.
+      </>
+    ),
+  },
+  {
+    q: 'E o DAS, como fica?',
+    a: (
+      <>
+        A IA te ajuda a não esquecer o DAS: te manda o resumo do mês e responde na hora quando você
+        pergunta quando vence ou quanto é. O boleto é o oficial, e quem paga é você, no seu tempo.
+      </>
+    ),
+  },
+  {
+    q: 'O que acontece quando eu chego perto do teto de R$ 81 mil?',
+    a: (
+      <>
+        A IA soma o seu faturamento do ano e te avisa <b>antes</b> de estourar. Se uma nota for
+        passar do limite, ela segura e te conta o que está em jogo, você decide emitir mesmo assim
+        ou não.
+      </>
+    ),
+  },
+  {
+    q: 'Vocês abrem o meu MEI?',
+    a: (
+      <>
+        Sim, e a abertura é de graça. A IA conduz o passo a passo, sugere o CNAE certo pra sua
+        atividade, confere os dados e te leva até o cadastro no Portal do Empreendedor (gov.br). Se
+        cobrarem pra abrir, é golpe.
+      </>
+    ),
+  },
+  {
+    q: 'Meus dados e meu dinheiro estão seguros?',
+    a: (
+      <>
+        Tudo sob a LGPD: você pede, a gente apaga. E a IA <b>nunca toca no seu dinheiro</b>, sem
+        acesso a conta, sem PIX no seu nome. Ela só emite a nota e organiza o seu fiscal.
+      </>
+    ),
+  },
+  {
+    q: 'Quanto custa?',
+    a: (
+      <>
+        No plano anual sai <b>R$ 39,90/mês</b> (12×), com o certificado digital já incluso. No
+        mensal, <b>R$ 49,90/mês</b>, com o certificado cobrado à parte. Sem fidelidade, cancela
+        quando quiser.
+      </>
+    ),
+  },
+];
+
+function FaqItem({ item, index, open, onToggle }) {
+  const m = useIsMobile();
+  const qId = `faq-q-${index}`;
+  const aId = `faq-a-${index}`;
+  return (
+    <div style={{
+      background: '#fff',
+      border: `1px solid ${open ? BRAND.coral : BRAND.sandDeep}`,
+      borderRadius: 16,
+      boxShadow: open ? '0 18px 40px -30px rgba(248,116,83,0.5)' : 'none',
+      transition: 'border-color .2s ease, box-shadow .2s ease',
+      overflow: 'hidden',
+    }}>
+      <button
+        id={qId} className="faq-q" aria-expanded={open} aria-controls={aId} onClick={onToggle}
+        style={{
+          width: '100%', textAlign: 'left', background: 'transparent', border: 'none',
+          cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          gap: 16, padding: m ? '16px 18px' : '20px 24px', minHeight: 56,
+        }}
+      >
+        <span style={{
+          fontFamily: FONTS.display, fontWeight: 700,
+          fontSize: m ? 16 : 17.5, lineHeight: 1.25, letterSpacing: -0.3,
+          color: BRAND.ink, textWrap: 'balance',
+        }}>{item.q}</span>
+        <span className="faq-chev" aria-hidden="true" style={{
+          flexShrink: 0, width: 28, height: 28, borderRadius: '50%',
+          background: open ? BRAND.coral : BRAND.coralSoft,
+          color: open ? '#fff' : BRAND.coralDeep,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          transform: open ? 'rotate(45deg)' : 'rotate(0deg)',
+          fontSize: 20, fontWeight: 400, lineHeight: 1,
+        }}>+</span>
+      </button>
+      {/* painel SEMPRE no DOM — colapsa por altura (grid 1fr/0fr), nunca removido (SEO) */}
+      <div id={aId} role="region" aria-labelledby={qId} className="faq-a"
+        style={{ gridTemplateRows: open ? '1fr' : '0fr', opacity: open ? 1 : 0 }}>
+        <div className="faq-a-clip">
+          <div style={{ padding: m ? '0 18px 18px' : '0 24px 22px' }}>
+            <p style={{
+              margin: 0, fontFamily: FONTS.body,
+              fontSize: m ? 15 : 15.5, lineHeight: 1.62,
+              color: BRAND.inkSoft, maxWidth: 620, textWrap: 'pretty',
+            }}>{item.a}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FaqV5() {
+  const m = useIsMobile();
+  const [open, setOpen] = React.useState({ 0: true }); // 1º aberto · toggles independentes
+  const toggle = (i) => setOpen(o => ({ ...o, [i]: !o[i] }));
+  const closer = (
+    <div style={{
+      marginTop: m ? 22 : 34, background: '#fff', border: `1px solid ${BRAND.sandDeep}`,
+      borderRadius: 18, padding: m ? '20px 20px' : '24px 24px', maxWidth: m ? '100%' : 380,
+    }}>
+      <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 18, color: BRAND.ink, letterSpacing: -0.3, lineHeight: 1.2 }}>Ainda com dúvida?</div>
+      <p style={{ margin: '8px 0 16px', fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.55, color: BRAND.inkSoft, textWrap: 'pretty' }}>
+        Pergunta pra IA no WhatsApp. Ela responde na hora, qualquer dia, qualquer hora.
+      </p>
+      <Door label="perguntar pra IA" text="tenho uma dúvida sobre o SimplesMEI" size="md" block align="left" preview/>
+    </div>
+  );
+  return (
+    <section data-anchor id="faq" style={{ background: BRAND.paper, padding: m ? '56px 20px 40px' : '92px 56px 60px' }}>
+      <div style={{ maxWidth: 1240, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr' : '0.82fr 1.18fr', gap: m ? 28 : 64, alignItems: 'start' }}>
+          {/* rail: cabeçalho + porta (sticky no desktop) */}
+          <div style={{ position: m ? 'static' : 'sticky', top: 96 }}>
+            <SecHead
+              eyebrow="Perguntas frequentes"
+              title="A dúvida fiscal, resolvida antes de você perguntar."
+              desc="As perguntas que mais aparecem sobre nota, DAS, teto e segurança do MEI. Se a sua não estiver aqui, é só perguntar pra IA."
+            />
+            {!m && closer}
+          </div>
+          {/* coluna de leitura: o acordeão */}
+          <div style={{ maxWidth: 760, width: '100%' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: m ? 10 : 12 }}>
+              {FAQ_ITEMS.map((item, i) => (
+                <FaqItem key={i} item={item} index={i} open={!!open[i]} onToggle={() => toggle(i)}/>
+              ))}
+            </div>
+            {m && closer}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── CTA FINAL (escuro) — a última porta ─── */
 function FinalCTA() {
   const m = useIsMobile();
@@ -166,10 +344,11 @@ function SiteV5() {
       <BentoV5/>
       <PriceV5/>
       <SegurancaV5/>
+      <FaqV5/>
       <FinalCTA/>
       <Footer/>
     </div>
   );
 }
 
-export { SecHead, PriceV5, SegurancaV5, FinalCTA, SiteV5 };
+export { SecHead, PriceV5, SegurancaV5, FaqV5, FinalCTA, SiteV5 };
