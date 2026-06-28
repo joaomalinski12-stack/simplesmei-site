@@ -1,14 +1,15 @@
 import React from 'react';
-import { BRAND, FONTS } from './tokens.jsx';
+import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 import { NavBar, Footer } from './logo_footer.jsx';
 
 export function Privacidade() {
+  const m = useIsMobile();
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <NavBar inverted={false} />
-      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
-        <h1 style={{ fontFamily: FONTS.display, fontSize: 36, letterSpacing: -1, marginBottom: 16 }}>Política de Privacidade (LGPD)</h1>
-        <p style={{ color: BRAND.inkSoft, fontSize: 15, marginBottom: 48 }}>Última atualização: 28 de junho de 2026</p>
+      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: m ? '40px 24px' : '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
+        <h1 style={{ fontFamily: FONTS.display, fontSize: m ? 28 : 36, letterSpacing: -1, marginBottom: 16 }}>Política de Privacidade (LGPD)</h1>
+        <p style={{ color: BRAND.inkSoft, fontSize: 15, marginBottom: m ? 32 : 48 }}>Última atualização: 28 de junho de 2026</p>
 
         <section style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>1. Compromisso com a Transparência</h2>

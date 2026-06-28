@@ -1,14 +1,15 @@
 import React from 'react';
-import { BRAND, FONTS } from './tokens.jsx';
+import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 import { NavBar, Footer } from './logo_footer.jsx';
 
 // Layout base compartilhado pelas páginas institucionais
 function InstitucionalLayout({ title, children }) {
+  const m = useIsMobile();
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <NavBar inverted={false} />
-      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
-        <h1 style={{ fontFamily: FONTS.display, fontSize: 36, letterSpacing: -1, marginBottom: 40, color: BRAND.coral }}>{title}</h1>
+      <main style={{ flex: 1, maxWidth: 840, margin: '0 auto', padding: m ? '40px 24px' : '80px 24px', fontFamily: FONTS.body, color: BRAND.ink, lineHeight: 1.7, width: '100%' }}>
+        <h1 style={{ fontFamily: FONTS.display, fontSize: m ? 28 : 36, letterSpacing: -1, marginBottom: m ? 24 : 40, color: BRAND.coral }}>{title}</h1>
         <div style={{ fontSize: 16 }}>
           {children}
         </div>

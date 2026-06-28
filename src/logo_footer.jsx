@@ -35,16 +35,23 @@ function NavBar({ inverted, links = [
   { label: 'Blog', href: '/blog' },
   { label: 'Sobre', href: '/sobre' }
 ] }) {
+  const m = useIsMobile();
   const txt = inverted ? '#DCDDE6' : BRAND.ink;
   return (
-    <nav style={{
+    <nav className="nav-container" style={{
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-      padding: '22px 56px', borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
+      padding: m ? '16px 24px' : '22px 56px', borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
     }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-links { display: none !important; }
+          .nav-container { padding: 16px 24px !important; }
+        }
+      `}</style>
       <a href="/" style={{ textDecoration: 'none' }}>
-        <Logo inverted={inverted} size={26}/>
+        <Logo inverted={inverted} size={m ? 22 : 26}/>
       </a>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+      <div className="desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
         {links.map(item => (
           <a key={item.label} href={item.href} style={{
             fontSize: 13.5, fontWeight: 500, color: txt, textDecoration: 'none',
@@ -52,15 +59,15 @@ function NavBar({ inverted, links = [
           }}>{item.label}</a>
         ))}
       </div>
-      <button style={{
-        background: BRAND.coral, color: '#fff', border: 'none',
-        padding: '11px 18px', borderRadius: 10,
-        fontFamily: FONTS.body, fontWeight: 700, fontSize: 13.5,
-        display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer',
+      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style={{
+        background: BRAND.coral, color: '#fff', border: 'none', textDecoration: 'none',
+        padding: m ? '10px 14px' : '11px 18px', borderRadius: 10,
+        fontFamily: FONTS.body, fontWeight: 700, fontSize: m ? 13 : 13.5,
+        display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer',
       }}>
-        <WhatsAppIcon size={16}/>
-        Abrir no WhatsApp
-      </button>
+        <WhatsAppIcon size={m ? 14 : 16}/>
+        {m ? 'WhatsApp' : 'Abrir no WhatsApp'}
+      </a>
     </nav>
   );
 }
