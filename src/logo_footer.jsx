@@ -37,20 +37,27 @@ function NavBar({ inverted, links = [
 ] }) {
   const m = useIsMobile();
   const txt = inverted ? '#DCDDE6' : BRAND.ink;
+  const [open, setOpen] = React.useState(false);
   return (
     <nav className="nav-container" style={{
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: m ? '16px 24px' : '22px 56px', borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
+      position: 'relative', zIndex: 100
     }}>
       <style>{`
         @media (max-width: 768px) {
           .desktop-links { display: none !important; }
           .nav-container { padding: 16px 24px !important; }
+          .mobile-menu-btn { display: flex !important; }
+        }
+        @media (min-width: 769px) {
+          .mobile-menu-btn { display: none !important; }
         }
       `}</style>
       <a href="/" style={{ textDecoration: 'none' }}>
         <Logo inverted={inverted} size={m ? 22 : 26}/>
       </a>
+      
       <div className="desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
         {links.map(item => (
           <a key={item.label} href={item.href} style={{
@@ -59,22 +66,76 @@ function NavBar({ inverted, links = [
           }}>{item.label}</a>
         ))}
       </div>
-      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style={{
-        background: BRAND.coral, color: '#fff', border: 'none', textDecoration: 'none',
-        padding: m ? '10px 14px' : '11px 18px', borderRadius: 10,
-        fontFamily: FONTS.body, fontWeight: 700, fontSize: m ? 13 : 13.5,
-        display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer',
-      }}>
-        <WhatsAppIcon size={m ? 14 : 16}/>
-        {m ? 'WhatsApp' : 'Abrir no WhatsApp'}
-      </a>
+      
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style={{
+          background: BRAND.coral, color: '#fff', border: 'none', textDecoration: 'none',
+          padding: m ? '10px 14px' : '11px 18px', borderRadius: 10,
+          fontFamily: FONTS.body, fontWeight: 700, fontSize: m ? 13 : 13.5,
+          display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer',
+        }}>
+          <WhatsAppIcon size={m ? 14 : 16}/>
+          {m ? 'WhatsApp' : 'Abrir no WhatsApp'}
+        </a>
+        
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setOpen(!open)}
+          style={{
+            display: m ? 'flex' : 'none',
+            alignItems: 'center', justifyContent: 'center',
+            background: inverted ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.05)',
+            border: 'none', borderRadius: 8,
+            width: 38, height: 38, cursor: 'pointer',
+            padding: 0
+          }}
+        >
+          {open ? <XIcon color={txt} /> : <MenuIcon color={txt} />}
+        </button>
+      </div>
+
+      {open && (
+        <div style={{
+          position: 'absolute', top: '100%', left: 0, right: 0,
+          background: inverted ? BRAND.ink : BRAND.paper,
+          borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
+          padding: '16px 24px',
+          display: 'flex', flexDirection: 'column', gap: 20,
+          boxShadow: '0 10px 20px rgba(0,0,0,0.05)'
+        }}>
+          {links.map(item => (
+            <a key={item.label} href={item.href} 
+               onClick={() => setOpen(false)}
+               style={{
+                 fontSize: 16, fontWeight: 600, color: txt, textDecoration: 'none',
+                 fontFamily: FONTS.body, opacity: 0.9,
+            }}>{item.label}</a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
 
-/* ─────────────────────────────────────────────
-   WhatsApp icon (generic — not branded copy)
-   ───────────────────────────────────────────── */
+function MenuIcon({ size = 20, color = '#10111A' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="6" x2="20" y2="6"></line>
+      <line x1="4" y1="18" x2="20" y2="18"></line>
+    </svg>
+  );
+}
+
+function XIcon({ size = 20, color = '#10111A' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  );
+}
+
 function WhatsAppIcon({ size = 18, color = '#fff' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
