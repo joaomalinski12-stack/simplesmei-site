@@ -55,7 +55,7 @@ function PriceV5() {
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: '22px 0 0', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: '12px 20px' }}>
               {perks.map((p, i) => (
-                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, fontSize: 13.5, lineHeight: 1.4, color: BRAND.ink }}>
+                <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 9, fontSize: m ? 14.5 : 13.5, lineHeight: 1.4, color: BRAND.ink }}>
                   <span style={{ color: BRAND.mintDeep, fontWeight: 700, marginTop: 1 }}>✓</span>{p}
                 </li>
               ))}
@@ -79,7 +79,7 @@ function PriceV5() {
               <Door label="começar os 34 dias grátis" text={DOOR_TEXT.comecar} size="lg" block align="center"/>
             </div>
             {/* MENSAL */}
-            <div style={{ background: 'transparent', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 14, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
+            <div style={{ background: 'transparent', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 14, padding: '16px 20px', display: 'flex', flexDirection: m ? 'column' : 'row', alignItems: m ? 'stretch' : 'center', justifyContent: 'space-between', gap: 14 }}>
               <div style={{ minWidth: 0 }}>
                 <Mono color={BRAND.inkSoft} size={10.5}>plano mensal</Mono>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 2, color: BRAND.ink, marginTop: 4 }}>
@@ -89,7 +89,7 @@ function PriceV5() {
                 </div>
                 <div style={{ fontSize: 11.5, color: BRAND.inkSoft, marginTop: 4 }}>Certificado digital cobrado à parte</div>
               </div>
-              <Door label="assinar mensal" text={DOOR_TEXT.comecar} size="sm"/>
+              <Door label="assinar mensal" text={DOOR_TEXT.comecar} size="sm" block={m}/>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@ function SegurancaV5() {
           {cards.map(([t, d], i) => (
             <div key={i} style={{ background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 16, padding: '22px 22px' }}>
               <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 16, color: BRAND.ink, letterSpacing: -0.3 }}>{t}</div>
-              <p style={{ fontSize: 13, lineHeight: 1.5, color: BRAND.inkSoft, margin: '8px 0 0', textWrap: 'pretty' }}>{d}</p>
+              <p style={{ fontSize: m ? 14.5 : 13, lineHeight: 1.5, color: BRAND.inkSoft, margin: '8px 0 0', textWrap: 'pretty' }}>{d}</p>
             </div>
           ))}
         </div>
@@ -141,7 +141,7 @@ function FinalCTA() {
         <div style={{ position: 'absolute', bottom: -160, right: -90, width: 460, height: 460, borderRadius: '50%', background: `radial-gradient(circle, rgba(248,116,83,0.24) 0%, transparent 64%)`, pointerEvents: 'none' }}/>
         <div style={{ position: 'relative' }}>
           <Mono color={BRAND.coral} size={11}>Comece agora</Mono>
-          <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: 46, lineHeight: 1.02, letterSpacing: -1.6, color: '#fff', margin: '14px 0 0', maxWidth: 480, textWrap: 'balance' }}>
+          <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 'clamp(30px, 8.5vw, 40px)' : 46, lineHeight: 1.02, letterSpacing: m ? '-0.03em' : -1.6, color: '#fff', margin: '14px 0 0', maxWidth: 480, textWrap: 'balance' }}>
             Manda a sua primeira nota hoje.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.55, color: '#9D9EA5', margin: '16px 0 0', maxWidth: 420 }}>

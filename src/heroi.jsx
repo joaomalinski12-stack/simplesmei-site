@@ -229,7 +229,7 @@ function HeroV5() {
           <div style={{ position: 'relative' }}>
             {/* brilho atrás do celular */}
             <div style={{ position: 'absolute', inset: -40, background: `radial-gradient(circle at 50% 60%, rgba(248,116,83,0.18) 0%, transparent 66%)`, pointerEvents: 'none' }}/>
-            <SignaturePhone step={step} scale={m ? 0.74 : 0.66}/>
+            <SignaturePhone step={step} scale={m ? 0.8 : 0.66}/>
 
             {!m && (
               <React.Fragment>

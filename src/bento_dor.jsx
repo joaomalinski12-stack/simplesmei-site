@@ -11,9 +11,10 @@ import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 /* recorrência: calendário + as 12 notas do ano (estático) */
 function RecorrenciaMini() {
+  const m = useIsMobile();
   const months = ['J','F','M','A','M','J','J','A','S','O','N','D'];
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, alignItems: 'stretch' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr' : 'minmax(0,1fr) minmax(0,1fr)', gap: 14, alignItems: 'stretch' }}>
       <TileCalendar highlightDay={5} label="todo dia 5 · ativa"/>
       <div style={{ background: BRAND.sand, border: `1px solid ${BRAND.sandDeep}`, borderRadius: 12, padding: 14, display: 'flex', flexDirection: 'column' }}>
         <Mono color={BRAND.inkSoft}>No automático · 2026</Mono>
@@ -57,11 +58,12 @@ function ResumoMini() {
 
 /* célula-porta do bento */
 function BentoCell({ kicker, title, desc, doorText, style, children }) {
+  const m = useIsMobile();
   return (
     <a className="v5-cell" href={waHref(doorText)} target="_blank" rel="noopener noreferrer" style={{
       textDecoration: 'none', color: 'inherit',
       background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 20, padding: 24,
-      display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden',
+      display: 'flex', flexDirection: 'column', position: 'relative', overflow: 'hidden', minWidth: 0,
       boxShadow: '0 2px 10px -6px rgba(16,17,26,0.10)', ...style,
     }}>
       {/* selo persistente: sou uma entrada */}
@@ -76,17 +78,17 @@ function BentoCell({ kicker, title, desc, doorText, style, children }) {
       <div style={{ marginBottom: 14, paddingRight: 30 }}>
         <Mono color={BRAND.coralDeep} size={10.5}>{kicker}</Mono>
         <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 19, color: BRAND.ink, letterSpacing: -0.4, lineHeight: 1.1, marginTop: 7 }}>{title}</div>
-        <p style={{ fontSize: 13, lineHeight: 1.5, color: BRAND.inkSoft, margin: '6px 0 0', textWrap: 'pretty' }}>{desc}</p>
+        <p style={{ fontSize: m ? 14.5 : 13, lineHeight: 1.5, color: BRAND.inkSoft, margin: '6px 0 0', textWrap: 'pretty' }}>{desc}</p>
       </div>
 
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>{children}</div>
 
       {/* porta revelada no hover */}
-      <div className="v5-cell-door" style={{ marginTop: 16, paddingTop: 14, borderTop: `1px solid ${BRAND.sand}`, display: 'flex', alignItems: 'center', gap: 9 }}>
+      <div className="v5-cell-door" style={{ marginTop: 16, paddingTop: 14, borderTop: `1px solid ${BRAND.sand}`, display: 'flex', alignItems: 'center', gap: 9, ...(m ? { opacity: 1, transform: 'none' } : null) }}>
         <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: DOOR_GREEN_DEEP, fontWeight: 700, fontSize: 12.5, fontFamily: FONTS.body, whiteSpace: 'nowrap' }}>
           abre o WhatsApp <span>→</span>
         </span>
-        <span style={{ fontFamily: FONTS.mono, fontSize: 10.5, color: BRAND.inkSoft, lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>“{doorText}”</span>
+        <span style={{ fontFamily: FONTS.mono, fontSize: 10.5, color: BRAND.inkSoft, lineHeight: 1.3, display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', flex: 1, minWidth: 0 }}>“{doorText}”</span>
       </div>
     </a>
   );
@@ -100,9 +102,9 @@ function BentoV5() {
         <SecHead eyebrow="O que mais ela resolve" title="O trabalho do contador. Sem a conta do contador." desc="Cada card abre o WhatsApp com a mensagem já digitada. Sem formulário, sem ‘saiba mais’: você toca e a IA já resolve." />
 
         <div style={{ marginTop: m ? 24 : 36, display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(12, 1fr)', gap: m ? 14 : 16, alignItems: 'stretch' }}>
-          <div data-anchor id="recorrencia" style={{ gridColumn: 'span 7', display: 'flex' }}>
+          <div data-anchor id="recorrencia" style={{ gridColumn: m ? 'auto' : 'span 7', display: 'flex', minWidth: 0 }}>
             <BentoCell
-              style={{ flex: 1 }}
+              style={{ flex: 1, minWidth: 0 }}
               kicker="No automático" title="Recorrência todo mês"
               desc="Configura uma vez e esquece. As 12 notas saem sozinhas, no dia certo. Você não levanta um dedo."
               doorText={DOOR_TEXT.recorrencia}>
@@ -111,7 +113,7 @@ function BentoV5() {
           </div>
 
           <BentoCell
-            style={{ gridColumn: 'span 5' }}
+            style={{ gridColumn: m ? 'auto' : 'span 5' }}
             kicker="Digita uma vez" title="Clientes na memória"
             desc="A IA guarda CNPJ, valor e serviço. Diz o nome e a nota sai certa, sem caçar documento."
             doorText={DOOR_TEXT.clientes}>
@@ -119,7 +121,7 @@ function BentoV5() {
           </BentoCell>
 
           <BentoCell
-            style={{ gridColumn: 'span 4' }}
+            style={{ gridColumn: m ? 'auto' : 'span 4' }}
             kicker="Sem susto no fim do ano" title="Limite MEI vigiado"
             desc="A IA soma tudo que você faturou e avisa antes de estourar o teto. Chega de descobrir tarde demais."
             doorText={DOOR_TEXT.limite}>
@@ -127,7 +129,7 @@ function BentoV5() {
           </BentoCell>
 
           <BentoCell
-            style={{ gridColumn: 'span 4' }}
+            style={{ gridColumn: m ? 'auto' : 'span 4' }}
             kicker="Tudo num lugar" title="Resumo do mês"
             desc="Faturamento, notas, DAS e recorrências: o mês inteiro, quando você pedir."
             doorText={DOOR_TEXT.resumo}>
@@ -135,7 +137,7 @@ function BentoV5() {
           </BentoCell>
 
           <BentoCell
-            style={{ gridColumn: 'span 4' }}
+            style={{ gridColumn: m ? 'auto' : 'span 4' }}
             kicker="Nunca mais multa" title="Lembrete do DAS"
             desc="A gente lembra antes de vencer e já manda o boleto com Pix. Multa por esquecimento, nunca mais."
             doorText={DOOR_TEXT.das}>
