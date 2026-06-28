@@ -23,3 +23,7 @@ pnpm-debug.log*
 .env
 .env.*
 !.env.example
+
+# mcp — config do Ubersuggest MCP (conexão via OAuth na conta; nunca commitar)
+.mcp.json
+.claude/
