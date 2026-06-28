@@ -8,6 +8,8 @@ import { Termos } from './termos.jsx';
 import { Privacidade } from './privacidade.jsx';
 import { Sobre, Imprensa, Carreiras, Contato } from './institucional.jsx';
 
+import { CookieBanner } from './cookie_banner.jsx';
+
 const App = ({ path }) => {
   let PageComponent = SiteV5;
   if (path === '/termos') PageComponent = Termos;
@@ -20,6 +22,7 @@ const App = ({ path }) => {
   return (
     <>
       <PageComponent />
+      <CookieBanner />
       <Analytics />
       <SpeedInsights />
     </>
