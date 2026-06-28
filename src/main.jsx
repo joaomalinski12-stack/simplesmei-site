@@ -1,5 +1,12 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import { SiteV5 } from './preco_cta.jsx';
 
-createRoot(document.getElementById('root')).render(<SiteV5 />);
+const root = document.getElementById('root');
+// Produção: HTML pré-renderizado (root já tem conteúdo) → hidrata.
+// Dev (vite): root vem vazio → render normal.
+if (root.firstElementChild) {
+  hydrateRoot(root, <SiteV5 />);
+} else {
+  createRoot(root).render(<SiteV5 />);
+}

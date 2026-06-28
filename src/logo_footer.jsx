@@ -452,6 +452,7 @@ function LGPDBadge({ inverted }) {
    Global keyframes injection
    ───────────────────────────────────────────── */
 (function injectKeyframes() {
+  if (typeof document === 'undefined') return; // SSR/pré-render: sem document
   if (document.getElementById('simplesmei-keyframes')) return;
   const style = document.createElement('style');
   style.id = 'simplesmei-keyframes';

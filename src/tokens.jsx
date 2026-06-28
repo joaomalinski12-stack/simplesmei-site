@@ -47,12 +47,16 @@ const FONTS = {
 
 /* Breakpoint único: < 768px = mobile. Hook reativo (matchMedia) pra
    ramificar layout em JS, já que o site é todo inline-style. */
+/* layout-effect isomórfico: useLayoutEffect no cliente (corrige o layout antes do
+   paint, sem flash), useEffect no servidor (evita warning no SSR). */
+const useIsoLayoutEffect = typeof window !== 'undefined' ? React.useLayoutEffect : React.useEffect;
+
 function useIsMobile(bp = 768) {
   const q = `(max-width: ${bp - 0.02}px)`;
-  const [m, setM] = React.useState(
-    () => typeof window !== 'undefined' && window.matchMedia(q).matches
-  );
-  React.useEffect(() => {
+  // Inicial determinístico (false = desktop) pra casar com o HTML pré-renderizado
+  // (servidor não tem window). O layout-effect abaixo corrige pro valor real no cliente.
+  const [m, setM] = React.useState(false);
+  useIsoLayoutEffect(() => {
     const mq = window.matchMedia(q);
     const on = () => setM(mq.matches);
     on();

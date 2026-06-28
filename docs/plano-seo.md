@@ -33,7 +33,7 @@
 | # | Item | Status |
 |---|---|---|
 | 1 | Search Console + GA4 | ✅ GA4 (G-FJDNXSSB3K) no index.html · GSC verificado (falta submeter sitemap) |
-| 2 | Pré-renderizar a home (SPA → HTML estático) | ⏳ pendente (mudança na build) |
+| 2 | Pré-renderizar a home (SPA → HTML estático) | ✅ feito (Vite SSR build + `renderToString` + `hydrateRoot`; ver `prerender.js`) |
 | 3 | `canonical` + `og:url` | ✅ feito (index.html) |
 | 4 | `og:image` + `twitter:image` | ✅ tags + `public/og-image.png` (1200×630, on-brand) gerados |
 | 5 | `robots.txt` + `sitemap.xml` | ✅ feito (`public/`) |
