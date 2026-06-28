@@ -14,9 +14,13 @@ lá. Este diretório guarda o **contrato** desse loop.
 
 ## Arquivos
 
-- [`CLAUDE-design.md`](CLAUDE-design.md) — a **constituição do agente de Design** do site.
-  Cole no projeto do Claude Design (ver instruções no topo do arquivo). **NÃO** é o `CLAUDE.md`
-  do repo.
+- [`CLAUDE-design.md`](CLAUDE-design.md) — a **constituição MESCLADA** do agente de Design.
+  O projeto *SimplesMeiv3* é **compartilhado** (dois domínios: WhatsApp + Site), e um projeto
+  tem **um só** CLAUDE.md — então este arquivo governa os dois, com a fundação comum + uma
+  seção por domínio. Cole no projeto do Claude Design (instruções no topo). **NÃO** é o
+  `CLAUDE.md` do repo. ⚠️ A seção do **WhatsApp** é espelhada de
+  `zapmei:design-system/CLAUDE-design.md` (fonte de verdade desse domínio) — se mudar lá,
+  re-sincronize aqui.
 - `../.claude/rules/design-fidelity.md` — o **ritual de fidelidade** (carrega ao mexer em
   `src/*.jsx`): puxar o mockup fresco → implementar → **medir** (não chutar) → comparar.
 - `../PRODUTO.md` — espelho do que o produto faz (no ar vs. roadmap); a copy se ancora nele.
