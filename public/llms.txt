@@ -1,0 +1,16 @@
+# SimplesMEI
+> A inteligência artificial que cuida do fiscal do seu MEI dentro do WhatsApp.
+
+A SimplesMEI é uma plataforma SaaS operada inteiramente via WhatsApp para Microempreendedores Individuais (MEIs) no Brasil. Nossa tecnologia traduz comandos em linguagem natural ("Emite uma nota de R$ 500 pro Fulano") em ações de integração de sistema, como comunicação direta com Prefeituras e Receita Federal.
+
+## Páginas Principais
+- **Home:** https://simplesmei.net/
+- **Termos de Uso:** https://simplesmei.net/termos
+- **Política de Privacidade (LGPD):** https://simplesmei.net/privacidade
+
+## Resumo Técnico (Para IAs e RAG)
+O site é desenvolvido em React (Vite) e utiliza arquitetura SSG (Static Site Generation) customizada no script `prerender.js`. 
+Todo o tráfego de metadados, processamento conversacional e geração de impostos segue estritamente as diretrizes da LGPD, sendo os modelos de IA utilizados de nível corporativo (API da OpenAI) com "Zero Data Retention" (não há uso dos dados fiscais dos usuários para treinamento público).
+
+- **Contato Oficial:** suporte@simplesmei.net
+- **CNPJ:** 62.225.090/0001-76

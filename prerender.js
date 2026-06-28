@@ -9,13 +9,51 @@ const distIndex = resolve(__dirname, 'dist/index.html');
 const ssrEntry = pathToFileURL(resolve(__dirname, 'dist-ssr/entry-server.js')).href;
 
 const { render } = await import(ssrEntry);
-const appHtml = render();
-
 const template = readFileSync(distIndex, 'utf-8');
 const rootRe = /<div id="root">\s*<\/div>/;
+
 if (!rootRe.test(template)) {
   console.error('prerender: <div id="root"></div> não encontrado em dist/index.html — abortando.');
   process.exit(1);
 }
-writeFileSync(distIndex, template.replace(rootRe, `<div id="root">${appHtml}</div>`));
-console.log(`✅ prerender: ${appHtml.length} chars de HTML injetados em dist/index.html`);
+
+import { mkdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+const routes = ['/', '/termos', '/privacidade'];
+
+for (const route of routes) {
+  const appHtml = render(route);
+  let html = template.replace(rootRe, `<div id="root">${appHtml}</div>`);
+  
+  // Custom SEO tags per route
+  let title = 'SimplesMEI · Seu fiscal do MEI no WhatsApp';
+  let description = 'A IA que cuida do fiscal do seu MEI dentro do WhatsApp. Você manda a mensagem do seu jeito, ela emite a nota, cuida do DAS, da recorrência e do teto. Sem portal, sem app, sem contador.';
+  let canonicalPath = route;
+
+  if (route === '/termos') {
+    title = 'Termos de Uso | SimplesMEI';
+    description = 'Termos de uso do serviço SimplesMEI. Saiba como nossa inteligência artificial interage via WhatsApp para facilitar o dia a dia do Microempreendedor Individual.';
+  } else if (route === '/privacidade') {
+    title = 'Política de Privacidade | SimplesMEI';
+    description = 'Política de Privacidade e LGPD do SimplesMEI. Transparência sobre o uso de dados, não-treinamento de IA pública e proteção do seu MEI.';
+  }
+
+  // Substituições de SEO no HTML gerado
+  html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
+  html = html.replace(/<meta name="description" content=".*?">/, `<meta name="description" content="${description}">`);
+  html = html.replace(/<link rel="canonical" href=".*?">/, `<link rel="canonical" href="https://simplesmei.net${canonicalPath === '/' ? '' : canonicalPath}">`);
+  html = html.replace(/<meta property="og:title" content=".*?">/, `<meta property="og:title" content="${title}">`);
+  html = html.replace(/<meta property="og:url" content=".*?">/, `<meta property="og:url" content="https://simplesmei.net${canonicalPath === '/' ? '' : canonicalPath}">`);
+  html = html.replace(/<meta property="og:description" content=".*?">/, `<meta property="og:description" content="${description}">`);
+
+  let outPath = distIndex;
+  if (route !== '/') {
+    const dir = join(resolve(__dirname, 'dist'), route);
+    mkdirSync(dir, { recursive: true });
+    outPath = join(dir, 'index.html');
+  }
+  
+  writeFileSync(outPath, html);
+  console.log(`✅ prerender: rota ${route} injetada (${appHtml.length} chars)`);
+}

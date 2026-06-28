@@ -377,9 +377,9 @@ function Footer() {
           </p>
         </div>
         {[
-          { h: 'Produto', l: ['Como funciona', 'Preço', 'Segurança', 'Mudar para Simples'] },
-          { h: 'Empresa', l: ['Sobre', 'Imprensa', 'Carreiras', 'Contato'] },
-          { h: 'Legal', l: ['Termos de uso', 'Política de privacidade', 'LGPD', 'CNPJ 62.225.090/0001-76'] },
+          { h: 'Produto', l: [{label: 'Como funciona', href: '/#funciona'}, {label: 'Preço', href: '/#preco'}, {label: 'Segurança', href: '/#seguranca'}, {label: 'Mudar para Simples', href: '/#mudar'}] },
+          { h: 'Empresa', l: [{label: 'Sobre'}, {label: 'Imprensa'}, {label: 'Carreiras'}, {label: 'Contato'}] },
+          { h: 'Legal', l: [{label: 'Termos de uso', href: '/termos'}, {label: 'Política de privacidade', href: '/privacidade'}, {label: 'CNPJ 62.225.090/0001-76'}] },
         ].map(col => (
           <div key={col.h}>
             <div style={{
@@ -387,8 +387,14 @@ function Footer() {
               letterSpacing: 1.2, textTransform: 'uppercase', color: BRAND.coral,
               marginBottom: 14,
             }}>{col.h}</div>
-            {col.l.map(l => (
-              <div key={l} style={{ fontSize: 13, lineHeight: 1.9, color: '#9D9EA5' }}>{l}</div>
+            {col.l.map(item => (
+              <div key={item.label || item} style={{ fontSize: 13, lineHeight: 1.9, color: '#9D9EA5' }}>
+                {item.href ? (
+                  <a href={item.href} style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>{item.label}</a>
+                ) : (
+                  item.label || item
+                )}
+              </div>
             ))}
           </div>
         ))}
