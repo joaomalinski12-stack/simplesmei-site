@@ -379,7 +379,7 @@ function Footer() {
         {[
           { h: 'Produto', l: ['Como funciona', 'Preço', 'Segurança', 'Mudar para Simples'] },
           { h: 'Empresa', l: ['Sobre', 'Imprensa', 'Carreiras', 'Contato'] },
-          { h: 'Legal', l: ['Termos de uso', 'Política de privacidade', 'LGPD', 'CNPJ 58.392.104/0001-37'] },
+          { h: 'Legal', l: ['Termos de uso', 'Política de privacidade', 'LGPD', 'CNPJ 62.225.090/0001-76'] },
         ].map(col => (
           <div key={col.h}>
             <div style={{
@@ -398,7 +398,7 @@ function Footer() {
         display: 'flex', justifyContent: m ? 'flex-start' : 'space-between', flexWrap: 'wrap', gap: 8, fontSize: 11.5,
         color: '#84858F', fontFamily: FONTS.mono, letterSpacing: 0.4,
       }}>
-        <span>© 2026 SimplesMEI Tecnologia LTDA · CNPJ 58.392.104/0001-37</span>
+        <span>© 2026 SimplesMEI Tecnologia LTDA · CNPJ 62.225.090/0001-76</span>
         <span>São Paulo · Brasil</span>
       </div>
     </footer>
