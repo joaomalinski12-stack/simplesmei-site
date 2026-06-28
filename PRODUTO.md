@@ -19,7 +19,7 @@ conversa por WhatsApp e a IA resolve.
 
 **Público:** MEI prestador de serviço (consultoria, design, marketing, audiovisual, etc.).
 **Modelo:** freemium — abertura de MEI e dúvidas fiscais grátis; emissão automática no plano pago.
-**Preço:** anual **R$ 39/mês** · mensal **R$ 49,90/mês** (fonte de verdade: `src/preco_cta.jsx`).
+**Preço:** anual **R$ 39,90/mês** · mensal **R$ 49,90/mês** (fonte de verdade: `src/preco_cta.jsx`).
 
 ---
 
