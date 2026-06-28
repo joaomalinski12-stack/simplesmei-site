@@ -207,16 +207,22 @@ function HeroV5() {
           </div>
           <h1 style={{
             fontFamily: FONTS.display, fontWeight: 800,
-            fontSize: m ? 'clamp(52px, 15vw, 76px)' : 108, lineHeight: 0.9, letterSpacing: m ? '-0.03em' : -4.4,
+            fontSize: m ? 'clamp(34px, 9.4vw, 52px)' : 66, lineHeight: 1.0, letterSpacing: m ? '-0.025em' : -2.2,
             color: BRAND.ink, margin: 0, textWrap: 'balance',
           }}>
-            Deixa <span style={{ color: BRAND.coralDeep }}>comigo.</span>
+            O trabalho do contador.<br/><span style={{ color: BRAND.coralDeep }}>Sem a conta do contador.</span>
           </h1>
           <p style={{
             fontFamily: FONTS.body, fontSize: 19, lineHeight: 1.52,
             color: BRAND.inkSoft, margin: '26px 0 0', maxWidth: 466,
           }}>
             Você manda a mensagem do seu jeito. A IA entende, emite a nota fiscal certinha e envia pro cliente. Sem portal travando, sem DAS esquecido, sem susto com o teto do MEI. Tudo numa conversa.
+          </p>
+          <p style={{
+            fontFamily: FONTS.body, fontSize: 15.5, lineHeight: 1.5,
+            color: BRAND.inkSoft, margin: '14px 0 0', maxWidth: 466,
+          }}>
+            <strong style={{ color: BRAND.ink, fontWeight: 700 }}>34 dias grátis.</strong> Depois, a partir de <strong style={{ color: BRAND.coralDeep, fontWeight: 700 }}>R$ 39,90/mês</strong>.
           </p>
           <div style={{ marginTop: 36, display: 'flex', flexDirection: 'column', gap: 14 }}>
             <Door label="emitir minha primeira nota grátis" text={DOOR_TEXT.hero} size={m ? 'lg' : 'xl'} block={m} preview/>
@@ -229,7 +235,7 @@ function HeroV5() {
           <div style={{ position: 'relative' }}>
             {/* brilho atrás do celular */}
             <div style={{ position: 'absolute', inset: -40, background: `radial-gradient(circle at 50% 60%, rgba(248,116,83,0.18) 0%, transparent 66%)`, pointerEvents: 'none' }}/>
-            <SignaturePhone step={step} scale={m ? 0.8 : 0.66}/>
+            <SignaturePhone step={step} scale={m ? 0.74 : 0.66}/>
 
             {!m && (
               <React.Fragment>

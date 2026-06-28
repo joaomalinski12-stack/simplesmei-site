@@ -77,7 +77,7 @@ function BentoCell({ kicker, title, desc, doorText, style, children }) {
 
       <div style={{ marginBottom: 14, paddingRight: 30 }}>
         <Mono color={BRAND.coralDeep} size={10.5}>{kicker}</Mono>
-        <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 19, color: BRAND.ink, letterSpacing: -0.4, lineHeight: 1.1, marginTop: 7 }}>{title}</div>
+        <h3 style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 19, color: BRAND.ink, letterSpacing: -0.4, lineHeight: 1.1, margin: '7px 0 0' }}>{title}</h3>
         <p style={{ fontSize: m ? 14.5 : 13, lineHeight: 1.5, color: BRAND.inkSoft, margin: '6px 0 0', textWrap: 'pretty' }}>{desc}</p>
       </div>
 
@@ -99,7 +99,7 @@ function BentoV5() {
   return (
     <section style={{ background: BRAND.paper, padding: m ? '56px 20px' : '92px 56px' }}>
       <div style={{ maxWidth: 1240, margin: '0 auto' }}>
-        <SecHead eyebrow="O que mais ela resolve" title="O trabalho do contador. Sem a conta do contador." desc="Cada card abre o WhatsApp com a mensagem já digitada. Sem formulário, sem ‘saiba mais’: você toca e a IA já resolve." />
+        <SecHead eyebrow="O que mais ela resolve" title="Tudo do fiscal do MEI, no automático." desc="Cada card abre o WhatsApp com a mensagem já digitada. Sem formulário, sem ‘saiba mais’: você toca e a IA já resolve." />
 
         <div style={{ marginTop: m ? 24 : 36, display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(12, 1fr)', gap: m ? 14 : 16, alignItems: 'stretch' }}>
           <div data-anchor id="recorrencia" style={{ gridColumn: m ? 'auto' : 'span 7', display: 'flex', minWidth: 0 }}>

@@ -27,8 +27,8 @@ for (const route of routes) {
   let html = template.replace(rootRe, `<div id="root">${appHtml}</div>`);
   
   // Custom SEO tags per route
-  let title = 'SimplesMEI · Seu fiscal do MEI no WhatsApp';
-  let description = 'A IA que cuida do fiscal do seu MEI dentro do WhatsApp. Você manda a mensagem do seu jeito, ela emite a nota, cuida do DAS, da recorrência e do teto. Sem portal, sem app, sem contador.';
+  let title = 'Emita a nota fiscal do MEI pelo WhatsApp · SimplesMEI';
+  let description = 'Emita a nota fiscal do seu MEI por uma mensagem no WhatsApp. A IA cuida do DAS, da recorrência e do teto — sem portal, sem app, sem contador.';
   let canonicalPath = route;
 
   if (route === '/termos') {

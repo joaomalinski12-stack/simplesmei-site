@@ -132,7 +132,7 @@ function SegurancaV5() {
    respostas vive no index.html. Posição: entre Segurança e CTA final. */
 const FAQ_ITEMS = [
   {
-    q: 'O MEI é obrigado a emitir nota fiscal?',
+    q: 'MEI precisa emitir nota fiscal?',
     a: (
       <>
         Pra empresa (CNPJ) é obrigatório. Pra pessoa física, é opcional, mas sempre vale a pena.
@@ -141,7 +141,7 @@ const FAQ_ITEMS = [
     ),
   },
   {
-    q: 'Como o SimplesMEI emite a nota pelo WhatsApp?',
+    q: 'Como emitir nota fiscal de MEI pelo WhatsApp?',
     a: (
       <>
         Você manda a mensagem do seu jeito, tipo <b>"emite 480 pra Marina, consultoria"</b>. A IA
@@ -151,35 +151,37 @@ const FAQ_ITEMS = [
     ),
   },
   {
-    q: 'Preciso baixar algum app ou aprender a usar um portal?',
+    q: 'MEI precisa de contador?',
     a: (
       <>
-        Não. É só o WhatsApp que você já usa, conversa normal. Sem app pra instalar, sem portal
-        travando, sem mais um login pra decorar.
+        Pra rotina do MEI — emitir nota, controlar o DAS e o teto — não. O MEI é dispensado de
+        contabilidade formal, e o SimplesMEI cuida dessa parte no WhatsApp. Se um dia o negócio
+        crescer além do MEI, aí um contador entra; até lá, a IA resolve.
       </>
     ),
   },
   {
-    q: 'E o DAS, como fica?',
+    q: 'O que é o DAS do MEI e como pagar?',
     a: (
       <>
-        A IA te ajuda a não esquecer o DAS: te manda o resumo do mês e responde na hora quando você
-        pergunta quando vence ou quanto é. O boleto é o oficial, e quem paga é você, no seu tempo.
+        O DAS é a guia mensal de imposto do MEI, um valor fixo que já inclui o INSS. O SimplesMEI
+        te ajuda a não esquecer: responde na hora quando você pergunta quando vence ou quanto é, e
+        te manda o resumo do mês. O boleto é o oficial, e quem paga é você, no seu tempo.
       </>
     ),
   },
   {
-    q: 'O que acontece quando eu chego perto do teto de R$ 81 mil?',
+    q: 'Qual é o limite do MEI e o que acontece se passar?',
     a: (
       <>
-        A IA soma o seu faturamento do ano e te avisa <b>antes</b> de estourar. Se uma nota for
-        passar do limite, ela segura e te conta o que está em jogo, você decide emitir mesmo assim
-        ou não.
+        O teto do MEI é <b>R$ 81 mil por ano</b>. A IA soma o seu faturamento e te avisa antes de
+        você chegar lá. Se uma nota for passar do limite, ela segura e te conta o que está em jogo,
+        você decide emitir mesmo assim ou não.
       </>
     ),
   },
   {
-    q: 'Vocês abrem o meu MEI?',
+    q: 'Como abrir o MEI? Vocês fazem pra mim?',
     a: (
       <>
         Sim, e a abertura é de graça. A IA conduz o passo a passo, sugere o CNAE certo pra sua
@@ -189,7 +191,7 @@ const FAQ_ITEMS = [
     ),
   },
   {
-    q: 'Meus dados e meu dinheiro estão seguros?',
+    q: 'O SimplesMEI é seguro? E meus dados (LGPD)?',
     a: (
       <>
         Tudo sob a LGPD: você pede, a gente apaga. E a IA <b>nunca toca no seu dinheiro</b>, sem
@@ -198,7 +200,7 @@ const FAQ_ITEMS = [
     ),
   },
   {
-    q: 'Quanto custa?',
+    q: 'Quanto custa o SimplesMEI?',
     a: (
       <>
         No plano anual sai <b>R$ 39,90/mês</b> (12×), com o certificado digital já incluso. No
