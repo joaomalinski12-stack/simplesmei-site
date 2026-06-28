@@ -48,7 +48,7 @@ function PriceV5() {
         }}>
           <div className="v5-comet-line" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4 }}/>
           {/* perks */}
-          <div style={{ padding: m ? '28px 22px' : '40px 44px' }}>
+          <div style={{ padding: m ? '28px 22px' : '40px 44px', minWidth: 0 }}>
             <Mono color={BRAND.coralDeep} size={11}>tudo incluso</Mono>
             <div style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: 28, letterSpacing: -0.8, color: BRAND.ink, marginTop: 8, lineHeight: 1.06 }}>
               O contador inteiro cabe numa conversa.
@@ -62,7 +62,7 @@ function PriceV5() {
             </ul>
           </div>
           {/* dois planos */}
-          <div style={{ padding: m ? '20px 22px 26px' : '34px 36px', background: BRAND.sand, borderLeft: m ? 'none' : `1px solid ${BRAND.sandDeep}`, borderTop: m ? `1px solid ${BRAND.sandDeep}` : 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 14 }}>
+          <div style={{ padding: m ? '20px 22px 26px' : '34px 36px', background: BRAND.sand, borderLeft: m ? 'none' : `1px solid ${BRAND.sandDeep}`, borderTop: m ? `1px solid ${BRAND.sandDeep}` : 'none', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 14, minWidth: 0 }}>
             {/* ANUAL — destaque */}
             <div style={{ position: 'relative', background: '#fff', border: `1.5px solid ${BRAND.coral}`, borderRadius: 18, padding: '22px 24px', boxShadow: '0 20px 44px -28px rgba(248,116,83,0.55)' }}>
               <span style={{ position: 'absolute', top: 16, right: 16, background: BRAND.coral, color: '#fff', padding: '4px 11px', borderRadius: 999, fontFamily: FONTS.mono, fontSize: 9.5, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase' }}>Mais escolhido</span>
@@ -80,7 +80,7 @@ function PriceV5() {
             </div>
             {/* MENSAL */}
             <div style={{ background: 'transparent', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 14, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <Mono color={BRAND.inkSoft} size={10.5}>plano mensal</Mono>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 2, color: BRAND.ink, marginTop: 4 }}>
                   <span style={{ fontFamily: FONTS.display, fontSize: 18, fontWeight: 800 }}>R$</span>
@@ -149,7 +149,7 @@ function FinalCTA() {
           </p>
         </div>
         <div style={{ position: 'relative', display: 'flex', justifyContent: m ? 'flex-start' : 'flex-start' }}>
-          <Door label="quero começar" text={DOOR_TEXT.comecar} size={m ? 'lg' : 'xl'} preview onDark/>
+          <Door label="quero começar" text={DOOR_TEXT.comecar} size={m ? 'lg' : 'xl'} block={m} preview onDark/>
         </div>
       </div>
     </section>

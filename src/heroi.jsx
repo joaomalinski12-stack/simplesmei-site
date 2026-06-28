@@ -195,7 +195,7 @@ function HeroV5() {
         display: 'grid', gridTemplateColumns: m ? '1fr' : '1.04fr 0.96fr', gap: m ? 8 : 40, alignItems: 'center',
       }}>
         {/* coluna texto */}
-        <div>
+        <div style={{ minWidth: 0 }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             padding: '7px 15px', borderRadius: 999,
@@ -219,7 +219,7 @@ function HeroV5() {
             Você manda a mensagem do seu jeito. A IA entende, emite a nota fiscal certinha e envia pro cliente. Sem portal travando, sem DAS esquecido, sem susto com o teto do MEI. Tudo numa conversa.
           </p>
           <div style={{ marginTop: 36, display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <Door label="emitir minha primeira nota grátis" text={DOOR_TEXT.hero} size="xl" preview/>
+            <Door label="emitir minha primeira nota grátis" text={DOOR_TEXT.hero} size={m ? 'lg' : 'xl'} block={m} preview/>
             <DoorNote/>
           </div>
         </div>
@@ -231,9 +231,13 @@ function HeroV5() {
             <div style={{ position: 'absolute', inset: -40, background: `radial-gradient(circle at 50% 60%, rgba(248,116,83,0.18) 0%, transparent 66%)`, pointerEvents: 'none' }}/>
             <SignaturePhone step={step} scale={m ? 0.74 : 0.66}/>
 
-            <Annotation show={annOn && !m} side="right" text="achou a cliente só pelo nome" style={{ top: 150, right: -64 }}/>
-            <Annotation show={annOn && !m} side="left" text="projetou seu limite" style={{ top: 150, left: -58 }}/>
-            <Annotation show={annOn && !m} side="right" text="enviou pra ela sozinha" style={{ top: 238, right: -56 }}/>
+            {!m && (
+              <React.Fragment>
+                <Annotation show={annOn} side="right" text="achou a cliente só pelo nome" style={{ top: 150, right: -64 }}/>
+                <Annotation show={annOn} side="left" text="projetou seu limite" style={{ top: 150, left: -58 }}/>
+                <Annotation show={annOn} side="right" text="enviou pra ela sozinha" style={{ top: 238, right: -56 }}/>
+              </React.Fragment>
+            )}
 
             {/* replay discreto */}
             <button onClick={replay} style={{

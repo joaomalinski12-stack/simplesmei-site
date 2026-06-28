@@ -41,7 +41,7 @@ function waHref(text) {
 */
 function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = 'lg', preview = false, block = false, align = 'left', onDark = false }) {
   const S = {
-    sm: { pad: '10px 16px', font: 13.5, icon: 16, radius: 11, gap: 9 },
+    sm: { pad: '11px 16px', font: 13.5, icon: 16, radius: 11, gap: 9 },
     md: { pad: '13px 20px', font: 14.5, icon: 18, radius: 12, gap: 10 },
     lg: { pad: '16px 24px', font: 15.5, icon: 19, radius: 14, gap: 11 },
     xl: { pad: '20px 30px', font: 17, icon: 22, radius: 16, gap: 12 },
@@ -62,7 +62,9 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
           padding: S.pad, borderRadius: S.radius,
           fontFamily: FONTS.body, fontWeight: 700, fontSize: S.font, letterSpacing: -0.1,
           display: block ? 'flex' : 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: S.gap,
-          width: block ? '100%' : undefined, whiteSpace: 'nowrap',
+          width: block ? '100%' : undefined,
+          whiteSpace: block ? 'normal' : 'nowrap', textAlign: 'center', lineHeight: 1.25,
+          minHeight: 44, boxSizing: 'border-box',
           boxShadow: '0 12px 30px -10px rgba(37,211,102,0.5), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
         }}
       >
@@ -72,8 +74,8 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
       </a>
       {preview && (
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 8,
-          maxWidth: 360, paddingLeft: block ? 0 : 2,
+          display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap',
+          maxWidth: '100%', paddingLeft: block ? 0 : 2,
           justifyContent: align === 'center' ? 'center' : 'flex-start',
         }}>
           <span style={{
@@ -82,7 +84,7 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
           }}>já vai digitado:</span>
           <span style={{
             fontFamily: FONTS.mono, fontSize: 11, color: onDark ? '#9D9EA5' : BRAND.inkSoft,
-            lineHeight: 1.35,
+            lineHeight: 1.35, minWidth: 0, flexShrink: 1, overflowWrap: 'anywhere',
           }}>“{text}”</span>
         </div>
       )}
