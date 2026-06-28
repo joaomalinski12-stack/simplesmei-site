@@ -6,11 +6,16 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import { Termos } from './termos.jsx';
 import { Privacidade } from './privacidade.jsx';
+import { Sobre, Imprensa, Carreiras, Contato } from './institucional.jsx';
 
 const App = ({ path }) => {
   let PageComponent = SiteV5;
   if (path === '/termos') PageComponent = Termos;
   if (path === '/privacidade') PageComponent = Privacidade;
+  if (path === '/sobre') PageComponent = Sobre;
+  if (path === '/imprensa') PageComponent = Imprensa;
+  if (path === '/carreiras') PageComponent = Carreiras;
+  if (path === '/contato') PageComponent = Contato;
 
   return (
     <>

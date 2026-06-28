@@ -20,7 +20,7 @@ if (!rootRe.test(template)) {
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const routes = ['/', '/termos', '/privacidade'];
+const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato'];
 
 for (const route of routes) {
   const appHtml = render(route);
@@ -37,6 +37,18 @@ for (const route of routes) {
   } else if (route === '/privacidade') {
     title = 'Política de Privacidade | SimplesMEI';
     description = 'Política de Privacidade e LGPD do SimplesMEI. Transparência sobre o uso de dados, não-treinamento de IA pública e proteção do seu MEI.';
+  } else if (route === '/sobre') {
+    title = 'Sobre a Empresa | SimplesMEI';
+    description = 'Conheça a história da SimplesMEI e nossa missão de usar inteligência artificial no WhatsApp para desburocratizar a contabilidade no Brasil.';
+  } else if (route === '/imprensa') {
+    title = 'Imprensa | SimplesMEI';
+    description = 'Media kit, contatos para a mídia e informações sobre a SimplesMEI para veículos de imprensa.';
+  } else if (route === '/carreiras') {
+    title = 'Carreiras | SimplesMEI';
+    description = 'Trabalhe conosco na SimplesMEI. Buscamos talentos em engenharia, design e IA para transformar a contabilidade no Brasil.';
+  } else if (route === '/contato') {
+    title = 'Contato | SimplesMEI';
+    description = 'Fale com o suporte da SimplesMEI via WhatsApp ou E-mail. Estamos aqui para ajudar o seu MEI.';
   }
 
   // Substituições de SEO no HTML gerado

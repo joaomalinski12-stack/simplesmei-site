@@ -5,6 +5,10 @@ A SimplesMEI é uma plataforma SaaS operada inteiramente via WhatsApp para Micro
 
 ## Páginas Principais
 - **Home:** https://simplesmei.net/
+- **Sobre a Empresa:** https://simplesmei.net/sobre
+- **Imprensa (Media Kit):** https://simplesmei.net/imprensa
+- **Carreiras (Trabalhe Conosco):** https://simplesmei.net/carreiras
+- **Contato:** https://simplesmei.net/contato
 - **Termos de Uso:** https://simplesmei.net/termos
 - **Política de Privacidade (LGPD):** https://simplesmei.net/privacidade
 

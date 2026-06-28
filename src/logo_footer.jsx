@@ -378,7 +378,7 @@ function Footer() {
         </div>
         {[
           { h: 'Produto', l: [{label: 'Como funciona', href: '/#funciona'}, {label: 'Preço', href: '/#preco'}, {label: 'Segurança', href: '/#seguranca'}, {label: 'Mudar para Simples', href: '/#mudar'}] },
-          { h: 'Empresa', l: [{label: 'Sobre'}, {label: 'Imprensa'}, {label: 'Carreiras'}, {label: 'Contato'}] },
+          { h: 'Empresa', l: [{label: 'Sobre', href: '/sobre'}, {label: 'Imprensa', href: '/imprensa'}, {label: 'Carreiras', href: '/carreiras'}, {label: 'Contato', href: '/contato'}] },
           { h: 'Legal', l: [{label: 'Termos de uso', href: '/termos'}, {label: 'Política de privacidade', href: '/privacidade'}, {label: 'CNPJ 62.225.090/0001-76'}] },
         ].map(col => (
           <div key={col.h}>
