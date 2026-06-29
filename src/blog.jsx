@@ -2,8 +2,8 @@ import React, { useMemo, useState } from 'react';
 import fm from 'front-matter';
 import ReactMarkdown from 'react-markdown';
 import rehypeSlug from 'rehype-slug';
-import { Footer, NavBar } from './logo_footer.jsx';
-import { waHref, Door } from './porta_nav.jsx';
+import { Footer } from './logo_footer.jsx';
+import { waHref, Door, NavV5 } from './porta_nav.jsx';
 import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 // Importa todos os posts de forma eager como string bruta
@@ -26,6 +26,50 @@ function slugify(h) {
 }
 
 const fmtLong = (d) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'long' }).format(new Date(d));
+
+/* ── Capa do post — imagem própria (frontmatter `cover`) ou capa gerada nos tokens.
+   Sem ilustração: gradiente da marca + grade de pontos + glow + wordmark + categoria. ── */
+const COVER_PALETTES = {
+  coral: { from: BRAND.coral, to: BRAND.coralDeep, glow: 'rgba(255,255,255,0.22)', mark: 'rgba(255,255,255,0.7)' },
+  amber: { from: BRAND.amber, to: BRAND.amberDeep, glow: 'rgba(255,255,255,0.20)', mark: 'rgba(255,255,255,0.7)' },
+  mint:  { from: BRAND.mint, to: BRAND.mintDeep, glow: 'rgba(255,255,255,0.20)', mark: 'rgba(255,255,255,0.7)' },
+  ink:   { from: BRAND.inkPanel, to: BRAND.ink, glow: 'rgba(248,116,83,0.30)', mark: BRAND.coral },
+};
+function PostCover({ post, m }) {
+  const h = m ? 220 : 320;
+  // imagem própria do post → <img> de verdade + H1 (título) abaixo
+  if (post.cover) {
+    return (
+      <>
+        <img src={post.cover} alt={post.coverAlt || ''} loading="lazy" style={{
+          width: '100%', height: h, objectFit: 'cover', borderRadius: 16,
+          border: `1px solid ${BRAND.creamDeep}`, marginTop: 14,
+        }} />
+        <h1 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: 'clamp(30px, 7vw, 46px)', lineHeight: 1.08, letterSpacing: -1.4, color: BRAND.ink, margin: '24px 0 0' }}>{post.title}</h1>
+      </>
+    );
+  }
+  // sem imagem própria → capa gerada nos tokens; o título É o H1 (masthead)
+  const p = COVER_PALETTES[post.coverPalette] || COVER_PALETTES.coral;
+  const category = post.category || 'Guia';
+  return (
+    <div style={{
+      position: 'relative', minHeight: h, borderRadius: 16, overflow: 'hidden', marginTop: 14,
+      background: `linear-gradient(135deg, ${p.from}, ${p.to})`,
+      display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: m ? '54px 20px 22px' : '70px 30px 30px',
+    }}>
+      <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)', backgroundSize: m ? '16px 16px' : '20px 20px', opacity: 0.6 }} />
+      <div style={{ position: 'absolute', top: m ? -60 : -110, right: m ? -50 : -90, width: m ? 200 : 340, height: m ? 200 : 340, borderRadius: '50%', background: `radial-gradient(circle, ${p.glow} 0%, transparent 66%)`, pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', top: m ? 18 : 26, left: m ? 20 : 30, fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 14 : 17, letterSpacing: -0.5, color: '#fff' }}>
+        Simples<span style={{ color: p.mark }}>MEI</span>
+      </div>
+      <div style={{ position: 'relative' }}>
+        <div style={{ fontFamily: FONTS.mono, fontSize: m ? 10 : 11, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: 'rgba(255,255,255,0.85)', marginBottom: m ? 8 : 10 }}>{category}</div>
+        <h1 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 'clamp(26px, 7vw, 32px)' : 'clamp(34px, 4.4vw, 46px)', lineHeight: 1.08, letterSpacing: -1.2, color: '#fff', margin: 0, maxWidth: '20ch', textWrap: 'balance' }}>{post.title}</h1>
+      </div>
+    </div>
+  );
+}
 
 /* ── Índice ("Neste artigo") — card creme nos tokens, recolhível no mobile ── */
 function TableOfContents({ content, m }) {
@@ -205,7 +249,7 @@ export function BlogList() {
 
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <NavBar />
+      <NavV5 />
 
       <main style={{
         flex: 1,
@@ -285,7 +329,7 @@ export function BlogPost({ slug }) {
   if (!post) {
     return (
       <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <NavBar />
+        <NavV5 />
         <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <h1 style={{ color: BRAND.ink, fontFamily: FONTS.display }}>Artigo não encontrado</h1>
         </main>
@@ -299,7 +343,7 @@ export function BlogPost({ slug }) {
 
   return (
     <div style={{ background: BRAND.paper, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <NavBar />
+      <NavV5 />
 
       <main style={{
         flex: 1,
@@ -315,17 +359,12 @@ export function BlogPost({ slug }) {
           <a href="/blog" className="toc-link" style={{ color: BRAND.coralDeep, textDecoration: 'none' }}>Blog</a>
         </nav>
 
-        {/* HEADER do artigo */}
-        <header style={{ marginBottom: 32 }}>
-          <h1 style={{
-            fontFamily: FONTS.display, fontWeight: 800,
-            fontSize: 'clamp(30px, 7vw, 46px)', lineHeight: 1.08, letterSpacing: -1.4,
-            color: BRAND.ink, margin: '14px 0 0',
-          }}>
-            {post.title}
-          </h1>
+        {/* CAPA / MASTHEAD — o título é o H1 (dentro da capa) */}
+        <PostCover post={post} m={m} />
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', margin: '20px 0 0', fontFamily: FONTS.body, fontSize: 13.5, color: BRAND.inkSoft }}>
+        {/* HEADER do artigo — assinatura + standfirst */}
+        <header style={{ margin: '22px 0 36px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap', fontFamily: FONTS.body, fontSize: 13.5, color: BRAND.inkSoft }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
               <span style={{ width: 30, height: 30, borderRadius: '50%', overflow: 'hidden', background: `linear-gradient(135deg, ${BRAND.coral}, ${BRAND.coralDeep})`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: FONTS.display, fontWeight: 800, fontSize: 12 }}>
                 {post.author && post.author.includes('Gandra')
@@ -341,7 +380,7 @@ export function BlogPost({ slug }) {
           </div>
 
           {post.description && (
-            <p style={{ fontFamily: FONTS.body, fontSize: 'clamp(17px, 2.8vw, 20px)', lineHeight: 1.5, color: BRAND.inkSoft, margin: '24px 0 0', textWrap: 'pretty' }}>
+            <p style={{ fontFamily: FONTS.body, fontSize: 'clamp(17px, 2.8vw, 20px)', lineHeight: 1.5, color: BRAND.inkSoft, margin: '20px 0 0', textWrap: 'pretty' }}>
               {post.description}
             </p>
           )}

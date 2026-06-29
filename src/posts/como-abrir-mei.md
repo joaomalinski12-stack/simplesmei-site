@@ -3,6 +3,8 @@ title: "Como abrir o seu MEI em 2026: passo a passo grátis"
 date: "2026-06-29"
 description: "Como abrir o MEI grátis em 2026: passo a passo oficial, documentos necessários e como fugir de golpes de falsos portais."
 author: "João Gandra"
+category: "Abrir MEI"
+coverPalette: "coral"
 faq:
   - q: "Abrir o MEI é pago?"
     a: "Não. A abertura é 100% gratuita pelo Portal do Empreendedor (gov.br). Se algum site cobrar 'taxa de abertura' ou 'taxa associativa', é golpe."
