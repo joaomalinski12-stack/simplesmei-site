@@ -140,6 +140,33 @@ pra não brigar com ele mesmo.
 **Produção:** workflow `simplesmei-10-posts` — draft → revisão adversária de SEO/honestidade
 (vs `PRODUTO.md`) → finalização → check de canibalização do cluster.
 
+### 2F. Lote 2 — 10 posts (2026-06-29)
+
+Segundo lote, produzido pela skill **`seo-content`** (`.claude/skills/seo-content/`). Pesquisa
+Ubersuggest refrescada (Brasil, pt, jun/2026) e **cruzada com os 11 do lote 1** pra não canibalizar —
+estende o funil pra novas frentes (aquisição, declarações, documentos, ciclo de vida, INSS) e adiciona
+um **hub** (`obrigacoes-do-mei`) que interliga todo o cluster.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente |
+|---|---|---|---|---|---|
+| 1 | `o-que-e-mei` | o que é mei | 22.200 | **18** | Aquisição (topo) |
+| 2 | `obrigacoes-do-mei` | obrigações do mei | 880 | 20 | **HUB** (linka tudo) |
+| 3 | `atividades-permitidas-mei` | atividades permitidas mei | 4.400 | 18 | CNAE (extensão) |
+| 4 | `mei-pode-ter-funcionario` | mei pode ter funcionário | 2.400 | **7** | Gestão |
+| 5 | `mei-imposto-de-renda` | mei imposto de renda (DASN×IRPF) | 2.900 | **6** | Declarações |
+| 6 | `declaracao-anual-mei` | declaração anual mei (DASN-SIMEI) | 90.500 | 44 | Declarações (pilar) |
+| 7 | `cartao-cnpj-mei` | cartão cnpj mei / CCMEI | 9.900 | **15** | Documentos |
+| 8 | `como-dar-baixa-no-mei` | como dar baixa no mei | 8.100 | **17** | Ciclo de vida |
+| 9 | `cancelar-nota-fiscal-mei` | cancelar nota fiscal mei | 1.300 | **6** | Nota fiscal (ext.) |
+| 10 | `aposentadoria-mei` | aposentadoria mei | 1.000 | 23 | INSS/benefícios |
+
+**Cruzamento (sem canibalização):** `declaração anual` (DASN, anual) ≠ `das-do-mei` (mensal);
+`cancelar nota` ≠ `como-emitir-nota`; `atividades permitidas` (a lista) ≠ `cnae-do-mei` (conceito);
+`mei-imposto-de-renda` clareia DASN×IRPF e linka a DASN. **Descartados:** `ccmei` (SD 59 — vira
+secundária de `cartao-cnpj-mei` SD 15), `nota fiscal de produto mei` (SD 39), `mei caminhoneiro`
+(9.9k/SD 23, mas fit fraco — público é prestador de serviço), `consultar mei` (SD 29 — coberto por
+`cartao-cnpj-mei`).
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
