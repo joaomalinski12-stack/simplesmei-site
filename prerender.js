@@ -21,7 +21,7 @@ import { mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import fm from 'front-matter';
 
-const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/blog'];
+const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/lista-de-espera', '/blog'];
 
 // Lê os posts para gerar rotas dinâmicas
 const postsDir = resolve(__dirname, 'src/posts');
@@ -80,6 +80,9 @@ for (const route of routes) {
   } else if (route === '/contato') {
     title = 'Contato | SimplesMEI';
     description = 'Fale com o suporte da SimplesMEI via WhatsApp ou E-mail. Estamos aqui para ajudar o seu MEI.';
+  } else if (route === '/lista-de-espera') {
+    title = 'Lista de espera | SimplesMEI';
+    description = 'Entre na lista de espera do SimplesMEI, a IA que cuida do fiscal do seu MEI no WhatsApp. A gente te avisa assim que abrir as primeiras vagas.';
   } else if (route === '/blog') {
     title = 'Blog | SimplesMEI';
     description = 'Dicas, tutoriais e novidades para facilitar a vida do Microempreendedor Individual.';
@@ -128,6 +131,11 @@ for (const route of routes) {
   html = html.replace(/<meta property="og:title" content=".*?">/, `<meta property="og:title" content="${title}">`);
   html = html.replace(/<meta property="og:url" content=".*?">/, `<meta property="og:url" content="https://simplesmei.net${canonicalPath === '/' ? '' : canonicalPath}">`);
   html = html.replace(/<meta property="og:description" content=".*?">/, `<meta property="og:description" content="${description}">`);
+
+  // Lista de espera é uma página transitória de captura — fora do índice (mas segue links).
+  if (route === '/lista-de-espera') {
+    html = html.replace(/<meta name="robots" content="[^"]*">/, '<meta name="robots" content="noindex, follow">');
+  }
 
   let outPath = distIndex;
   if (route !== '/') {

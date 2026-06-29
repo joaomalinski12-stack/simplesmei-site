@@ -8,6 +8,7 @@ import { Termos } from './termos.jsx';
 import { Privacidade } from './privacidade.jsx';
 import { Sobre, Imprensa, Carreiras, Contato } from './institucional.jsx';
 import { BlogList, BlogPost } from './blog.jsx';
+import { WaitlistPage } from './lista_espera.jsx';
 
 import { CookieBanner } from './cookie_banner.jsx';
 
@@ -21,6 +22,7 @@ const App = ({ path }) => {
   else if (path === '/imprensa') PageComponent = Imprensa;
   else if (path === '/carreiras') PageComponent = Carreiras;
   else if (path === '/contato') PageComponent = Contato;
+  else if (path === '/lista-de-espera') PageComponent = WaitlistPage;
   else if (path === '/blog') PageComponent = BlogList;
   else if (path.startsWith('/blog/')) {
     PageComponent = BlogPost;

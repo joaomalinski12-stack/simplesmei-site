@@ -91,7 +91,7 @@ export function Contato() {
         <div style={{ padding: 24, border: '1px solid #E5E7EB', borderRadius: 12 }}>
           <h3 style={{ margin: '0 0 12px 0', fontSize: 18 }}>WhatsApp (Central)</h3>
           <p style={{ color: '#575A66', marginBottom: 16, fontSize: 14 }}>Seu próprio assistente também direciona você para um atendente humano caso necessário.</p>
-          <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '10px 20px', background: BRAND.coral, color: 'white', borderRadius: 8, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>
+          <a href="/lista-de-espera" style={{ display: 'inline-block', padding: '10px 20px', background: BRAND.coral, color: 'white', borderRadius: 8, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>
             Abrir WhatsApp
           </a>
         </div>

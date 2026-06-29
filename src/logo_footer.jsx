@@ -68,7 +68,7 @@ function NavBar({ inverted, links = [
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" style={{
+        <a href="/lista-de-espera" style={{
           background: BRAND.coral, color: '#fff', border: 'none', textDecoration: 'none',
           padding: m ? '10px 14px' : '11px 18px', borderRadius: 10,
           fontFamily: FONTS.body, fontWeight: 700, fontSize: m ? 13 : 13.5,

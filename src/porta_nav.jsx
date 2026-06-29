@@ -25,8 +25,14 @@ const DOOR_TEXT = {
   comecar:     'quero começar',
 };
 
+/* PRÉ-LANÇAMENTO: o produto ainda não está aberto. Em vez de mandar o lead pro
+   WhatsApp do bot, todos os CTAs ("portas") caem na lista de espera. O `text`
+   (mensagem que iria pré-digitada) é mantido na assinatura pra não mexer no botão
+   nem no preview — só o destino muda. Quando o produto abrir, é só voltar este
+   retorno pro deep link do WhatsApp (wa.me/WA_NUMBER). */
+const WAITLIST_URL = '/lista-de-espera';
 function waHref(text) {
-  return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text);
+  return WAITLIST_URL;
 }
 
 /* ─── A PORTA ──────────────────────────────────────────────
