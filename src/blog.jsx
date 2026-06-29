@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import fm from 'front-matter';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { Footer } from './logo_footer.jsx';
 import { waHref, Door, NavV5 } from './porta_nav.jsx';
@@ -377,6 +378,12 @@ export function BlogPost({ slug }) {
             <time dateTime={post.date}>{fmtLong(post.date)}</time>
             <span style={{ width: 3, height: 3, borderRadius: '50%', background: BRAND.inkMid }} />
             <span>{readMin} min de leitura</span>
+            {post.updated && post.updated !== post.date && (
+              <>
+                <span style={{ width: 3, height: 3, borderRadius: '50%', background: BRAND.inkMid }} />
+                <span style={{ fontStyle: 'italic' }}>atualizado em <time dateTime={post.updated}>{fmtLong(post.updated)}</time></span>
+              </>
+            )}
           </div>
 
           {post.description && (
@@ -395,9 +402,13 @@ export function BlogPost({ slug }) {
           fontFamily: FONTS.body
         }}>
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeSlug]}
             components={{
               a: ({node, ...props}) => <a className="blog-link" {...props} />,
+              table: ({node, ...props}) => (
+                <div style={{ overflowX: 'auto', margin: '24px 0' }}><table {...props} /></div>
+              ),
               img: ({node, ...props}) => (
                 <img
                   {...props}
@@ -522,6 +533,28 @@ export function BlogPost({ slug }) {
           color: ${BRAND.ink};
         }
         .blog-content blockquote p { font: inherit; color: inherit; margin: 0; }
+
+        /* tabelas (remark-gfm) — dado tabular é muito mais citável em AI Overviews */
+        .blog-content table {
+          width: 100%;
+          border-collapse: collapse;
+          font-size: clamp(14px, 2.4vw, 15.5px);
+          line-height: 1.5;
+        }
+        .blog-content th, .blog-content td {
+          border: 1px solid ${BRAND.creamDeep};
+          padding: 10px 12px;
+          text-align: left;
+          vertical-align: top;
+        }
+        .blog-content th {
+          background: ${BRAND.cream};
+          font-family: ${FONTS.display};
+          font-weight: 700;
+          color: ${BRAND.ink};
+        }
+        .blog-content td { color: ${BRAND.inkPanel}; }
+        .blog-content tbody tr:nth-child(even) td { background: rgba(239,234,226,0.35); }
 
         /* links de navegação (índice, trilha, autor) */
         .toc-link { color: ${BRAND.inkSoft}; text-decoration: none; transition: color .15s ease; }

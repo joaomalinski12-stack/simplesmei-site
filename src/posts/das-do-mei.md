@@ -40,6 +40,12 @@ O valor do DAS **muda todo ano**, porque ele é amarrado ao **salário mínimo**
 
 Quem presta serviço (consultoria, design, marketing, audiovisual e afins) paga **INSS + R$ 5 de ISS**. Quem faz comércio paga **INSS + R$ 1 de ICMS**. Quem faz os dois (comércio e serviço) paga **INSS + R$ 1 + R$ 5**.
 
+| Tipo de atividade do MEI | O que entra no DAS |
+| --- | --- |
+| Comércio ou indústria | INSS (5% do salário mínimo) + R$ 1 de ICMS |
+| Prestação de serviços | INSS (5% do salário mínimo) + R$ 5 de ISS |
+| Comércio e serviços | INSS (5% do salário mínimo) + R$ 1 + R$ 5 |
+
 > Como a parte do INSS é 5% do salário mínimo, o valor do DAS é **reajustado a cada virada de ano**. Por isso não cravamos aqui um número exato de 2026: confira o **valor atual** direto no Portal do Empreendedor antes de pagar. Em caso de dúvida, dá para perguntar a composição e o valor da sua faixa pelo WhatsApp no [SimplesMEI](/), que a IA responde com base nas fontes oficiais.
 
 A boa notícia: esse INSS é o que te dá direito a **aposentadoria por idade, auxílio-doença e salário-maternidade**. O DAS não é só imposto — é a sua porta para a Previdência.

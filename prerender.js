@@ -63,33 +63,33 @@ for (const route of routes) {
   let canonicalPath = route;
 
   if (route === '/termos') {
-    title = 'Termos de Uso | SimplesMEI';
+    title = 'Termos de Uso · SimplesMEI';
     description = 'Termos de uso do serviço SimplesMEI. Saiba como nossa inteligência artificial interage via WhatsApp para facilitar o dia a dia do Microempreendedor Individual.';
   } else if (route === '/privacidade') {
-    title = 'Política de Privacidade | SimplesMEI';
+    title = 'Política de Privacidade · SimplesMEI';
     description = 'Política de Privacidade e LGPD do SimplesMEI. Transparência sobre o uso de dados, não-treinamento de IA pública e proteção do seu MEI.';
   } else if (route === '/sobre') {
-    title = 'Sobre a Empresa | SimplesMEI';
+    title = 'Sobre a Empresa · SimplesMEI';
     description = 'Conheça a história da SimplesMEI e nossa missão de usar inteligência artificial no WhatsApp para desburocratizar a contabilidade no Brasil.';
   } else if (route === '/imprensa') {
-    title = 'Imprensa | SimplesMEI';
+    title = 'Imprensa · SimplesMEI';
     description = 'Media kit, contatos para a mídia e informações sobre a SimplesMEI para veículos de imprensa.';
   } else if (route === '/carreiras') {
-    title = 'Carreiras | SimplesMEI';
+    title = 'Carreiras · SimplesMEI';
     description = 'Trabalhe conosco na SimplesMEI. Buscamos talentos em engenharia, design e IA para transformar a contabilidade no Brasil.';
   } else if (route === '/contato') {
-    title = 'Contato | SimplesMEI';
+    title = 'Contato · SimplesMEI';
     description = 'Fale com o suporte da SimplesMEI via WhatsApp ou E-mail. Estamos aqui para ajudar o seu MEI.';
   } else if (route === '/lista-de-espera') {
-    title = 'Lista de espera | SimplesMEI';
+    title = 'Lista de espera · SimplesMEI';
     description = 'Entre na lista de espera do SimplesMEI, a IA que cuida do fiscal do seu MEI no WhatsApp. A gente te avisa assim que abrir as primeiras vagas.';
   } else if (route === '/blog') {
-    title = 'Blog | SimplesMEI';
+    title = 'Blog · SimplesMEI';
     description = 'Dicas, tutoriais e novidades para facilitar a vida do Microempreendedor Individual.';
   } else if (route.startsWith('/blog/')) {
     const slug = route.replace('/blog/', '');
     if (blogMeta[slug]) {
-      title = `${blogMeta[slug].title} | SimplesMEI`;
+      title = `${blogMeta[slug].title} · SimplesMEI`;
       description = blogMeta[slug].description || title;
       
       // Injeta JSON-LD de Artigo
@@ -100,12 +100,24 @@ for (const route of routes) {
         "headline": blogMeta[slug].title,
         "description": description,
         "datePublished": blogMeta[slug].date,
+        "dateModified": blogMeta[slug].updated || blogMeta[slug].date,
         "author": {
           "@type": "Person",
           "name": blogMeta[slug].author || "Equipe SimplesMEI"
         }
       });
-      
+
+      // Trilha visível (Início › Blog › título) → BreadcrumbList
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://simplesmei.net/blog" },
+          { "@type": "ListItem", "position": 3, "name": blogMeta[slug].title }
+        ]
+      });
+
       if (blogMeta[slug].faq && blogMeta[slug].faq.length > 0) {
         schemas.push({
           "@context": "https://schema.org",
