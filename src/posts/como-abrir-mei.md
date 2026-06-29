@@ -48,6 +48,10 @@ Na abertura você escolhe a sua **ocupação**, que o sistema converte no **CNAE
 
 > Ficou em dúvida sobre qual CNAE escolher? No SimplesMEI, a IA **sugere o CNAE certo** para a sua atividade durante a abertura, pelo WhatsApp.
 
+![Tela do SimplesMEI sugerindo o CNAE da atividade durante a abertura do MEI pelo WhatsApp](/abertura-mei-cnae.png)
+
+*A IA já sugere as atividades (o CNAE) pela sua descrição — você só confirma.*
+
 ## Quanto custa para abrir o MEI?
 
 **Nada.** A abertura é gratuita. O único custo do MEI é o **DAS mensal** — um valor fixo que já inclui a sua contribuição ao INSS e te dá direito a aposentadoria, auxílio-doença e salário-maternidade.
@@ -57,5 +61,9 @@ Na abertura você escolhe a sua **ocupação**, que o sistema converte no **CNAE
 Formalizar é só o começo. A partir daí você precisa **emitir nota**, **pagar o DAS** todo mês e **não estourar o teto** de faturamento do MEI (R$ 81 mil por ano) — passar disso te desenquadra e pode gerar cobrança retroativa.
 
 É aqui que o [**SimplesMEI**](/) entra. A nossa inteligência artificial cuida do fiscal pelo WhatsApp: você manda *"emite uma nota de 500 para a Marina"* e ela emite a nota, classifica o serviço e **vigia o seu teto automaticamente** — sem planilha, sem portal. E se você ainda não abriu o MEI, dá para **começar a abertura de graça** direto pela conversa, com a IA te guiando passo a passo.
+
+![SimplesMEI perguntando idade e faturamento para checar se você pode ser MEI, no WhatsApp](/abertura-mei-precheck.png)
+
+*A abertura é guiada: a IA confere se você pode ser MEI e conduz o passo a passo pela conversa.*
 
 Ainda com dúvida sobre nota, DAS ou teto? Veja as [perguntas frequentes](/#faq) do SimplesMEI.
