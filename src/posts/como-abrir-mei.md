@@ -33,29 +33,27 @@ Só isso. Você não precisa de contador nem de nenhum documento pago.
 
 ## Passo a passo para abrir o MEI (oficial e grátis)
 
-### 1. Acesse o Portal do Empreendedor
-O **único** lugar para abrir o seu MEI é o [Portal do Empreendedor](https://www.gov.br/empresas-e-negocios/pt-br/empreendedor) (gov.br). Fuja de sites que cobram "taxa de abertura" ou "taxa associativa" — eles não são oficiais.
+### 1. Acesse o Portal do Empreendedor e clique em "Formalize-se!"
+O **único** lugar para abrir o seu MEI é o [Portal do Empreendedor](https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei) (gov.br). Na página **"Quero ser MEI"**, clique no card **"Formalize-se! Obtenha seu CNPJ"**. Fuja de sites que cobram "taxa de abertura" ou "taxa associativa" — eles não são oficiais.
+
+![Página "Quero ser MEI" do Portal do Empreendedor (gov.br), com o card "Formalize-se!" para iniciar a abertura do MEI](/abertura-gov-0-quero-ser-mei.png)
 
 ### 2. Entre com a conta Gov.br e dê o consentimento
 O processo exige uma conta **Gov.br nível prata ou ouro** (você sobe de nível pelo login do seu banco ou pela biometria no app Gov.br). Logo no início, o portal pede o **consentimento da LGPD** para usar os seus dados cadastrais — marque a caixa e clique em **Continuar**.
 
 ![Tela de consentimento (LGPD) do Portal do Empreendedor para inscrição do MEI](/abertura-gov-1-consentimento.png)
 
-### 3. Preencha a identificação e as atividades
-Informe RG, contato e endereço, e escolha a sua **Ocupação Principal** (e até 15 secundárias) — é aqui que entra o seu CNAE. O CEP completa a rua e a cidade sozinho.
+### 3. Preencha os dados e escolha a sua atividade (o CNAE)
+Informe RG, contato e endereço. Em seguida, escolha a sua **Ocupação Principal** (e até 15 secundárias): é aqui que entra o **CNAE**, o código que define a sua atividade e quais impostos entram no DAS. Escolha a ocupação que mais se parece com o que você faz — o CEP completa a rua e a cidade sozinho.
 
 ![Formulário de identificação e atividades (ocupação/CNAE) do Portal do Empreendedor para abrir o MEI](/abertura-gov-2-dados.png)
+
+> Em dúvida sobre qual CNAE escolher? No SimplesMEI, a IA **sugere o CNAE certo** para a sua atividade pelo WhatsApp — e ainda pode te guiar na abertura inteira, de graça.
 
 ### 4. Confira os dados e confirme
 O portal mostra um resumo dos seus dados. Confira tudo e clique em **Confirmar** — atenção: a partir daí a formalização é concluída e o **CNPJ é gerado na hora**. Pronto, você já é MEI.
 
 ![Tela de confirmação do Portal do Empreendedor: ao confirmar, a formalização é concluída e o CNPJ do MEI é gerado](/abertura-gov-3-confirmacao.png)
-
-## Escolha a sua atividade (o CNAE)
-
-Na abertura você escolhe a sua **ocupação**, que o sistema converte no **CNAE** (o código da sua atividade). É ele que define o que você pode fazer como MEI e quais impostos entram no DAS. Escolha a atividade que mais se parece com o que você faz — e, se atuar em mais de uma, é possível incluir uma principal e até 15 secundárias.
-
-> Ficou em dúvida sobre qual CNAE escolher? No SimplesMEI, a IA **sugere o CNAE certo** para a sua atividade durante a abertura, pelo WhatsApp.
 
 ## Quanto custa para abrir o MEI?
 
