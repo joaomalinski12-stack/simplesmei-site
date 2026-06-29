@@ -40,7 +40,23 @@ for (const file of postFiles) {
 for (const route of routes) {
   const appHtml = render(route);
   let html = template.replace(rootRe, `<div id="root">${appHtml}</div>`);
-  
+
+  // Rotas != home: o @graph da home traz SoftwareApplication + FAQPage, que são específicos
+  // da home. Mantém só Organization + WebSite (sitewide) nas outras páginas, pra não vazar a
+  // FAQPage do produto pro blog/institucionais. (O Article/FAQPage do post é anexado depois.)
+  if (route !== '/') {
+    html = html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (m, json) => {
+      try {
+        const data = JSON.parse(json);
+        if (Array.isArray(data['@graph'])) {
+          data['@graph'] = data['@graph'].filter(n => n['@type'] === 'Organization' || n['@type'] === 'WebSite');
+          return `<script type="application/ld+json">\n${JSON.stringify(data, null, 2)}\n</script>`;
+        }
+      } catch (e) { /* se não parsear, mantém como está */ }
+      return m;
+    });
+  }
+
   // Custom SEO tags per route
   let title = 'Emita a nota fiscal do MEI pelo WhatsApp · SimplesMEI';
   let description = 'Emita a nota fiscal do seu MEI por uma mensagem no WhatsApp. A IA cuida do DAS, da recorrência e do teto — sem portal, sem app, sem contador.';
