@@ -1,5 +1,5 @@
 ---
-title: "Nota fiscal eletrônica do MEI (NFS-e): o que é e quando emitir"
+title: "Nota fiscal eletrônica do MEI: o que é e quando emitir"
 date: "2026-06-27"
 description: "Microempreendedor individual e nota fiscal eletrônica: o que é a NFS-e, a diferença para NF-e e NFC-e e quando o MEI precisa emitir nota."
 author: "João Gandra"
