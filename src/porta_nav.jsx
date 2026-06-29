@@ -1,5 +1,5 @@
 import React from 'react';
-import { Logo, WhatsAppIcon } from './logo_footer.jsx';
+import { Logo, WhatsAppIcon, MenuIcon, XIcon } from './logo_footer.jsx';
 import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 /* SimplesMEI — Site V5 · A PORTA CONTEXTUAL
@@ -109,22 +109,26 @@ function DoorNote({ onDark = false }) {
    Logo · âncoras que ancoram de verdade · porta sempre visível. */
 function NavV5() {
   const [solid, setSolid] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const m = useIsMobile();
+  
   React.useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 24);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  
   const links = [
-    ['Como funciona', '#como-funciona'],
-    ['Recorrência', '#recorrencia'],
-    ['Preço', '#preco'],
+    ['Como funciona', '/#como-funciona'],
+    ['Preço', '/#preco'],
+    ['Segurança', '/#seguranca'],
     ['Blog', '/blog'],
-    ['Segurança', '#seguranca'],
+    ['Sobre', '/sobre']
   ];
+  
   return (
-    <nav style={{
+    <nav className="navv5-container" style={{
       position: 'sticky', top: 0, zIndex: 100,
       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       padding: m ? (solid ? '10px 20px' : '14px 20px') : (solid ? '12px 56px' : '18px 56px'),
@@ -133,8 +137,18 @@ function NavV5() {
       boxShadow: solid ? '0 6px 24px -18px rgba(16,17,26,0.50)' : 'none',
       transition: 'padding .22s ease, box-shadow .22s ease',
     }}>
+      <style>{`
+        @media (max-width: 768px) {
+          .navv5-desktop-links { display: none !important; }
+          .navv5-mobile-btn { display: flex !important; }
+        }
+        @media (min-width: 769px) {
+          .navv5-mobile-btn { display: none !important; }
+        }
+      `}</style>
       <Logo size={solid ? 24 : 26}/>
-      <div style={{ display: m ? 'none' : 'flex', alignItems: 'center', gap: 30 }}>
+      
+      <div className="navv5-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
         {links.map(([l, href]) => (
           <a key={l} href={href} style={{
             fontSize: 13.5, fontWeight: 600, color: BRAND.ink, whiteSpace: 'nowrap',
@@ -142,7 +156,46 @@ function NavV5() {
           }}>{l}</a>
         ))}
       </div>
-      <Door label={m ? 'Testar' : 'Testar no WhatsApp'} text={DOOR_TEXT.comecar} size="sm"/>
+      
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <Door label={m ? 'Testar' : 'Testar no WhatsApp'} text={DOOR_TEXT.comecar} size="sm"/>
+        
+        <button 
+          className="navv5-mobile-btn"
+          onClick={() => setOpen(!open)}
+          style={{
+            display: m ? 'flex' : 'none',
+            alignItems: 'center', justifyContent: 'center',
+            background: 'rgba(0,0,0,0.05)',
+            border: 'none', borderRadius: 8,
+            width: 38, height: 38, cursor: 'pointer',
+            padding: 0
+          }}
+        >
+          {open ? <XIcon color={BRAND.ink} /> : <MenuIcon color={BRAND.ink} />}
+        </button>
+      </div>
+      
+      {open && (
+        <div style={{
+          position: 'absolute', top: '100%', left: 0, right: 0,
+          background: '#fff',
+          borderBottom: `1px solid ${BRAND.sandDeep}`,
+          padding: '16px 24px',
+          display: 'flex', flexDirection: 'column', gap: 20,
+          boxShadow: '0 10px 20px rgba(0,0,0,0.05)'
+        }}>
+          {links.map(([l, href]) => (
+            <a key={l} href={href} 
+               onClick={() => setOpen(false)}
+               style={{
+                 fontSize: 16, fontWeight: 600, color: BRAND.ink, textDecoration: 'none',
+                 fontFamily: FONTS.body, opacity: 0.9,
+            }}>{l}</a>
+          ))}
+        </div>
+      )}
+      
       <div className="v5-comet-line" style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 2, opacity: solid ? 1 : 0, transition: 'opacity .22s ease' }}/>
     </nav>
   );

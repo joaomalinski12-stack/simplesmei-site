@@ -976,4 +976,4 @@ function AIBadge() {
   );
 }
 
-export { Logo, NavBar, WhatsAppIcon, CTA, LockIcon, DEFAULT_SCRIPT, AnimatedChat, Dot, FadeIn, TrustStrip, Eyebrow, SectionTitle, PricingBlock, FAQ, Footer, Portrait, LGPDBadge, SCENARIOS, MultiScenarioChat, renderScenarioMessage, ChatGaugeCard, ChatReceiptCard, ChatHandoffCard, RenataBubble, ChatCnaeCard, TestimonialCard, AIBadge };
+export { Logo, NavBar, WhatsAppIcon, MenuIcon, XIcon, CTA, LockIcon, DEFAULT_SCRIPT, AnimatedChat, Dot, FadeIn, TrustStrip, Eyebrow, SectionTitle, PricingBlock, FAQ, Footer, Portrait, LGPDBadge, SCENARIOS, MultiScenarioChat, renderScenarioMessage, ChatGaugeCard, ChatReceiptCard, ChatHandoffCard, RenataBubble, ChatCnaeCard, TestimonialCard, AIBadge };
