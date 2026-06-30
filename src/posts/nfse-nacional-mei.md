@@ -11,7 +11,7 @@ faq:
   - q: "O que é o Emissor Nacional de NFS-e?"
     a: "É o sistema gratuito do governo (gov.br/nfse) para emitir a NFS-e no padrão nacional. Funciona no navegador e no aplicativo, com login gov.br, e na maioria dos casos sem certificado digital pago."
   - q: "A NFS-e Nacional é obrigatória para o MEI?"
-    a: "O padrão nacional de NFS-e passa a valer para empresas do Simples Nacional a partir de 1º de setembro de 2026. Como o MEI é optante do Simples, a tendência é migrar para o emissor padrão. Confirme a regra da sua cidade em gov.br/nfse."
+    a: "Para o MEI prestador de serviço, a NFS-e padrão nacional já é obrigatória desde 1º de setembro de 2023 — você emite pelo Emissor Nacional (gov.br/nfse). A data de 1º de setembro de 2026 é o marco para as demais empresas do Simples (ME e EPP). Confirme a regra da sua cidade em gov.br/nfse."
   - q: "Preciso de certificado digital para usar o Emissor Nacional?"
     a: "Na maioria dos casos não. No Emissor Nacional o MEI costuma emitir só com a conta gov.br, sem certificado A1 pago. Confirme o nível de conta exigido em gov.br/nfse, pois alguns sistemas municipais antigos ainda pedem o certificado."
   - q: "Como emitir NFS-e pelo Emissor Nacional?"
@@ -34,7 +34,7 @@ Em resumo: a **NFS-e Nacional** é o *padrão* (o formato da nota) e o **Emissor
 
 ## Por que a NFS-e Nacional está virando padrão em 2026
 
-A unificação não é só conforto — é calendário. O **padrão nacional de NFS-e passa a ser obrigatório para as empresas do Simples Nacional a partir de 1º de setembro de 2026**. Como o MEI é **optante do Simples**, a direção é clara: a emissão tende a migrar do sistema municipal antigo para o **emissor padrão**.
+A unificação não é só conforto — é calendário. Para o **MEI prestador de serviço, o Emissor Nacional já é obrigatório desde 1º de setembro de 2023** (Resolução CGSN nº 169/2022): a NFS-e do MEI já nasce no padrão nacional. Para as **demais empresas do Simples (ME e EPP)**, o padrão passa a valer a partir de **1º de setembro de 2026**. Ou seja, para o MEI isso não é futuro — já é a regra, e o que segue acontecendo é a migração dos sistemas municipais antigos para o **emissor padrão**.
 
 O objetivo do governo é acabar com a colcha de retalhos. Hoje, um prestador que atende clientes em cidades diferentes pode esbarrar em sistemas incompatíveis; uma empresa que recebe notas de fornecedores Brasil afora lida com dezenas de formatos. Um **layout único** simplifica para quem emite, para quem recebe e para o Fisco.
 
@@ -49,7 +49,7 @@ Se você já emite NFS-e hoje, o que vem pela frente é mais **uniformização**
 - **Um sistema, não vários.** Em vez de aprender o portal específico da sua prefeitura, você passa a usar o **Emissor Nacional** — o mesmo para todo mundo. Quem muda de cidade não recomeça do zero.
 - **Login gov.br no centro.** O acesso é com a sua **conta gov.br**, a mesma que você já usa para o Portal do Empreendedor e o DAS. Menos senha para guardar. O nível de conta exigido você confere direto em gov.br/nfse.
 - **Padrão de dados único.** O **código de serviço** e a estrutura da nota seguem o layout nacional, o que reduz a chance de errar campo por causa de regra municipal exótica.
-- **Calendário a acompanhar.** A obrigatoriedade para o Simples começa em **01/09/2026**. Não é "tudo muda amanhã", mas é o sentido da maré — melhor estar pronto.
+- **Calendário a acompanhar.** Para o MEI prestador, a obrigatoriedade já vale desde **01/09/2023**; para ME e EPP, começa em **01/09/2026**. Não é "tudo muda amanhã", mas é o sentido da maré — melhor estar rodando no padrão.
 
 O que **não** muda: a NFS-e continua sendo emitida com o **seu CNPJ**, continua sendo **gratuita** de emitir, e o serviço que você presta continua entrando no cálculo do seu faturamento anual — ou seja, segue contando para [o teto do MEI](/blog/limite-do-mei). Padrão novo, mesma regra de jogo do faturamento.
 
@@ -105,6 +105,6 @@ E não para na nota avulsa: se você fatura o mesmo valor para o mesmo cliente t
 
 ## Resumo: entre na onda antes do pico
 
-A **NFS-e Nacional** é o futuro próximo da nota de serviço no Brasil, e o **Emissor Nacional** (gov.br/nfse) é onde isso acontece: gratuito, com login gov.br, padrão único e, na maioria dos casos, sem certificado pago. Para o MEI optante do Simples, a obrigatoriedade do padrão começa em **1º de setembro de 2026** — então aprender agora é sair na frente.
+A **NFS-e Nacional** é o presente da nota de serviço no Brasil, e o **Emissor Nacional** (gov.br/nfse) é onde isso acontece: gratuito, com login gov.br, padrão único e, na maioria dos casos, sem certificado pago. Para o MEI prestador, a obrigatoriedade do padrão já vale desde **1º de setembro de 2023** (para ME e EPP, começa em 1º de setembro de 2026) — então dominar o Emissor Nacional não é antecipação, é o caminho que já está valendo.
 
 O caminho oficial está aberto e é de graça: acesse gov.br/nfse, credencie-se, emita e baixe o PDF. E se a ideia de preencher formulário toda vez te cansa, lembre que a mesma NFS-e pode sair de uma frase no WhatsApp, com a IA do SimplesMEI projetando o teto e guardando os seus clientes. Padrão novo, atrito de menos. Se você ainda nem formalizou, dá para [abrir o MEI](/blog/como-abrir-mei) de graça primeiro — e já começar a emitir certo desde a primeira nota.

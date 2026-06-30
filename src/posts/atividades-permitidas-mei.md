@@ -7,7 +7,7 @@ category: "CNAE"
 coverPalette: "mint"
 faq:
   - q: "Quais atividades são permitidas para MEI?"
-    a: "São permitidas as ocupações que constam na lista oficial anexa à resolução do CGSN — centenas de atividades de serviço, comércio e indústria de menor risco. Cabe quem cabe na lista: cabeleireiro, eletricista, designer, programador, costureira, vendedor, entre muitos outros."
+    a: "São permitidas as ocupações que constam na lista oficial anexa à resolução do CGSN — mais de 400 ocupações (cerca de 468) de serviço, comércio e indústria de menor risco. Cabe quem cabe na lista: cabeleireiro, eletricista, designer, programador, costureira, vendedor, entre muitos outros."
   - q: "Quais profissões não podem ser MEI?"
     a: "Não podem ser MEI as profissões regulamentadas que exigem registro em conselho de classe: médico, advogado, engenheiro, contador, dentista, psicólogo, arquiteto, nutricionista, fisioterapeuta, veterinário, entre outras. Para essas atividades, o caminho é outro tipo de empresa, como a ME."
   - q: "Quantas atividades o MEI pode exercer?"
@@ -15,7 +15,7 @@ faq:
   - q: "Onde consultar a lista oficial de atividades do MEI?"
     a: "A lista vigente fica no Portal do Empreendedor (gov.br), na própria tela de abertura ou de alteração, e no anexo da resolução do CGSN. É de graça e atualizada por resolução, então confira sempre a versão do momento antes de abrir."
   - q: "O que acontece se eu exercer uma atividade não permitida ao MEI?"
-    a: "Exercer como MEI uma atividade fora da lista é causa de desenquadramento: você deixa de ser MEI e passa a ser tributado como ME, com obrigações e custos maiores. Por isso vale conferir a lista antes de cadastrar a ocupação."
+    a: "Exercer como MEI uma atividade fora da lista é causa de desenquadramento: você deixa de ser MEI e passa a ser tributado pela regra geral do Simples Nacional (como Microempresa ou EPP), com obrigações e custos maiores. Por isso vale conferir a lista antes de cadastrar a ocupação."
   - q: "A lista de atividades permitidas ao MEI muda?"
     a: "Sim. A lista é definida por resolução do CGSN e atualizada de tempos em tempos: ocupações entram e saem. Uma atividade permitida hoje pode sair amanhã, e vice-versa. Por isso a regra é sempre conferir a versão vigente no Portal do Empreendedor."
 ---
@@ -26,7 +26,7 @@ Este guia é a **referência da lista**: o que conta como atividade permitida, e
 
 ## O que são as atividades permitidas para MEI?
 
-As atividades permitidas para MEI são as **ocupações de uma lista fechada**, definida por resolução do Comitê Gestor do Simples Nacional (**CGSN**). Só pode ser MEI quem exerce uma atividade dessa lista. São centenas de ocupações de **serviço, comércio e indústria** de baixo risco — e quem não está nela precisa de outro tipo de empresa.
+As atividades permitidas para MEI são as **ocupações de uma lista fechada**, definida por resolução do Comitê Gestor do Simples Nacional (**CGSN**). Só pode ser MEI quem exerce uma atividade dessa lista. São mais de 400 ocupações (cerca de 468) de **serviço, comércio e indústria** de baixo risco — e quem não está nela precisa de outro tipo de empresa.
 
 O ponto que confunde: na abertura, você **não escolhe um código** solto. Você escolhe uma **ocupação** com nome de profissão — *"Cabeleireiro(a)"*, *"Programador(a) de sistemas"*, *"Vendedor(a) a domicílio"* — e cada uma já vem amarrada a um [código CNAE por trás](/blog/cnae-do-mei). A lista de ocupações é o "cardápio"; o CNAE é o que está escrito na ficha de cada prato.
 
@@ -48,7 +48,7 @@ A lista oficial tem **centenas de ocupações**, então não dá para decorar. M
 
 Aqui o foco é só um: **cabe ou não cabe no MEI**. A tabela mostra o tipo de ocupação que está prevista na lista, não a escolha técnica do código — essa parte (qual CNAE casa com cada ocupação e como selecionar o seu) está detalhada em [o que é o CNAE e como escolher o seu](/blog/cnae-do-mei).
 
-Repare no fio condutor: são atividades de **menor risco e sem exigência de conselho de classe**. Comércio e indústria pagam **ICMS** no DAS; serviços pagam **ISS**; quem faz os dois paga os dois (entenda a composição no [DAS do MEI](/blog/das-do-mei)).
+Repare no fio condutor: são atividades de **menor risco e sem exigência de conselho de classe**. Comércio e indústria recolhem **R$ 1 de ICMS** (fixo) no DAS; serviços recolhem **R$ 5 de ISS** (fixo); quem faz os dois paga os dois (entenda a composição no [DAS do MEI](/blog/das-do-mei)).
 
 > Em vez de caçar o termo certo nessa lista enorme, no **SimplesMEI** você descreve o que faz pelo WhatsApp e a IA **sugere a ocupação** (principal e secundárias) que melhor casa com o seu serviço. Ela traduz "edito vídeos para empresas" na ocupação correta da lista — sem você decorar nada.
 

@@ -9,7 +9,7 @@ faq:
   - q: "O MEI tem direito a aposentadoria?"
     a: "Sim. Ao pagar o DAS todo mês, o MEI recolhe 5% do salário mínimo ao INSS e fica segurado da Previdência. Isso garante aposentadoria por idade, além de auxílios e pensões, desde que cumprida a carência exigida para cada benefício."
   - q: "Quais benefícios o INSS do DAS garante ao MEI?"
-    a: "Com a contribuição de 5% no DAS, o MEI tem direito a aposentadoria por idade, auxílio por incapacidade (antigo auxílio-doença), salário-maternidade, pensão por morte para os dependentes e auxílio-reclusão. Cada um exige uma carência mínima de contribuições."
+    a: "Com a contribuição de 5% no DAS, o MEI tem direito a aposentadoria por idade, auxílio por incapacidade (antigo auxílio-doença), salário-maternidade, pensão por morte para os dependentes e auxílio-reclusão. A maioria exige uma carência mínima de contribuições — mas alguns, como o salário-maternidade e a pensão por morte, não exigem carência."
   - q: "Por que o MEI não se aposenta por tempo de contribuição?"
     a: "Porque a alíquota de 5% do salário mínimo é reduzida e dá direito apenas à aposentadoria por idade. Para contar com a aposentadoria por tempo de contribuição (regras de transição), é preciso complementar mais 15% sobre o salário mínimo, chegando a 20%."
   - q: "Como o MEI complementa o INSS para somar tempo de contribuição?"
@@ -32,17 +32,17 @@ O ponto-chave é que esse direito vem do **INSS embutido no DAS**, não de uma c
 
 ## Quais benefícios o INSS do DAS garante ao MEI?
 
-A contribuição de **5% do salário mínimo** paga no DAS dá ao MEI acesso a um **conjunto de benefícios previdenciários** — não só a aposentadoria. São cinco principais: **aposentadoria por idade**, **auxílio por incapacidade**, **salário-maternidade**, **pensão por morte** (para os dependentes) e **auxílio-reclusão**. Cada um exige uma **carência** mínima de meses contribuídos.
+A contribuição de **5% do salário mínimo** paga no DAS dá ao MEI acesso a um **conjunto de benefícios previdenciários** — não só a aposentadoria. São cinco principais: **aposentadoria por idade**, **auxílio por incapacidade**, **salário-maternidade**, **pensão por morte** (para os dependentes) e **auxílio-reclusão**. A maioria exige uma **carência** mínima de meses contribuídos — mas alguns, como o salário-maternidade e a pensão por morte, não exigem carência.
 
 A confusão mais comum é achar que o MEI "só se aposenta" e nada mais. Na prática, o mesmo recolhimento de 5% cobre proteção em vários momentos da vida — doença, maternidade, falecimento. O que muda de um benefício para o outro é a **carência** e as **regras** de cada um. Em nível conceitual, o quadro é este:
 
 | Benefício do INSS | A quem se destina | Carência (conceito) |
 | --- | --- | --- |
 | Aposentadoria por idade | Ao próprio MEI, ao atingir a idade mínima | Carência longa (vários anos de contribuição) |
-| Auxílio por incapacidade (antigo auxílio-doença) | MEI temporariamente incapaz de trabalhar | Carência curta, dispensada em acidente/doença grave |
-| Salário-maternidade | MEI em licença por nascimento ou adoção | Carência curta de contribuições |
+| Auxílio por incapacidade (antigo auxílio-doença) | MEI temporariamente incapaz de trabalhar | Carência de 12 meses (dispensada em acidente ou doença grave) |
+| Salário-maternidade | MEI em licença por nascimento ou adoção | Sem carência (basta comprovar a qualidade de segurado) |
 | Pensão por morte | Dependentes do MEI falecido | Em regra sem carência |
-| Auxílio-reclusão | Dependentes do MEI de baixa renda preso | Carência curta de contribuições |
+| Auxílio-reclusão | Dependentes do MEI de baixa renda preso | Carência de 24 meses |
 
 > Os **números exatos** de carência, idade mínima e valores **mudam** com a legislação e com o salário mínimo a cada ano. Não cravamos meses nem idades aqui de propósito: confirme as regras vigentes do **seu** caso direto no aplicativo **Meu INSS** ou no portal **gov.br**. No [SimplesMEI](/) você tira dúvidas sobre o que o INSS do DAS cobre pelo WhatsApp, mas o pedido do benefício é sempre feito por você no INSS.
 

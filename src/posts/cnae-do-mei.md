@@ -38,7 +38,7 @@ O CNAE não é só burocracia de cadastro. Ele tem efeito prático em três fren
 
 - **Define o que você pode faturar.** A nota fiscal que você emite precisa bater com a atividade do seu CNAE. Se você é MEI de design, mas faz um trabalho de marketing que não está no seu cadastro, a nota daquele serviço fica "torta" — ou nem sai direito.
 - **Define os impostos do DAS.** O CNAE diz se a sua atividade é **comércio**, **indústria** ou **serviço**, e isso muda a composição do DAS: serviço paga **ISS** (R$ 5), comércio/indústria paga **ICMS** (R$ 1), e quem faz os dois paga os dois. (Para entender a guia inteira, veja o [DAS do MEI](/blog/das-do-mei).)
-- **Define o limite e o enquadramento.** Atividades permitidas ao MEI têm o **teto de R$ 81 mil por ano**. Exercer algo fora da lista permitida, ou crescer além do teto, leva ao [desenquadramento do MEI](/blog/desenquadramento-do-mei) — e a conta de imposto muda de figura.
+- **Define o limite e o enquadramento.** Para ser MEI, você precisa exercer uma atividade da lista permitida **e** respeitar o **teto de R$ 81 mil por ano** de faturamento. Exercer algo fora da lista, ou crescer além do teto, leva ao [desenquadramento do MEI](/blog/desenquadramento-do-mei) — e a conta de imposto muda de figura.
 
 Resumindo: o CNAE é a "identidade fiscal" do seu negócio. Acertar nele desde a abertura evita retrabalho depois.
 

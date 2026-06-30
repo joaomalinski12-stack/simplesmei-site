@@ -17,7 +17,7 @@ faq:
   - q: "Como informar o lucro do MEI no IRPF?"
     a: "A parte isenta do lucro entra como rendimento isento e não tributável; a parte que exceder o limite presumido entra como rendimento tributável recebido de pessoa jurídica. Por isso vale manter o faturamento e os custos do MEI organizados o ano todo."
   - q: "O que acontece se eu não entregar a DASN-SIMEI?"
-    a: "A DASN em atraso gera multa (mínima em torno de R$ 50). A inadimplência prolongada do MEI, somando declarações e DAS sem pagar, pode com o tempo levar à exclusão do CNPJ. Por ser obrigatória, vale entregar todo ano até 31 de maio, mesmo sem ter faturado."
+    a: "A DASN em atraso gera multa (mínima de R$ 50). A inadimplência prolongada do MEI, somando declarações e DAS sem pagar, pode com o tempo levar à exclusão do CNPJ. Por ser obrigatória, vale entregar todo ano até 31 de maio, mesmo sem ter faturado."
 ---
 
 Sobre **MEI e Imposto de Renda** existem **duas declarações diferentes** que costumam ser confundidas. Como **empresa**, o MEI entrega sempre a **DASN-SIMEI** (anual, gratuita, até 31 de maio). Como **pessoa física**, só declara o **IRPF** se cair nas regras gerais da Receita Federal — não é automático por ser MEI.
@@ -40,7 +40,7 @@ A melhor forma de não embolar as duas é colocá-las lado a lado:
 | De quem | Da **empresa** (CNPJ) | Da **pessoa física** (CPF) |
 | Quem entrega | **Todo** MEI, sempre | Só quem se enquadra nas **regras gerais** da Receita |
 | O que informa | Faturamento **bruto** do ano anterior | Rendimentos, bens e direitos da pessoa |
-| Quando | 1x/ano, **até 31 de maio** | 1x/ano, no prazo anual da Receita (em geral até 31 de maio) |
+| Quando | 1x/ano, **até 31 de maio** | 1x/ano, no prazo anual da Receita (em geral até o fim de maio) |
 | Onde | **Portal do Empreendedor** (gov.br) | Programa/app **Meu Imposto de Renda** (Receita Federal) |
 | Custo | **Gratuita** | Gratuita |
 

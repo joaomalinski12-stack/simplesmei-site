@@ -15,7 +15,7 @@ faq:
   - q: "Como pagar o DAS do MEI atrasado?"
     a: "Você gera a guia do mês em atraso no Portal do Empreendedor (app PGMEI). O sistema já calcula juros e multa, e você paga por Pix ou boleto. Várias guias atrasadas podem ser parceladas no Simples Nacional."
   - q: "O que acontece se eu não pagar o DAS?"
-    a: "Você perde os direitos previdenciários no período em atraso (aposentadoria, auxílio-doença, salário-maternidade), os débitos acumulam juros e multa, podem ir para a dívida ativa e o MEI pode ser cancelado se ficar muito tempo sem pagar nem declarar."
+    a: "Enquanto não regularizar, você fica sem os direitos previdenciários do período em atraso (aposentadoria, auxílio-doença, salário-maternidade); os débitos acumulam juros e multa, podem ir para a dívida ativa e o MEI pode ser cancelado se ficar muito tempo sem pagar nem declarar. Pagando ou parcelando as guias atrasadas, o período é recuperado e volta a contar."
   - q: "Posso tirar dúvida sobre o DAS pelo WhatsApp?"
     a: "Sim. No SimplesMEI você pergunta sobre o DAS pelo WhatsApp e a IA explica composição, vencimento e como gerar a guia, com base nas fontes oficiais do gov.br e do Sebrae."
 ---
@@ -96,7 +96,7 @@ Quanto antes regularizar, menores os encargos. Atraso de poucos dias custa quase
 
 Deixar o DAS de lado tem **consequências reais** — não é só uma cobrança que some sozinha:
 
-- **Você perde os direitos previdenciários** dos meses em atraso. Sem o INSS recolhido, aquele período **não conta** para aposentadoria, auxílio-doença nem salário-maternidade.
+- **Você perde os direitos previdenciários** dos meses em atraso enquanto não regularizar. Sem o INSS recolhido, aquele período **não conta** para aposentadoria, auxílio-doença nem salário-maternidade — mas, ao quitar ou parcelar as guias atrasadas, ele é recuperado e volta a contar.
 - **A dívida cresce** com juros e multa a cada mês parado.
 - **Dívida ativa:** débitos antigos podem ser inscritos na **Dívida Ativa da União**, o que pode levar a protesto e restrições no CPF/CNPJ.
 - **Cancelamento do MEI:** ficar muito tempo sem pagar o DAS e sem entregar a declaração anual pode levar à **baixa do CNPJ** em processos de cancelamento de MEIs inadimplentes promovidos pela Receita. Não há um cronômetro fixo e simples: a regularização depende de quitar os débitos e entregar as declarações em aberto, então, na dúvida, confira a sua **situação cadastral** no Portal do Empreendedor.

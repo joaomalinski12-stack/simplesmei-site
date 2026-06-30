@@ -15,9 +15,9 @@ faq:
   - q: "Como consultar a situação cadastral do meu MEI?"
     a: "O CCMEI mostra a sua situação no Portal do Empreendedor. Para ver o status na Receita (ativa, baixada, suspensa), use a Consulta CNPJ no site da Receita Federal, com o número do seu CNPJ."
   - q: "Preciso atualizar o CCMEI todo ano?"
-    a: "Não. O CCMEI é atualizado automaticamente: sempre que você emite uma nova via, ela já vem com os dados mais recentes. Não há renovação anual nem taxa para mantê-lo."
+    a: "Não. O CCMEI sai sempre atualizado: cada nova via que você emite já vem com os dados mais recentes do cadastro. Não há renovação anual nem taxa para mantê-lo."
   - q: "O CCMEI em PDF vale como documento sem precisar imprimir?"
-    a: "Sim. O CCMEI em PDF traz um código de autenticação que permite verificar a validade no portal, então a versão digital tem o mesmo valor da impressa. Para banco, contrato e cadastro, o arquivo já é aceito. Só imprima se o órgão exigir papel."
+    a: "Sim. O CCMEI em PDF traz um código de autenticação que permite verificar a validade no portal, então a versão digital tem o mesmo valor da impressa. Para banco, contrato e cadastro, o arquivo costuma ser aceito. Só imprima se o órgão exigir papel."
 ---
 
 O **cartão CNPJ do MEI** é o **CCMEI** — o Certificado da Condição de Microempreendedor Individual. É o documento oficial e gratuito que comprova que a sua empresa existe: nele estão o CNPJ, as atividades (CNAE), a data de abertura e o endereço. Você emite em segundos no **Portal do Empreendedor** com login gov.br, sem pagar nada.
@@ -78,7 +78,7 @@ Esta tabela mostra o que cada documento entrega e onde emitir:
 | **Cartão CNPJ / Comprovante de Inscrição** | Receita Federal (Consulta CNPJ) | CNPJ, razão social, CNAE, situação cadastral, natureza jurídica | Grátis |
 | **Consulta de situação cadastral** | Receita Federal | Status do CNPJ: ativa, baixada, suspensa, inapta | Grátis |
 
-O dado mais procurado é a **situação cadastral**. "Ativa" significa que o MEI está regular. "Baixada" indica que o CNPJ foi encerrado. "Suspensa" ou "inapta" costuma sinalizar pendência — em geral, declaração anual ou DAS em atraso, que vale resolver antes de seguir emitindo nota.
+O dado mais procurado é a **situação cadastral**. "Ativa" significa que o MEI está regular. "Baixada" indica que o CNPJ foi encerrado. "Suspensa" ou "inapta" sinaliza pendência: a **inapta** costuma indicar falta de entrega da declaração anual (DASN-SIMEI) por um período; a **suspensa**, em geral, outras pendências fiscais, como DAS em atraso. Em ambos os casos, vale resolver antes de seguir emitindo nota.
 
 ## Os dados que aparecem no cartão CNPJ do MEI
 
@@ -92,7 +92,7 @@ O cartão CNPJ do MEI traz os **dados de identificação da empresa** em uma pá
 - **Endereço:** onde a empresa está registrada.
 - **Enquadramento:** a condição de MEI optante pelo Simples Nacional.
 
-Um detalhe que poupa retrabalho: o CCMEI é **atualizado automaticamente**. Você não precisa renovar todo ano nem pagar taxa de manutenção. Sempre que muda algo no cadastro — um endereço novo, uma atividade incluída — a próxima via que você emitir já sai com a informação corrigida. Por isso, em vez de guardar um PDF antigo, o melhor é **emitir uma via nova** sempre que alguém pedir o documento.
+Um detalhe que poupa retrabalho: o CCMEI **sai sempre atualizado na emissão**. Você não precisa renovar todo ano nem pagar taxa de manutenção. Sempre que muda algo no cadastro — um endereço novo, uma atividade incluída — a próxima via que você emitir já sai com a informação corrigida. Por isso, em vez de guardar um PDF antigo, o melhor é **emitir uma via nova** sempre que alguém pedir o documento.
 
 > O SimplesMEI é uma IA que cuida do fiscal do MEI dentro do WhatsApp. Ela não emite o CCMEI por você (esse é um serviço do governo), mas tira as dúvidas que costumam travar o empreendedor — *"meu MEI está ativo?"*, *"qual é o meu CNAE?"*, *"como comprovo a empresa pro banco?"* — direto na conversa, sem você caçar a resposta em fórum.
 

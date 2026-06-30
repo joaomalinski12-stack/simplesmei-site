@@ -33,7 +33,7 @@ A regra é simples e dura:
 - **1 funcionário, sim** — registrado, com carteira assinada e todos os direitos trabalhistas.
 - **2 ou mais, não** — o segundo contrato dispara o desenquadramento automático.
 - **Familiar conta como funcionário** — você pode contratar um parente, mas só dentro do mesmo limite de 1 empregado e com vínculo formal (carteira assinada, salário compatível, eSocial). Sem registro, vira informalidade e gera passivo trabalhista.
-- **Estagiário** não ocupa a vaga do empregado CLT do MEI, mas segue a Lei do Estágio (termo de compromisso, instituição de ensino, jornada limitada) — não é mão de obra livre.
+- **Estagiário** ocupa a única vaga do MEI: a permissão é de **um** contratado — empregado **ou** estagiário, não os dois. O estágio segue a Lei do Estágio (termo de compromisso, instituição de ensino, jornada limitada) — não é mão de obra livre.
 
 > Antes de pensar em crescer o time, vale entender o que segura o seu enquadramento. Veja [o que desenquadra o MEI](/blog/desenquadramento-do-mei): faturamento acima do teto, atividade fora da lista e o segundo empregado são os três gatilhos mais comuns.
 

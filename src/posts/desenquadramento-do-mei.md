@@ -88,7 +88,7 @@ Sair do MEI não é o fim do mundo — para quem faturou acima do teto, virar ME
 
 - **Acaba o DAS fixo.** Em vez de uma guia única de valor pequeno e previsível, você passa a recolher por **percentual sobre o faturamento**, segundo a tabela do Simples Nacional. Quem quer entender o que era esse valor fixo enquanto MEI pode revisar [o DAS do MEI](/blog/das-do-mei).
 - **Surgem obrigações acessórias.** Declarações e controles que o MEI não tinha passam a ser exigidos.
-- **Contabilidade entra em cena.** O MEI é dispensado de contabilidade formal; a ME, na prática, precisa de um contador para manter tudo em ordem.
+- **Contabilidade entra em cena.** O MEI é dispensado de contabilidade formal (mas deve guardar o Relatório Mensal de Receitas Brutas); já a ME passa a ter obrigações contábeis no Simples Nacional e, na prática, quase sempre conta com um contador para manter tudo em ordem.
 - **A nota fiscal continua.** Você segue emitindo — inclusive a obrigação de [emitir nota fiscal](/blog/como-emitir-nota-fiscal-mei) para empresas continua valendo, agora no novo regime.
 
 Os percentuais do Simples para a ME variam conforme o anexo (comércio, indústria ou serviços) e a faixa de faturamento, e podem mudar de ano para ano — por isso o ideal é conferir a tabela vigente com um contador antes de migrar, em vez de assumir um número fixo. Resumo: mais imposto e mais burocracia, em troca de um limite de faturamento muito maior.

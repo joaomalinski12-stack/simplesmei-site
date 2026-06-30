@@ -7,7 +7,7 @@ category: "Nota fiscal"
 coverPalette: "coral"
 faq:
   - q: "MEI é obrigado a emitir nota fiscal?"
-    a: "Vendendo para empresa (PJ), sim: o MEI deve emitir a NFS-e, salvo quando a própria contratante emite a nota de entrada no seu lugar. Vendendo para pessoa física, a emissão é dispensada — mas se o cliente pedir a nota, você é obrigado a emitir."
+    a: "Vendendo para empresa (PJ), sim. No caso de venda de produto, há uma exceção: quando a própria empresa compradora emite a nota de entrada no seu lugar. Para serviço (NFS-e) não existe essa exceção — a emissão é sempre obrigatória ao vender para PJ. Vendendo para pessoa física, a emissão é dispensada — mas se o cliente pedir a nota, você é obrigado a emitir."
   - q: "Como emitir nota fiscal de serviço sendo MEI?"
     a: "Pela NFS-e: você emite no portal da sua prefeitura ou no Emissor Nacional (gov.br/nfse) com login gov.br. Informa o tomador, descreve o serviço dentro da sua atividade, confirma e baixa o PDF."
   - q: "Preciso de certificado digital para emitir nota como MEI?"
@@ -28,7 +28,7 @@ A boa notícia: **emitir nota fiscal como MEI é gratuito** e dá para fazer de 
 
 A primeira pergunta é simples: **para quem você está vendendo?**
 
-- **Cliente pessoa jurídica (empresa):** a emissão é **obrigatória**. Sempre que você presta serviço para uma empresa, deve emitir a NFS-e — a única exceção comum é quando a própria contratante emite a nota de entrada no seu lugar.
+- **Cliente pessoa jurídica (empresa):** a emissão é **obrigatória**. Sempre que você presta serviço para uma empresa, deve emitir a NFS-e. (A exceção da nota de entrada — quando o comprador emite a nota no seu lugar — vale para **venda de produto**, não para serviço.)
 - **Cliente pessoa física (consumidor final):** a emissão é **dispensada**. Você não é obrigado por padrão — mas, **se o cliente pedir a nota, passa a ser obrigatório emitir**.
 
 Mesmo quando a nota é dispensada, emitir tem vantagens: comprova o seu faturamento, organiza o controle do **teto anual** e passa profissionalismo. E atenção — emitir nota **não** muda o quanto você paga de imposto: o MEI recolhe valor fixo no DAS, independentemente de quantas notas saíram no mês. Falaremos disso mais à frente.

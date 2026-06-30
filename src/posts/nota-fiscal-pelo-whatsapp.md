@@ -17,7 +17,7 @@ faq:
   - q: "Emitir nota pelo WhatsApp é seguro e oficial?"
     a: "A nota é uma NFS-e válida, emitida com os dados do seu MEI no provedor da sua prefeitura. O WhatsApp é só a porta de comando; a nota nasce nos sistemas oficiais, com número e PDF para o cliente."
   - q: "O SimplesMEI emite nota em qualquer prefeitura?"
-    a: "Depende do provedor de NFS-e da sua cidade. A emissão automática cobre os municípios já integrados; a NFS-e Nacional, obrigatória para o Simples a partir de 01/09/2026, tende a uniformizar isso."
+    a: "Depende do provedor de NFS-e da sua cidade. A emissão automática cobre os municípios já integrados; a NFS-e Nacional — obrigatória para o MEI prestador desde 01/09/2023 e, para ME e EPP, a partir de 01/09/2026 — tende a uniformizar isso."
 ---
 
 Emitir **nota fiscal pelo WhatsApp** parece coisa de outro mundo para quem está acostumado a abrir portal, decorar senha e brigar com formulário. Mas a pergunta é justa: dá mesmo para emitir nota pelo celular, mandando uma mensagem, sem entrar em site nenhum?
@@ -82,7 +82,7 @@ E não é só emissão sob demanda. Se você fatura o mesmo valor para o mesmo c
 
 ## O que ainda passa por você (e o que a IA cuida)
 
-Emitir por conversa não te tira do controle — pelo contrário. Antes de cada nota sair, a IA **mostra o que vai emitir** e espera o seu "ok". Você decide; ela executa. E o cancelamento dentro da **janela de 24h** também sai por mensagem, com o histórico das notas guardado para consulta.
+Emitir por conversa não te tira do controle — pelo contrário. Antes de cada nota sair, a IA **mostra o que vai emitir** e espera o seu "ok". Você decide; ela executa. E o pedido de cancelamento também sai por mensagem — respeitando o prazo de cancelamento da sua prefeitura —, com o histórico das notas guardado para consulta.
 
 O que muda de verdade é a carga mental:
 

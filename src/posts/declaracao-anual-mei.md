@@ -9,11 +9,11 @@ faq:
   - q: "O que é a declaração anual do MEI?"
     a: "É a DASN-SIMEI, a Declaração Anual do Simples Nacional do Microempreendedor Individual. Uma vez por ano você informa à Receita o faturamento bruto do MEI no ano anterior e se teve empregado. É obrigatória, gratuita e feita no Portal do Empreendedor."
   - q: "Qual o prazo da DASN-SIMEI?"
-    a: "O prazo vai até 31 de maio de cada ano, referente ao faturamento do ano anterior (a declaração de 2026 cobre o que você faturou em 2025). Se o dia cair em fim de semana, confirme a data-limite vigente no Portal do Empreendedor."
+    a: "O prazo vai até 31 de maio de cada ano, referente ao faturamento do ano anterior (a declaração de 2026 cobre o que você faturou em 2025). O prazo é fixo: não há prorrogação automática quando 31 de maio cai em fim de semana ou feriado, então entregue com folga."
   - q: "O que informar na declaração anual do MEI?"
     a: "O faturamento bruto total do ano anterior (com nota e sem nota), separando, se for o caso, a receita de comércio/indústria da receita de serviços, e se você teve um empregado contratado durante o ano. Só esses dados; é uma declaração simples."
   - q: "O que acontece se eu não declarar a DASN-SIMEI?"
-    a: "O atraso gera multa, com valor mínimo em torno de R$ 50, que pode ter desconto se você pagar dentro do prazo indicado no recibo. Em casos de omissão somada a DAS em atraso por anos, a Receita pode cancelar o CNPJ; confira sua situação no Portal do Empreendedor."
+    a: "O atraso gera multa, com valor mínimo de R$ 50 e redução de 50% para quem declara espontaneamente (antes de ser notificado pela Receita) e paga no prazo indicado no recibo. Em casos de omissão somada a DAS em atraso por anos, a Receita pode cancelar o CNPJ; confira sua situação no Portal do Empreendedor."
   - q: "DASN-SIMEI é a mesma coisa que Imposto de Renda?"
     a: "Não. A DASN-SIMEI é a declaração da empresa (do CNPJ), entregue até 31 de maio. O IRPF é a declaração da pessoa física (do CPF), com prazo e regras próprios. São declarações diferentes e você pode precisar entregar as duas."
   - q: "Preciso declarar se abri o MEI no ano passado?"
@@ -34,13 +34,13 @@ Diferente do que muita gente pensa, a declaração anual MEI (DASN-SIMEI) **não
 
 O prazo da **DASN-SIMEI** vai **até 31 de maio** de cada ano e se refere ao **faturamento do ano anterior**. Ou seja: a declaração entregue em 2026 informa o que o MEI faturou em **2025**. É um prazo único anual — não tem nada a ver com o vencimento mensal do DAS, que cai todo dia 20.
 
-Vale entregar com folga. Se o dia 31 de maio cair em fim de semana ou feriado, a data-limite pode ser ajustada, então confirme o prazo vigente no **Portal do Empreendedor**. Deixar para a última semana costuma dar fila no sistema — e atraso vira multa.
+Vale entregar com folga. O prazo é **fixo em 31 de maio** e não tem prorrogação automática quando cai em fim de semana ou feriado — então não conte com dias extras. Deixar para a última semana costuma dar fila no sistema — e atraso vira multa.
 
 | Obrigação do MEI | Frequência | Prazo | Custo |
 | --- | --- | --- | --- |
 | DAS (guia mensal) | Mensal | Dia 20 de cada mês | Valor fixo (INSS + ICMS/ISS) |
 | DASN-SIMEI (declaração anual) | Anual | Até 31 de maio | Gratuita |
-| IRPF (pessoa física) | Anual | Conforme a Receita (geralmente abril/maio) | Gratuita |
+| IRPF (pessoa física) | Anual | Conforme a Receita (em geral de março a maio) | Gratuita |
 
 A diferença mais importante: o **DAS** é um pagamento mensal; a **DASN** é uma declaração anual sem custo. Entenda a fundo [o DAS mensal](/blog/das-do-mei) para não trocar uma obrigação pela outra.
 
@@ -76,14 +76,14 @@ O **faturamento bruto** é tudo o que o MEI recebeu pela atividade no ano, **ind
 
 ## O que acontece se atrasar a declaração anual do MEI
 
-Atrasar a **DASN-SIMEI** gera uma **multa por atraso (MAED)**, com valor mínimo em torno de **R$ 50** (fonte: Receita Federal/Portal do Empreendedor). A multa pode ter desconto se você pagar dentro do prazo indicado no recibo. Em casos de omissão por anos somada a DAS em atraso, a Receita pode chegar a cancelar o CNPJ MEI — confira sua situação no Portal do Empreendedor.
+Atrasar a **DASN-SIMEI** gera uma **multa por atraso (MAED)**, com valor mínimo de **R$ 50** (fonte: Receita Federal/Portal do Empreendedor). A multa tem redução de 50% para quem declara espontaneamente (antes de ser notificado) e paga no prazo indicado no recibo. Em casos de omissão por anos somada a DAS em atraso, a Receita pode chegar a cancelar o CNPJ MEI — confira sua situação no Portal do Empreendedor.
 
 O sistema gera a guia da multa junto com o recibo quando você entrega a declaração fora do prazo. Por isso, mesmo atrasado, **declare** — o valor não cresce indefinidamente, mas a omissão prolongada, somada a DAS em atraso, é o que dispara os processos de cancelamento de MEIs inativos pela Receita.
 
 | Situação | Consequência |
 | --- | --- |
 | Entregou até 31 de maio | Em dia, sem custo |
-| Entregou com atraso | Multa mínima ~R$ 50 (com desconto se paga no prazo do recibo) |
+| Entregou com atraso | Multa mínima de R$ 50 (50% de desconto na entrega espontânea, paga no prazo do recibo) |
 | Não declarou por anos | Multa acumulada + risco de cancelamento do CNPJ |
 
 ## Quem abriu ou deu baixa no MEI também declara

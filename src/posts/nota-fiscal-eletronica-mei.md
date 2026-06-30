@@ -91,7 +91,7 @@ A lição prática: **não emita no escuro**. Antes de mandar uma nota grande no
 
 Como cada prefeitura tinha o seu sistema, o governo criou um padrão único: a **NFS-e Nacional**, com um **Emissor Nacional** gratuito em **gov.br/nfse**, em que o MEI entra com o login **gov.br**. Em muitos casos, dá para emitir **sem certificado digital pago**.
 
-A novidade de 2026: a **NFS-e padrão nacional vira obrigatória** para as empresas do Simples Nacional **a partir de 01/09/2026**. Ou seja, o modelo único deixa de ser opcional e passa a ser a regra. Para o MEI, isso tende a simplificar — um sistema só, em vez de um por cidade.
+A novidade de 2026: a **NFS-e padrão nacional vira obrigatória** para as **ME e EPP** do Simples Nacional **a partir de 01/09/2026**. Para o **MEI prestador de serviço**, ela já é obrigatória desde **01/09/2023** — ou seja, o modelo único já é a sua regra, e 2026 só completa a unificação para o resto do Simples. Para o MEI, o efeito prático é a simplificação: um sistema só, em vez de um por cidade.
 
 Se você quer entender o que essa mudança significa na prática e como usar o emissor, leia o post dedicado à [NFS-e Nacional](/blog/nfse-nacional-mei). E, se ainda não decidiu sobre certificado, vale conferir se o [certificado digital para MEI](/blog/certificado-digital-mei) é realmente necessário no seu caso — em boa parte das prefeituras e no Emissor Nacional, o login gov.br já resolve.
 

@@ -9,9 +9,9 @@ faq:
   - q: "O MEI precisa de certificado digital para emitir nota fiscal?"
     a: "Na maioria dos casos, não. No Emissor Nacional (NFS-e Nacional) e em muitas prefeituras o MEI emite com login gov.br, sem certificado pago. Alguns sistemas municipais ainda exigem o A1."
   - q: "Qual a diferença entre certificado A1 e A3?"
-    a: "O A1 é um arquivo digital instalado no computador ou celular, vale 1 ano e é o mais usado por MEI. O A3 fica em um cartão ou token físico, costuma valer até 3 anos e é mais comum em empresas maiores."
+    a: "O A1 é um arquivo digital instalado no computador ou celular, vale 1 ano e é o mais usado por MEI. O A3 fica em um cartão ou token físico, pode valer até 5 anos e é mais comum em empresas maiores."
   - q: "Quanto custa um certificado digital para MEI?"
-    a: "Varia por emissora. Um A1 (e-CNPJ) costuma sair na casa de algumas dezenas a pouco mais de cem reais por ano. Confira o preço atual direto nas Autoridades Certificadoras credenciadas pela ICP-Brasil."
+    a: "Varia por emissora. Um A1 (e-CNPJ) costuma custar na faixa de R$ 150 a R$ 300 por ano, podendo passar disso conforme a certificadora. Confira o preço atual direto nas Autoridades Certificadoras credenciadas pela ICP-Brasil."
   - q: "Dá para emitir NFS-e só com a conta gov.br?"
     a: "Sim, no Emissor Nacional e em boa parte das prefeituras a conta gov.br (nível prata ou ouro) já libera a emissão, sem certificado A1. Confirme a regra da sua cidade antes."
   - q: "O certificado digital vem incluso no SimplesMEI?"
@@ -37,7 +37,7 @@ A peça importante: certificado digital **não é a mesma coisa** que conta gov.
 
 Aqui está o ponto que mais gera dúvida. Para **emitir NFS-e**, o caminho mudou:
 
-- **Emissor Nacional / NFS-e Nacional (gov.br/nfse):** o MEI emite com **login gov.br** (nível prata ou ouro), de graça e **sem certificado A1**. Esse é o emissor padrão nacional, que vira obrigatório para o Simples Nacional a partir de **01/09/2026**.
+- **Emissor Nacional / NFS-e Nacional (gov.br/nfse):** o MEI emite com **login gov.br** (nível prata ou ouro), de graça e **sem certificado A1**. Esse é o emissor padrão nacional, já obrigatório para o MEI prestador desde 01/09/2023 e que passa a valer para ME e EPP em **01/09/2026**.
 - **Muitas prefeituras:** liberam a emissão pelo próprio sistema municipal usando login gov.br ou senha web, também sem certificado pago.
 - **Alguns sistemas municipais:** ainda exigem o **certificado A1** para entrar e assinar a nota. Isso é exceção, mas existe — depende de como a sua cidade montou o sistema.
 
@@ -64,7 +64,7 @@ O **A1** é um **arquivo digital**. Você instala no computador ou no celular e 
 
 O **A3** fica em um **dispositivo físico** — um **token** (parecido com um pen drive) ou um **cartão** com leitora. Características:
 
-- Validade maior, em geral **até 3 anos**.
+- Validade maior, em geral **até 5 anos**.
 - A chave não sai do dispositivo, o que aumenta a segurança.
 - Exige ter o token/cartão por perto e instalar drivers.
 - Mais comum em empresas maiores e em quem assina muito documento sensível.
@@ -82,9 +82,9 @@ Se a sua cidade exige certificado para a NFS-e, o tipo pedido normalmente é o *
 
 ## Quanto custa e quando vale a pena
 
-Não vou inventar um valor cravado, porque o preço **varia por emissora** e muda ao longo do ano. Mas dá para situar a ordem de grandeza: um **e-CNPJ A1** costuma sair na casa de **algumas dezenas a pouco mais de cem reais por ano**. O A3 tende a custar mais, somando o dispositivo físico.
+Não vou inventar um valor cravado, porque o preço **varia por emissora** e muda ao longo do ano. Mas dá para situar a ordem de grandeza: um **e-CNPJ A1** costuma custar na faixa de **R$ 150 a R$ 300 por ano** (pode passar disso conforme a emissora e a validade). O A3 tende a custar mais, somando o dispositivo físico.
 
-Para conferir o preço atual e comprar com segurança, use sempre uma **Autoridade Certificadora credenciada pela ICP-Brasil** (a lista oficial está no site do ITI/ICP-Brasil). Fuja de sites genéricos que prometem "certificado barato" sem credenciamento — certificado fora da ICP-Brasil não tem validade jurídica.
+Para conferir o preço atual e comprar com segurança, use sempre uma **Autoridade Certificadora credenciada pela ICP-Brasil** (a lista oficial está no site do ITI/ICP-Brasil). Fuja de sites genéricos que prometem "certificado barato" sem credenciamento — certificado fora da ICP-Brasil não tem a presunção de validade jurídica perante o governo e os sistemas oficiais (como a emissão de nota fiscal).
 
 Quando vale a pena ter o seu:
 
@@ -107,7 +107,7 @@ A NFS-e é um **tributo municipal** (o ISS), então quem manda no sistema de emi
 2. **Tente fazer o login** com a sua conta gov.br ou senha web municipal.
 3. Se o sistema **pedir certificado A1**, aí sim você precisa de um. Se entrar direto, não precisa.
 
-Vale lembrar: com a chegada da **NFS-e padrão nacional** — obrigatória para o Simples Nacional a partir de **01/09/2026** — a tendência é o login gov.br virar suficiente para o MEI na maioria dos lugares, reduzindo ainda mais a necessidade de certificado pago.
+Vale lembrar: com a **NFS-e padrão nacional** — já obrigatória para o MEI prestador desde 01/09/2023 e para ME e EPP a partir de **01/09/2026** — a tendência é o login gov.br virar suficiente para o MEI na maioria dos lugares, reduzindo ainda mais a necessidade de certificado pago.
 
 ## O atalho: emitir sem se preocupar com certificado
 

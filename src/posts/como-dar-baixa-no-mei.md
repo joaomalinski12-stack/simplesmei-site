@@ -15,7 +15,7 @@ faq:
   - q: "Qual a diferença entre dar baixa e desenquadrar o MEI?"
     a: "Dar baixa encerra o CNPJ de vez: a empresa deixa de existir. Desenquadrar mantém o CNPJ ativo, mas muda a categoria para Microempresa (ME). Baixa é para quem vai parar; desenquadramento é para quem cresceu e vai continuar."
   - q: "Posso reabrir o MEI depois de dar baixa?"
-    a: "Pode. Não há quarentena para voltar a se formalizar. Como o MEI é vinculado ao seu CPF, ao reabrir você costuma recuperar o mesmo CNPJ. Pendências antigas (DAS e declarações) precisam estar resolvidas para a reabertura sair sem travas."
+    a: "Pode. Não há quarentena para voltar a se formalizar. Mas você recebe um CNPJ novo: a baixa extingue o número anterior em definitivo, então a reabertura cria outra empresa. As pendências antigas (DAS e declarações) seguem vinculadas ao seu CPF e precisam estar resolvidas para a nova inscrição sair sem travas."
   - q: "Dar baixa no MEI tem custo?"
     a: "Não. O cancelamento do MEI e a DASN de extinção são gratuitos e feitos pelo próprio empreendedor no Portal do Empreendedor. Você não precisa pagar ninguém nem contratar contador para encerrar o CNPJ."
 ---
@@ -61,7 +61,7 @@ Na prática, o que muda é só que você deixa de gerar **novas** guias. As anti
 | Pendência antes da baixa | O que acontece depois de dar baixa |
 | --- | --- |
 | DAS atrasado | Continua devido no CPF; pode ir para a Dívida Ativa com juros e multa |
-| DASN-SIMEI não entregue | Segue obrigatória; o atraso gera multa (mínima de cerca de R$ 50) |
+| DASN-SIMEI não entregue | Segue obrigatória; o atraso gera multa (mínima de R$ 50) |
 | Nota fiscal não emitida | Não dá mais para emitir pelo CNPJ baixado |
 | DAS dos meses futuros | Deixa de ser gerado a partir da baixa |
 
@@ -71,7 +71,7 @@ Por isso a recomendação é sempre a mesma: **quite ou parcele o DAS antes** de
 
 Encerrar o CNPJ não é o último passo. Ao dar baixa, você ainda precisa entregar a **DASN-SIMEI de extinção** — a declaração anual do MEI na sua versão de **situação especial**. Ela informa o **faturamento bruto** do ano corrente, do dia 1º de janeiro até o mês em que a empresa foi baixada.
 
-É um ponto que pega muita gente: a pessoa cancela o MEI, comemora, e esquece a declaração de extinção. Resultado: **multa por atraso** (a mínima fica em torno de R$ 50), mesmo com o CNPJ já fechado.
+É um ponto que pega muita gente: a pessoa cancela o MEI, comemora, e esquece a declaração de extinção. Resultado: **multa por atraso** (a mínima é de R$ 50), mesmo com o CNPJ já fechado.
 
 - **É obrigatória.** Vale para todo MEI que dá baixa, inclusive quem faturou R$ 0 no período.
 - **É gratuita.** Feita no Portal do Empreendedor, sem custo e sem contador.
@@ -94,9 +94,9 @@ Se o seu caso é o segundo — faturamento acima de **R$ 81.000 por ano**, contr
 
 ## Dei baixa por engano ou quero voltar: posso reabrir o MEI?
 
-Sim, dá para **reabrir o MEI** depois de uma baixa. Não existe quarentena ou prazo de carência para voltar a se formalizar. Como o MEI é vinculado ao seu CPF, ao reabrir você costuma recuperar o **mesmo CNPJ** — desde que as **pendências antigas** (DAS e declarações) estejam resolvidas, porque elas seguem no seu CPF e podem travar a nova inscrição.
+Sim, dá para **reabrir o MEI** depois de uma baixa. Não existe quarentena ou prazo de carência para voltar a se formalizar. Mas atenção a um ponto que confunde muita gente: ao reabrir, você recebe um **CNPJ novo**, porque a baixa extingue o número anterior em definitivo — a reabertura cria outra empresa, não ressuscita a antiga. As **pendências antigas** (DAS e declarações) seguem vinculadas ao seu **CPF** e precisam estar resolvidas, porque podem travar a nova inscrição.
 
-O processo de reabertura é o mesmo da abertura inicial, feito no Portal do Empreendedor com a conta gov.br — e sai um **CNPJ novo**, já que a baixa extingue o número anterior em definitivo. Se você está nesse momento de recomeço, vale revisar o passo a passo de [como abrir o MEI](/blog/como-abrir-mei) para escolher a atividade certa de novo.
+O processo de reabertura é o mesmo da abertura inicial, feito no Portal do Empreendedor com a conta gov.br. Se você está nesse momento de recomeço, vale revisar o passo a passo de [como abrir o MEI](/blog/como-abrir-mei) para escolher a atividade certa de novo.
 
 A lição: a baixa não é uma porta sem volta. Mas ela funciona melhor — e a volta é mais fácil — quando você sai **com tudo quitado**, em vez de deixar dívida para trás.
 

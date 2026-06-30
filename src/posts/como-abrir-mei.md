@@ -13,9 +13,9 @@ faq:
   - q: "Preciso de contador para abrir o MEI?"
     a: "Não. O MEI é dispensado de contabilidade formal e você mesmo pode abrir. Depois, a rotina (nota fiscal, DAS e teto) o SimplesMEI cuida pelo WhatsApp."
   - q: "Quanto tempo demora para abrir o MEI?"
-    a: "É na hora. Ao concluir o cadastro no Portal do Empreendedor, o seu CNPJ é gerado na mesma hora e você já pode emitir nota fiscal."
+    a: "É na hora. Ao concluir o cadastro no Portal do Empreendedor, o seu CNPJ é gerado na mesma hora. Para emitir nota fiscal, você ainda faz um credenciamento rápido no Emissor Nacional (gov.br/nfse) ou no sistema da sua prefeitura — feito isso, já consegue emitir."
   - q: "Quanto custa para abrir o MEI?"
-    a: "Abrir é grátis. Depois de aberto, o MEI paga só o DAS mensal, um valor fixo que já inclui a contribuição ao INSS."
+    a: "Abrir é grátis. Depois de aberto, o MEI paga só o DAS mensal, um valor fixo (que varia conforme a sua atividade) e já inclui a contribuição ao INSS."
 ---
 
 Abrir um MEI (Microempreendedor Individual) é o primeiro passo para formalizar o seu negócio, garantir direitos previdenciários e poder emitir nota fiscal para qualquer cliente, inclusive empresas.
@@ -26,6 +26,7 @@ A boa notícia: **a abertura do MEI é 100% gratuita**. Mesmo assim, muita gente
 
 Separe antes de começar (é rápido):
 
+- Uma **conta Gov.br nível prata ou ouro** (você sobe de nível pelo login do seu banco ou pela biometria no app Gov.br)
 - **RG e CPF**
 - **Título de eleitor** ou o **número do recibo** da sua última declaração do Imposto de Renda
 - **CEP** da sua residência e do **local onde a empresa vai funcionar**

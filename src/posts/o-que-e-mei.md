@@ -22,7 +22,7 @@ faq:
 
 **MEI** é a sigla de **Microempreendedor Individual**, o regime que transforma o trabalhador por conta própria em empresa com **CNPJ** de forma simples e barata. Ele formaliza o autônomo, dá direito a emitir nota fiscal, garante benefícios do INSS e cobra um imposto fixo mensal baixo — o caminho mais usado para sair da informalidade no Brasil.
 
-Mais de 15 milhões de brasileiros já são MEI ([Portal do Empreendedor](https://www.gov.br/empresas-e-negocios/pt-br/empreendedor)). Neste guia você entende o que é o MEI, **quem pode ser**, as **vantagens** e os **limites**, quanto custa e como ele se compara ao autônomo informal e à Microempresa.
+Mais de 16 milhões de brasileiros já são MEI ([Portal do Empreendedor](https://www.gov.br/empresas-e-negocios/pt-br/empreendedor)). Neste guia você entende o que é o MEI, **quem pode ser**, as **vantagens** e os **limites**, quanto custa e como ele se compara ao autônomo informal e à Microempresa.
 
 ## O que é MEI?
 

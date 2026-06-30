@@ -78,7 +78,7 @@ Recorrência não é piloto automático cego. Você segue mandando no processo:
 - **Mudou o valor do contrato?** Avisa a IA antes da próxima competência e o ciclo segue com o novo valor.
 - **Cliente pediu para pausar?** Você pausa ou encerra a recorrência quando quiser.
 - **Quer conferir o que saiu?** O **histórico** fica registrado, e cada NFS-e devolve **número + PDF** para você guardar ou repassar.
-- **Errou na emissão?** Dá para **cancelar dentro da janela de 24h**, direto pela conversa.
+- **Errou na emissão?** Dá para pedir o **cancelamento pela conversa**, dentro do prazo permitido pela sua prefeitura.
 
 A diferença para o automático "de verdade" é que você nunca fica refém de um sistema fechado: a recorrência facilita, mas a decisão continua sua.
 
