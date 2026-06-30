@@ -21,8 +21,8 @@ Rode antes de cada publicação. O validador `scripts/validar-posts.cjs` cobre a
 ## Qualidade / E-E-A-T
 - [ ] **Information gain** claro: diz algo que a SERP não diz; sem reescrita commodity.
 - [ ] **Experiência de 1ª pessoa** do produto (passo a passo real, honesto).
-- [ ] **Fontes oficiais** linkadas (gov.br/Receita/Sebrae/Portal do Empreendedor) com **ano**;
-      estatística com fonte.
+- [ ] **Fontes oficiais** linkadas (gov.br/Receita/Portal do Empreendedor, Sebrae, Contabilizei,
+      IBGE) com **ano**; estatística com fonte.
 - [ ] `author: "João Gandra"` presente (autor ausente = falha, vira "Equipe SimplesMEI" no JSON-LD).
 - [ ] Data de publicação visível; em conteúdo sensível a tempo (DAS/teto/prazos), use `updated` no
       refresh → "atualizado em".
@@ -30,6 +30,19 @@ Rode antes de cada publicação. O validador `scripts/validar-posts.cjs` cobre a
 - [ ] Sem "equipe/atendente/contador/pessoa" — **IA sempre**. Marca **SimplesMEI**, nunca ZapMEI.
 - [ ] Preços de `src/preco_cta.jsx`; valor do DAS aponta o Portal, não cravado.
 - [ ] Cobertura completa da intenção **sem inflar** contagem de palavras.
+
+## Conformidade factual (YMYL)
+Valide o **fato**, não só a presença do link. Método e armadilhas: [conformidade-fontes.md](conformidade-fontes.md).
+- [ ] Cada **processo/valor/regra** (corpo **e** FAQ) confere com **gov.br/Sebrae/Contabilizei/IBGE**
+      — com a **URL** que sustenta cada um.
+- [ ] **Proposta ≠ lei:** nenhuma página de campanha (`gov.br/memp`) usada como regra vigente. Em
+      2026 valem **teto R$ 81.000** e **1 empregado**.
+- [ ] **Datas de vigência** conferidas (ex.: NFS-e Nacional do MEI desde **01/09/2023**; ME/EPP em 2026).
+- [ ] Sem **contradição interna** (corpo vs FAQ, parágrafo vs tabela).
+- [ ] **Valores que mudam por ano** (DAS, faixas, salário mínimo, prazos) hedgeados ou **datados** —
+      não cravados sem ano.
+- [ ] Claim de **alto impacto** (nº de funcionários, teto, "é obrigatório?") confirmado **à mão** na
+      fonte primária, não em correção de agente em massa.
 
 ## Técnico / structured data
 - [ ] Frontmatter completo e válido (title/date/description/author/category/coverPalette/faq).

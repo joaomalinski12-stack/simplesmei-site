@@ -1,6 +1,6 @@
 ---
 name: seo-content
-description: Produção de conteúdo SEO de classe mundial para o blog/landing do SimplesMEI — criar ou refrescar posts (src/posts/*.md), páginas-pilar e clusters. Use ao escrever artigo/post, fazer pesquisa de keyword, planejar cluster, otimizar on-page, ou rodar um ciclo de refresh. Cobre: Ubersuggest (MCP), priorização por dificuldade×fit, answer-first extraível (era AI Overviews), revisão de honestidade vs PRODUTO.md, e JSON-LD via prerender. Sem mitos (nada de llms.txt nem "schema mágico"). pt-BR.
+description: Produção de conteúdo SEO de classe mundial para o blog/landing do SimplesMEI — criar ou refrescar posts (src/posts/*.md), páginas-pilar e clusters. Use ao escrever artigo/post, fazer pesquisa de keyword, planejar cluster, otimizar on-page, ou rodar um ciclo de refresh. Cobre: Ubersuggest (MCP), priorização por dificuldade×fit, answer-first extraível (era AI Overviews), validação de conformidade factual contra fontes oficiais (gov.br/Sebrae/Contabilizei/IBGE), revisão de honestidade vs PRODUTO.md, e JSON-LD via prerender. Sem mitos (nada de llms.txt nem "schema mágico"). pt-BR.
 allowed-tools: Read Grep Glob Edit Write Bash WebSearch WebFetch
 ---
 
@@ -26,7 +26,7 @@ landing (use `.claude/rules/design-fidelity.md`); decisões de produto/preço (s
 ## O que entrega
 Keyword priorizada por **dificuldade baixa × fit de produto** (datada) → cluster sem
 canibalização (documentado em `docs/plano-seo.md`) → post **answer-first** extraível com
-frontmatter + FAQ → revisão adversária de SEO **e** honestidade → build validado (JSON-LD
+frontmatter + FAQ → revisão adversária de SEO, honestidade **e** conformidade factual (fontes oficiais) → build validado (JSON-LD
 `Article`+`FAQPage`+`BreadcrumbList`, sitemap, meta) → fidelidade medida no Playwright → plano
 de medição/refresh.
 
@@ -56,11 +56,15 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
    fonte+ano, definições curtas, **tabelas** para preço/limites/comparativos); listas numeradas para
    processos; bloco "Como o SimplesMEI ajuda" com **links internos escritos à mão** pros irmãos do
    cluster + CTA pra home `/`.
-6. **Revisão adversária — duas passadas obrigatórias.** (a) **Honestidade vs `PRODUTO.md`**: cada
+6. **Revisão adversária — três passadas obrigatórias.** (a) **Honestidade vs `PRODUTO.md`**: cada
    afirmação do produto bate; roadmap/parcial → hedgear sem prazo; SimplesMEI **é uma IA** (nunca
    "equipe/atendente/contador/pessoa"); marca **SimplesMEI** (nunca ZapMEI); preços de
    `src/preco_cta.jsx`. (b) **SEO adversário**: canibaliza com outro post? Title sobrevive à
-   reescrita? Cada H2-pergunta tem resposta extraível? FAQ/respostas **revisadas à mão**. Checklist:
+   reescrita? Cada H2-pergunta tem resposta extraível? FAQ/respostas **revisadas à mão**. (c)
+   **Conformidade factual (YMYL)**: cada processo/valor/regra (corpo **e** FAQ) checado contra
+   **gov.br/Sebrae/Contabilizei/IBGE** com a URL; **proposta ≠ lei** (cuidado com páginas de campanha
+   tipo `gov.br/memp`); claims de alto impacto confirmados **à mão** antes de editar. Método:
+   [references/conformidade-fontes.md](references/conformidade-fontes.md). Checklist:
    [references/checklists.md](references/checklists.md).
 7. **Finalizar frontmatter** (schema exato no playbook §Frontmatter). `title` curto com keyword no
    início (o build anexa ` · SimplesMEI`); `description` 140–155 char; `coverPalette`
@@ -82,6 +86,10 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
 ## Regras inegociáveis
 - **Honestidade vs `PRODUTO.md` é lei.** Roadmap/parcial = hedgear sem prazo. Confira a tabela
   "Estado real" — e que ela pode estar **desatualizada** (confirme com o dono em dúvida).
+- **Conformidade factual = fontes oficiais.** Todo processo/valor/regra fiscal validado contra
+  **gov.br/Sebrae/Contabilizei/IBGE**, com a URL. **Proposta ≠ lei** — não confie em página de
+  campanha (`gov.br/memp`); confirme claim de alto impacto na fonte primária. Em 2026 valem **teto
+  R$ 81.000** e **1 empregado**. Detalhe: [references/conformidade-fontes.md](references/conformidade-fontes.md).
 - **SimplesMEI é uma IA.** Nunca atendente/equipe/contador/pessoa. Marca **SimplesMEI**, nunca ZapMEI.
 - **1 keyword-alvo / 1 dono por intenção.** Sem canibalização. Priorize **SD baixo, não volume**.
 - **Autor = João Gandra** (aciona foto + bio + LinkedIn). Autor ausente vira "Equipe SimplesMEI" no
@@ -102,6 +110,7 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
 ## Bússola
 - **Princípios + o que move citação em 2026:** [references/estado-da-arte.md](references/estado-da-arte.md)
 - **Assets, schema, regras e fatos deste repo:** [references/playbook-projeto.md](references/playbook-projeto.md)
+- **Conformidade factual (fontes oficiais + armadilhas):** [references/conformidade-fontes.md](references/conformidade-fontes.md)
 - **Checklists (on-page / E-E-A-T / técnico):** [references/checklists.md](references/checklists.md)
 - **Medição e refresh (GSC, 90 dias, pruning):** [references/medicao-refresh.md](references/medicao-refresh.md)
 - **Esqueleto de post pronto pra copiar:** [assets/post-template.md](assets/post-template.md)
