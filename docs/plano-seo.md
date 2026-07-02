@@ -167,6 +167,35 @@ secundária de `cartao-cnpj-mei` SD 15), `nota fiscal de produto mei` (SD 39), `
 (9.9k/SD 23, mas fit fraco — público é prestador de serviço), `consultar mei` (SD 29 — coberto por
 `cartao-cnpj-mei`).
 
+### 2G. Lote 3 — 5 posts (2026-07-01)
+
+Terceiro lote pela skill `seo-content`, agora com a **3ª passada de conformidade já na origem**: os
+fatos YMYL foram verificados em gov.br/Sebrae/Contabilizei/IBGE **antes** de escrever. Snapshot
+Ubersuggest (Brasil, pt, jul/2026), cruzado com os 21 publicados. Abre a frente **"MEI e
+vínculos/benefícios"** (mini-cluster) + uma obrigação extraível + a maior categoria ainda descoberta.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente |
+|---|---|---|---|---|---|
+| 1 | `relatorio-mensal-mei` | relatório mensal mei | 1.000 | **18** | Obrigação (extraível) |
+| 2 | `seguro-desemprego-mei` | seguro desemprego mei | 880 | **19** | Vínculos/benefícios |
+| 3 | `mei-pode-ter-carteira-assinada` | mei pode ter carteira assinada | 1.000 | **23** | Vínculos/benefícios |
+| 4 | `mei-caminhoneiro` | mei caminhoneiro | 9.900 | 31 | Categoria (volume) |
+| 5 | `mei-pode-receber-bolsa-familia` | mei pode receber bolsa família | 1.000 | 38 | Benefícios |
+
+**Cruzamento (sem canibalização):** `carteira-assinada` (MEI como *empregado*) ≠ `mei-pode-ter-funcionario`
+(MEI como *empregador*); `seguro-desemprego`/`bolsa-familia` = interação com benefícios (frente nova);
+`relatorio-mensal` (registro mensal que *alimenta* a DASN) ≠ `declaracao-anual` (a DASN); `mei-caminhoneiro`
+(categoria: teto R$ 251.600, INSS 12%) ≠ `o-que-e-mei`/`limite-do-mei` (MEI comum).
+
+**Fatos-chave verificados na fonte (3ª passada):** relatório mensal **não se entrega** — preenche até
+dia 20 e arquiva 5 anos; seguro-desemprego **não é cancelado só por ser MEI** — decide a **renda própria
+suficiente** (aferida na DASN); Bolsa Família convive com MEI dentro da **renda per capita** + **Regra de
+Proteção** (até 2 anos a 50%); MEI-Caminhoneiro tem **teto R$ 251.600/ano** e **INSS 12%** (não 5%).
+
+**Reversão consciente:** `mei-caminhoneiro` fora descartado no lote 2 por "fit fraco"; reincluído aqui
+pela autoridade tópica e por ser o maior termo de categoria MEI ainda não coberto (9,9k/mês) — com CTA
+honesto (a IA cobre abertura/DAS/dúvidas; transporte de carga usa CT-e, fora do foco de NFS-e).
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
