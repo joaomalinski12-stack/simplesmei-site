@@ -229,6 +229,51 @@ salário-maternidade **sem carência** (IN 188/2025), 120 dias, valor = salário
 desde 2016 (MEI Rural, regime familiar); NF-e de produto pode sair pelo **NFF gratuito** (sem certificado),
 com **Inscrição Estadual** simplificada — estados implementando a obrigatoriedade para MEI de ICMS em 2026.
 
+### 2I. Lote 5 — 15 posts (2026-07-01)
+
+Quinto lote pela skill `seo-content`. Snapshot Ubersuggest (Brasil, pt, jul/2026), cruzado com os **36
+publicados**. Preenche cinco frentes ainda descobertas: **comparativos** (MEI vs Simples/ME/autônomo),
+**benefícios INSS**, **DAS operacional** (parcelamento), **setup** (alvará, nome fantasia) e **nichos de
+profissão** — estes validados contra a **base oficial de CNAEs** (`zapmei:bot/data/cnae_mei.json`, Anexo
+XI Res. CGSN 140/2018), fonte autoritativa do que de fato pode ser MEI.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente |
+|---|---|---|---|---|---|
+| 1 | `mei-e-simples-nacional` | mei e simples nacional | 1.300 | **11** | Conceito/tributação |
+| 2 | `auxilio-doenca-mei` | auxílio doença mei | 1.000 | **15** | Benefícios INSS |
+| 3 | `mei-para-entregador` | mei entregador | 320 | **13** | Nicho profissão |
+| 4 | `mei-diarista` | mei diarista | 260 | **15** | Nicho profissão |
+| 5 | `programador-pode-ser-mei` | programador pode ser mei | 210 | **17** | Nicho profissão |
+| 6 | `diferenca-mei-e-me` | diferença entre mei e me | 1.300 | **19** | Comparativo |
+| 7 | `alvara-mei` | alvará mei | 390 | 21 | Setup/abertura |
+| 8 | `mei-precisa-de-contador` | mei precisa de contador | 880 | 24 | Fundo de funil (fit máx) |
+| 9 | `mei-ou-autonomo` | mei ou autônomo | 140 | 24 | Comparativo |
+| 10 | `mei-2026` | mei 2026 | 2.400 | 26 | Regras (oportuno/YMYL) |
+| 11 | `nome-fantasia-mei` | nome fantasia mei | 2.900 | 27 | Setup/abertura |
+| 12 | `mei-para-salao-de-beleza` | mei salão de beleza / manicure | ~110 | 10–22 | Nicho profissão (bundle) |
+| 13 | `parcelar-das-mei` | parcelar das mei | 135.000 | 31 | Regularização (volume) |
+| 14 | `mei-fotografo` | mei fotógrafo | 90 | 21 | Nicho profissão |
+| 15 | `beneficios-do-mei` | benefícios do mei | — | baixo | **HUB** benefícios INSS |
+
+**Cruzamento (sem canibalização):** `mei-e-simples-nacional` (o regime/Simei) ≠ `das-do-mei` (como pagar);
+`diferenca-mei-e-me` (comparação) ≠ `desenquadramento-do-mei` (o processo de sair); `mei-ou-autonomo` e
+`diferenca-mei-e-me` formam mini-cluster de comparativos que se linkam; `parcelar-das-mei` (o parcelamento
+em si) ≠ `como-consultar-debitos` (ver o que deve) ≠ `como-regularizar` (HUB); `mei-para-entregador` (delivery:
+iFood/Rappi) ≠ `mei-para-motorista-de-aplicativo` (passageiro: Uber/99); `auxilio-doenca` é benefício específico
+e `beneficios-do-mei` é o HUB que amarra aposentadoria + auxílio-doença + salário-maternidade + pensão.
+
+**Fatos-chave verificados na fonte (3ª passada):** MEI é enquadrado no **Simples Nacional** e recolhe pelo
+**SIMEI** (valor fixo); **ME** vai até **R$ 360 mil/ano** (MEI até R$ 81 mil); **programador/desenvolvedor NÃO
+pode ser MEI** (programação/desenvolvimento de software fora da lista de ocupações — confirmado na base oficial);
+**diarista pode** (`Diarista independente` 9700-5/00) desde que **sem vínculo** e **até 2 dias/semana** pro mesmo
+cliente (3+ contínuos = doméstica/CLT, não MEI); **entregador/motoboy pode** (`Motoboy independente` 5320-2/02);
+**auxílio-doença** exige **carência de 12 contribuições** (acidente dispensa), benefício de **1 salário mínimo**,
+pede-se no **Meu INSS/135**; **MEI dispensado de alvará** desde **01/09/2020** (Resolução CGSIM 59/2020 — toda
+atividade é baixo risco), comprovado pelo **CCMEI** (não isenta sanitário/ambiental/zoneamento); **DAS parcela em
+até 60x**, parcela mínima **R$ 50**, Receita via PGMEI e Dívida Ativa via **REGULARIZE/PGFN**, 1 parcelamento por
+ano; **MEI não é obrigado a ter contador** (LC 123/2006); em **2026** valem **teto R$ 81 mil** e **1 empregado**
+("Novo Teto" segue **proposta**, não lei — armadilha da página-campanha `gov.br/memp`).
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
