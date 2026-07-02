@@ -196,6 +196,39 @@ Proteção** (até 2 anos a 50%); MEI-Caminhoneiro tem **teto R$ 251.600/ano** e
 pela autoridade tópica e por ser o maior termo de categoria MEI ainda não coberto (9,9k/mês) — com CTA
 honesto (a IA cobre abertura/DAS/dúvidas; transporte de carga usa CT-e, fora do foco de NFS-e).
 
+### 2H. Lote 4 — 10 posts (2026-07-01)
+
+Quarto lote pela skill `seo-content`, com a 3ª passada de conformidade na origem (fatos YMYL verificados
+em gov.br/Sebrae/Contabilizei/IBGE antes de escrever). Snapshot Ubersuggest (Brasil, pt, jul/2026),
+cruzado com os 26 publicados. Preenche três frentes: **nichos/categorias**, **regularização/manutenção**
+e mais **vínculos/benefícios**.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente |
+|---|---|---|---|---|---|
+| 1 | `mei-para-motorista-de-aplicativo` | mei para motorista de aplicativo | 320 | **18** | Nicho/categoria |
+| 2 | `mei-vender-no-mercado-livre` | mei pode vender no mercado livre | 90 | **7** | E-commerce (quick-win) |
+| 3 | `mei-rural` | mei rural | 590 | **23** | Nicho/categoria |
+| 4 | `posso-ter-dois-mei` | posso ter dois mei | 590 | **25** | Dúvida |
+| 5 | `como-regularizar-o-mei` | como regularizar o mei | 5.400 | 40 | **HUB** regularização |
+| 6 | `aposentado-pode-ser-mei` | aposentado pode ser mei | 880 | 35 | Vínculos/benefícios |
+| 7 | `salario-maternidade-mei` | salário maternidade mei | 1.900 | 36 | Benefícios |
+| 8 | `como-consultar-debitos-do-mei` | como consultar débitos do mei | 320 | 33 | Regularização |
+| 9 | `como-alterar-dados-do-mei` | como alterar dados do mei | 390 | 39 | Cadastro |
+| 10 | `nota-fiscal-de-produto-mei` | nota fiscal de produto mei | 590 | 39 | Nota fiscal (produto) |
+
+**Cruzamento (sem canibalização):** `motorista-de-aplicativo`/`mei-rural`/`vender-no-mercado-livre` são
+**nichos** (não competem com `o-que-e-mei`/`atividades-permitidas`); `regularizar` é HUB que linka
+`das`/`declaracao`/`consultar-debitos`/situação; `consultar-debitos` (onde *ver* o que deve) ≠ `das-do-mei`
+(como *pagar*); `alterar-dados` (cadastro) ≠ `cartao-cnpj`; `nota-fiscal-de-produto` (NF-e modelo 55) ≠
+`como-emitir`/`nota-fiscal-eletronica` (NFS-e de serviço); `salario-maternidade` (benefício específico) e
+`aposentado-pode-ser-mei` (vínculo) estendem o cluster de benefícios do lote 3.
+
+**Fatos-chave verificados na fonte (3ª passada):** motorista de app **pode** ser MEI (Decreto 9.792/2019);
+**não dá para ter dois MEI** (1 CPF = 1 CNPJ MEI); aposentado por **idade/tempo** pode, por **invalidez não**;
+salário-maternidade **sem carência** (IN 188/2025), 120 dias, valor = salário mínimo; produtor rural é MEI
+desde 2016 (MEI Rural, regime familiar); NF-e de produto pode sair pelo **NFF gratuito** (sem certificado),
+com **Inscrição Estadual** simplificada — estados implementando a obrigatoriedade para MEI de ICMS em 2026.
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
