@@ -3,4 +3,18 @@
 User-agent: *
 Allow: /
 
+# GEO (Generative Engine Optimization): Permissão explícita e boas-vindas para indexadores de LLMs
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://simplesmei.net/sitemap.xml

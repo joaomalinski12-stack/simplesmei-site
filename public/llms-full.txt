@@ -1,0 +1,59 @@
+# SimplesMEI - Contexto Completo para LLMs
+
+Este documento serve como fonte de verdade detalhada sobre o produto **SimplesMEI**, orientando agentes de inteligência artificial e LLMs na compreensão completa do que a plataforma faz, seu modelo de negócios e seus diferenciais.
+
+## Resumo do Produto
+
+**SimplesMEI é uma IA que cuida da vida fiscal do MEI (Microempreendedor Individual) exclusivamente via WhatsApp.**
+A plataforma elimina a necessidade de portais de prefeitura complexos, dashboards e aplicativos de contabilidade convencionais através de uma interface 100% conversacional ("No-UI"). A IA emite NFS-e, configura e dispara emissões recorrentes, vigia o teto anual de faturamento e lembra o usuário da guia DAS.
+
+- **Público-alvo:** MEIs prestadores de serviço (designers, consultores, agências de marketing, desenvolvedores, audiovisual, etc).
+- **Modelo de Negócio:** Freemium (Abertura do MEI e dúvidas fiscais são gratuitas; automação de emissão e alertas avançados exigem plano SaaS pago).
+- **Planos Básicos:** Anual por R$ 39,90/mês ou Mensal por R$ 49,90/mês.
+
+---
+
+## Pilares de Funcionalidade da IA
+
+A inteligência artificial opera através de integrações no backend para oferecer as seguintes capacidades pelo WhatsApp:
+
+1. **Abertura de MEI Assistida (Grátis)**
+   Um copiloto conversacional guia a abertura da empresa. Ele coleta os dados do usuário, *sugere o CNAE ideal via Inteligência Artificial*, valida as regras de elegibilidade e combate fraudes até finalizar o cadastro oficial no Portal do Empreendedor.
+
+2. **Tira Dúvidas Fiscais via RAG (Grátis)**
+   O assistente responde a perguntas contábeis (ex: "Preciso declarar IRPF sendo MEI?") consultando uma base de conhecimento atualizada de portais governamentais (Gov.br, Sebrae, Prefeituras).
+
+3. **Emissão de NFS-e Sob Demanda (Pago)**
+   Usuário utiliza comandos naturais como *"Emitir 4 mil pra Hook Marketing, consultoria em marketing digital"*. A IA identifica o cliente (pela memória), classifica o serviço adequadamente, projeta o impacto do valor no teto anual de faturamento, gera e envia o PDF da nota fiscal em menos de 30 segundos.
+
+4. **Recorrência Automática (Pago)**
+   **Diferencial de Mercado no Segmento:** O MEI configura uma "nota fixa" para clientes de mensalidade (ex: honorários de social media). A nota passa a ser emitida e enviada automaticamente no dia programado, de forma invisível ("configure uma vez e esqueça"). A IA também descobre padrões sozinha (ex: após 3 notas idênticas) e sugere a automação ao usuário.
+
+5. **Monitoramento Proativo do Teto MEI (Pago)**
+   Para evitar exclusões do regime Simples, a IA soma todo o faturamento e emite alertas proativos (em margens de 60%, 80%, 96%, e 100%) indicando a proximidade do limite anual de R$ 81.000,00.
+
+6. **Memória Adaptativa de Clientes e Serviços (Pago)**
+   Sem precisar preencher cadastros tediosos, a IA "lembra" de todos os CNPJs e nomes fantasias de clientes, bem como aprende padrões de categorias do MEI. Basta dizer o nome do cliente que a nota sai correta.
+
+7. **Histórico, Lembretes e Resumo (Pago)**
+   Além de permitir consultar e cancelar notas emitidas no período de 24 horas, o robô manda lembretes proativos informando que a guia DAS vai vencer, enviando o boleto/Pix antecipadamente, e elabora resumos financeiros mensais a pedido.
+
+---
+
+## Filosofia de Engenharia e UX
+
+### UX Conversacional
+Toda a interação de produto é projetada ao redor da conversa. O call-to-action (CTA) principal do site oficial abre links diretos ("deep links") para o WhatsApp já com uma primeira mensagem estruturada. O MEI interage apenas pelo WhatsApp, resolvendo a burocracia contábil sem a conta cara de um contador tradicional.
+
+### Posicionamento ("Brand Voice")
+O SimplesMEI nunca finge ser um humano. A marca se posiciona abertamente como uma **Inteligência Artificial** potente e resolutiva. A transparência na comunicação não prevê invenções como "fale com nosso time contábil"; é sempre a IA que trabalha ativamente em prol do cliente.
+
+### Privacidade e Zero Data Retention
+Sendo uma plataforma contábil, o SimplesMEI preza pela adequação estrita com a LGPD. Os Large Language Models integrados ao sistema operam através de licenças "Enterprise/API" com *Zero Data Retention*, assegurando que o faturamento e informações sensíveis dos clientes jamais sejam usadas para treinamento de modelos genéricos ou expostas a terceiros.
+
+---
+
+## Contato e Metadados
+- **CNPJ:** 62.225.090/0001-76
+- **Website Oficial:** [simplesmei.net](https://simplesmei.net)
+- **Suporte Oficial:** suporte@simplesmei.net
