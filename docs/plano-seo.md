@@ -274,6 +274,46 @@ até 60x**, parcela mínima **R$ 50**, Receita via PGMEI e Dívida Ativa via **R
 ano; **MEI não é obrigado a ter contador** (LC 123/2006); em **2026** valem **teto R$ 81 mil** e **1 empregado**
 ("Novo Teto" segue **proposta**, não lei — armadilha da página-campanha `gov.br/memp`).
 
+### 2J. Lote 6 — 5 posts (2026-07-09)
+
+Sexto lote pela skill `seo-content`, com a **3ª passada de conformidade verificada na origem** (5 agentes
+de pesquisa cruzaram cada fato YMYL em gov.br/Receita/Sebrae **antes** de escrever). Snapshot Ubersuggest
+(Brasil, pt, jul/2026), cruzado com os **51 publicados**. Abre a frente **financeiro/banco** (inédita),
+completa os clusters de **vínculos/benefícios** e de **elegibilidade**, e adiciona a pergunta-núcleo de
+nota fiscal (o *se/quando*) + um nicho de serviço = demo pura de NFS-e.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente / Categoria |
+|---|---|---|---|---|---|
+| 1 | `mei-obrigado-emitir-nota-fiscal` | mei é obrigado a emitir nota fiscal | **2.400** (pico 5.400) | 40 | Nota fiscal (o *se/quando*) |
+| 2 | `conta-pj-mei` | conta pj mei | 880 | 44 | **Frente nova: financeiro** · Primeiros passos · CPC R$ 7 |
+| 3 | `mei-tem-direito-a-fgts` | mei tem direito a fgts | 390 | 32 | Benefícios e INSS (fecha cluster trabalhista) |
+| 4 | `mei-pode-ser-socio-de-empresa` | mei pode ser sócio de empresa | 170 | **19** | Teto e crescimento (elegibilidade) |
+| 5 | `mei-eletricista` | mei eletricista | 90 | 22 | Profissões e nichos (demo NFS-e) |
+
+**Cruzamento (sem canibalização):** `obrigado-a-emitir` (o *se/quando*) ≠ `como-emitir-nota-fiscal-mei` (o
+*como*) ≠ `nota-fiscal-eletronica-mei` (o *tipo*); `conta-pj` abre frente financeira inédita; `fgts` e
+`pode-ser-sócio` estendem vínculos e elegibilidade (≠ `carteira-assinada` que é MEI *empregado*, ≠
+`posso-ter-dois-mei`); `eletricista` é nicho (≠ `o-que-e-mei`/`atividades-permitidas`).
+
+**Descartados:** `guia do mei` (9,9k — SERP 100% DAS/PGMEI, intenção de emitir guia, não de conteúdo);
+`empréstimo para mei` (33,1k, SD 66 — head comercial, inviável DA baixo + fora do produto); `maquininha
+para mei` (CPC R$ 14, mas **transacional** — a pessoa quer comprar maquininha); `como consultar cnpj mei`
+(SD 45, coberto por `cartao-cnpj-mei`); `mei confeiteira`/`mei nota fiscal pessoa física` (volume 0).
+
+**Fatos-chave verificados na fonte (3ª passada):** MEI **obrigado** a emitir p/ PJ/governo sempre, p/ PF é
+**dispensado** (só se pedir; produto em transporte exige) — NFS-e Nacional obrigatória p/ MEI **desde
+01/09/2023** (Res. CGSN 169/2022; o marco de set/2026 é p/ **ME/EPP**, não MEI); Reforma Tributária (LC
+214/2025) **acaba com a dispensa p/ PF a partir de 2027**. Conta PJ **não é obrigatória** — gov.br confirma
+que dá p/ usar conta PF (a PJ é organização, não lei). MEI titular **não tem FGTS** p/ si (contribui é p/ o
+INSS via DAS); quem é **CLT+MEI** mantém o FGTS do emprego; **funcionário do MEI** tem FGTS 8% (+3% INSS
+patronal, via DAE/eSocial). MEI **não pode ser sócio/titular/administrador** de outra empresa (art. 105 Res.
+CGSN 140/2018) — se virar, **desenquadramento obrigatório com efeito no 1º dia do mês seguinte** (≠ estouro
+de teto, que retroage a 1º/jan). Eletricista **pode** ser MEI: **"Eletricista em residências e
+estabelecimentos comerciais, independente"** (CNAE **4321-5/00**) + automotivo (4520-0/03); serviço/ISS →
+NFS-e; **CREA só p/ engenharia**, NR-10 é segurança (não condição p/ abrir).
+
+**Total publicado após o lote: 56 posts.**
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
