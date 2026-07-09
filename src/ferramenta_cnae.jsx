@@ -335,8 +335,21 @@ function NoResultState({ query }) {
   );
 }
 
+/* ── busca acontecendo (lexical vazio, semântico ainda voltando) ── */
+function SearchingState({ query }) {
+  const m = useIsMobile();
+  return (
+    <div style={{ textAlign: 'center', padding: m ? '30px 20px' : '44px 40px' }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, fontWeight: 600, color: BRAND.inkSoft }}>
+        <span className="cnae-pulse" style={{ width: 9, height: 9, borderRadius: '50%', background: BRAND.mint, flexShrink: 0 }} />
+        A IA está procurando “{query.trim()}” por significado…
+      </div>
+    </div>
+  );
+}
+
 /* ── estado: com resultados ── */
-function ResultsState({ results, query }) {
+function ResultsState({ results, query, smart }) {
   const m = useIsMobile();
   return (
     <div>
@@ -344,9 +357,16 @@ function ResultsState({ results, query }) {
         display: 'flex', alignItems: 'baseline', justifyContent: 'space-between',
         gap: 12, flexWrap: 'wrap', marginBottom: m ? 14 : 18,
       }}>
-        <Mono color={BRAND.inkSoft} size={11}>
-          {results.length} {results.length === 1 ? 'atividade encontrada' : 'atividades encontradas'} para “{query.trim()}”
-        </Mono>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+          <Mono color={BRAND.inkSoft} size={11}>
+            {results.length} {results.length === 1 ? 'atividade encontrada' : 'atividades encontradas'} para “{query.trim()}”
+          </Mono>
+          {smart && (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: FONTS.mono, fontSize: 10, fontWeight: 700, letterSpacing: 0.3, color: BRAND.mintDeep }}>
+              <span style={{ width: 6, height: 6, borderRadius: '50%', background: BRAND.mint, boxShadow: `0 0 0 3px ${BRAND.mintSoft}` }} />BUSCA INTELIGENTE
+            </span>
+          )}
+        </span>
         <Mono color={BRAND.inkMute} size={10}>ISS = serviço · ICMS = comércio/indústria</Mono>
       </div>
       <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(2, 1fr)', gap: m ? 10 : 14 }}>
@@ -547,14 +567,21 @@ const CNAE_STYLE = `
   details.cnae-faq > summary:focus-visible { box-shadow: inset 0 0 0 2px #F87453; border-radius: 12px; }
   .cnae-faq-plus { transition: transform .26s cubic-bezier(.2,.7,.3,1); }
   details.cnae-faq[open] .cnae-faq-plus { transform: rotate(45deg); }
-  @media (prefers-reduced-motion: reduce) { .cnae-magic::before { animation: none; } }
+  .cnae-pulse { animation: cnae-pulse 1.1s ease-in-out infinite; }
+  @keyframes cnae-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.65); } }
+  @media (prefers-reduced-motion: reduce) { .cnae-magic::before, .cnae-pulse { animation: none; } }
 `;
+
+/* mapa oc+cnae → ocupação completa (pra casar os hits semânticos com o objeto local) */
+const OCC_BY_KEY = new Map(OCCUPATIONS.map((o) => [o.oc + '|' + o.cnae, o]));
 
 /* ── A PÁGINA ── */
 export function ConsultaCnaeMei() {
   const m = useIsMobile();
   const [query, setQuery] = useState('');
+  const [sem, setSem] = useState({ q: '', state: 'idle', hits: [] }); // busca semântica
   const inputRef = useRef(null);
+  const cache = useRef(new Map());
 
   useEffect(() => {
     const t = setTimeout(() => {
@@ -565,9 +592,44 @@ export function ConsultaCnaeMei() {
     return () => clearTimeout(t);
   }, []);
 
-  const results = useMemo(() => buscar(query), [query]);
+  // Busca SEMÂNTICA (debounce) — só no cliente. Falha/offline/sem-chave → cai no lexical.
+  useEffect(() => {
+    const q = query.trim();
+    if (norm(q).length < 2) { setSem({ q: query, state: 'idle', hits: [] }); return; }
+    if (cache.current.has(q)) { setSem({ q: query, state: 'done', hits: cache.current.get(q) }); return; }
+    let alive = true;
+    setSem((s) => ({ q: query, state: 'loading', hits: s.q === query ? s.hits : [] }));
+    const t = setTimeout(async () => {
+      try {
+        const r = await fetch(`/api/cnae-busca?q=${encodeURIComponent(q)}`);
+        const j = await r.json();
+        if (!alive) return;
+        if (j && j.ok && Array.isArray(j.results)) {
+          cache.current.set(q, j.results);
+          setSem({ q: query, state: 'done', hits: j.results });
+        } else {
+          setSem({ q: query, state: 'off', hits: [] });
+        }
+      } catch (e) { if (alive) setSem({ q: query, state: 'off', hits: [] }); }
+    }, 280);
+    return () => { alive = false; clearTimeout(t); };
+  }, [query]);
+
+  const lexical = useMemo(() => buscar(query), [query]);
+
+  // combinado: lexical (prefixo, no topo) + os hits semânticos que o lexical não pegou
+  const combined = useMemo(() => {
+    const seen = new Set(lexical.map((r) => r.oc + '|' + r.cnae));
+    const extra = (sem.q === query && sem.state === 'done')
+      ? sem.hits.map((h) => OCC_BY_KEY.get(h.oc + '|' + h.cnae) || h).filter((h) => !seen.has(h.oc + '|' + h.cnae))
+      : [];
+    return [...lexical, ...extra];
+  }, [lexical, sem, query]);
+
   const trimmed = norm(query);
-  const mode = !trimmed ? 'empty' : (results.length ? 'results' : 'none');
+  const semSettled = sem.q === query && sem.state !== 'loading';
+  const mode = !trimmed ? 'empty' : (combined.length ? 'results' : (semSettled ? 'none' : 'searching'));
+  const smart = combined.length > lexical.length; // o semântico acrescentou algo
 
   const pick = (q) => { setQuery(q); if (inputRef.current) { try { inputRef.current.focus({ preventScroll: true }); } catch (e) {} } };
 
@@ -600,7 +662,8 @@ export function ConsultaCnaeMei() {
           <AiHint />
           <div style={{ marginTop: m ? 24 : 30 }}>
             {mode === 'empty' && <EmptyState onPick={pick} />}
-            {mode === 'results' && <ResultsState results={results} query={query} />}
+            {mode === 'searching' && <SearchingState query={query} />}
+            {mode === 'results' && <ResultsState results={combined} query={query} smart={smart} />}
             {mode === 'none' && <NoResultState query={query} />}
           </div>
         </div>
