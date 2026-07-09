@@ -111,6 +111,56 @@ function DoorNote({ onDark = false }) {
   );
 }
 
+/* seta do dropdown (gira ao abrir) */
+function Chevron({ open }) {
+  return (
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+      style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .18s ease' }}>
+      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+/* aba "Recursos" com menu suspenso (Blog + Ferramentas) — desktop (hover/foco/clique) */
+function RecursosMenu({ items }) {
+  const [open, setOpen] = React.useState(false);
+  const t = React.useRef(null);
+  const openNow = () => { if (t.current) clearTimeout(t.current); setOpen(true); };
+  const closeSoon = () => { t.current = setTimeout(() => setOpen(false), 130); };
+  return (
+    <div style={{ position: 'relative' }} onMouseEnter={openNow} onMouseLeave={closeSoon}
+      onKeyDown={(e) => { if (e.key === 'Escape') setOpen(false); }}>
+      <button type="button" className="navv5-rectrigger" aria-haspopup="true" aria-expanded={open}
+        onClick={() => setOpen(true)} onFocus={openNow}
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: 5,
+          fontSize: 13.5, fontWeight: 600, color: BRAND.ink, whiteSpace: 'nowrap',
+          fontFamily: FONTS.body, opacity: open ? 1 : 0.74,
+          background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+        }}>
+        Recursos<Chevron open={open}/>
+      </button>
+      {open && (
+        <div role="menu" style={{
+          position: 'absolute', top: 'calc(100% + 10px)', left: '50%', transform: 'translateX(-50%)',
+          minWidth: 250, background: '#fff', border: `1px solid ${BRAND.sandDeep}`,
+          borderRadius: 16, padding: 8, zIndex: 120,
+          boxShadow: '0 22px 50px -24px rgba(16,17,26,0.34)',
+          display: 'flex', flexDirection: 'column', gap: 2,
+        }}>
+          {items.map(([label, href, sub]) => (
+            <a key={label} href={href} role="menuitem" className="navv5-reclink" onClick={() => setOpen(false)}
+              style={{ display: 'block', textDecoration: 'none', padding: '10px 12px', borderRadius: 11 }}>
+              <span style={{ display: 'block', fontFamily: FONTS.body, fontWeight: 700, fontSize: 14.5, color: BRAND.ink, letterSpacing: -0.2 }}>{label}</span>
+              <span style={{ display: 'block', fontFamily: FONTS.body, fontSize: 12.5, color: BRAND.inkSoft, marginTop: 2 }}>{sub}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 /* ─── NAV (sticky, condensa ao rolar) ──────────────────────
    Logo · âncoras que ancoram de verdade · porta sempre visível. */
 function NavV5() {
@@ -129,8 +179,12 @@ function NavV5() {
     ['Como funciona', '/#como-funciona'],
     ['Preço', '/#preco'],
     ['Segurança', '/#seguranca'],
-    ['Blog', '/blog'],
     ['Sobre', '/sobre']
+  ];
+  // "Recursos" (dropdown): [label, href, subtítulo]
+  const recursos = [
+    ['Blog', '/blog', 'Guias do MEI'],
+    ['Ferramentas', '/ferramentas/consulta-cnae-mei', 'Consulta CNAE MEI'],
   ];
   
   return (
@@ -151,13 +205,23 @@ function NavV5() {
         @media (min-width: 769px) {
           .navv5-mobile-btn { display: none !important; }
         }
+        .navv5-reclink { transition: background .14s ease; }
+        .navv5-reclink:hover { background: #FCFAF6; }
+        .navv5-rectrigger:hover { opacity: 1 !important; }
       ` }} />
       <a href="/" aria-label="SimplesMEI — início" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
         <Logo size={solid ? 24 : 26}/>
       </a>
       
       <div className="navv5-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
-        {links.map(([l, href]) => (
+        {links.slice(0, 3).map(([l, href]) => (
+          <a key={l} href={href} style={{
+            fontSize: 13.5, fontWeight: 600, color: BRAND.ink, whiteSpace: 'nowrap',
+            textDecoration: 'none', fontFamily: FONTS.body, opacity: 0.74,
+          }}>{l}</a>
+        ))}
+        <RecursosMenu items={recursos}/>
+        {links.slice(3).map(([l, href]) => (
           <a key={l} href={href} style={{
             fontSize: 13.5, fontWeight: 600, color: BRAND.ink, whiteSpace: 'nowrap',
             textDecoration: 'none', fontFamily: FONTS.body, opacity: 0.74,
@@ -193,8 +257,29 @@ function NavV5() {
           display: 'flex', flexDirection: 'column', gap: 20,
           boxShadow: '0 10px 20px rgba(0,0,0,0.05)'
         }}>
-          {links.map(([l, href]) => (
-            <a key={l} href={href} 
+          {links.slice(0, 3).map(([l, href]) => (
+            <a key={l} href={href}
+               onClick={() => setOpen(false)}
+               style={{
+                 fontSize: 16, fontWeight: 600, color: BRAND.ink, textDecoration: 'none',
+                 fontFamily: FONTS.body, opacity: 0.9,
+            }}>{l}</a>
+          ))}
+          <div style={{ fontFamily: FONTS.mono, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.6, textTransform: 'uppercase', color: BRAND.inkMute, marginTop: 2 }}>Recursos</div>
+          {recursos.map(([l, href, sub]) => (
+            <a key={l} href={href}
+               onClick={() => setOpen(false)}
+               style={{
+                 fontSize: 16, fontWeight: 600, color: BRAND.ink, textDecoration: 'none',
+                 fontFamily: FONTS.body, opacity: 0.9, paddingLeft: 12,
+                 display: 'flex', flexDirection: 'column', gap: 2,
+            }}>
+              {l}
+              <span style={{ fontSize: 12.5, fontWeight: 500, color: BRAND.inkSoft }}>{sub}</span>
+            </a>
+          ))}
+          {links.slice(3).map(([l, href]) => (
+            <a key={l} href={href}
                onClick={() => setOpen(false)}
                style={{
                  fontSize: 16, fontWeight: 600, color: BRAND.ink, textDecoration: 'none',
