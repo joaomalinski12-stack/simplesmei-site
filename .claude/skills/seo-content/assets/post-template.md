@@ -3,7 +3,7 @@ title: "<Keyword no início>: <gancho> (2026)"
 date: "AAAA-MM-DD"
 description: "<140–155 char, com a keyword e um gancho de valor que casa com a intenção da busca.>"
 author: "João Gandra"
-category: "<Pilar do cluster, ex.: Nota fiscal | Teto do MEI | DAS | CNAE>"
+category: "Nota fiscal"   # UM dos 7 EXATOS de src/blog_cats.js: Primeiros passos · Nota fiscal · Imposto e DAS · Teto e crescimento · Benefícios e INSS · Regularização · Profissões e nichos
 coverPalette: "coral"   # coral | amber | mint | ink
 faq:
   - q: "<Pergunta real, estilo People Also Ask>"

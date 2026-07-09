@@ -14,6 +14,18 @@ const POSTS_DIR = path.resolve(process.cwd(), 'src/posts');
 if (!fs.existsSync(POSTS_DIR)) { console.error(`src/posts não encontrado em ${POSTS_DIR} — rode da raiz do repo.`); process.exit(2); }
 
 const PALETTES = ['coral', 'amber', 'mint', 'ink'];
+
+// Categorias válidas — fonte única em src/blog_cats.js. As seções da home e os hubs
+// /blog/categoria/<slug> filtram por `category === name` EXATO (sem normalizar acento/caixa).
+// Categoria fora da lista (ou ausente) = post órfão: não entra em nenhuma seção nem hub, só na busca.
+const CATEGORIES = (() => {
+  try {
+    const src = fs.readFileSync(path.resolve(process.cwd(), 'src/blog_cats.js'), 'utf8');
+    const names = [...src.matchAll(/name:\s*'([^']+)'/g)].map(m => m[1]);
+    return names.length ? names : null;
+  } catch { return null; }
+})();
+
 const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
 const allSlugs = new Set(files.map(f => f.replace('.md', '')));
 const only = process.argv.slice(2);
@@ -39,7 +51,9 @@ for (const file of targets) {
     else if (dl > 160) wrn.push(`description ${dl} char (>160)`);
     else if (dl < 120) wrn.push(`description ${dl} char (<120, pode encurtar demais o snippet)`);
     if (attr.author !== 'João Gandra') errs.push(`author = ${JSON.stringify(attr.author)} (deve ser "João Gandra"; ausente vira "Equipe SimplesMEI" no JSON-LD)`);
-    if (!attr.category) wrn.push('sem category (capa usa "Guia")');
+    if (!attr.category) errs.push('sem category — post fica órfão (não entra em nenhuma seção da home nem no hub /blog/categoria/…)');
+    else if (CATEGORIES && !CATEGORIES.includes('' + attr.category)) errs.push(`category ${JSON.stringify(attr.category)} não é válida — use o nome EXATO (acento/caixa) de src/blog_cats.js: ${CATEGORIES.join(' · ')}`);
+    else if (!CATEGORIES) wrn.push('não consegui ler src/blog_cats.js pra conferir a categoria (rode da raiz do repo)');
     if (!PALETTES.includes(attr.coverPalette)) errs.push(`coverPalette inválido: ${JSON.stringify(attr.coverPalette)} (use coral|amber|mint|ink)`);
     if (!Array.isArray(attr.faq) || attr.faq.length < 3) errs.push(`faq precisa de 3–6 itens (tem ${attr.faq && attr.faq.length})`);
     else {

@@ -33,12 +33,36 @@ Lido por `src/blog.jsx` + `prerender.js` (YAML via `front-matter`). Ordem e camp
 | `date` | sim | `"AAAA-MM-DD"`. Ordena a lista + `<time>` + `datePublished` no JSON-LD. |
 | `description` | sim | meta description + standfirst. **140–155 char**, keyword + gancho. |
 | `author` | sim | **`"João Gandra"`** → foto `/joao-gandra.jpg` + bio Growth + LinkedIn. Ausente → "Equipe SimplesMEI" (tratar como falha). |
-| `category` | sim | rótulo da capa (ex.: "Nota fiscal", "Teto do MEI"). Default `Guia`. |
+| `category` | sim | **um dos 7 nomes EXATOS de `src/blog_cats.js`** (acento/caixa). Vira o rótulo da capa **e** decide em que seção/hub o post entra. Fora da lista = post órfão (só na busca). Ver §Categorias abaixo. |
 | `coverPalette` | sim | `coral` \| `amber` \| `mint` \| `ink`. |
 | `faq` | sim | lista de `{q, a}`, **3–6** itens. Alimenta o acordeão visível **e** o `FAQPage` JSON-LD. q/a entre aspas, uma linha, sem aspas duplas internas quebrando o YAML. |
 | `updated` | opcional | `"AAAA-MM-DD"`. Emite `dateModified` no `Article` + mostra "atualizado em" no header. **Use no refresh.** |
 | `cover` | opcional | caminho de imagem → vira `<img>` de capa (o título vira H1 abaixo). |
 | `coverAlt` | opcional | alt da imagem de capa. |
+
+## Categorias do blog (as 7 — fonte única: `src/blog_cats.js`)
+`category` **tem que ser o nome exato** de uma destas 7. É o mesmo string que `blog.jsx` e os hubs
+`/blog/categoria/<slug>` usam — o filtro é `p.category === c.name`, **sem normalizar acento/caixa**.
+
+| nome (`category`) | slug do hub | escopo |
+|---|---|---|
+| `Primeiros passos` | `primeiros-passos` | abrir CNPJ, CNAE, CCMEI, alvará, nome fantasia |
+| `Nota fiscal` | `nota-fiscal` | emitir, NFS-e, produto, recorrente, cancelar |
+| `Imposto e DAS` | `imposto-e-das` | DAS, Simples Nacional, IR, declaração anual |
+| `Teto e crescimento` | `teto-e-crescimento` | limite, desenquadramento, MEI × ME |
+| `Benefícios e INSS` | `beneficios-e-inss` | aposentadoria, auxílios, tempo de contribuição |
+| `Regularização` | `regularizacao` | regularizar, débitos, parcelar, dar baixa |
+| `Profissões e nichos` | `profissoes-e-nichos` | guias do MEI por profissão |
+
+- **Escolha 1 pelo pilar/intenção do cluster.** Na dúvida entre duas, vá pela **intenção de busca
+  dominante** do post, não pelo assunto tangencial (ex.: "MEI pode se aposentar?" é `Benefícios e
+  INSS`, mesmo citando DAS).
+- **Nome errado ou ausente = o post some** das seções da home **e** do hub (não é 404, mas fica sem
+  link interno/navegação — péssimo pro SEO). O validador **barra** isso (erro, não aviso).
+- **Precisa de categoria nova?** Não invente no frontmatter — edite `src/blog_cats.js` (name+slug+
+  desc). O `prerender.js` já gera o hub `/blog/categoria/<slug>`, o schema e o sitemap a partir dela.
+- Rótulos de outros lugares (capa mostra "Guia" se faltar; `docs/plano-seo.md` fala de "pilar") **não
+  são** a categoria. A categoria válida é só o nome desta tabela.
 
 ## Paletas de capa (`COVER_PALETTES` em `blog.jsx`)
 Gradiente 135° from→to + grade de pontos + glow + wordmark.

@@ -44,7 +44,8 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
    (viram pilar de longo prazo); comece por **SD ≤ ~26** e quick-wins de SD baixíssimo.
 3. **Design do cluster (pillar→cluster, 1 dono por intenção).** Sem canibalização; diferencie por
    intenção quando o tema repetir ("o que é" vs "como fazer"). Documente o lote **antes de escrever**
-   em `docs/plano-seo.md` (tabela slug/keyword/vol/SD/pilar) e **marque os descartados com o motivo**.
+   em `docs/plano-seo.md` (tabela slug/keyword/vol/SD/pilar/**categoria**) — cada post herda **1 das 7
+   categorias** de `src/blog_cats.js`; e **marque os descartados com o motivo**.
 4. **Brief por post:** keyword + intenção; as **sub-perguntas do fan-out** (PAA/AlsoAsked); o ângulo
    de **information gain** (o que esta página diz que a SERP não diz); fontes oficiais a citar (com
    ano); irmãos do cluster a linkar; paleta de capa.
@@ -67,8 +68,10 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
    [references/conformidade-fontes.md](references/conformidade-fontes.md). Checklist:
    [references/checklists.md](references/checklists.md).
 7. **Finalizar frontmatter** (schema exato no playbook §Frontmatter). `title` curto com keyword no
-   início (o build anexa ` · SimplesMEI`); `description` 140–155 char; `coverPalette`
-   (coral|amber|mint|ink); `faq` **3–6** q/a (alimenta o acordeão visível **e** o `FAQPage`).
+   início (o build anexa ` · SimplesMEI`); `description` 140–155 char; **`category` = um dos 7 nomes
+   EXATOS de `src/blog_cats.js`** (decide a seção/hub — nome errado ou ausente = post órfão, some da
+   navegação); `coverPalette` (coral|amber|mint|ink); `faq` **3–6** q/a (alimenta o acordeão visível
+   **e** o `FAQPage`).
 8. **Validar:** `npm run build` → `prerender.js` injeta `Article`+`FAQPage`+`BreadcrumbList` por post,
    reescreve title/description/canonical/og e atualiza o `sitemap.xml`. Rode o validador:
    `node .claude/skills/seo-content/scripts/validar-posts.cjs` (frontmatter, links internos, H2, faq).
@@ -92,6 +95,10 @@ Detalhe e racional em [references/estado-da-arte.md](references/estado-da-arte.m
   R$ 81.000** e **1 empregado**. Detalhe: [references/conformidade-fontes.md](references/conformidade-fontes.md).
 - **SimplesMEI é uma IA.** Nunca atendente/equipe/contador/pessoa. Marca **SimplesMEI**, nunca ZapMEI.
 - **1 keyword-alvo / 1 dono por intenção.** Sem canibalização. Priorize **SD baixo, não volume**.
+- **`category` = 1 dos 7 nomes exatos de `src/blog_cats.js`** (acento/caixa). É o que joga o post na
+  seção da home e no hub `/blog/categoria/<slug>` (match exato, sem normalizar) — nome errado/ausente
+  = post órfão, some da navegação. Categoria nova **só editando `blog_cats.js`**, nunca inventada no
+  frontmatter. O validador barra (erro).
 - **Autor = João Gandra** (aciona foto + bio + LinkedIn). Autor ausente vira "Equipe SimplesMEI" no
   JSON-LD — trate isso como **falha**, não default: todo post precisa de `author: "João Gandra"`.
 - **Meça com Playwright**, não no olho. O que embarca é o build do Vite.
