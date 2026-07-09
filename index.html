@@ -138,6 +138,21 @@
   @keyframes v5-firefly { from { opacity: 0; transform: translate(var(--fx,0), 8px) scale(.8); } to { opacity: 1; transform: translate(0,0) scale(1); } }
   @keyframes v5-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
+  /* ── Herói a-ha (frase vira nota) · src/heroi.jsx ── */
+  .aha-stage { -ms-overflow-style: none; scrollbar-width: none; }
+  .aha-stage::-webkit-scrollbar { display: none; }
+  .aha-dot { width: 6px; height: 6px; border-radius: 50%; background: #84858F; display: inline-block; animation: aha-bounce 1s infinite; }
+  .aha-pop { animation: aha-pop 380ms cubic-bezier(.2,.85,.3,1) both; }
+  .aha-pulse { animation: aha-pulse 560ms ease both; }
+  @keyframes aha-bounce { 0%,60%,100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-4px); opacity: .9; } }
+  @keyframes aha-pop  { 0% { transform: scale(.9); opacity: 0; } 60% { transform: scale(1.035); } 100% { transform: scale(1); opacity: 1; } }
+  @keyframes aha-pulse { 0% { transform: scale(.985); } 42% { transform: scale(1.012); } 100% { transform: scale(1); } }
+  .aha-replay { transition: transform .16s ease, box-shadow .16s ease, color .16s ease; }
+  .aha-replay:hover { transform: translateX(-50%) translateY(-1px); color: #10111A; box-shadow: 0 12px 26px -14px rgba(16,17,26,0.5); }
+  @media (prefers-reduced-motion: reduce) {
+    .aha-pop, .aha-pulse, .aha-dot { animation: none !important; }
+  }
+
   /* ── FAQ (acordeão · espelha src/preco_cta.jsx FaqV5) ── */
   .faq-q { transition: background .15s ease; outline: none; }
   .faq-q:hover { background: #FCFAF6; }

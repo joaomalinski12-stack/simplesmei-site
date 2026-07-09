@@ -152,7 +152,9 @@ function NavV5() {
           .navv5-mobile-btn { display: none !important; }
         }
       `}</style>
-      <Logo size={solid ? 24 : 26}/>
+      <a href="/" aria-label="SimplesMEI — início" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+        <Logo size={solid ? 24 : 26}/>
+      </a>
       
       <div className="navv5-desktop-links" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
         {links.map(([l, href]) => (
