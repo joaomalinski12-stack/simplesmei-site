@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "nota": "Fonte ÚNICA das atividades que NÃO podem ser MEI. Consumida por src/data/cnae_naomei.js (match lexical no front) e por scripts/build_naomei_embeddings.py (índice semântico api/_naomei_index.js). Espelhada à mão no bot (zapmei app/services/mei_opening.py).",
+    "regra": "Só entra o INEQUÍVOCO — falso-bloqueio (dizer 'não pode' a quem pode) é o pior erro. Profissão regulamentada por conselho federal ou CNAE impeditivo do Simples. Keys normalizadas (minúsculas, sem acento), casadas por substring; anchor é o texto embeddado.",
+    "cnae_fonte": "CONCLA/IBGE (confirmados) ou representativo da atividade quando a vedação vem da natureza da profissão, não do número.",
+    "atualizado_em": "2026-07-09"
+  },
+  "regulamentadas": [
+    { "area": "Medicina", "keys": ["medic"], "cnae": "8630-5/03", "cnaeNome": "Atividade médica ambulatorial restrita a consultas" },
+    { "area": "Odontologia", "keys": ["dentist", "odontolog"], "cnae": "8630-5/04", "cnaeNome": "Atividade odontológica" },
+    { "area": "Advocacia", "keys": ["advog", "advocacia"], "cnae": "6911-7/01", "cnaeNome": "Serviços advocatícios" },
+    { "area": "Contabilidade", "keys": ["contad", "contabil"], "cnae": "6920-6/01", "cnaeNome": "Atividades de contabilidade" },
+    { "area": "Engenharia", "keys": ["engenh"], "cnae": "7112-0/00", "cnaeNome": "Serviços de engenharia" },
+    { "area": "Arquitetura", "keys": ["arquit"], "cnae": "7111-1/00", "cnaeNome": "Serviços de arquitetura" },
+    { "area": "Psicologia", "keys": ["psico"], "cnae": "8650-0/03", "cnaeNome": "Atividades de psicologia e psicanálise" },
+    { "area": "Nutrição", "keys": ["nutri"], "cnae": "8650-0/02", "cnaeNome": "Atividades de profissionais da nutrição e dietética" },
+    { "area": "Fisioterapia", "keys": ["fisio"], "cnae": "8650-0/04", "cnaeNome": "Atividades de fisioterapia" },
+    { "area": "Veterinária", "keys": ["veterin"], "cnae": "7500-1/00", "cnaeNome": "Atividades veterinárias" },
+    { "area": "Jornalismo", "keys": ["jornalis"], "cnae": "9002-7/01", "cnaeNome": "Atividades de artistas plásticos, jornalistas independentes e escritores" },
+    { "area": "Publicidade", "keys": ["publicit"], "cnae": "7311-4/00", "cnaeNome": "Agências de publicidade" },
+    { "area": "Fonoaudiologia", "keys": ["fonoaud"], "cnae": "8650-0/06", "cnaeNome": "Atividades de fonoaudiologia" },
+    { "area": "Enfermagem", "keys": ["enferm"], "cnae": "8650-0/01", "cnaeNome": "Atividades de enfermagem" },
+    { "area": "Biomedicina", "keys": ["biomedic"], "cnae": "8650-0/99", "cnaeNome": "Atividades de profissionais da área de saúde não especificadas anteriormente" },
+    { "area": "Corretagem de imóveis", "keys": ["corretor de imo"], "cnae": "6821-8/01", "cnaeNome": "Corretagem na compra e venda e avaliação de imóveis" },
+    { "area": "Corretagem de seguros", "keys": ["corretor de seguro"], "cnae": "6622-3/00", "cnaeNome": "Corretores e agentes de seguros e de planos de previdência complementar e de saúde" },
+    { "area": "Economia", "keys": ["economist"], "cnae": "", "cnaeNome": "" },
+
+    { "area": "Educação física / Personal trainer", "keys": ["personal trainer", "personal", "educador fisico", "educacao fisica", "professor de academia", "instrutor de academia", "treinador de academia"], "cnae": "9313-1/00", "cnaeNome": "Atividades de condicionamento físico", "anchor": "Educação física, personal trainer, treinador em academia, professor de educação física." },
+    { "area": "Farmácia (farmacêutico)", "keys": ["farmaceutic", "farmacia"], "cnae": "8650-0/99", "cnaeNome": "Atividades de profissionais da área de saúde não especificadas anteriormente", "anchor": "Farmacêutico, farmácia, dispensação de medicamentos, farmacêutico responsável." },
+    { "area": "Terapia ocupacional", "keys": ["terapeuta ocupacional", "terapia ocupacional"], "cnae": "8650-0/05", "cnaeNome": "Atividades de terapia ocupacional", "anchor": "Terapeuta ocupacional, terapia ocupacional, reabilitação." },
+    { "area": "Serviço social", "keys": ["assistente social", "servico social"], "cnae": "8800-6/00", "cnaeNome": "Serviços de assistência social sem alojamento", "anchor": "Assistente social, serviço social." },
+    { "area": "Administração", "keys": ["administrador de empresas", "bacharel em administracao"], "cnae": "7020-4/00", "cnaeNome": "Atividades de consultoria em gestão empresarial", "anchor": "Administrador de empresas, bacharel em administração, consultor de gestão empresarial registrado no CRA." },
+    { "area": "Química (profissional)", "keys": ["quimico industrial", "analises quimicas", "quimico responsavel"], "cnae": "7120-1/00", "cnaeNome": "Testes e análises técnicas", "anchor": "Químico, químico industrial, análises químicas, químico responsável." },
+    { "area": "Estatística", "keys": ["estatistic"], "cnae": "7320-3/00", "cnaeNome": "Pesquisas de mercado e de opinião pública", "anchor": "Estatístico, estatística, análise estatística, pesquisa estatística." },
+    { "area": "Geologia", "keys": ["geolog"], "cnae": "7112-0/00", "cnaeNome": "Serviços de engenharia", "anchor": "Geólogo, geologia, prospecção geológica, engenheiro geólogo." },
+    { "area": "Biblioteconomia", "keys": ["bibliotecari", "biblioteconomia"], "cnae": "9101-5/00", "cnaeNome": "Atividades de bibliotecas e arquivos", "anchor": "Bibliotecário, biblioteconomia, organização de acervo, gestão de biblioteca." },
+    { "area": "Zootecnia", "keys": ["zootecni"], "cnae": "7500-1/00", "cnaeNome": "Atividades veterinárias", "anchor": "Zootecnista, zootecnia, produção e nutrição animal." },
+    { "area": "Biologia", "keys": ["biolog"], "cnae": "", "cnaeNome": "", "anchor": "Biólogo, biologia, biólogo ambiental." },
+    { "area": "Tradução e interpretação", "keys": ["tradutor", "traducao", "tradutor juramentado", "traducao juramentada", "interprete de idiomas"], "cnae": "7490-1/01", "cnaeNome": "Serviços de tradução, interpretação e similares", "anchor": "Tradutor, tradução, tradutor juramentado, intérprete de idiomas, tradução de textos." },
+    { "area": "Despacho aduaneiro", "keys": ["despachante aduaneiro", "despachante aduaneira", "agente aduaneiro"], "cnae": "5250-8/02", "cnaeNome": "Atividades de despachantes aduaneiros", "anchor": "Despachante aduaneiro, despacho aduaneiro, agente aduaneiro no comércio exterior." },
+    { "area": "Vigilância e segurança privada", "keys": ["vigilante", "seguranca privada", "vigilancia patrimonial", "guarda-costas", "guarda costas"], "cnae": "8011-1/01", "cnaeNome": "Atividades de vigilância e segurança privada", "anchor": "Vigilante, segurança privada, vigilância patrimonial, guarda-costas." },
+    { "area": "Representação comercial", "keys": ["representante comercial", "representacao comercial"], "cnae": "4619-2/00", "cnaeNome": "Representantes comerciais e agentes do comércio de mercadorias em geral não especializado", "anchor": "Representante comercial, representação comercial, agente autônomo do comércio registrado no CORE." }
+  ],
+  "vedadas": [
+    { "categoria": "comércio atacadista", "keys": ["atacad"], "cnae": "4691-5/00", "cnaeNome": "Comércio atacadista de mercadorias em geral, com predominância de produtos alimentícios", "anchor": "Comércio atacadista, atacadista, atacadão, venda no atacado." },
+    { "categoria": "desenvolvimento de software/sistemas", "keys": ["programador", "desenvolvedor de software", "desenvolvedor de site", "desenvolvedor de aplicativo", "desenvolvedor web", "desenvolvimento de software", "desenvolvimento de sistema", "criacao de software"], "cnae": "6201-5/01", "cnaeNome": "Desenvolvimento de programas de computador sob encomenda", "anchor": "Programador, desenvolvedor de software, desenvolvimento de sistemas, criação de aplicativos e sites." },
+    { "categoria": "importação ou exportação", "keys": ["importacao", "importo", "importador", "exportacao", "exporto", "exportador", "comercio exterior"], "cnae": "", "cnaeNome": "", "anchor": "Importação e exportação de mercadorias, comércio exterior, importador, exportador." },
+    { "categoria": "atividade financeira", "keys": ["agiotagem", "emprestimo de dinheiro", "factoring", "casa de cambio", "corretora de valores"], "cnae": "", "cnaeNome": "", "anchor": "Atividade financeira, empréstimo de dinheiro, factoring, casa de câmbio, corretora de valores." },
+    { "categoria": "armas e munições", "keys": ["arma de fogo", "armas de fogo", "municao", "explosivo"], "cnae": "", "cnaeNome": "", "anchor": "Comércio e fabricação de armas de fogo, munição e explosivos." },
+    { "categoria": "fabricação de bebidas alcoólicas", "keys": ["fabricacao de bebida", "cervejaria", "destilaria"], "cnae": "1113-5/02", "cnaeNome": "Fabricação de cervejas e chopes", "anchor": "Fabricação de bebidas alcoólicas, cervejaria, destilaria, produção de cerveja." },
+    { "categoria": "fabricação de cigarros/tabaco", "keys": ["fabricacao de cigarro"], "cnae": "1220-4/01", "cnaeNome": "Fabricação de cigarros", "anchor": "Fabricação de cigarros e produtos de tabaco." },
+    { "categoria": "locação de imóveis próprios", "keys": ["locacao de imovel", "locacao de imoveis", "aluguel de imovel", "aluguel de imoveis", "aluguel de casa", "aluguel de apartamento", "renda de aluguel", "alugar imovel proprio"], "cnae": "6810-2/02", "cnaeNome": "Aluguel de imóveis próprios", "anchor": "Aluguel e locação de imóveis próprios, renda de aluguel de casas e apartamentos." },
+    { "categoria": "geração de energia elétrica", "keys": ["gerar energia", "geracao de energia", "vender energia", "usina solar", "producao de energia"], "cnae": "3511-5/01", "cnaeNome": "Geração de energia elétrica", "anchor": "Geração e comercialização de energia elétrica, usina solar que vende energia, produção de energia." },
+    { "categoria": "transporte intermunicipal/interestadual de passageiros", "keys": ["transporte intermunicipal", "transporte interestadual", "van intermunicipal", "onibus de viagem", "linha de onibus", "transporte de passageiros entre cidades"], "cnae": "4922-1/01", "cnaeNome": "Transporte rodoviário coletivo de passageiros, com itinerário fixo, intermunicipal", "anchor": "Transporte rodoviário coletivo de passageiros entre cidades e estados, linha de ônibus de viagem intermunicipal e interestadual." }
+  ]
+}

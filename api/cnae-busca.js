@@ -9,8 +9,15 @@
    Falha graciosa: sem chave / erro na API / query vazia → { ok:false }, e o
    front cai no buscador lexical (offline) que já existe. */
 import INDEX from './_cnae_index.js';
+import NAOMEI from './_naomei_index.js';
 
 const MODEL = 'gemini-embedding-001';
+
+// Detecção semântica NÃO-MEI: só afirmamos "não pode" quando a query está claramente
+// mais perto de uma âncora não-MEI do que de qualquer ocupação permitida. Alta precisão
+// (falso-bloqueio é o pior erro) → exige score alto E margem sobre o melhor permitido.
+const NAOMEI_MATCH = 0.66;   // piso do score da âncora não-MEI
+const NAOMEI_MARGIN = 0.05;  // quanto a âncora precisa vencer o melhor permitido (a margem separa nao×permitido)
 
 // decodifica os vetores uma vez por instância quente
 let IDX = null;
@@ -18,7 +25,9 @@ function index() {
   if (IDX) return IDX;
   const buf = Buffer.from(INDEX.vectors_b64, 'base64');
   const flat = new Float32Array(buf.buffer, buf.byteOffset, INDEX.count * INDEX.dim);
-  IDX = { ...INDEX, flat };
+  const nb = Buffer.from(NAOMEI.vectors_b64, 'base64');
+  const nflat = new Float32Array(nb.buffer, nb.byteOffset, NAOMEI.count * NAOMEI.dim);
+  IDX = { ...INDEX, flat, nao: { ...NAOMEI, flat: nflat } };
   return IDX;
 }
 
@@ -77,9 +86,28 @@ export default async function handler(req, res) {
       results.push({ oc: it.oc, cnae: it.cnae, trib: it.trib, score: Number(s.toFixed(4)) });
       if (results.length >= 8) break;
     }
+    const bestMei = scored.length ? scored[0].s : 0;
+
+    // melhor âncora NÃO-MEI
+    const nao = idx.nao;
+    let naomei = null;
+    if (nao && nao.count) {
+      let bi = -1, bs = -Infinity;
+      for (let i = 0; i < nao.count; i++) {
+        const off = i * nao.dim;
+        let s = 0;
+        for (let d = 0; d < nao.dim; d++) s += nao.flat[off + d] * qv[d];
+        if (s > bs) { bs = s; bi = i; }
+      }
+      // só afirma "não pode ser MEI" com score alto E margem sobre o melhor permitido
+      if (bi >= 0 && bs >= NAOMEI_MATCH && bs >= bestMei + NAOMEI_MARGIN) {
+        const it = nao.items[bi];
+        naomei = { tipo: it.tipo, label: it.label, cnae: it.cnae, cnaeNome: it.cnaeNome, score: Number(bs.toFixed(4)) };
+      }
+    }
 
     res.setHeader('Cache-Control', 'public, s-maxage=86400, max-age=600');
-    return res.status(200).json({ ok: true, confident: results[0] ? results[0].score >= match : false, results });
+    return res.status(200).json({ ok: true, confident: results[0] ? results[0].score >= match : false, results, naomei });
   } catch (e) {
     return res.status(200).json({ ok: false, error: 'upstream' });
   }

@@ -620,7 +620,7 @@ const OCC_BY_KEY = new Map(OCCUPATIONS.map((o) => [o.oc + '|' + o.cnae, o]));
 export function ConsultaCnaeMei() {
   const m = useIsMobile();
   const [query, setQuery] = useState('');
-  const [sem, setSem] = useState({ q: '', state: 'idle', hits: [] }); // busca semântica
+  const [sem, setSem] = useState({ q: '', state: 'idle', hits: [], naomei: null }); // busca semântica
   const inputRef = useRef(null);
   const cache = useRef(new Map());
 
@@ -636,22 +636,23 @@ export function ConsultaCnaeMei() {
   // Busca SEMÂNTICA (debounce) — só no cliente. Falha/offline/sem-chave → cai no lexical.
   useEffect(() => {
     const q = query.trim();
-    if (norm(q).length < 2) { setSem({ q: query, state: 'idle', hits: [] }); return; }
-    if (cache.current.has(q)) { setSem({ q: query, state: 'done', hits: cache.current.get(q) }); return; }
+    if (norm(q).length < 2) { setSem({ q: query, state: 'idle', hits: [], naomei: null }); return; }
+    if (cache.current.has(q)) { const c = cache.current.get(q); setSem({ q: query, state: 'done', hits: c.hits, naomei: c.naomei }); return; }
     let alive = true;
-    setSem((s) => ({ q: query, state: 'loading', hits: s.q === query ? s.hits : [] }));
+    setSem((s) => ({ q: query, state: 'loading', hits: s.q === query ? s.hits : [], naomei: s.q === query ? s.naomei : null }));
     const t = setTimeout(async () => {
       try {
         const r = await fetch(`/api/cnae-busca?q=${encodeURIComponent(q)}`);
         const j = await r.json();
         if (!alive) return;
         if (j && j.ok && Array.isArray(j.results)) {
-          cache.current.set(q, j.results);
-          setSem({ q: query, state: 'done', hits: j.results });
+          const c = { hits: j.results, naomei: j.naomei || null };
+          cache.current.set(q, c);
+          setSem({ q: query, state: 'done', hits: c.hits, naomei: c.naomei });
         } else {
-          setSem({ q: query, state: 'off', hits: [] });
+          setSem({ q: query, state: 'off', hits: [], naomei: null });
         }
-      } catch (e) { if (alive) setSem({ q: query, state: 'off', hits: [] }); }
+      } catch (e) { if (alive) setSem({ q: query, state: 'off', hits: [], naomei: null }); }
     }, 280);
     return () => { alive = false; clearTimeout(t); };
   }, [query]);
@@ -672,17 +673,24 @@ export function ConsultaCnaeMei() {
   const semSettled = sem.q === query && sem.state !== 'loading';
   // semântico "confiante" de que É permitida (≥ 0.66) — usado só pra desempatar quando a busca cheira a não-MEI.
   const semConfident = sem.q === query && sem.state === 'done' && sem.hits[0] && sem.hits[0].score >= 0.66;
+  // veredicto semântico de NÃO-MEI (só vem quando venceu o permitido com margem, no servidor)
+  const semNao = (sem.q === query && sem.state === 'done' && sem.naomei) ? sem.naomei : null;
+
+  // qual objeto não-MEI mostrar: lexical (instantâneo, certeza) tem prioridade; senão o semântico
+  const naoVerdict = nao || semNao;
 
   let mode;
   if (!trimmed) {
     mode = 'empty';
   } else if (!nao) {
-    // sem sinal de não-MEI: caminho normal (lexical instantâneo + semântico)
-    if (lexical.length || combined.length) mode = 'results';
+    // sem sinal LEXICAL de não-MEI
+    if (lexical.length) mode = 'results';          // match de prefixo em ocupação real → permitida
     else if (!semSettled) mode = 'searching';
+    else if (semNao) mode = 'naomei';              // o semântico afirmou não-MEI (paráfrase: "desenvolvo apps")
+    else if (combined.length) mode = 'results';    // hits semânticos permitidos
     else mode = 'none';
   } else {
-    // cheira a não-MEI: o semântico confirma se, na verdade, é uma atividade permitida (ex.: "artigos médicos")
+    // cheira a não-MEI pelo lexical: o semântico confirma se, na verdade, é permitida (ex.: "artigos médicos")
     if (!semSettled) mode = 'searching';
     else if (semConfident) mode = 'results';
     else mode = 'naomei';
@@ -723,7 +731,7 @@ export function ConsultaCnaeMei() {
             {mode === 'empty' && <EmptyState onPick={pick} />}
             {mode === 'searching' && <SearchingState query={query} />}
             {mode === 'results' && <ResultsState results={combined} query={query} smart={smart} />}
-            {mode === 'naomei' && <NaoMeiState nao={nao} />}
+            {mode === 'naomei' && naoVerdict && <NaoMeiState nao={naoVerdict} />}
             {mode === 'none' && <NoResultState query={query} />}
           </div>
         </div>
