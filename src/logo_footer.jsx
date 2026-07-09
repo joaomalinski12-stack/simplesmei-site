@@ -44,7 +44,7 @@ function NavBar({ inverted, links = [
       padding: m ? '16px 24px' : '22px 56px', borderBottom: `1px solid ${inverted ? 'rgba(255,255,255,0.10)' : BRAND.sandDeep}`,
       position: 'relative', zIndex: 100
     }}>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .desktop-links { display: none !important; }
           .nav-container { padding: 16px 24px !important; }
@@ -53,7 +53,7 @@ function NavBar({ inverted, links = [
         @media (min-width: 769px) {
           .mobile-menu-btn { display: none !important; }
         }
-      `}</style>
+      ` }} />
       <a href="/" style={{ textDecoration: 'none' }}>
         <Logo inverted={inverted} size={m ? 22 : 26}/>
       </a>

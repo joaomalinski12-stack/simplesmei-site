@@ -755,8 +755,11 @@ export function BlogPost({ slug }) {
 
       <Footer />
 
-      {/* Tipografia de markdown — H2/H3, parágrafo, listas, link, blockquote (nos tokens) */}
-      <style>{`
+      {/* Tipografia de markdown — H2/H3, parágrafo, listas, link, blockquote (nos tokens).
+         dangerouslySetInnerHTML (não children): <style> é raw text; via children o
+         renderToString escapa `>` e `"` (de FONTS/seletores) → &gt;/&quot; no SSR, que o
+         navegador não decodifica dentro de <style> → mismatch de hidratação (#425). */}
+      <style dangerouslySetInnerHTML={{ __html: `
         .blog-content h2 {
           font-family: ${FONTS.display};
           font-weight: 700;
@@ -875,7 +878,7 @@ export function BlogPost({ slug }) {
         .blog-link { color: ${BRAND.coralDeep}; text-decoration: none; transition: color .15s ease; }
         .blog-link:hover { color: ${BRAND.coral}; }
         .rel-card:hover { border-color: ${BRAND.coral} !important; transform: translateY(-2px); }
-      `}</style>
+      ` }} />
     </div>
   );
 }

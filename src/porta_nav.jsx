@@ -143,7 +143,7 @@ function NavV5() {
       boxShadow: solid ? '0 6px 24px -18px rgba(16,17,26,0.50)' : 'none',
       transition: 'padding .22s ease, box-shadow .22s ease',
     }}>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .navv5-desktop-links { display: none !important; }
           .navv5-mobile-btn { display: flex !important; }
@@ -151,7 +151,7 @@ function NavV5() {
         @media (min-width: 769px) {
           .navv5-mobile-btn { display: none !important; }
         }
-      `}</style>
+      ` }} />
       <a href="/" aria-label="SimplesMEI — início" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
         <Logo size={solid ? 24 : 26}/>
       </a>
