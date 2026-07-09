@@ -8,6 +8,7 @@ import { Termos } from './termos.jsx';
 import { Privacidade } from './privacidade.jsx';
 import { Sobre, Imprensa, Carreiras, Contato } from './institucional.jsx';
 import { BlogList, BlogPost, BlogCategory } from './blog.jsx';
+import { ConsultaCnaeMei } from './ferramenta_cnae.jsx';
 import { WaitlistPage } from './lista_espera.jsx';
 
 import { CookieBanner } from './cookie_banner.jsx';
@@ -23,6 +24,7 @@ const App = ({ path }) => {
   else if (path === '/carreiras') PageComponent = Carreiras;
   else if (path === '/contato') PageComponent = Contato;
   else if (path === '/lista-de-espera') PageComponent = WaitlistPage;
+  else if (path === '/ferramentas/consulta-cnae-mei') PageComponent = ConsultaCnaeMei;
   else if (path === '/blog') PageComponent = BlogList;
   else if (path.startsWith('/blog/categoria/')) {
     PageComponent = BlogCategory;
