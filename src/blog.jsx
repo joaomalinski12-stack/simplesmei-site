@@ -271,8 +271,11 @@ const BLOG_SCHEMA = {
   name: 'Guias do MEI · Blog do SimplesMEI',
   description: 'Guias do MEI: nota fiscal, DAS, teto, benefícios do INSS e regularização, explicados sem juridiquês.',
   url: 'https://simplesmei.net/blog',
+  isPartOf: { '@type': 'WebSite', name: 'SimplesMEI', url: 'https://simplesmei.net' },
+  publisher: { '@type': 'Organization', name: 'SimplesMEI', url: 'https://simplesmei.net' },
   mainEntity: {
     '@type': 'ItemList',
+    numberOfItems: allPosts.length,
     itemListElement: allPosts.map((p, i) => ({
       '@type': 'ListItem', position: i + 1,
       url: `https://simplesmei.net/blog/${p.slug}`, name: p.title,
@@ -484,6 +487,7 @@ function WaitlistBand({ m }) {
 
 /* cabeçalho editorial + busca */
 function BlogHeader({ q, onQ, m }) {
+  const introLink = { color: BRAND.coralDeep, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2, textDecorationColor: 'rgba(193,62,46,0.35)' };
   return (
     <header style={{ maxWidth: 1160, margin: '0 auto', width: '100%', padding: m ? '32px 20px 0' : '56px 40px 0' }}>
       <nav aria-label="Trilha" style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: FONTS.mono, fontSize: 11, fontWeight: 700, letterSpacing: 0.4, textTransform: 'uppercase', marginBottom: m ? 20 : 26 }}>
@@ -501,7 +505,7 @@ function BlogHeader({ q, onQ, m }) {
             Guias do <span style={{ color: BRAND.coral }}>MEI</span>
           </h1>
           <p style={{ fontFamily: FONTS.body, fontSize: m ? 16 : 18.5, lineHeight: 1.5, color: BRAND.inkSoft, margin: '16px 0 0', maxWidth: 520, textWrap: 'pretty' }}>
-            Nota fiscal, DAS, teto, benefícios e regularização, explicados sem juridiquês. Tudo que o Microempreendedor Individual precisa saber, num lugar só.
+            <a href="/blog/como-emitir-nota-fiscal-mei" style={introLink}>Nota fiscal</a>, <a href="/blog/das-do-mei" style={introLink}>DAS</a>, <a href="/blog/limite-do-mei" style={introLink}>teto</a>, <a href="/blog/categoria/beneficios-e-inss" style={introLink}>benefícios</a> e <a href="/blog/categoria/regularizacao" style={introLink}>regularização</a>, explicados sem juridiquês. Tudo que o Microempreendedor Individual precisa saber, num lugar só.
           </p>
         </div>
         <label className="blog-search" style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#fff', border: `1px solid ${BRAND.creamDeep}`, borderRadius: 14, padding: '13px 16px', width: m ? '100%' : 320, minHeight: 44, boxShadow: '0 10px 26px -22px rgba(16,17,26,0.3)' }}>

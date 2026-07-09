@@ -88,8 +88,18 @@ for (const route of routes) {
     title = 'Lista de espera · SimplesMEI';
     description = 'Entre na lista de espera do SimplesMEI, a IA que cuida do fiscal do seu MEI no WhatsApp. A gente te avisa assim que abrir as primeiras vagas.';
   } else if (route === '/blog') {
-    title = 'Blog · SimplesMEI';
-    description = 'Dicas, tutoriais e novidades para facilitar a vida do Microempreendedor Individual.';
+    title = 'Guias do MEI: nota fiscal, DAS, teto e benefícios · SimplesMEI';
+    description = 'Nota fiscal, DAS, teto, INSS e regularização do MEI, sem juridiquês. Guias práticos pra resolver cada dúvida do seu CNPJ — tudo num lugar só.';
+    // Trilha visível (Início › Blog) → BreadcrumbList. A CollectionPage/ItemList já vem do componente (no #root).
+    const breadcrumb = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
+        { "@type": "ListItem", "position": 2, "name": "Blog" }
+      ]
+    };
+    html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(breadcrumb, null, 2)}\n</script>\n</head>`);
   } else if (route.startsWith('/blog/categoria/')) {
     const cslug = route.replace('/blog/categoria/', '');
     const cat = CATS.find(c => c.slug === cslug);
