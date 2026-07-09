@@ -4,6 +4,7 @@ import { Mono } from './tiles.jsx';
 import { Door, NavV5 } from './porta_nav.jsx';
 import { Footer } from './logo_footer.jsx';
 import { OCCUPATIONS, CATS, HOT, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
+import { detectNaoMei } from './data/cnae_naomei.js';
 
 /* ════════════════════════════════════════════════════════════════════════
    FERRAMENTA "Sua atividade pode ser MEI?" — /ferramentas/consulta-cnae-mei
@@ -335,6 +336,46 @@ function NoResultState({ query }) {
   );
 }
 
+/* ── estado: NÃO pode ser MEI (profissão regulamentada / atividade vedada) ── */
+function NaoMeiState({ nao }) {
+  const m = useIsMobile();
+  const reg = nao.tipo === 'regulamentada';
+  return (
+    <div style={{
+      background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 20,
+      padding: m ? '28px 22px' : '38px 40px', maxWidth: 640, margin: '0 auto',
+    }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: 'rgba(200,93,0,0.10)', padding: '6px 13px 6px 7px', borderRadius: 999, marginBottom: 16 }}>
+        <span style={{ width: 20, height: 20, borderRadius: '50%', background: BRAND.amberDeep, color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, lineHeight: 1 }}>✕</span>
+        <Mono color={BRAND.amberDeep} size={10.5}>Não pode ser MEI</Mono>
+      </div>
+      <h3 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 21 : 25, lineHeight: 1.18, letterSpacing: -0.5, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>
+        Essa atividade não entra no MEI.
+      </h3>
+      <p style={{ fontFamily: FONTS.body, fontSize: m ? 15 : 16, lineHeight: 1.6, color: BRAND.inkSoft, margin: '12px 0 0', textWrap: 'pretty' }}>
+        {reg
+          ? <><b style={{ color: BRAND.ink }}>{nao.label}</b> é uma <b style={{ color: BRAND.ink }}>profissão regulamentada</b> (tem conselho de classe), e a lei não permite exercê-la como MEI.</>
+          : <>É uma atividade <b style={{ color: BRAND.ink }}>vedada ao MEI</b> por natureza — <b style={{ color: BRAND.ink }}>{nao.label}</b> fica fora da lista oficial de ocupações.</>}
+      </p>
+      {nao.cnae && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 9, flexWrap: 'wrap', marginTop: 16 }}>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: BRAND.sand, color: BRAND.inkSoft, padding: '5px 11px', borderRadius: 8, fontFamily: FONTS.mono, fontSize: 12, fontWeight: 700, letterSpacing: 0.2, border: `1px solid ${BRAND.creamDeep}` }}>
+            <span style={{ fontSize: 9, opacity: 0.7, letterSpacing: 0.6 }}>CNAE</span>{nao.cnae}
+          </span>
+          <span style={{ fontFamily: FONTS.body, fontSize: 12.5, color: BRAND.inkMute, textWrap: 'pretty' }}>{nao.cnaeNome} — não permitido ao MEI</span>
+        </div>
+      )}
+      <p style={{ fontFamily: FONTS.body, fontSize: m ? 14.5 : 15, lineHeight: 1.6, color: BRAND.inkSoft, margin: '16px 0 0', textWrap: 'pretty' }}>
+        O caminho costuma ser outro regime — em geral uma <b style={{ color: BRAND.ink }}>Microempresa (ME)</b> no Simples Nacional. Vale confirmar com um contador.
+      </p>
+      <a href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei/atividades-permitidas" target="_blank" rel="noopener noreferrer"
+        style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, fontFamily: FONTS.body, fontSize: 14, fontWeight: 700, color: BRAND.coralDeep, textDecoration: 'none', borderBottom: `2px solid ${BRAND.coralSoft}`, paddingBottom: 2 }}>
+        Ver a lista oficial de atividades do MEI <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  );
+}
+
 /* ── busca acontecendo (lexical vazio, semântico ainda voltando) ── */
 function SearchingState({ query }) {
   const m = useIsMobile();
@@ -616,6 +657,7 @@ export function ConsultaCnaeMei() {
   }, [query]);
 
   const lexical = useMemo(() => buscar(query), [query]);
+  const nao = useMemo(() => detectNaoMei(query), [query]);
 
   // combinado: lexical (prefixo, no topo) + os hits semânticos que o lexical não pegou
   const combined = useMemo(() => {
@@ -628,8 +670,25 @@ export function ConsultaCnaeMei() {
 
   const trimmed = norm(query);
   const semSettled = sem.q === query && sem.state !== 'loading';
-  const mode = !trimmed ? 'empty' : (combined.length ? 'results' : (semSettled ? 'none' : 'searching'));
-  const smart = combined.length > lexical.length; // o semântico acrescentou algo
+  // semântico "confiante" de que É permitida (≥ 0.66) — usado só pra desempatar quando a busca cheira a não-MEI.
+  const semConfident = sem.q === query && sem.state === 'done' && sem.hits[0] && sem.hits[0].score >= 0.66;
+
+  let mode;
+  if (!trimmed) {
+    mode = 'empty';
+  } else if (!nao) {
+    // sem sinal de não-MEI: caminho normal (lexical instantâneo + semântico)
+    if (lexical.length || combined.length) mode = 'results';
+    else if (!semSettled) mode = 'searching';
+    else mode = 'none';
+  } else {
+    // cheira a não-MEI: o semântico confirma se, na verdade, é uma atividade permitida (ex.: "artigos médicos")
+    if (!semSettled) mode = 'searching';
+    else if (semConfident) mode = 'results';
+    else mode = 'naomei';
+  }
+
+  const smart = mode === 'results' && combined.length > lexical.length; // o semântico acrescentou algo
 
   const pick = (q) => { setQuery(q); if (inputRef.current) { try { inputRef.current.focus({ preventScroll: true }); } catch (e) {} } };
 
@@ -664,6 +723,7 @@ export function ConsultaCnaeMei() {
             {mode === 'empty' && <EmptyState onPick={pick} />}
             {mode === 'searching' && <SearchingState query={query} />}
             {mode === 'results' && <ResultsState results={combined} query={query} smart={smart} />}
+            {mode === 'naomei' && <NaoMeiState nao={nao} />}
             {mode === 'none' && <NoResultState query={query} />}
           </div>
         </div>
