@@ -3,7 +3,7 @@ title: "Declaração anual do MEI (DASN-SIMEI): prazo e passos"
 date: "2026-06-27"
 description: "Declaração anual do MEI (DASN-SIMEI): o prazo até 31 de maio, o passo a passo gratuito no Portal do Empreendedor, o que informar e como difere do IRPF."
 author: "João Gandra"
-category: "Declarações"
+category: "Imposto e DAS"
 coverPalette: "ink"
 faq:
   - q: "O que é a declaração anual do MEI?"

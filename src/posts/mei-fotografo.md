@@ -3,7 +3,7 @@ title: "MEI fotógrafo: CNAE, nota fiscal e como abrir"
 date: "2026-07-01"
 description: "Fotógrafo pode ser MEI na ocupação Fotógrafo independente (CNAE 7420-0/01). Veja os CNAEs, quanto paga de DAS, a nota para eventos e como abrir."
 author: "João Gandra"
-category: "Profissões"
+category: "Profissões e nichos"
 coverPalette: "amber"
 faq:
   - q: "Fotógrafo pode ser MEI?"

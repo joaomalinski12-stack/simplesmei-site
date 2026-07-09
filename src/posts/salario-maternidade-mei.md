@@ -3,7 +3,7 @@ title: "Salário-maternidade MEI: valor, prazo e como pedir"
 date: "2026-07-01"
 description: "Salário-maternidade do MEI: hoje sem carência, dura 120 dias e vale um salário mínimo. Veja quem tem direito, o que preciso ter em dia e como pedir no Meu INSS."
 author: "João Gandra"
-category: "Benefícios"
+category: "Benefícios e INSS"
 coverPalette: "mint"
 faq:
   - q: "A MEI tem direito a salário-maternidade?"

@@ -3,7 +3,7 @@ title: "Atividades permitidas para MEI (e o que não pode)"
 date: "2026-06-28"
 description: "Atividades permitidas para MEI: exemplos por área em tabela, as profissões que não podem ser MEI e como consultar a lista oficial de ocupações."
 author: "João Gandra"
-category: "CNAE"
+category: "Primeiros passos"
 coverPalette: "mint"
 faq:
   - q: "Quais atividades são permitidas para MEI?"

@@ -3,7 +3,7 @@ title: "MEI para entregador: iFood, Rappi e como abrir"
 date: "2026-07-01"
 description: "Entregador de app pode ser MEI: a ocupação é Motoboy independente (CNAE 5320-2/02). Veja o CNAE, quanto paga de DAS e como abrir para iFood e Rappi."
 author: "João Gandra"
-category: "Profissões"
+category: "Profissões e nichos"
 coverPalette: "amber"
 faq:
   - q: "Entregador de aplicativo pode ser MEI?"

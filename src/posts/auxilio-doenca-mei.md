@@ -3,7 +3,7 @@ title: "Auxílio-doença do MEI: carência, valor e como pedir"
 date: "2026-07-01"
 description: "Auxílio-doença do MEI: direito após 12 contribuições (acidente dispensa), valor de um salário mínimo e pedido no Meu INSS. Veja o passo a passo."
 author: "João Gandra"
-category: "Benefícios"
+category: "Benefícios e INSS"
 coverPalette: "coral"
 faq:
   - q: "O MEI tem direito a auxílio-doença?"

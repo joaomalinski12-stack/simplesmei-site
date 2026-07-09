@@ -3,7 +3,7 @@ title: "MEI para motorista de aplicativo: como funciona"
 date: "2026-07-01"
 description: "MEI para motorista de aplicativo: sim, dá para se formalizar desde 2019. Veja os requisitos, o INSS de 5% no DAS e os benefícios de virar MEI dirigindo."
 author: "João Gandra"
-category: "MEI Motorista"
+category: "Profissões e nichos"
 coverPalette: "coral"
 faq:
   - q: "Motorista de aplicativo pode ser MEI?"

@@ -153,6 +153,21 @@
     .aha-pop, .aha-pulse, .aha-dot { animation: none !important; }
   }
 
+  /* ── Blog · home editorial · src/blog.jsx ── */
+  .blog-card { transition: transform .16s cubic-bezier(.2,.7,.3,1), box-shadow .16s ease, border-color .16s ease; }
+  .blog-card:hover { transform: translateY(-4px); border-color: #E1DACE; box-shadow: 0 24px 48px -30px rgba(16,17,26,0.32); }
+  .blog-card:hover .blog-card-title { color: #C13E2E; }
+  .blog-chip { transition: transform .14s ease, background .14s ease, border-color .14s ease, color .14s ease; }
+  .blog-chip:hover:not(.is-active) { transform: translateY(-1px); background: #FFDDD2; border-color: #F87453; color: #C13E2E; }
+  .blog-chipbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .blog-chipbar::-webkit-scrollbar { display: none; }
+  .blog-search { transition: box-shadow .18s ease, border-color .18s ease; }
+  .blog-search:focus-within { border-color: #F87453; box-shadow: 0 18px 40px -26px rgba(248,116,83,0.5); }
+  .blog-search input::placeholder { color: #9D9EA5; }
+  .rail-all { transition: gap .15s ease, color .15s ease; }
+  .rail-all:hover { gap: 12px; color: #F87453; }
+  @media (prefers-reduced-motion: reduce) { .blog-card, .blog-chip, .v5-door, .rail-all { transition: none; } }
+
   /* ── FAQ (acordeão · espelha src/preco_cta.jsx FaqV5) ── */
   .faq-q { transition: background .15s ease; outline: none; }
   .faq-q:hover { background: #FCFAF6; }

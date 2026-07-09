@@ -3,7 +3,7 @@ title: "Obrigações do MEI: o que fazer pra ficar em dia"
 date: "2026-06-29"
 description: "Obrigações do MEI em 2026: pagar o DAS, entregar a DASN, emitir nota, respeitar o teto e a atividade. O checklist completo com prazos e o que dá multa."
 author: "João Gandra"
-category: "MEI"
+category: "Regularização"
 coverPalette: "ink"
 faq:
   - q: "Quais são as obrigações do MEI?"

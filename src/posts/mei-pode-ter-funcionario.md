@@ -3,7 +3,7 @@ title: "MEI pode ter funcionário? Regras, custo e contratação"
 date: "2026-06-28"
 description: "MEI pode ter funcionário? Sim, até 1 empregado. Veja as regras, o custo do empregador (FGTS + INSS) em tabela e o passo a passo para contratar."
 author: "João Gandra"
-category: "Gestão"
+category: "Primeiros passos"
 coverPalette: "amber"
 faq:
   - q: "MEI pode ter funcionário?"

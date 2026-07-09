@@ -3,7 +3,7 @@ title: "Como dar baixa no MEI: passo a passo para fechar o CNPJ"
 date: "2026-06-25"
 description: "Como dar baixa no MEI no Portal do Empreendedor: o passo a passo, o que acontece com o DAS em aberto e a DASN de extinção que você precisa entregar."
 author: "João Gandra"
-category: "Ciclo de vida"
+category: "Regularização"
 coverPalette: "amber"
 faq:
   - q: "Como dar baixa no MEI?"

@@ -3,7 +3,7 @@ title: "Nome fantasia do MEI: o que é e como definir"
 date: "2026-07-01"
 description: "Nome fantasia do MEI é o nome comercial do negócio, diferente da razão social. Veja como definir e alterar de graça e se ele protege a marca."
 author: "João Gandra"
-category: "Abertura"
+category: "Primeiros passos"
 coverPalette: "mint"
 faq:
   - q: "O que é o nome fantasia do MEI?"

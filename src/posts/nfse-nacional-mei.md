@@ -3,7 +3,7 @@ title: "NFS-e Nacional para o MEI: o que muda em 2026 e como emitir"
 date: "2026-06-19"
 description: "NFS-e Nacional e o Emissor Nacional (gov.br/nfse): o que muda para o MEI em 2026, por que vira padrão e como emitir, passo a passo."
 author: "João Gandra"
-category: "NFS-e Nacional"
+category: "Nota fiscal"
 coverPalette: "ink"
 faq:
   - q: "O que é a NFS-e Nacional?"

@@ -3,7 +3,7 @@ title: "MEI para diarista: quando pode e como abrir"
 date: "2026-07-01"
 description: "Diarista pode ser MEI (ocupação Diarista independente), desde que sem vínculo e até 2 dias por semana no mesmo cliente. Veja a regra e como abrir."
 author: "João Gandra"
-category: "Profissões"
+category: "Profissões e nichos"
 coverPalette: "mint"
 faq:
   - q: "Diarista pode ser MEI?"

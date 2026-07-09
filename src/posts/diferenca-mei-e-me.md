@@ -3,7 +3,7 @@ title: "Diferença entre MEI e ME: limites, impostos e migração"
 date: "2026-07-01"
 description: "Diferença entre MEI e ME: o MEI fatura até R$ 81 mil e paga DAS fixo; a ME vai até R$ 360 mil e paga percentual. Veja a comparação e quando migrar."
 author: "João Gandra"
-category: "Dúvidas"
+category: "Teto e crescimento"
 coverPalette: "amber"
 faq:
   - q: "Qual a diferença entre MEI e ME?"

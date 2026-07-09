@@ -3,7 +3,7 @@ title: "Nota fiscal recorrente: como deixar a emissão no automático"
 date: "2026-06-25"
 description: "Nota fiscal recorrente para MEI: o que é, por que importa pra quem tem cliente fixo e como deixar a emissão da NFS-e quase no automático."
 author: "João Gandra"
-category: "Recorrência"
+category: "Nota fiscal"
 coverPalette: "mint"
 faq:
   - q: "O que é nota fiscal recorrente?"

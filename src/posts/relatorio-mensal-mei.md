@@ -3,7 +3,7 @@ title: "Relatório mensal do MEI: como fazer, prazo e modelo"
 date: "2026-07-01"
 description: "Relatório mensal do MEI (receitas brutas): o prazo até o dia 20, o modelo para preencher e por que você arquiva — e não entrega — esse documento obrigatório."
 author: "João Gandra"
-category: "Obrigações"
+category: "Imposto e DAS"
 coverPalette: "ink"
 faq:
   - q: "O relatório mensal do MEI é obrigatório?"

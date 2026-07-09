@@ -3,7 +3,7 @@ title: "Cartão CNPJ do MEI: como emitir e consultar o CCMEI"
 date: "2026-06-26"
 description: "Cartão CNPJ do MEI é o CCMEI: veja para que serve, como emitir, baixar e imprimir de graça no Portal do Empreendedor e consultar os dados da empresa."
 author: "João Gandra"
-category: "Documentos"
+category: "Primeiros passos"
 coverPalette: "coral"
 faq:
   - q: "O que é o cartão CNPJ do MEI?"

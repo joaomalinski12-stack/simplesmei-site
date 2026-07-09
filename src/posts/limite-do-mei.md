@@ -3,7 +3,7 @@ title: "Limite do MEI 2026: qual é o teto e como não estourar"
 date: "2026-06-23"
 description: "Limite do MEI em 2026: o teto é R$ 81.000 por ano. Veja o que conta, o caso do caminhoneiro, o ano proporcional e como não estourar."
 author: "João Gandra"
-category: "Teto do MEI"
+category: "Teto e crescimento"
 coverPalette: "amber"
 faq:
   - q: "Qual é o limite do MEI em 2026?"

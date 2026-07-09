@@ -3,7 +3,7 @@ title: "Posso ter dois MEI? A regra do CNPJ por CPF"
 date: "2026-07-01"
 description: "Posso ter dois MEI? Não — cada CPF só pode ter um CNPJ de MEI. Veja como exercer várias atividades no mesmo MEI e o que fazer se precisa de outro negócio."
 author: "João Gandra"
-category: "Dúvidas"
+category: "Teto e crescimento"
 coverPalette: "ink"
 faq:
   - q: "Posso ter dois MEI no mesmo CPF?"

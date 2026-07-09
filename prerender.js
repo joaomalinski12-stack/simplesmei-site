@@ -20,6 +20,7 @@ if (!rootRe.test(template)) {
 import { mkdirSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import fm from 'front-matter';
+import { CATS } from './src/blog_cats.js';
 
 const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/lista-de-espera', '/blog'];
 
@@ -36,6 +37,9 @@ for (const file of postFiles) {
   const parsed = fm(content);
   blogMeta[slug] = parsed.attributes;
 }
+
+// Rotas de categoria (hubs indexáveis) — /blog/categoria/<slug>
+for (const c of CATS) routes.push(`/blog/categoria/${c.slug}`);
 
 for (const route of routes) {
   const appHtml = render(route);
@@ -86,6 +90,24 @@ for (const route of routes) {
   } else if (route === '/blog') {
     title = 'Blog · SimplesMEI';
     description = 'Dicas, tutoriais e novidades para facilitar a vida do Microempreendedor Individual.';
+  } else if (route.startsWith('/blog/categoria/')) {
+    const cslug = route.replace('/blog/categoria/', '');
+    const cat = CATS.find(c => c.slug === cslug);
+    if (cat) {
+      title = `${cat.name} · Guias do MEI · SimplesMEI`;
+      description = `${cat.desc}. Guias do MEI sobre ${cat.name.toLowerCase()}, sem juridiquês.`;
+      // BreadcrumbList aqui; a CollectionPage/ItemList já vem do componente (no #root).
+      const breadcrumb = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://simplesmei.net/blog" },
+          { "@type": "ListItem", "position": 3, "name": cat.name }
+        ]
+      };
+      html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(breadcrumb, null, 2)}\n</script>\n</head>`);
+    }
   } else if (route.startsWith('/blog/')) {
     const slug = route.replace('/blog/', '');
     if (blogMeta[slug]) {
@@ -176,7 +198,12 @@ try {
     const date = blogMeta[slug].date ? new Date(blogMeta[slug].date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
     sitemap += `  <url>\n    <loc>https://simplesmei.net/blog/${slug}</loc>\n    <lastmod>${date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
   }
-  
+
+  // Adiciona os hubs de categoria
+  for (const c of CATS) {
+    sitemap += `  <url>\n    <loc>https://simplesmei.net/blog/categoria/${c.slug}</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+  }
+
   // Fecha a tag novamente
   sitemap += '</urlset>\n';
   writeFileSync(sitemapPath, sitemap);

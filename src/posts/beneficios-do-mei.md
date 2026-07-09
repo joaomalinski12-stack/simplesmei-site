@@ -3,7 +3,7 @@ title: "Benefícios do MEI: os direitos do INSS e do CNPJ"
 date: "2026-07-01"
 description: "Benefícios do MEI: pelo DAS, o MEI tem aposentadoria, auxílio-doença, salário-maternidade e pensão para dependentes. Veja os direitos e as carências."
 author: "João Gandra"
-category: "Benefícios"
+category: "Benefícios e INSS"
 coverPalette: "mint"
 faq:
   - q: "Quais benefícios o MEI tem direito?"

@@ -3,8 +3,9 @@ title: "O que é MEI? O guia do Microempreendedor Individual"
 date: "2026-06-29"
 description: "O que é MEI: o Microempreendedor Individual é o jeito mais simples de ter CNPJ no Brasil. Veja vantagens, limites, quanto custa e quem pode ser."
 author: "João Gandra"
-category: "MEI"
+category: "Primeiros passos"
 coverPalette: "coral"
+featured: true
 faq:
   - q: "O que é MEI?"
     a: "MEI é a sigla de Microempreendedor Individual, um regime simplificado que dá CNPJ a quem trabalha por conta própria. Ele formaliza o autônomo com um imposto fixo mensal baixo, direito a benefícios do INSS e a possibilidade de emitir nota fiscal."

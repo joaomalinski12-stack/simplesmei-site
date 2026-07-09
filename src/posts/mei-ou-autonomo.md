@@ -3,7 +3,7 @@ title: "MEI ou autônomo: qual compensa mais?"
 date: "2026-07-01"
 description: "MEI ou autônomo: o autônomo paga 11% ou 20% de INSS e não tem CNPJ; o MEI paga só 5% pelo DAS, tem CNPJ e emite nota fácil. Veja qual compensa para o seu caso."
 author: "João Gandra"
-category: "Dúvidas"
+category: "Teto e crescimento"
 coverPalette: "ink"
 faq:
   - q: "Qual a diferença entre MEI e autônomo?"

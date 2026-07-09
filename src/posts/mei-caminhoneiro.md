@@ -3,7 +3,7 @@ title: "MEI Caminhoneiro: teto, INSS e como se formalizar"
 date: "2026-07-01"
 description: "MEI Caminhoneiro: o transportador autônomo de carga tem teto de R$ 251.600 por ano e INSS de 12%. Veja as diferenças para o MEI comum e como se formalizar."
 author: "João Gandra"
-category: "MEI Caminhoneiro"
+category: "Profissões e nichos"
 coverPalette: "ink"
 faq:
   - q: "O que é o MEI Caminhoneiro?"

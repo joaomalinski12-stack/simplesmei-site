@@ -3,7 +3,7 @@ title: "Desenquadramento do MEI: causas e como evitar"
 date: "2026-06-22"
 description: "Desenquadramento MEI: o que é, as causas, a regra dos 20% de tolerância e como evitar virar ME e pagar imposto retroativo."
 author: "João Gandra"
-category: "Teto do MEI"
+category: "Teto e crescimento"
 coverPalette: "amber"
 faq:
   - q: "O que é o desenquadramento do MEI?"

@@ -3,7 +3,7 @@ title: "MEI precisa de contador? O que diz a lei"
 date: "2026-07-01"
 description: "MEI precisa de contador? Não é obrigatório: a LC 123/2006 dispensa o MEI de contabilidade formal. Veja o que dá para fazer sozinho e quando ajuda."
 author: "João Gandra"
-category: "Dúvidas"
+category: "Primeiros passos"
 coverPalette: "coral"
 faq:
   - q: "O MEI é obrigado a ter contador?"

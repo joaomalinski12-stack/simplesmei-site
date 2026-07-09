@@ -3,7 +3,7 @@ title: "MEI pode receber Bolsa Família? Renda e regras"
 date: "2026-07-01"
 description: "MEI pode receber Bolsa Família? Sim, se a renda por pessoa da família ficar no limite. Veja como funciona a renda per capita, a Regra de Proteção e o CadÚnico."
 author: "João Gandra"
-category: "Benefícios"
+category: "Benefícios e INSS"
 coverPalette: "mint"
 faq:
   - q: "MEI pode receber Bolsa Família?"

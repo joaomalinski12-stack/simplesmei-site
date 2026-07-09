@@ -3,7 +3,7 @@ title: "MEI pode ter carteira assinada? CLT e MEI juntos"
 date: "2026-07-01"
 description: "MEI pode ter carteira assinada? Sim, dá para ser CLT e MEI ao mesmo tempo. Veja o que muda no INSS e no imposto e as restrições (conflito, servidor)."
 author: "João Gandra"
-category: "Vínculos"
+category: "Benefícios e INSS"
 coverPalette: "coral"
 faq:
   - q: "MEI pode ter carteira assinada?"

@@ -3,7 +3,7 @@ title: "Alvará do MEI: precisa? A dispensa e o CCMEI"
 date: "2026-07-01"
 description: "Alvará do MEI: desde 2020 o MEI é dispensado de alvará, pois toda atividade é de baixo risco. Veja como funciona e o que a dispensa não cobre."
 author: "João Gandra"
-category: "Abertura"
+category: "Primeiros passos"
 coverPalette: "mint"
 faq:
   - q: "O MEI precisa de alvará?"

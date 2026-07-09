@@ -3,7 +3,7 @@ title: "MEI para salão de beleza, manicure e cabeleireiro"
 date: "2026-07-01"
 description: "Profissionais de beleza podem ser MEI: cabeleireiro, manicure, esteticista e mais têm CNAE próprio. Veja os códigos, o DAS e como abrir."
 author: "João Gandra"
-category: "Profissões"
+category: "Profissões e nichos"
 coverPalette: "coral"
 faq:
   - q: "Profissionais de beleza podem ser MEI?"

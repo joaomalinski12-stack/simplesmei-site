@@ -3,7 +3,7 @@ title: "Programador pode ser MEI? A resposta honesta"
 date: "2026-07-01"
 description: "Programador pode ser MEI? Em regra, não: desenvolvimento de software não está na lista de ocupações do MEI. Entenda o porquê e as alternativas."
 author: "João Gandra"
-category: "Profissões"
+category: "Profissões e nichos"
 coverPalette: "ink"
 faq:
   - q: "Programador pode ser MEI?"

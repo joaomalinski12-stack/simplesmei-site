@@ -3,7 +3,7 @@ title: "Como abrir o seu MEI em 2026: passo a passo grátis"
 date: "2026-06-29"
 description: "Como abrir o MEI grátis em 2026: passo a passo oficial, documentos necessários e como fugir de golpes de falsos portais."
 author: "João Gandra"
-category: "Abrir MEI"
+category: "Primeiros passos"
 coverPalette: "coral"
 faq:
   - q: "Abrir o MEI é pago?"

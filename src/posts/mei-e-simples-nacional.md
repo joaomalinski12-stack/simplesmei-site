@@ -3,7 +3,7 @@ title: "MEI é Simples Nacional? Entenda o regime e o Simei"
 date: "2026-07-01"
 description: "MEI é Simples Nacional? Sim — o MEI faz parte do Simples e recolhe pelo Simei, um valor fixo mensal (o DAS). Veja a diferença, os impostos e a declaração."
 author: "João Gandra"
-category: "Impostos"
+category: "Imposto e DAS"
 coverPalette: "mint"
 faq:
   - q: "O MEI é Simples Nacional?"

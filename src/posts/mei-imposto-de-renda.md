@@ -3,7 +3,7 @@ title: "MEI e Imposto de Renda: DASN x IRPF, o que declarar"
 date: "2026-06-27"
 description: "MEI e Imposto de Renda: a diferença entre a DASN-SIMEI (da empresa) e o IRPF (da pessoa física), quem declara cada uma e quando o MEI faz o IRPF."
 author: "João Gandra"
-category: "Declarações"
+category: "Imposto e DAS"
 coverPalette: "ink"
 faq:
   - q: "MEI precisa declarar Imposto de Renda?"

@@ -3,7 +3,7 @@ title: "CNAE MEI: o que é, como escolher e consultar o seu"
 date: "2026-06-20"
 description: "CNAE MEI: o que é, como escolher a ocupação certa, quais atividades são permitidas e como consultar o seu código no CCMEI."
 author: "João Gandra"
-category: "CNAE"
+category: "Primeiros passos"
 coverPalette: "mint"
 faq:
   - q: "O que é o CNAE do MEI?"

@@ -3,7 +3,7 @@ title: "Aposentado pode ser MEI? Depende da aposentadoria"
 date: "2026-07-01"
 description: "Aposentado pode ser MEI? Quem é aposentado por idade ou tempo de contribuição pode e continua recebendo. Por invalidez, não. Veja as regras, o INSS e o BPC."
 author: "João Gandra"
-category: "Vínculos"
+category: "Benefícios e INSS"
 coverPalette: "amber"
 faq:
   - q: "Aposentado pode ser MEI?"

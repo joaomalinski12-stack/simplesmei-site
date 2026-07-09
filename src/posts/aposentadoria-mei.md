@@ -3,7 +3,7 @@ title: "Aposentadoria do MEI: como funciona e o que garante"
 date: "2026-06-23"
 description: "Aposentadoria do MEI: o INSS de 5% no DAS garante aposentadoria por idade e mais benefícios — e como complementar com +15% para somar tempo de contribuição."
 author: "João Gandra"
-category: "INSS"
+category: "Benefícios e INSS"
 coverPalette: "mint"
 faq:
   - q: "O MEI tem direito a aposentadoria?"

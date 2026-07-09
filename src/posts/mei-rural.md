@@ -3,7 +3,7 @@ title: "MEI Rural: o produtor rural pode ser MEI? Regras"
 date: "2026-07-01"
 description: "MEI Rural: o produtor rural pode se formalizar como MEI desde 2016. Veja as atividades permitidas, o teto, o regime familiar e a condição de segurado especial."
 author: "João Gandra"
-category: "MEI Rural"
+category: "Profissões e nichos"
 coverPalette: "mint"
 faq:
   - q: "O produtor rural pode ser MEI?"

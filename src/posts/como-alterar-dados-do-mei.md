@@ -3,7 +3,7 @@ title: "Como alterar dados do MEI: endereço, atividade e mais"
 date: "2026-07-01"
 description: "Como alterar dados do MEI no Portal do Empreendedor: mude endereço, atividade (CNAE) e nome fantasia de graça. Veja o passo a passo e o que não dá para alterar."
 author: "João Gandra"
-category: "Cadastro"
+category: "Regularização"
 coverPalette: "coral"
 faq:
   - q: "Como alterar os dados do MEI?"

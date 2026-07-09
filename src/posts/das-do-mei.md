@@ -3,7 +3,7 @@ title: "DAS do MEI: o que é, valor e como pagar (e se atrasar)"
 date: "2026-06-21"
 description: "DAS do MEI 2026: o que é, a composição (INSS + ICMS ou ISS), como gerar e pagar no Portal do Empreendedor e o que fazer se a guia atrasar."
 author: "João Gandra"
-category: "DAS"
+category: "Imposto e DAS"
 coverPalette: "ink"
 faq:
   - q: "O que é o DAS do MEI?"

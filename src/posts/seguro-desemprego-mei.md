@@ -3,7 +3,7 @@ title: "MEI e seguro-desemprego: quem tem direito e quando"
 date: "2026-07-01"
 description: "MEI e seguro-desemprego: abrir MEI não cancela o benefício — o que decide é a renda própria. Veja a regra oficial e o que fazer se você foi demitido."
 author: "João Gandra"
-category: "Benefícios"
+category: "Benefícios e INSS"
 coverPalette: "amber"
 faq:
   - q: "Abrir MEI cancela o seguro-desemprego?"

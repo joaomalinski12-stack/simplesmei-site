@@ -3,7 +3,7 @@ title: "MEI pode vender no Mercado Livre? Nota e regras"
 date: "2026-07-01"
 description: "MEI pode vender no Mercado Livre e em marketplaces? Sim. Veja as regras de nota fiscal, o teto de R$ 81 mil e a Inscrição Estadual que você precisa ter."
 author: "João Gandra"
-category: "E-commerce"
+category: "Profissões e nichos"
 coverPalette: "amber"
 faq:
   - q: "MEI pode vender no Mercado Livre?"
