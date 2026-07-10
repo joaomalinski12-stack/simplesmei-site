@@ -5,6 +5,7 @@ import { Door, NavV5 } from './porta_nav.jsx';
 import { Footer } from './logo_footer.jsx';
 import { OCCUPATIONS, CATS, HOT, POPULAR, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
 import { detectNaoMei, REGULATED, FORBIDDEN } from './data/cnae_naomei.js';
+import { SPOKES } from './data/spokes.js';
 
 /* ════════════════════════════════════════════════════════════════════════
    FERRAMENTA "Sua atividade pode ser MEI?" — /ferramentas/consulta-cnae-mei
@@ -573,17 +574,24 @@ function PopularesSection({ onPick }) {
 /* ── (A) "Quem NÃO pode ser MEI": índice fixo (regulamentadas + vedadas), sempre no DOM ── */
 const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
-function NaoMeiTag({ label, cnae }) {
-  return (
-    <span style={{
-      display: 'inline-flex', alignItems: 'center', gap: 8,
-      background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 999,
-      padding: '8px 13px', fontFamily: FONTS.body, fontSize: 13.5, fontWeight: 600, color: BRAND.ink,
-    }}>
+/* CNAE → slug da spoke (a etiqueta que tem página vira link). Casa por CNAE (único
+   entre as 6 spokes). Conforme criamos mais spokes, mais etiquetas viram links. */
+const CNAE_TO_SPOKE = Object.fromEntries(Object.values(SPOKES).map((s) => [s.cnae, s.slug]));
+
+function NaoMeiTag({ label, cnae, href }) {
+  const style = {
+    display: 'inline-flex', alignItems: 'center', gap: 8,
+    background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 999,
+    padding: '8px 13px', fontFamily: FONTS.body, fontSize: 13.5, fontWeight: 600, color: BRAND.ink,
+  };
+  const inner = (
+    <>
       {label}
       {cnae ? <span style={{ fontFamily: FONTS.mono, fontSize: 10, color: BRAND.inkMute, fontWeight: 600, whiteSpace: 'nowrap' }}>{cnae}</span> : null}
-    </span>
+    </>
   );
+  if (href) return <a href={href} className="naomei-link" style={{ ...style, textDecoration: 'none' }}>{inner}</a>;
+  return <span style={style}>{inner}</span>;
 }
 
 function NaoMeiIndex() {
@@ -605,7 +613,7 @@ function NaoMeiIndex() {
           <div>
             <h3 style={h3}>Profissões regulamentadas <span style={{ fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute }}>· têm conselho de classe</span></h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {REGULATED.map((r) => <NaoMeiTag key={r.area} label={r.area} cnae={r.cnae} />)}
+              {REGULATED.map((r) => <NaoMeiTag key={r.area} label={r.area} cnae={r.cnae} href={CNAE_TO_SPOKE[r.cnae] ? `/ferramentas/consulta-cnae-mei/${CNAE_TO_SPOKE[r.cnae]}` : null} />)}
             </div>
           </div>
           <div>
@@ -718,6 +726,8 @@ const CNAE_STYLE = `
   details.cnae-faq[open] .cnae-faq-plus { transform: rotate(45deg); }
   .cnae-pulse { animation: cnae-pulse 1.1s ease-in-out infinite; }
   @keyframes cnae-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.65); } }
+  .naomei-link { transition: border-color .14s ease, color .14s ease, box-shadow .14s ease; }
+  .naomei-link:hover { border-color: #F87453; color: #C13E2E; box-shadow: 0 6px 16px -10px rgba(248,116,83,0.5); }
   @media (prefers-reduced-motion: reduce) { .cnae-magic::before, .cnae-pulse { animation: none; } }
 `;
 
