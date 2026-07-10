@@ -11,7 +11,7 @@ faq:
   - q: "Qual a diferença entre NFS-e, NF-e e NFC-e?"
     a: "A NFS-e é para serviços (municipal, prefeitura). A NF-e é para venda de mercadoria entre empresas (estadual). A NFC-e é a do consumidor final no balcão. O MEI prestador de serviço usa a NFS-e."
   - q: "MEI que presta serviço emite qual nota?"
-    a: "A NFS-e (Nota Fiscal de Serviços eletrônica), que é municipal e registra o ISS. É a nota do MEI de consultoria, design, marketing, audiovisual e afins."
+    a: "A NFS-e (Nota Fiscal de Serviços eletrônica), que é municipal e registra o ISS. É a nota do MEI de serviço — eletricista, cabeleireiro, diarista, fotógrafo e afins."
   - q: "Preciso emitir nota para pessoa física?"
     a: "Só se ela pedir. O MEI é dispensado de emitir nota para consumidor pessoa física, mas se o cliente solicitar a nota, você é obrigado a emitir."
   - q: "Emitir NFS-e é pago?"
@@ -40,7 +40,7 @@ Existe um detalhe que confunde muita gente: **nota fiscal não é a mesma coisa 
 
 Aqui está o ponto que mais gera dúvida. "Nota fiscal eletrônica" é um guarda-chuva — embaixo dele existem **tipos diferentes**, cada um para uma situação:
 
-- **NFS-e (Nota Fiscal de Serviços eletrônica)** — é a nota de **serviço**. Quem cobra o imposto é a **prefeitura** (o tributo é o **ISS**). Serve para consultoria, design, marketing, edição de vídeo, fotografia, aulas, manutenção e qualquer atividade em que você entrega trabalho, não um produto físico.
+- **NFS-e (Nota Fiscal de Serviços eletrônica)** — é a nota de **serviço**. Quem cobra o imposto é a **prefeitura** (o tributo é o **ISS**). Serve para eletricista, cabeleireiro, edição de vídeo, fotografia, aulas, manutenção e qualquer atividade em que você entrega trabalho, não um produto físico.
 - **NF-e (Nota Fiscal eletrônica, modelo 55)** — é a nota usada na **venda de mercadoria para outra empresa**, comum no MEI de comércio e indústria. Quem cobra o imposto é o **estado** (o tributo é o **ICMS**).
 - **NFC-e (Nota Fiscal de Consumidor eletrônica, modelo 65)** — é a nota de **venda no balcão** para o consumidor final, no varejo. Substitui o cupom fiscal.
 

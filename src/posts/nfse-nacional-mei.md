@@ -26,7 +26,7 @@ Neste guia direto você vê **o que é** a NFS-e Nacional e o Emissor Nacional, 
 
 ## O que é a NFS-e Nacional (e o Emissor Nacional)
 
-A **NFS-e** é a **Nota Fiscal de Serviço eletrônica** — o documento que o MEI prestador de serviço (consultoria, design, marketing, audiovisual e afins) emite quando vende um serviço. Até aqui, nada novo. O problema histórico é que cada cidade tinha o **seu próprio sistema**: um layout, um login, um código de serviço diferente. Mudou de município, mudou tudo.
+A **NFS-e** é a **Nota Fiscal de Serviço eletrônica** — o documento que o MEI prestador de serviço (eletricista, cabeleireiro, fotógrafo, instrutor e afins) emite quando vende um serviço. Até aqui, nada novo. O problema histórico é que cada cidade tinha o **seu próprio sistema**: um layout, um login, um código de serviço diferente. Mudou de município, mudou tudo.
 
 A **NFS-e Nacional** resolve isso com um **padrão único** para o país inteiro: o mesmo layout de nota, a mesma estrutura de dados, válida de Norte a Sul. E o **Emissor Nacional de NFS-e** é a ferramenta gratuita do governo, em **gov.br/nfse**, onde você emite essa nota no padrão nacional. É um sistema só, mantido pela Receita junto com os municípios, em vez de dezenas de portais municipais soltos.
 
@@ -92,7 +92,7 @@ Revise tudo, **confirme** a emissão e baixe o **PDF da nota (o DANFSE)** para e
 
 O Emissor Nacional resolve o "onde" e padroniza o "como" — mas continua sendo **você preenchendo formulário**: login, tomador, código de serviço, valor, confirmar, baixar. Para quem emite toda semana, isso é atrito que volta sempre.
 
-É aí que entra o [**SimplesMEI**](/), a **IA que cuida do fiscal do MEI dentro do WhatsApp**. Sem app para baixar, sem dashboard, sem login extra: você manda uma frase como *"emite 800 para a Marina, consultoria de marketing"* e a IA faz o trabalho que você faria no portal — só que em segundos:
+É aí que entra o [**SimplesMEI**](/), a **IA que cuida do fiscal do MEI dentro do WhatsApp**. Sem app para baixar, sem dashboard, sem login extra: você manda uma frase como *"emite 800 para a Marina, sessão de fotos do casamento"* e a IA faz o trabalho que você faria no portal — só que em segundos:
 
 - **Identifica o cliente** — se a Marina já recebeu nota antes, reusa os dados; se é nova, pede o que falta uma vez só.
 - **Classifica o serviço** — encaixa a descrição no código e na categoria certa, aprendendo as suas categorias com o tempo.

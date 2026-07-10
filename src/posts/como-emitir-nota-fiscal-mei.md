@@ -42,7 +42,7 @@ Reúna esses dados uma vez e a emissão fica rápida:
 - **O serviço:** uma descrição clara do que foi feito e o **valor**.
 - **O enquadramento certo:** o serviço descrito precisa bater com a sua atividade registrada (o seu CNAE).
 
-Esse último ponto é o que mais gera erro. A descrição do serviço puxa o **código de tributação do ISS** na prefeitura e precisa ser coerente com a atividade que você registrou ao abrir o MEI. Uma descrição boa é específica e bate com o que você faz: "consultoria em marketing digital — gestão de campanhas de setembro". Uma descrição ruim é genérica ou fora da sua atividade: "serviços diversos" ou, pior, um MEI de design descrevendo "consultoria jurídica". A primeira sai com a classificação certa; a segunda deixa a nota torta e pode gerar dor de cabeça com a prefeitura.
+Esse último ponto é o que mais gera erro. A descrição do serviço puxa o **código de tributação do ISS** na prefeitura e precisa ser coerente com a atividade que você registrou ao abrir o MEI. Uma descrição boa é específica e bate com o que você faz: "instalação elétrica residencial — troca do quadro de disjuntores". Uma descrição ruim é genérica ou fora da sua atividade: "serviços diversos" ou, pior, um MEI eletricista descrevendo "consultoria jurídica". A primeira sai com a classificação certa; a segunda deixa a nota torta e pode gerar dor de cabeça com a prefeitura.
 
 ## Como emitir nota fiscal de MEI pelo portal da prefeitura
 
@@ -80,7 +80,7 @@ O caminho oficial funciona — mas tem login, menu, lista de serviços e cadastr
 
 É aqui que entra o [**SimplesMEI**](/). Em vez de abrir portal, você manda uma frase no WhatsApp:
 
-*"emitir 4 mil pra Hook Marketing, consultoria em marketing digital"*
+*"emitir 4 mil pra Hook Marketing, edição dos vídeos de setembro"*
 
 A IA **identifica o cliente** (e guarda o cadastro para a próxima), **classifica o serviço** dentro da sua atividade, **projeta o impacto no seu teto**, emite a **NFS-e** e devolve **número + PDF** — em segundos, sem você abrir nenhum sistema. Da segunda vez, basta dizer o nome do cliente que a nota sai certa.
 

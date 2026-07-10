@@ -38,7 +38,7 @@ O valor do DAS **muda todo ano**, porque ele é amarrado ao **salário mínimo**
 - **ICMS:** **R$ 1** — só para MEI de **comércio** ou **indústria**.
 - **ISS:** **R$ 5** — só para MEI de **prestação de serviços**.
 
-Quem presta serviço (consultoria, design, marketing, audiovisual e afins) paga **INSS + R$ 5 de ISS**. Quem faz comércio paga **INSS + R$ 1 de ICMS**. Quem faz os dois (comércio e serviço) paga **INSS + R$ 1 + R$ 5**.
+Quem presta serviço (eletricista, cabeleireiro, diarista, fotógrafo e afins) paga **INSS + R$ 5 de ISS**. Quem faz comércio paga **INSS + R$ 1 de ICMS**. Quem faz os dois (comércio e serviço) paga **INSS + R$ 1 + R$ 5**.
 
 | Tipo de atividade do MEI | O que entra no DAS |
 | --- | --- |

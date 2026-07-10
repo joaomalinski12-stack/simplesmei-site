@@ -87,7 +87,7 @@ Contratar um **segundo funcionário** é causa de **desenquadramento** — o MEI
 
 ## Como o SimplesMEI ajuda
 
-O **SimplesMEI** é uma **IA que cuida do fiscal do MEI dentro do WhatsApp** — sem app, sem portal, sem login. Na prática, ele toca as obrigações que mais consomem o seu tempo: **emite a NFS-e** com uma frase ("emite 480 pra Marina, consultoria"), guarda seus clientes e categorias, **vigia o teto** e te avisa antes de você se aproximar dos R$ 81.000, e **tira dúvidas fiscais** sobre DAS, declaração e atividade pelo chat, com base nas fontes oficiais.
+O **SimplesMEI** é uma **IA que cuida do fiscal do MEI dentro do WhatsApp** — sem app, sem portal, sem login. Na prática, ele toca as obrigações que mais consomem o seu tempo: **emite a NFS-e** com uma frase ("emite 480 pra Marina, sessão de fotos"), guarda seus clientes e categorias, **vigia o teto** e te avisa antes de você se aproximar dos R$ 81.000, e **tira dúvidas fiscais** sobre DAS, declaração e atividade pelo chat, com base nas fontes oficiais.
 
 Seja honesto sobre o que ainda é manual: o **lembrete proativo automático** dos prazos (dia 20 do DAS, 31 de maio da DASN) está no nosso roadmap. Por enquanto, a IA responde quando você pergunta e ajuda com a guia do DAS — você é quem confirma e paga, no seu tempo, no boleto oficial.
 

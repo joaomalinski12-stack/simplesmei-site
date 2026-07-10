@@ -106,7 +106,7 @@ Há um detalhe que pega muita gente: a contribuição padrão do MEI (5% do sal�
 
 O **SimplesMEI** é uma IA que cuida do fiscal do MEI **dentro do WhatsApp** — sem app, sem portal, sem login. Se você ainda não é MEI, a IA conduz a abertura: sugere o CNAE certo para a sua atividade, confere os dados e te leva até o cadastro no Portal do Empreendedor, de graça. E tira as suas dúvidas fiscais na conversa, com base em fontes oficiais.
 
-Depois de aberto, a rotina é onde ela mais ajuda: você pede a nota numa frase ("emite 480 pra Marina, consultoria") e a IA emite a **NFS-e** oficial em segundos, guarda os seus clientes na memória, soma o seu faturamento do ano e te **avisa antes de estourar o teto**. Para o DAS, você pergunta o vencimento e a composição pela conversa e a IA responde na hora.
+Depois de aberto, a rotina é onde ela mais ajuda: você pede a nota numa frase ("emite 480 pra Marina, sessão de fotos") e a IA emite a **NFS-e** oficial em segundos, guarda os seus clientes na memória, soma o seu faturamento do ano e te **avisa antes de estourar o teto**. Para o DAS, você pergunta o vencimento e a composição pela conversa e a IA responde na hora.
 
 Para continuar do ponto certo:
 

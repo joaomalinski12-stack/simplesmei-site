@@ -13,7 +13,7 @@ faq:
   - q: "Preciso de certificado digital para emitir nota pelo celular?"
     a: "Na maioria dos casos não. No Emissor Nacional e em muitas prefeituras o MEI emite só com login gov.br. Alguns sistemas municipais ainda exigem o certificado A1 pago."
   - q: "Como o SimplesMEI emite a nota pelo WhatsApp?"
-    a: "Você descreve a nota em uma frase ('emite 800 para a Marina, consultoria de marketing'). A IA identifica o cliente, classifica o serviço, projeta o impacto no teto, emite a NFS-e e devolve número e PDF na conversa."
+    a: "Você descreve a nota em uma frase ('emite 800 para a Marina, sessão de fotos'). A IA identifica o cliente, classifica o serviço, projeta o impacto no teto, emite a NFS-e e devolve número e PDF na conversa."
   - q: "Emitir nota pelo WhatsApp é seguro e oficial?"
     a: "A nota é uma NFS-e válida, emitida com os dados do seu MEI no provedor da sua prefeitura. O WhatsApp é só a porta de comando; a nota nasce nos sistemas oficiais, com número e PDF para o cliente."
   - q: "O SimplesMEI emite nota em qualquer prefeitura?"
@@ -62,12 +62,12 @@ Aqui está o caminho que faz a pergunta do título virar "sim". O [**SimplesMEI*
 
 Na prática, você manda uma frase como:
 
-> "emite 800 para a Marina, consultoria de marketing digital"
+> "emite 800 para a Marina, sessão de fotos do casamento"
 
 E a IA faz o trabalho que você faria no portal, só que em segundos:
 
 - **Identifica o cliente** — se a Marina já recebeu nota antes, ela reusa os dados; se é nova, pede o que falta (CNPJ/CPF) uma vez só.
-- **Classifica o serviço** — encaixa "consultoria de marketing" no código e na categoria certa, aprendendo as suas categorias com o tempo.
+- **Classifica o serviço** — encaixa "sessão de fotos para casamento" no código e na categoria certa, aprendendo as suas categorias com o tempo.
 - **Projeta o impacto no teto** — antes de emitir, calcula quanto essa nota soma no seu faturamento do ano.
 - **Emite a NFS-e** no provedor da sua cidade, com os dados do seu MEI.
 - **Devolve número e PDF** ali na conversa, pronto para repassar ao cliente.

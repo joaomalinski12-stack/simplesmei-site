@@ -20,7 +20,7 @@ faq:
     a: "Pode. A recorrência guarda o combinado, mas você ajusta quando o contrato muda de valor — é só avisar a IA no WhatsApp antes da próxima emissão. O ciclo segue com o novo valor."
 ---
 
-A **nota fiscal recorrente** é a saída para quem tem cliente fixo e cansou de emitir a mesma nota, do zero, todo santo mês. Mensalidade de consultoria, contrato de social media, retainer de design, manutenção de site — o serviço é o mesmo, o cliente é o mesmo, o valor é o mesmo. Mudar só muda a competência.
+A **nota fiscal recorrente** é a saída para quem tem cliente fixo e cansou de emitir a mesma nota, do zero, todo santo mês. Mensalidade de aulas de idiomas, faxina semanal fixa, manutenção elétrica de um cliente, pacote de edição de vídeo — o serviço é o mesmo, o cliente é o mesmo, o valor é o mesmo. Mudar só muda a competência.
 
 Mesmo assim, muita gente continua abrindo o portal, preenchendo tudo de novo e torcendo para não esquecer. Aqui você vai entender o que é a **nota fiscal automática** na prática, por que ela importa para o seu controle de faturamento e como deixar a emissão **quase no automático** — sem prometer mágica.
 
@@ -28,8 +28,8 @@ Mesmo assim, muita gente continua abrindo o portal, preenchendo tudo de novo e t
 
 **Nota fiscal recorrente** é uma nota que se repete em um ciclo fixo — geralmente mensal — para o mesmo cliente, com o mesmo serviço e (na maioria das vezes) o mesmo valor. É o padrão de quem trabalha com:
 
-- **Mensalidade** (consultoria, mentoria, assessoria)
-- **Contrato continuado** (social media, tráfego pago, manutenção)
+- **Mensalidade** (aulas particulares, instrutor de idiomas, reforço escolar)
+- **Contrato continuado** (faxina semanal, jardinagem, manutenção elétrica)
 - **Retainer** ou pacote de horas fixo
 - **Assinatura** de um serviço seu
 
