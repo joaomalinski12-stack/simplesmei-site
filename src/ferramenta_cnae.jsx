@@ -107,7 +107,7 @@ function SearchField({ value, onChange, inputRef, onCoral }) {
           onChange={(e) => onChange(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          placeholder="ex.: manicure, eletricista, pedreiro, cabeleireiro"
+          placeholder="ex.: faço unha em casa, vendo marmita, conserto celular"
           aria-label="Buscar sua profissão na lista do MEI"
           style={{
             flex: 1, minWidth: 0, border: 'none', outline: 'none', background: 'transparent',
