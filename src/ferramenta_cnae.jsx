@@ -213,7 +213,9 @@ function ResultCard({ it }) {
 function WaitlistBand({ topOc, topCnae }) {
   const m = useIsMobile();
   const contextual = !!topOc;
-  const label = contextual ? `quero abrir meu MEI de ${ocCurto(topOc)}` : 'entrar na lista de espera';
+  // label FIXO e curto (o contexto vai no preview "já vai digitado" e no título) — um
+  // label por-ocupação estourava a largura do botão (nowrap) com nomes longos.
+  const label = 'entrar na lista de espera';
   const text = contextual
     ? `quero que a IA abra meu MEI de ${ocCurto(topOc)} (CNAE ${topCnae}) — me avisa quando abrir`
     : 'quero entrar na lista de espera do SimplesMEI — me avisa quando abrir';
@@ -252,39 +254,42 @@ function WaitlistBand({ topOc, topCnae }) {
   );
 }
 
-/* ── estado: vazio / inicial ── */
+/* ── linha de chips reutilizável ── */
+function ChipRow({ items, onPick }) {
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: 14, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
+      {items.map((h) => (
+        <button key={h} className="cnae-chip" onClick={() => onPick(h)} style={{
+          background: '#fff', color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
+          padding: '10px 16px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
+          fontFamily: FONTS.body, fontSize: 14.5, fontWeight: 600, letterSpacing: -0.1,
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+        }}>
+          <span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/* ── estado: vazio / inicial — sugestões consolidadas (profissões + por atividade) ── */
 function EmptyState({ onPick }) {
   const m = useIsMobile();
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <Mono color={BRAND.inkMute} size={10.5}>as profissões mais buscadas</Mono>
+        <Mono color={BRAND.inkMute} size={10.5}>profissões mais buscadas</Mono>
       </div>
-      <div style={{
-        display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center',
-        marginTop: 14, maxWidth: 620, marginLeft: 'auto', marginRight: 'auto',
-      }}>
-        {HOT.map((h) => (
-          <button
-            key={h}
-            className="cnae-chip"
-            onClick={() => onPick(h)}
-            style={{
-              background: '#fff', color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
-              padding: '10px 16px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
-              fontFamily: FONTS.body, fontSize: 14.5, fontWeight: 600, letterSpacing: -0.1,
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-            }}
-          >
-            <span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}
-          </button>
-        ))}
+      <ChipRow items={HOT} onPick={onPick} />
+      <div style={{ textAlign: 'center', marginTop: m ? 24 : 28 }}>
+        <Mono color={BRAND.inkMute} size={10.5}>ou o CNAE por atividade e negócio</Mono>
       </div>
+      <ChipRow items={POPULAR} onPick={onPick} />
       <p style={{
         textAlign: 'center', fontFamily: FONTS.body, fontSize: 13.5, color: BRAND.inkSoft,
         margin: `${m ? 22 : 28}px auto 0`, maxWidth: 460, lineHeight: 1.55,
       }}>
-        Toca numa profissão ou escreve a sua do jeito que você fala. A busca acha mesmo com apelido, sem acento e sem se preocupar com maiúscula.
+        Toca numa sugestão ou escreve a sua atividade do jeito que você fala. A busca acha mesmo com apelido, sem acento e sem se preocupar com maiúscula.
       </p>
     </div>
   );
@@ -390,9 +395,13 @@ function SearchingState({ query }) {
   );
 }
 
-/* ── estado: com resultados ── */
+/* ── estado: com resultados (cap em 6, com "ver todas") ── */
+const RESULT_LIMIT = 6;
 function ResultsState({ results, query, smart }) {
   const m = useIsMobile();
+  const [showAll, setShowAll] = useState(false);
+  const shown = showAll ? results : results.slice(0, RESULT_LIMIT);
+  const extra = results.length - shown.length;
   return (
     <div>
       <div style={{
@@ -412,8 +421,17 @@ function ResultsState({ results, query, smart }) {
         <Mono color={BRAND.inkMute} size={10}>ISS = serviço · ICMS = comércio/indústria</Mono>
       </div>
       <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(2, 1fr)', gap: m ? 10 : 14 }}>
-        {results.map((it) => <li key={it.oc + it.cnae}><ResultCard it={it} /></li>)}
+        {shown.map((it) => <li key={it.oc + it.cnae}><ResultCard it={it} /></li>)}
       </ul>
+      {extra > 0 && (
+        <div style={{ textAlign: 'center', marginTop: m ? 14 : 18 }}>
+          <button onClick={() => setShowAll(true)} className="cnae-chip" style={{
+            background: '#fff', color: BRAND.coralDeep, border: `1px solid ${BRAND.sandDeep}`,
+            padding: '10px 18px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
+            fontFamily: FONTS.body, fontSize: 14, fontWeight: 700, letterSpacing: -0.1,
+          }}>+{extra} {extra === 1 ? 'outra atividade' : 'outras atividades'}</button>
+        </div>
+      )}
       <div style={{ marginTop: m ? 24 : 32 }}>
         <WaitlistBand topOc={results[0].oc} topCnae={results[0].cnae} />
       </div>
@@ -541,66 +559,54 @@ function ExplainerSection() {
   );
 }
 
-/* ── (B) "CNAE das atividades mais buscadas": chips semeados por keyword ── */
-function PopularesSection({ onPick }) {
-  const m = useIsMobile();
-  return (
-    <section data-anchor id="populares" style={{ background: BRAND.paper, padding: m ? '12px 20px 40px' : '20px 56px 52px' }}>
-      <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-          <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
-          <Mono color={BRAND.coralDeep} size={11}>Atalhos rápidos</Mono>
-          <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
-        </div>
-        <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 24 : 30, lineHeight: 1.06, letterSpacing: m ? '-0.03em' : -1, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>CNAE das atividades mais buscadas</h2>
-        <p style={{ fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, lineHeight: 1.55, color: BRAND.inkSoft, margin: '12px auto 0', maxWidth: 480, textWrap: 'pretty' }}>Toque para ver na hora o CNAE e o imposto — de salão de beleza a lanchonete, loja de roupas, pedreiro e mais.</p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: m ? 16 : 20 }}>
-          {POPULAR.map((h) => (
-            <button key={h} className="cnae-chip" onClick={() => onPick(h)} style={{
-              background: '#fff', color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
-              padding: '10px 16px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
-              fontFamily: FONTS.body, fontSize: 14.5, fontWeight: 600, letterSpacing: -0.1,
-              display: 'inline-flex', alignItems: 'center', gap: 8,
-            }}>
-              <span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── (A) "Quem NÃO pode ser MEI": índice fixo (regulamentadas + vedadas), sempre no DOM ── */
 const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
-/* CNAE → slug da spoke (a etiqueta que tem página vira link). Casa por CNAE (único
-   entre as 6 spokes). Conforme criamos mais spokes, mais etiquetas viram links. */
-const CNAE_TO_SPOKE = Object.fromEntries(Object.values(SPOKES).map((s) => [s.cnae, s.slug]));
-
-function NaoMeiTag({ label, cnae, href }) {
-  const style = {
-    display: 'inline-flex', alignItems: 'center', gap: 8,
-    background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 999,
-    padding: '8px 13px', fontFamily: FONTS.body, fontSize: 13.5, fontWeight: 600, color: BRAND.ink,
-  };
-  const inner = (
-    <>
-      {label}
-      {cnae ? <span style={{ fontFamily: FONTS.mono, fontSize: 10, color: BRAND.inkMute, fontWeight: 600, whiteSpace: 'nowrap' }}>{cnae}</span> : null}
-    </>
+/* card de destaque — as negativas mais buscadas que já têm página própria (spoke) */
+function SpokeCard({ nome, slug, cnae }) {
+  const m = useIsMobile();
+  return (
+    <a href={`/ferramentas/consulta-cnae-mei/${slug}`} className="cnae-card" style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, textDecoration: 'none',
+      background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 14, padding: m ? '13px 15px' : '15px 18px',
+    }}>
+      <span style={{ minWidth: 0 }}>
+        <span style={{ display: 'block', fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15 : 16, letterSpacing: -0.3, color: BRAND.ink, lineHeight: 1.2 }}>{nome} pode ser MEI?</span>
+        <span style={{ display: 'block', fontFamily: FONTS.mono, fontSize: 10.5, color: BRAND.inkMute, marginTop: 3 }}>CNAE {cnae} · ver o porquê</span>
+      </span>
+      <span aria-hidden="true" style={{ color: BRAND.coralDeep, fontSize: 18, fontWeight: 700, flexShrink: 0 }}>→</span>
+    </a>
   );
-  if (href) return <a href={href} className="naomei-link" style={{ ...style, textDecoration: 'none' }}>{inner}</a>;
-  return <span style={style}>{inner}</span>;
+}
+
+/* lista compacta (nome · nome · …) — tudo no DOM (SEO), leitura leve.
+   Os espaços ao redor do "·" são obrigatórios: dão a oportunidade de quebra de linha
+   (nomes de palavra única emendados por "·" viram uma linha só e estouram). */
+function CompactList({ items }) {
+  return (
+    <p style={{ fontFamily: FONTS.body, fontSize: 14.5, lineHeight: 2, color: BRAND.inkSoft, margin: 0, textWrap: 'pretty', overflowWrap: 'anywhere' }}>
+      {items.map((label, i) => (
+        <React.Fragment key={label}>
+          <span style={{ color: BRAND.ink, fontWeight: 600 }}>{label}</span>
+          {i < items.length - 1 ? <span style={{ color: BRAND.inkMute }}>{' · '}</span> : null}
+        </React.Fragment>
+      ))}
+    </p>
+  );
 }
 
 function NaoMeiIndex() {
   const m = useIsMobile();
-  const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15.5 : 17, letterSpacing: -0.3, color: BRAND.ink, margin: '0 0 12px' };
+  const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15.5 : 17, letterSpacing: -0.3, color: BRAND.ink, margin: '0 0 14px' };
+  const hint = { fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute };
+  const spokes = Object.values(SPOKES);                        // as 6 em destaque
+  const spokeCnaes = new Set(spokes.map((s) => s.cnae));
+  const restReg = REGULATED.filter((r) => !spokeCnaes.has(r.cnae)).map((r) => r.area);
+  const vedadas = FORBIDDEN.map((f) => capFirst(f.categoria));
   return (
     <section data-anchor id="nao-pode" style={{ background: BRAND.paper, padding: m ? '4px 20px 52px' : '8px 56px 76px' }}>
       <div style={{ maxWidth: 820, margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: m ? 22 : 30 }}>
+        <div style={{ textAlign: 'center', marginBottom: m ? 24 : 32 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
             <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
             <Mono color={BRAND.coralDeep} size={11}>Quem fica de fora</Mono>
@@ -609,20 +615,19 @@ function NaoMeiIndex() {
           <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 26 : 34, lineHeight: 1.05, letterSpacing: m ? '-0.03em' : -1.2, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>Quem <span style={{ color: BRAND.coral }}>não</span> pode ser MEI</h2>
           <p style={{ fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, lineHeight: 1.6, color: BRAND.inkSoft, margin: '12px auto 0', maxWidth: 520, textWrap: 'pretty' }}>Profissão regulamentada (com conselho de classe) e algumas atividades vedadas por natureza não entram no MEI. Se é o seu caso, o caminho costuma ser uma Microempresa (ME) no Simples Nacional.</p>
         </div>
-        <div style={{ display: 'grid', gap: m ? 20 : 26 }}>
-          <div>
-            <h3 style={h3}>Profissões regulamentadas <span style={{ fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute }}>· têm conselho de classe</span></h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {REGULATED.map((r) => <NaoMeiTag key={r.area} label={r.area} cnae={r.cnae} href={CNAE_TO_SPOKE[r.cnae] ? `/ferramentas/consulta-cnae-mei/${CNAE_TO_SPOKE[r.cnae]}` : null} />)}
-            </div>
-          </div>
-          <div>
-            <h3 style={h3}>Atividades vedadas por natureza</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-              {FORBIDDEN.map((f) => <NaoMeiTag key={f.categoria} label={capFirst(f.categoria)} cnae={f.cnae} />)}
-            </div>
-          </div>
+
+        {/* destaque: as mais buscadas, com página */}
+        <h3 style={h3}>Mais buscadas <span style={hint}>· clique pra ver por quê</span></h3>
+        <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(3, 1fr)', gap: m ? 10 : 12 }}>
+          {spokes.map((s) => <SpokeCard key={s.slug} nome={s.nome} slug={s.slug} cnae={s.cnae} />)}
         </div>
+
+        {/* resto: listas compactas (leitura leve, tudo indexável) */}
+        <h3 style={{ ...h3, marginTop: m ? 28 : 36 }}>Outras profissões regulamentadas</h3>
+        <CompactList items={restReg} />
+
+        <h3 style={{ ...h3, marginTop: m ? 26 : 32 }}>Atividades vedadas por natureza</h3>
+        <CompactList items={vedadas} />
       </div>
     </section>
   );
@@ -848,7 +853,7 @@ export function ConsultaCnaeMei() {
           <div style={{ marginTop: m ? 24 : 30 }}>
             {mode === 'empty' && <EmptyState onPick={pick} />}
             {mode === 'searching' && <SearchingState query={query} />}
-            {mode === 'results' && <ResultsState results={combined} query={query} smart={smart} />}
+            {mode === 'results' && <ResultsState key={query} results={combined} query={query} smart={smart} />}
             {mode === 'naomei' && naoVerdict && <NaoMeiState nao={naoVerdict} />}
             {mode === 'none' && <NoResultState query={query} />}
           </div>
@@ -856,7 +861,6 @@ export function ConsultaCnaeMei() {
       </section>
 
       <ExplainerSection />
-      <PopularesSection onPick={pick} />
       <BrowseAll onPick={pick} />
       <NaoMeiIndex />
       <FaqSection />

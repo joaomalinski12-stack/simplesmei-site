@@ -30,10 +30,11 @@ export const HOT = ['manicure', 'cabeleireiro', 'pedreiro', 'diarista', 'costure
    cnae lanchonete 880, cnae salão de beleza 480/SD6, cnae pizzaria 480, cnae pedreiro
    480, cnae fotógrafo 390, cnae loja de roupas 390…). São atalhos de negócio/ofício:
    a pessoa que vai abrir busca "cnae [X]". O chip cai na busca (semântica resolve). */
+// termos de NEGÓCIO/atividade — DISJUNTOS de HOT (que são profissões), pra os dois
+// blocos de sugestão não se repetirem. Alto volume em "cnae X" (jul/2026).
 export const POPULAR = [
-  'salão de beleza', 'lanchonete', 'loja de roupas', 'pizzaria', 'pedreiro',
-  'fotógrafo', 'cabeleireiro', 'eletricista', 'confeitaria', 'manicure',
-  'artesanato', 'motoboy', 'mecânico', 'barbeiro', 'costureira', 'diarista',
+  'salão de beleza', 'lanchonete', 'loja de roupas', 'pizzaria',
+  'confeitaria', 'artesanato', 'mecânico', 'barbeiro',
 ];
 
 /* exemplos de atividade NÃO permitida (regulamentadas/intelectuais) — só pro texto de ajuda */
