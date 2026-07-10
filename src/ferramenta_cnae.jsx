@@ -3,7 +3,7 @@ import { BRAND, FONTS, useIsMobile, CheckSeal } from './tokens.jsx';
 import { Mono } from './tiles.jsx';
 import { Door, NavV5 } from './porta_nav.jsx';
 import { Footer } from './logo_footer.jsx';
-import { OCCUPATIONS, CATS, HOT, POPULAR, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
+import { OCCUPATIONS, CATS, EXEMPLOS, POPULAR, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
 import { detectNaoMei, REGULATED, FORBIDDEN } from './data/cnae_naomei.js';
 import { SPOKES } from './data/spokes.js';
 
@@ -254,33 +254,36 @@ function WaitlistBand({ topOc, topCnae }) {
   );
 }
 
-/* ── linha de chips reutilizável ── */
-function ChipRow({ items, onPick }) {
+/* ── linha de chips reutilizável (variant 'example' = frase coloquial, com lupa e aspas) ── */
+function ChipRow({ items, onPick, variant }) {
+  const ex = variant === 'example';
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: 14, maxWidth: 640, marginLeft: 'auto', marginRight: 'auto' }}>
       {items.map((h) => (
         <button key={h} className="cnae-chip" onClick={() => onPick(h)} style={{
-          background: '#fff', color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
+          background: '#fff', color: ex ? BRAND.inkSoft : BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
           padding: '10px 16px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
           fontFamily: FONTS.body, fontSize: 14.5, fontWeight: 600, letterSpacing: -0.1,
           display: 'inline-flex', alignItems: 'center', gap: 8,
         }}>
-          <span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}
+          {ex
+            ? <><SearchIcon size={14} color={BRAND.mintDeep} /><span style={{ color: BRAND.ink }}>“{h}”</span></>
+            : <><span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}</>}
         </button>
       ))}
     </div>
   );
 }
 
-/* ── estado: vazio / inicial — sugestões consolidadas (profissões + por atividade) ── */
+/* ── estado: vazio / inicial — o "fala do seu jeito" (semântico) em cima, cnae por atividade embaixo ── */
 function EmptyState({ onPick }) {
   const m = useIsMobile();
   return (
     <div>
       <div style={{ textAlign: 'center' }}>
-        <Mono color={BRAND.inkMute} size={10.5}>profissões mais buscadas</Mono>
+        <Mono color={BRAND.mintDeep} size={10.5}>experimente — fala do seu jeito</Mono>
       </div>
-      <ChipRow items={HOT} onPick={onPick} />
+      <ChipRow items={EXEMPLOS} onPick={onPick} variant="example" />
       <div style={{ textAlign: 'center', marginTop: m ? 24 : 28 }}>
         <Mono color={BRAND.inkMute} size={10.5}>ou o CNAE por atividade e negócio</Mono>
       </div>
@@ -289,7 +292,7 @@ function EmptyState({ onPick }) {
         textAlign: 'center', fontFamily: FONTS.body, fontSize: 13.5, color: BRAND.inkSoft,
         margin: `${m ? 22 : 28}px auto 0`, maxWidth: 460, lineHeight: 1.55,
       }}>
-        Toca numa sugestão ou escreve a sua atividade do jeito que você fala. A busca acha mesmo com apelido, sem acento e sem se preocupar com maiúscula.
+        Escreve a sua atividade do jeito que você fala — “faço unha em casa”, “vendo marmita”. A IA acha mesmo com apelido, sem acento e sem se preocupar com maiúscula.
       </p>
     </div>
   );

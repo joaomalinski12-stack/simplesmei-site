@@ -37,6 +37,15 @@ export const POPULAR = [
   'confeitaria', 'artesanato', 'mecânico', 'barbeiro',
 ];
 
+// EXEMPLOS coloquiais — o "fala do seu jeito" que mostra o poder da busca semântica
+// (o que uma tabela estática NÃO resolve). Todos validados ao vivo no endpoint
+// (resolvem 0.67–0.76); "sou dev" cai no veredito NÃO-MEI de propósito (mostra que a
+// ferramenta dá um veredito, não é só um lookup). Só resolvem em produção (semântico).
+export const EXEMPLOS = [
+  'faço unha em casa', 'vendo marmita', 'conserto celular', 'cuido de idoso',
+  'faço bolo por encomenda', 'dou aula de inglês', 'faço frete', 'sou dev',
+];
+
 /* exemplos de atividade NÃO permitida (regulamentadas/intelectuais) — só pro texto de ajuda */
 export const NOT_MEI = ['advogado', 'médico', 'dentista', 'psicólogo', 'arquiteto', 'contador', 'engenheiro'];
 
