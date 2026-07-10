@@ -96,10 +96,10 @@ Se a sua carteira de clientes fixos está crescendo e o faturamento subindo, ent
 
 A nota fiscal recorrente brilha quando o seu negócio tem **previsibilidade**. Vale muito a pena se você é:
 
-- **Consultor ou mentor** com clientes em mensalidade
-- **Social media / gestor de tráfego** com contratos mensais
-- **Designer** ou **dev** em retainer ou manutenção contínua
-- **Profissional de audiovisual** com pacotes recorrentes
+- **Instrutor(a) de idiomas, música ou informática** com alunos mensalistas
+- **Diarista ou jardineiro(a)** com clientes fixos toda semana
+- **Técnico(a) de informática** em contratos de manutenção contínua
+- **Fotógrafo(a) ou editor(a) de vídeo** com pacotes recorrentes
 - Qualquer **MEI prestador de serviço** com uma carteira fixa
 
 Se a maior parte da sua receita vem dos mesmos clientes todo mês, você é exatamente quem mais sofre com a emissão manual — e quem mais ganha em deixar isso no ciclo.

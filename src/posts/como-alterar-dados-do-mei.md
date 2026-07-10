@@ -43,7 +43,7 @@ Pela Atualização Cadastral, dá para mexer no que muda com o tempo no negócio
 - **Nome fantasia** — o nome comercial do seu negócio.
 - **Forma de atuação** — como você atua (em local fixo, porta a porta, pela internet etc.).
 
-Trocar ou incluir atividade é uma das alterações mais comuns — por exemplo, quando o negócio passa a oferecer um novo serviço. A lógica de escolher o código certo está em [o que é o CNAE do MEI](/blog/cnae-do-mei), e a lista de ocupações, em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei). É assim, aliás, que você cobre **várias atividades no mesmo MEI**, em vez de tentar (sem sucesso) [ter dois MEI](/blog/posso-ter-dois-mei).
+Trocar ou incluir atividade é uma das alterações mais comuns — por exemplo, quando o negócio passa a oferecer um novo serviço. A lógica de escolher o código certo está em [o que é o CNAE do MEI](/blog/cnae-do-mei), a lista de ocupações em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei) — e o CNAE do serviço novo você descobre na hora com a [consulta CNAE MEI](/ferramentas/consulta-cnae-mei). É assim, aliás, que você cobre **várias atividades no mesmo MEI**, em vez de tentar (sem sucesso) [ter dois MEI](/blog/posso-ter-dois-mei).
 
 ## O que não dá para alterar no MEI
 

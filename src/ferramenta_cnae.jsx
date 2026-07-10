@@ -679,7 +679,7 @@ function FaqSection() {
           ))}
         </div>
         <p style={{ textAlign: 'center', marginTop: m ? 26 : 34, fontFamily: FONTS.mono, fontSize: 10.5, letterSpacing: 0.3, color: BRAND.inkMute, lineHeight: 1.5 }}>
-          Base: lista oficial do MEI · {OCCUPATIONS.length} ocupações · Anexo XI da Res. CGSN nº 140/2018
+          Base: lista oficial do MEI · {OCCUPATIONS.length} ocupações · Anexo XI da Res. CGSN nº 140/2018 · conferida em julho de 2026
         </p>
       </div>
     </section>

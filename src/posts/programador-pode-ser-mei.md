@@ -52,7 +52,7 @@ O caminho honesto é abrir uma empresa em **outra natureza jurídica**. A mais c
 
 ## Como o SimplesMEI ajuda
 
-O [**SimplesMEI**](/) é uma **IA que cuida do fiscal do MEI dentro do WhatsApp** — então, sendo direto: se a sua atividade é **programação**, o MEI (e o SimplesMEI) **não é o caminho**, porque a ocupação não existe na categoria. O que a IA faz de útil aqui é **evitar que você abra o CNPJ errado**: você descreve o que faz e ela confirma, pelas fontes oficiais, se a atividade cabe ou não no MEI.
+O [**SimplesMEI**](/) é uma **IA que cuida do fiscal do MEI dentro do WhatsApp** — então, sendo direto: se a sua atividade é **programação**, o MEI (e o SimplesMEI) **não é o caminho**, porque a ocupação não existe na categoria. O que a IA faz de útil aqui é **evitar que você abra o CNPJ errado**: você descreve o que faz e ela confirma, pelas fontes oficiais, se a atividade cabe ou não no MEI. Dá para testar agora, sem cadastro: a [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei) entende até "sou dev" — e mostra o veredito, o CNAE e o porquê.
 
 > Honestidade acima de tudo: não adianta prometer que "dá um jeito" de ser MEI programando — não dá, e forçar isso te coloca em situação irregular. A IA serve para você **descobrir cedo** que precisa de outro enquadramento, em vez de abrir um MEI que não te cobre e ter dor de cabeça depois.
 

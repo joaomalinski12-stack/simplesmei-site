@@ -33,7 +33,7 @@ A ideia por trás do MEI é tirar o trabalhador autônomo da informalidade. Ante
 
 ## Quem pode ser MEI?
 
-Pode ser **MEI** quem fatura até **R$ 81.000 por ano**, exerce uma atividade que esteja na lista oficial de ocupações, tem no máximo **um empregado** e não participa de outra empresa como sócio ou titular. Quem trabalha por conta própria — cabeleireiro, eletricista, designer, vendedor — geralmente se enquadra.
+Pode ser **MEI** quem fatura até **R$ 81.000 por ano**, exerce uma atividade que esteja na lista oficial de ocupações, tem no máximo **um empregado** e não participa de outra empresa como sócio ou titular. Quem trabalha por conta própria — cabeleireiro, eletricista, costureira, vendedor — geralmente se enquadra.
 
 Os requisitos, em resumo:
 
@@ -42,7 +42,7 @@ Os requisitos, em resumo:
 - **No máximo 1 funcionário** — contratar um segundo causa desenquadramento.
 - **Não ser sócio, titular ou administrador de outra empresa**.
 
-Há uma exceção importante: **profissões regulamentadas não podem ser MEI**. Médico, advogado, engenheiro, contador, dentista, psicólogo e arquiteto, entre outras, ficam de fora porque exigem registro em conselho de classe. Para saber se a sua profissão entra, veja a lista de [atividades permitidas](/blog/atividades-permitidas-mei).
+Há uma exceção importante: **profissões regulamentadas não podem ser MEI**. Médico, advogado, engenheiro, contador, dentista, psicólogo e arquiteto, entre outras, ficam de fora porque exigem registro em conselho de classe. Para saber se a sua profissão entra, veja a lista de [atividades permitidas](/blog/atividades-permitidas-mei) — ou digite o que você faz na [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei) e veja a resposta na hora.
 
 ## Qual a diferença entre MEI, autônomo e Microempresa?
 

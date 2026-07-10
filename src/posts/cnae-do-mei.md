@@ -28,7 +28,7 @@ Neste guia direto você vê **o que é o CNAE**, por que ele importa, como funci
 
 CNAE é a sigla de **Classificação Nacional de Atividades Econômicas**. É um código numérico, padronizado pela Receita Federal e pelo IBGE, que classifica o que cada empresa faz. Toda empresa formal no Brasil tem pelo menos um — e o MEI não é exceção.
 
-Tem um detalhe que confunde muita gente: na hora de abrir o MEI, você não escolhe o código CNAE direto. Você escolhe uma **ocupação** de uma lista pronta — algo como *"Programador(a) de sistemas"*, *"Designer de páginas da internet"* ou *"Consultor(a)"*. Cada ocupação dessa lista **já vem amarrada a um CNAE** por trás. Ou seja: você escolhe pelo nome da profissão, e o sistema cuida do código.
+Tem um detalhe que confunde muita gente: na hora de abrir o MEI, você não escolhe o código CNAE direto. Você escolhe uma **ocupação** de uma lista pronta — algo como *"Cabeleireiro(a)"*, *"Editor(a) de vídeo"* ou *"Confeiteiro(a)"*. Cada ocupação dessa lista **já vem amarrada a um CNAE** por trás. Ou seja: você escolhe pelo nome da profissão, e o sistema cuida do código.
 
 Essa lista de ocupações permitidas ao MEI é definida por **resolução do Comitê Gestor do Simples Nacional (CGSN)** e é atualizada de tempos em tempos. Por isso, nem toda profissão cabe no MEI — só as que estão nessa lista (mais sobre isso adiante).
 
@@ -49,7 +49,7 @@ O MEI pode ter **mais de uma atividade** — e isso é importante para quem faz 
 - **1 ocupação principal:** é a sua atividade-fim, aquela que melhor descreve o seu negócio e que costuma trazer a maior parte da renda.
 - **Até 15 ocupações secundárias:** atividades complementares que você também exerce.
 
-No total, dá para ter **até 16 ocupações** no mesmo CNPJ. Um exemplo de combinação possível (sempre confira a lista vigente no Portal do Empreendedor): um MEI da área audiovisual pode ter como **principal** *"Operador(a) de câmera"* e, como **secundárias**, *"Editor(a) de vídeo"* e *"Fotógrafo(a)"*. Assim, ele emite nota corretamente para qualquer um desses serviços — desde que as ocupações estejam mesmo previstas na lista no momento da abertura.
+No total, dá para ter **até 16 ocupações** no mesmo CNPJ. Um exemplo de combinação possível (sempre confira a lista vigente no Portal do Empreendedor): um MEI da área audiovisual pode ter como **principal** *"Fotógrafo(a)"* e, como **secundária**, *"Editor(a) de vídeo"*. Assim, ele emite nota corretamente para os dois serviços — desde que as ocupações estejam mesmo previstas na lista no momento da abertura.
 
 A dica é cadastrar de cara tudo o que você realmente faz. Se mais para frente você passar a oferecer um serviço novo, dá para incluir a ocupação depois — mas, enquanto ela não estiver no cadastro, você não emite nota certa para ela.
 
@@ -57,11 +57,11 @@ A dica é cadastrar de cara tudo o que você realmente faz. Se mais para frente 
 
 ## Como achar o CNAE certo para a sua atividade
 
-Achar a ocupação certa é menos sobre o código e mais sobre **descrever bem o que você faz**. Um caminho que funciona:
+Achar a ocupação certa é menos sobre o código e mais sobre **descrever bem o que você faz**. O jeito mais rápido é a [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei): você escreve do seu jeito ("faço unha em casa", "vendo marmita") e vê na hora a ocupação, o CNAE e o imposto — sem cadastro. Se preferir fazer à mão, um caminho que funciona:
 
 ### 1. Escreva o que você faz no dia a dia
 
-Antes de olhar qualquer lista, escreva em uma frase a sua atividade real: *"edito vídeos para empresas"*, *"presto consultoria de marketing digital"*, *"desenvolvo sites e sistemas"*. Quanto mais concreto, mais fácil casar com uma ocupação.
+Antes de olhar qualquer lista, escreva em uma frase a sua atividade real: *"edito vídeos para empresas"*, *"faço bolo por encomenda"*, *"conserto celular e computador"*. Quanto mais concreto, mais fácil casar com uma ocupação.
 
 ### 2. Procure a ocupação que mais se parece
 
@@ -77,7 +77,7 @@ Esse é exatamente o ponto em que a IA do SimplesMEI ajuda: em vez de você caç
 
 Nem toda profissão pode ser MEI. A lista de ocupações é **fechada**: se a sua atividade não está nela, você não consegue se enquadrar como MEI para aquilo. Em geral, ficam **de fora** do MEI as profissões **regulamentadas** que exigem registro em conselho de classe — por exemplo, médico, advogado, engenheiro, contador, psicólogo, dentista, entre outras. Essas precisam de outro tipo de empresa (como ME).
 
-Já a maioria das atividades de **prestação de serviço** comuns ao público do MEI — design, marketing, audiovisual, consultoria em geral, programação, manutenção, beleza, reparos — **costuma ter ocupação prevista** na lista. Mas a lista muda por resolução, então o ideal é sempre **conferir na fonte oficial** antes de abrir.
+Já a maioria das atividades de **prestação de serviço** comuns ao público do MEI — beleza, reparos, construção, alimentação, audiovisual (fotografia e edição de vídeo), limpeza, transporte — **costuma ter ocupação prevista** na lista. Atenção às exceções que pegam muita gente: **programação/desenvolvimento de software** e **design** não estão na lista vigente ([entenda o caso do programador](/blog/programador-pode-ser-mei)). Como a lista muda por resolução, o ideal é sempre **conferir na fonte oficial** antes de abrir — ou tirar a dúvida em segundos na [consulta de atividades permitidas](/ferramentas/consulta-cnae-mei), que responde inclusive quem **não** pode.
 
 Por que isso importa tanto? Porque exercer, como MEI, uma atividade **não permitida** é uma das causas de **desenquadramento**. O Fisco pode entender que você nunca poderia ter sido MEI para aquilo. Se esse é o seu caso, vale entender bem como funciona a [atividade não permitida e o desenquadramento](/blog/desenquadramento-do-mei) antes de seguir.
 

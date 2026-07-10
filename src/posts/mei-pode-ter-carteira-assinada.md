@@ -26,7 +26,7 @@ Neste guia você vê **por que dá** para acumular os dois, o que muda no seu **
 
 Pode, e é comum. A lei **não proíbe** que um empregado com carteira assinada seja também MEI. São duas relações diferentes: como **CLT**, você cumpre jornada e funções sob um empregador, com salário e benefícios; como **MEI**, você atua de forma **autônoma** na sua atividade, emitindo nota e pagando o **DAS**. Uma coisa não anula a outra.
 
-O gov.br confirma que é possível *"solicitar a inscrição como MEI e manter vínculo empregatício com carteira assinada"*. Na prática, é o caminho de quem tem um emprego fixo e toca um **bico formalizado** em paralelo — um designer CLT que faz freelas, um vendedor que revende no fim de semana, e por aí vai.
+O gov.br confirma que é possível *"solicitar a inscrição como MEI e manter vínculo empregatício com carteira assinada"*. Na prática, é o caminho de quem tem um emprego fixo e toca um **bico formalizado** em paralelo — um fotógrafo CLT que faz freelas, um vendedor que revende no fim de semana, e por aí vai.
 
 ## O que muda no INSS quando você é CLT e MEI
 

@@ -27,7 +27,7 @@ Pode, e é uma das ocupações clássicas do MEI. A lista oficial do Portal do E
 - **Eletricista em residências e estabelecimentos comerciais, independente** — **CNAE 4321-5/00** (Instalação e manutenção elétrica). É o eletricista **predial**, o mais comum.
 - **Eletricista de automóveis, independente** — **CNAE 4520-0/03**. É o eletricista **automotivo**, uma ocupação separada.
 
-Escolha a que descreve o seu trabalho na hora de abrir o MEI. Se você faz os dois, dá para registrar a atividade principal e incluir a secundária. Para entender como a atividade vira código, veja o guia de [CNAE do MEI](/blog/cnae-do-mei).
+Escolha a que descreve o seu trabalho na hora de abrir o MEI. Se você faz os dois, dá para registrar a atividade principal e incluir a secundária — confira os dois códigos na [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei). Para entender como a atividade vira código, veja o guia de [CNAE do MEI](/blog/cnae-do-mei).
 
 ## O que o eletricista MEI pode fazer?
 

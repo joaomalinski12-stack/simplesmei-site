@@ -7,7 +7,7 @@ category: "Primeiros passos"
 coverPalette: "mint"
 faq:
   - q: "Quais atividades são permitidas para MEI?"
-    a: "São permitidas as ocupações que constam na lista oficial anexa à resolução do CGSN — mais de 400 ocupações (cerca de 468) de serviço, comércio e indústria de menor risco. Cabe quem cabe na lista: cabeleireiro, eletricista, designer, programador, costureira, vendedor, entre muitos outros."
+    a: "São permitidas as ocupações que constam na lista oficial anexa à resolução do CGSN — mais de 400 ocupações (cerca de 468) de serviço, comércio e indústria de menor risco. Cabe quem cabe na lista: cabeleireiro, eletricista, costureira, fotógrafo, diarista, vendedor, entre muitos outros."
   - q: "Quais profissões não podem ser MEI?"
     a: "Não podem ser MEI as profissões regulamentadas que exigem registro em conselho de classe: médico, advogado, engenheiro, contador, dentista, psicólogo, arquiteto, nutricionista, fisioterapeuta, veterinário, entre outras. Para essas atividades, o caminho é outro tipo de empresa, como a ME."
   - q: "Quantas atividades o MEI pode exercer?"
@@ -28,7 +28,7 @@ Este guia é a **referência da lista**: o que conta como atividade permitida, e
 
 As atividades permitidas para MEI são as **ocupações de uma lista fechada**, definida por resolução do Comitê Gestor do Simples Nacional (**CGSN**). Só pode ser MEI quem exerce uma atividade dessa lista. São mais de 400 ocupações (cerca de 468) de **serviço, comércio e indústria** de baixo risco — e quem não está nela precisa de outro tipo de empresa.
 
-O ponto que confunde: na abertura, você **não escolhe um código** solto. Você escolhe uma **ocupação** com nome de profissão — *"Cabeleireiro(a)"*, *"Programador(a) de sistemas"*, *"Vendedor(a) a domicílio"* — e cada uma já vem amarrada a um [código CNAE por trás](/blog/cnae-do-mei). A lista de ocupações é o "cardápio"; o CNAE é o que está escrito na ficha de cada prato.
+O ponto que confunde: na abertura, você **não escolhe um código** solto. Você escolhe uma **ocupação** com nome de profissão — *"Cabeleireiro(a)"*, *"Editor(a) de vídeo"*, *"Vendedor(a) a domicílio"* — e cada uma já vem amarrada a um [código CNAE por trás](/blog/cnae-do-mei). A lista de ocupações é o "cardápio"; o CNAE é o que está escrito na ficha de cada prato.
 
 Por ser uma lista **fechada e oficial**, ela tem duas consequências práticas: tudo que está nela cabe no MEI, e tudo que não está, não cabe — por mais simples que a atividade pareça.
 
@@ -39,7 +39,7 @@ A lista oficial tem **centenas de ocupações**, então não dá para decorar. M
 | Área | Exemplos de ocupações permitidas |
 | --- | --- |
 | Serviços de beleza | Cabeleireiro(a), manicure/pedicure, maquiador(a), barbeiro, esteticista |
-| Tecnologia e digital | Programador(a) de sistemas, designer de páginas/sites, editor(a) de vídeo |
+| Tecnologia e digital | Editor(a) de vídeo, técnico(a) de manutenção de computador, instrutor(a) de informática, digitador(a) |
 | Construção e reparos | Eletricista, encanador, pintor de paredes, pedreiro, instalador(a) |
 | Comércio (varejo) | Vendedor(a) a domicílio, comerciante de roupas, de cosméticos, de alimentos |
 | Alimentação | Salgadeiro(a), confeiteiro(a), cozinheiro(a), vendedor(a) ambulante de alimentos |
@@ -69,7 +69,7 @@ A confusão acontece porque muita gente acha que "trabalho sozinho, logo posso s
 | Nutricionista, fisioterapeuta | CRN / Crefito |
 | Veterinário | CRMV |
 
-Além das regulamentadas, ficam de fora **atividades de maior risco** ou que a resolução simplesmente não previu. A regra de ouro: se a ocupação **não está na lista**, não dá para ser MEI para ela — e tentar mesmo assim pode levar ao [desenquadramento por atividade não permitida](/blog/desenquadramento-do-mei).
+Além das regulamentadas, ficam de fora **atividades de maior risco** ou que a resolução simplesmente não previu. Duas pegadinhas comuns dessa segunda turma: **programador/desenvolvedor de software** e **designer** — muita lista na internet os cita como MEI, mas essas ocupações **não estão** na lista oficial vigente ([veja o caso do programador](/blog/programador-pode-ser-mei)). A regra de ouro: se a ocupação **não está na lista**, não dá para ser MEI para ela — e tentar mesmo assim pode levar ao [desenquadramento por atividade não permitida](/blog/desenquadramento-do-mei). Para tirar a dúvida da sua profissão em segundos, use a [consulta de atividades do MEI](/ferramentas/consulta-cnae-mei) — ela responde também **quem não pode**, com o motivo.
 
 ## Quantas atividades o MEI pode exercer ao mesmo tempo?
 
@@ -78,7 +78,7 @@ O MEI pode exercer **mais de uma atividade**: são **1 ocupação principal** ma
 - **Ocupação principal** — é a atividade-fim, a que melhor descreve o negócio e que costuma trazer a maior parte da renda.
 - **Até 15 secundárias** — atividades complementares que você também exerce de verdade.
 
-Um exemplo: um MEI da área audiovisual pode ter como **principal** *"Operador(a) de câmera"* e, como **secundárias**, *"Editor(a) de vídeo"* e *"Fotógrafo(a)"* — desde que as três estejam na lista no momento da abertura. Assim ele emite nota certa para qualquer um desses serviços.
+Um exemplo: um MEI da área audiovisual pode ter como **principal** *"Fotógrafo(a)"* e, como **secundária**, *"Editor(a) de vídeo"* — desde que as duas estejam na lista no momento da abertura. Assim ele emite nota certa para os dois serviços.
 
 A dica prática: **cadastre de cara tudo o que você faz**. Enquanto uma ocupação não estiver no seu cadastro, você não emite nota corretamente para ela. Dá para incluir depois, pelo Portal do Empreendedor, mas é um passo a mais.
 
@@ -89,6 +89,8 @@ A lista oficial é **gratuita** e fica em fontes públicas — você não precis
 1. **Portal do Empreendedor (gov.br)** — na tela de **abertura** ou de **alteração** do MEI, o sistema mostra a lista de ocupações que você pode selecionar. É a forma mais direta de ver o que está permitido **agora**.
 2. **Anexo da resolução do CGSN** — a lista completa de ocupações é publicada no **anexo** da resolução do Comitê Gestor do Simples Nacional. É a fonte normativa, atualizada quando há mudança.
 3. **No seu cadastro, depois de aberto** — se você já é MEI, as ocupações que ficaram registradas aparecem no seu [cadastro de CNAE (CCMEI)](/blog/cnae-do-mei), com os códigos.
+
+Um atalho prático: a [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei) do SimplesMEI busca nas 466 ocupações oficiais do jeito que você fala ("faço unha em casa", "vendo marmita") e mostra o CNAE e o imposto na hora — e avisa quando a atividade **não é permitida**, com o motivo.
 
 Por que insistir em conferir a versão do momento? Porque ocupações **entram e saem** da lista. Uma atividade permitida em um ano pode sair no seguinte (e o contrário também). Listas copiadas em blogs envelhecem rápido — a oficial, não. Na dúvida, a referência é sempre o **Portal do Empreendedor**.
 

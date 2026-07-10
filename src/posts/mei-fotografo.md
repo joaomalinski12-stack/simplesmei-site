@@ -39,7 +39,7 @@ A fotografia tem algumas ocupações, todas permitidas:
 | Revelação | Revelador(a) fotográfico (7420-0/03) | ISS |
 | Revenda de artigos de foto | Comerciante de artigos fotográficos (4789-0/08) | ICMS |
 
-A principal, para a maioria, é a **Fotógrafo(a) independente**. Se você também **vende** equipamentos ou álbuns, pode incluir o comércio como atividade **secundária**. Entenda a lógica em [o que é o CNAE do MEI](/blog/cnae-do-mei) e veja o leque em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei).
+A principal, para a maioria, é a **Fotógrafo(a) independente**. Se você também **vende** equipamentos ou álbuns, pode incluir o comércio como atividade **secundária**. Entenda a lógica em [o que é o CNAE do MEI](/blog/cnae-do-mei), veja o leque em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei) — ou digite "fotógrafo" na [consulta CNAE MEI](/ferramentas/consulta-cnae-mei) e veja todas as ocupações de fotografia na hora.
 
 ## Quanto o fotógrafo MEI paga por mês?
 

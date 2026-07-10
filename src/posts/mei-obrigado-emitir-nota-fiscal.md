@@ -48,7 +48,7 @@ Fora esses casos, emitir para pessoa física é uma **escolha sua**. Muitos MEIs
 
 Existem duas notas diferentes, e a que você usa depende do que vende:
 
-- **NFS-e (Nota Fiscal de Serviços eletrônica):** para quem **presta serviço** (eletricista, designer, manicure, consultor). O imposto envolvido é o **ISS**, de competência **municipal**, e o MEI emite pelo **Emissor Nacional** no gov.br/nfse.
+- **NFS-e (Nota Fiscal de Serviços eletrônica):** para quem **presta serviço** (eletricista, manicure, diarista, fotógrafo). O imposto envolvido é o **ISS**, de competência **municipal**, e o MEI emite pelo **Emissor Nacional** no gov.br/nfse.
 - **NF-e modelo 55:** para quem **vende produto/mercadoria**. O imposto é o **ICMS**, de competência **estadual**, e a nota sai pela **Secretaria da Fazenda** do estado — o que exige **Inscrição Estadual** e, na maioria dos casos, **certificado digital**.
 
 | Tipo | Serviço → NFS-e | Produto → NF-e (mod. 55) |

@@ -125,6 +125,17 @@ for (const route of routes) {
           "provider": { "@type": "Organization", "name": "SimplesMEI", "url": "https://simplesmei.net" }
         },
         {
+          "@type": "Dataset",
+          "name": "Ocupações permitidas ao MEI — Anexo XI da Resolução CGSN nº 140/2018",
+          "description": "As 466 ocupações permitidas ao MEI (Anexo XI da Resolução CGSN nº 140/2018), com CNAE e tributo (ISS/ICMS) de cada uma, mais as profissões regulamentadas e atividades vedadas que não podem ser MEI. Pesquisável por busca semântica na ferramenta.",
+          "url": "https://simplesmei.net/ferramentas/consulta-cnae-mei",
+          "inLanguage": "pt-BR",
+          "dateModified": "2026-07",
+          "creator": { "@type": "Organization", "name": "SimplesMEI", "url": "https://simplesmei.net" },
+          "isBasedOn": "https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei/atividades-permitidas",
+          "keywords": ["CNAE MEI", "atividades permitidas MEI", "ocupações MEI", "quem pode ser MEI", "quem não pode ser MEI"]
+        },
+        {
           "@type": "FAQPage",
           "mainEntity": FAQ_ITEMS.map(it => ({
             "@type": "Question", "name": it.q,

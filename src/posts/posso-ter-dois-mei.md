@@ -30,7 +30,7 @@ Essa é uma diferença importante em relação a outras empresas: uma pessoa pod
 
 ## Como exercer mais de uma atividade sendo MEI
 
-Aqui está a boa notícia: você **não precisa** de dois MEIs para fazer duas coisas. O MEI permite **uma ocupação principal e até 15 secundárias** — no total, **até 16 atividades** no mesmo CNPJ, desde que todas estejam na lista permitida. Um único MEI cobre, por exemplo, quem é **cabeleireiro e vende cosméticos**, ou **designer e fotógrafo**.
+Aqui está a boa notícia: você **não precisa** de dois MEIs para fazer duas coisas. O MEI permite **uma ocupação principal e até 15 secundárias** — no total, **até 16 atividades** no mesmo CNPJ, desde que todas estejam na lista permitida. Um único MEI cobre, por exemplo, quem é **cabeleireiro e vende cosméticos**, ou **fotógrafo e editor de vídeo**.
 
 Na prática, em vez de "abrir outro MEI", você **inclui a nova atividade** no MEI que já tem, alterando o cadastro. O passo a passo de incluir ocupações está em [como alterar os dados do MEI](/blog/como-alterar-dados-do-mei), e a lógica de escolher os códigos certos, em [o que é o CNAE do MEI](/blog/cnae-do-mei). Assim, um CNPJ só resolve várias frentes.
 

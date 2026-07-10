@@ -37,7 +37,7 @@ Os profissionais de beleza se dividem em duas ocupações principais:
 | Cabeleireiro, barbeiro, manicure/pedicure | 9602-5/01 | ISS |
 | Esteticista, depilador, maquiador | 9602-5/02 | ISS |
 
-Todos são **serviço** (ISS). Se você também **revende** produtos de beleza (cosméticos, esmaltes), há ocupações de **comércio** que podem ser incluídas como atividade secundária, aí com ICMS. Entenda a lógica em [o que é o CNAE do MEI](/blog/cnae-do-mei) e veja o leque completo em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei).
+Todos são **serviço** (ISS). Se você também **revende** produtos de beleza (cosméticos, esmaltes), há ocupações de **comércio** que podem ser incluídas como atividade secundária, aí com ICMS. Entenda a lógica em [o que é o CNAE do MEI](/blog/cnae-do-mei), veja o leque completo em [atividades permitidas ao MEI](/blog/atividades-permitidas-mei) — ou escreva "salão de beleza" na [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei) e veja o código de cada serviço na hora.
 
 ## Quanto o MEI de beleza paga por mês?
 

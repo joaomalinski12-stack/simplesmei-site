@@ -47,7 +47,7 @@ O processo exige uma conta **Gov.br nível prata ou ouro** (você sobe de nível
 ![Tela de consentimento (LGPD) do Portal do Empreendedor para inscrição do MEI](/abertura-gov-1-consentimento.png)
 
 ### 3. Preencha os dados e escolha a sua atividade (o CNAE)
-Informe RG, contato e endereço. Em seguida, escolha a sua **Ocupação Principal** (e até 15 secundárias): é aqui que entra o **CNAE**, o código que define a sua atividade e quais impostos entram no DAS. Escolha a ocupação que mais se parece com o que você faz — o CEP completa a rua e a cidade sozinho.
+Informe RG, contato e endereço. Em seguida, escolha a sua **Ocupação Principal** (e até 15 secundárias): é aqui que entra o **CNAE**, o código que define a sua atividade e quais impostos entram no DAS. Escolha a ocupação que mais se parece com o que você faz — dá para descobrir a sua em segundos na [consulta CNAE MEI grátis](/ferramentas/consulta-cnae-mei), escrevendo do seu jeito. O CEP completa a rua e a cidade sozinho.
 
 ![Formulário de identificação e atividades (ocupação/CNAE) do Portal do Empreendedor para abrir o MEI](/abertura-gov-2-dados.png)
 
