@@ -3,8 +3,8 @@ import { BRAND, FONTS, useIsMobile, CheckSeal } from './tokens.jsx';
 import { Mono } from './tiles.jsx';
 import { Door, NavV5 } from './porta_nav.jsx';
 import { Footer } from './logo_footer.jsx';
-import { OCCUPATIONS, CATS, HOT, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
-import { detectNaoMei } from './data/cnae_naomei.js';
+import { OCCUPATIONS, CATS, HOT, POPULAR, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
+import { detectNaoMei, REGULATED, FORBIDDEN } from './data/cnae_naomei.js';
 
 /* ════════════════════════════════════════════════════════════════════════
    FERRAMENTA "Sua atividade pode ser MEI?" — /ferramentas/consulta-cnae-mei
@@ -421,11 +421,12 @@ function ResultsState({ results, query, smart }) {
 }
 
 /* ── seção navegável — acordeão por categoria ── */
-function CatItem({ cat, ocs, open, onToggle, onPick }) {
+function CatItem({ cat, ocs, open, onToggle, onPick, id }) {
   const m = useIsMobile();
   const [title, hint] = cat;
   return (
-    <div style={{
+    <div id={id} style={{
+      scrollMarginTop: 84,
       background: '#fff', border: `1px solid ${open ? BRAND.coral : BRAND.sandDeep}`, borderRadius: 16,
       boxShadow: open ? '0 18px 40px -30px rgba(248,116,83,0.5)' : 'none',
       transition: 'border-color .2s ease, box-shadow .2s ease', overflow: 'hidden',
@@ -490,13 +491,13 @@ function BrowseAll({ onPick }) {
         <div style={{ textAlign: 'center', marginBottom: m ? 22 : 30 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
             <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
-            <Mono color={BRAND.coralDeep} size={11}>Não sabe o termo exato?</Mono>
+            <Mono color={BRAND.coralDeep} size={11}>Quem pode ser MEI</Mono>
             <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
           </div>
           <h2 style={{
             fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 26 : 34, lineHeight: 1.05,
             letterSpacing: m ? '-0.03em' : -1.2, color: BRAND.ink, margin: 0, textWrap: 'balance',
-          }}>Navegue pelas atividades por categoria</h2>
+          }}>As 466 atividades permitidas ao MEI</h2>
           <p style={{
             fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, lineHeight: 1.55, color: BRAND.inkSoft,
             margin: '12px auto 0', maxWidth: 440, textWrap: 'pretty',
@@ -504,8 +505,115 @@ function BrowseAll({ onPick }) {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: m ? 10 : 12 }}>
           {CATS.map((cat, i) => (
-            <CatItem key={i} cat={cat} ocs={byCat[i]} open={!!open[i]} onToggle={() => toggle(i)} onPick={onPick} />
+            <CatItem key={i} id={'cat-' + norm(cat[0]).replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')} cat={cat} ocs={byCat[i]} open={!!open[i]} onToggle={() => toggle(i)} onPick={onPick} />
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── (A) explicativo: prosa única + H2/H3 (o que é CNAE, ISS×ICMS, quem pode) ── */
+function ExplainerSection() {
+  const m = useIsMobile();
+  const p = { fontFamily: FONTS.body, fontSize: m ? 15 : 16, lineHeight: 1.7, color: BRAND.inkSoft, margin: '0 0 14px', textWrap: 'pretty' };
+  const bb = { color: BRAND.ink, fontWeight: 700 };
+  const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 18 : 21, letterSpacing: -0.4, color: BRAND.ink, margin: m ? '24px 0 10px' : '30px 0 12px' };
+  return (
+    <section data-anchor id="o-que-e" style={{ background: BRAND.paper, padding: m ? '4px 20px 8px' : '8px 56px 16px' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: m ? 18 : 24 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+            <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+            <Mono color={BRAND.coralDeep} size={11}>Entenda em 1 minuto</Mono>
+            <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+          </div>
+          <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 26 : 34, lineHeight: 1.05, letterSpacing: m ? '-0.03em' : -1.2, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>O que é o CNAE do MEI</h2>
+        </div>
+        <p style={p}>O <b style={bb}>CNAE</b> (Classificação Nacional de Atividades Econômicas) é o código que diz, para os órgãos públicos, qual é a sua atividade. No MEI, é ele que define <b style={bb}>qual nota fiscal você emite</b> e <b style={bb}>qual imposto você paga</b>. Todo MEI tem uma atividade <b style={bb}>principal</b> e pode incluir até 15 <b style={bb}>secundárias</b> — desde que todas estejam na lista oficial de atividades permitidas ao MEI.</p>
+        <h3 style={h3}>ISS ou ICMS: o que o CNAE muda pra você</h3>
+        <p style={p}>O imposto do MEI é fixo e mensal (o DAS), mas o CNAE define a <b style={bb}>natureza</b> dele: atividade de <b style={bb}>serviço</b> recolhe <b style={bb}>ISS</b>; <b style={bb}>comércio e indústria</b> recolhem <b style={bb}>ICMS</b>; quem vende e presta serviço ao mesmo tempo pode ter os dois. Achar o CNAE certo é o primeiro passo pra saber como sua nota e seu imposto funcionam.</p>
+        <h3 style={h3}>Quem pode e quem não pode ser MEI</h3>
+        <p style={{ ...p, margin: 0 }}>Podem ser MEI as <b style={bb}>466 ocupações</b> do Anexo XI da Resolução CGSN nº 140/2018 — de manicure a pedreiro, de confeiteira a motoboy. Ficam de <b style={bb}>fora</b> as profissões <b style={bb}>regulamentadas</b> (com conselho de classe, como médico, advogado e psicólogo) e algumas atividades <b style={bb}>vedadas por natureza</b>. É só digitar o que você faz na busca aqui em cima: a IA acha o seu CNAE, o imposto e diz na hora se pode — ou não — ser MEI.</p>
+      </div>
+    </section>
+  );
+}
+
+/* ── (B) "CNAE das atividades mais buscadas": chips semeados por keyword ── */
+function PopularesSection({ onPick }) {
+  const m = useIsMobile();
+  return (
+    <section data-anchor id="populares" style={{ background: BRAND.paper, padding: m ? '12px 20px 40px' : '20px 56px 52px' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+          <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+          <Mono color={BRAND.coralDeep} size={11}>Atalhos rápidos</Mono>
+          <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+        </div>
+        <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 24 : 30, lineHeight: 1.06, letterSpacing: m ? '-0.03em' : -1, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>CNAE das atividades mais buscadas</h2>
+        <p style={{ fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, lineHeight: 1.55, color: BRAND.inkSoft, margin: '12px auto 0', maxWidth: 480, textWrap: 'pretty' }}>Toque para ver na hora o CNAE e o imposto — de salão de beleza a lanchonete, loja de roupas, pedreiro e mais.</p>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center', marginTop: m ? 16 : 20 }}>
+          {POPULAR.map((h) => (
+            <button key={h} className="cnae-chip" onClick={() => onPick(h)} style={{
+              background: '#fff', color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
+              padding: '10px 16px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
+              fontFamily: FONTS.body, fontSize: 14.5, fontWeight: 600, letterSpacing: -0.1,
+              display: 'inline-flex', alignItems: 'center', gap: 8,
+            }}>
+              <span style={{ color: BRAND.coral, marginTop: -1 }}>+</span>{h}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── (A) "Quem NÃO pode ser MEI": índice fixo (regulamentadas + vedadas), sempre no DOM ── */
+const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+
+function NaoMeiTag({ label, cnae }) {
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 8,
+      background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 999,
+      padding: '8px 13px', fontFamily: FONTS.body, fontSize: 13.5, fontWeight: 600, color: BRAND.ink,
+    }}>
+      {label}
+      {cnae ? <span style={{ fontFamily: FONTS.mono, fontSize: 10, color: BRAND.inkMute, fontWeight: 600, whiteSpace: 'nowrap' }}>{cnae}</span> : null}
+    </span>
+  );
+}
+
+function NaoMeiIndex() {
+  const m = useIsMobile();
+  const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15.5 : 17, letterSpacing: -0.3, color: BRAND.ink, margin: '0 0 12px' };
+  return (
+    <section data-anchor id="nao-pode" style={{ background: BRAND.paper, padding: m ? '4px 20px 52px' : '8px 56px 76px' }}>
+      <div style={{ maxWidth: 820, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: m ? 22 : 30 }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
+            <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+            <Mono color={BRAND.coralDeep} size={11}>Quem fica de fora</Mono>
+            <span className="v5-comet-line" style={{ width: 26, height: 2, borderRadius: 2 }} />
+          </div>
+          <h2 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 26 : 34, lineHeight: 1.05, letterSpacing: m ? '-0.03em' : -1.2, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>Quem <span style={{ color: BRAND.coral }}>não</span> pode ser MEI</h2>
+          <p style={{ fontFamily: FONTS.body, fontSize: m ? 14.5 : 15.5, lineHeight: 1.6, color: BRAND.inkSoft, margin: '12px auto 0', maxWidth: 520, textWrap: 'pretty' }}>Profissão regulamentada (com conselho de classe) e algumas atividades vedadas por natureza não entram no MEI. Se é o seu caso, o caminho costuma ser uma Microempresa (ME) no Simples Nacional.</p>
+        </div>
+        <div style={{ display: 'grid', gap: m ? 20 : 26 }}>
+          <div>
+            <h3 style={h3}>Profissões regulamentadas <span style={{ fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute }}>· têm conselho de classe</span></h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {REGULATED.map((r) => <NaoMeiTag key={r.area} label={r.area} cnae={r.cnae} />)}
+            </div>
+          </div>
+          <div>
+            <h3 style={h3}>Atividades vedadas por natureza</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {FORBIDDEN.map((f) => <NaoMeiTag key={f.categoria} label={capFirst(f.categoria)} cnae={f.cnae} />)}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -737,7 +845,10 @@ export function ConsultaCnaeMei() {
         </div>
       </section>
 
+      <ExplainerSection />
+      <PopularesSection onPick={pick} />
       <BrowseAll onPick={pick} />
+      <NaoMeiIndex />
       <FaqSection />
       <Footer />
 

@@ -111,6 +111,14 @@ for (const route of routes) {
           "operatingSystem": "Web",
           "inLanguage": "pt-BR",
           "description": "Descubra na hora se sua atividade pode ser MEI, qual o CNAE e o imposto. Grátis e sem cadastro.",
+          "featureList": [
+            "Busca por profissão ou apelido",
+            "Busca semântica que entende como você fala",
+            "CNAE e código oficial da atividade",
+            "Imposto ISS ou ICMS por atividade",
+            "Detecção de atividade não permitida ao MEI",
+            "Grátis e sem cadastro"
+          ],
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
           "provider": { "@type": "Organization", "name": "SimplesMEI", "url": "https://simplesmei.net" }
         },
@@ -212,6 +220,9 @@ for (const route of routes) {
   html = html.replace(/<meta property="og:title" content=".*?">/, `<meta property="og:title" content="${title}">`);
   html = html.replace(/<meta property="og:url" content=".*?">/, `<meta property="og:url" content="https://simplesmei.net${canonicalPath === '/' ? '' : canonicalPath}">`);
   html = html.replace(/<meta property="og:description" content=".*?">/, `<meta property="og:description" content="${description}">`);
+  // Twitter cards herdavam a copy da home em toda rota — espelha o og: por rota.
+  html = html.replace(/<meta name="twitter:title" content=".*?">/, `<meta name="twitter:title" content="${title}">`);
+  html = html.replace(/<meta name="twitter:description" content=".*?">/, `<meta name="twitter:description" content="${description}">`);
 
   // Lista de espera é uma página transitória de captura — fora do índice (mas segue links).
   if (route === '/lista-de-espera') {
