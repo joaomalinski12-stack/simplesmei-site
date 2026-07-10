@@ -184,7 +184,7 @@ function NavV5() {
   // "Recursos" (dropdown): [label, href, subtítulo]
   const recursos = [
     ['Blog', '/blog', 'Guias do MEI'],
-    ['Ferramentas', '/ferramentas/consulta-cnae-mei', 'Consulta CNAE MEI'],
+    ['Ferramentas', '/ferramentas', 'Consulta CNAE MEI e mais'],
   ];
   
   return (

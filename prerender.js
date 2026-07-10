@@ -22,8 +22,10 @@ import { join } from 'node:path';
 import fm from 'front-matter';
 import { CATS } from './src/blog_cats.js';
 import { FAQ_ITEMS } from './src/data/cnae_mei.js';
+import { SPOKES } from './src/data/spokes.js';
 
-const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/lista-de-espera', '/ferramentas/consulta-cnae-mei', '/blog'];
+const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/lista-de-espera', '/ferramentas', '/ferramentas/consulta-cnae-mei', '/blog'];
+for (const slug of Object.keys(SPOKES)) routes.push(`/ferramentas/consulta-cnae-mei/${slug}`);
 
 // Lê os posts para gerar rotas dinâmicas
 const postsDir = resolve(__dirname, 'src/posts');
@@ -99,8 +101,8 @@ for (const route of routes) {
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
-            { "@type": "ListItem", "position": 2, "name": "Ferramentas" },
-            { "@type": "ListItem", "position": 3, "name": "Consulta CNAE MEI" }
+            { "@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://simplesmei.net/ferramentas" },
+            { "@type": "ListItem", "position": 3, "name": "Consulta CNAE MEI", "item": "https://simplesmei.net/ferramentas/consulta-cnae-mei" }
           ]
         },
         {
@@ -132,6 +134,45 @@ for (const route of routes) {
       ]
     };
     html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>\n</head>`);
+  } else if (route === '/ferramentas') {
+    title = 'Ferramentas grátis para o MEI: CNAE, atividades e mais · SimplesMEI';
+    description = 'Ferramentas grátis pra o MEI, sem cadastro: descubra se sua atividade pode ser MEI, qual o CNAE e o imposto. Feitas pela IA que cuida do fiscal do MEI no WhatsApp.';
+    const graph = {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
+          { "@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://simplesmei.net/ferramentas" }
+        ] },
+        { "@type": "CollectionPage", "name": "Ferramentas para o MEI", "url": "https://simplesmei.net/ferramentas", "inLanguage": "pt-BR", "isPartOf": { "@type": "WebSite", "name": "SimplesMEI", "url": "https://simplesmei.net" } }
+      ]
+    };
+    html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>\n</head>`);
+  } else if (route.startsWith('/ferramentas/consulta-cnae-mei/')) {
+    const slug = route.replace('/ferramentas/consulta-cnae-mei/', '');
+    const s = SPOKES[slug];
+    if (s) {
+      const sigla = s.conselho.split(' (')[0];
+      title = `${s.nome} pode ser MEI? CNAE, imposto e o que fazer (2026) · SimplesMEI`;
+      description = `${s.nome} NÃO pode ser MEI: é profissão regulamentada (${sigla}). Veja o CNAE ${s.cnae}, o porquê e como ter CNPJ e emitir nota.`;
+      const url = `https://simplesmei.net/ferramentas/consulta-cnae-mei/${slug}`;
+      const graph = {
+        "@context": "https://schema.org",
+        "@graph": [
+          { "@type": "BreadcrumbList", "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://simplesmei.net" },
+            { "@type": "ListItem", "position": 2, "name": "Ferramentas", "item": "https://simplesmei.net/ferramentas" },
+            { "@type": "ListItem", "position": 3, "name": "Consulta CNAE MEI", "item": "https://simplesmei.net/ferramentas/consulta-cnae-mei" },
+            { "@type": "ListItem", "position": 4, "name": s.nome, "item": url }
+          ] },
+          { "@type": "FAQPage", "mainEntity": [
+            { "@type": "Question", "name": `${s.nome} pode ser MEI?`, "acceptedAnswer": { "@type": "Answer", "text": s.resposta } },
+            ...s.faq.map(it => ({ "@type": "Question", "name": it.q, "acceptedAnswer": { "@type": "Answer", "text": it.a } }))
+          ] }
+        ]
+      };
+      html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>\n</head>`);
+    }
   } else if (route === '/blog') {
     title = 'Guias do MEI: nota fiscal, DAS, teto e benefícios · SimplesMEI';
     description = 'Nota fiscal, DAS, teto, INSS e regularização do MEI, sem juridiquês. Guias práticos pra resolver cada dúvida do seu CNPJ — tudo num lugar só.';
@@ -248,8 +289,12 @@ try {
   // Remove o fechamento da tag
   sitemap = sitemap.replace('</urlset>', '');
   
-  // Ferramenta de consulta de CNAE
+  // Hub de ferramentas + consulta de CNAE + spokes de profissão ("X pode ser MEI?")
+  sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
   sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas/consulta-cnae-mei</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  for (const slug of Object.keys(SPOKES)) {
+    sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas/consulta-cnae-mei/${slug}</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+  }
 
   // Adiciona a listagem principal do blog
   sitemap += `  <url>\n    <loc>https://simplesmei.net/blog</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;

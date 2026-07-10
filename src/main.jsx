@@ -9,6 +9,8 @@ import { Privacidade } from './privacidade.jsx';
 import { Sobre, Imprensa, Carreiras, Contato } from './institucional.jsx';
 import { BlogList, BlogPost, BlogCategory } from './blog.jsx';
 import { ConsultaCnaeMei } from './ferramenta_cnae.jsx';
+import { FerramentasHub, SpokePage } from './ferramentas.jsx';
+import { SPOKES } from './data/spokes.js';
 import { WaitlistPage } from './lista_espera.jsx';
 
 import { CookieBanner } from './cookie_banner.jsx';
@@ -24,6 +26,12 @@ const App = ({ path }) => {
   else if (path === '/carreiras') PageComponent = Carreiras;
   else if (path === '/contato') PageComponent = Contato;
   else if (path === '/lista-de-espera') PageComponent = WaitlistPage;
+  else if (path === '/ferramentas') PageComponent = FerramentasHub;
+  else if (path.startsWith('/ferramentas/consulta-cnae-mei/')) {
+    const slug = path.replace('/ferramentas/consulta-cnae-mei/', '').replace(/\/$/, '');
+    if (SPOKES[slug]) { PageComponent = SpokePage; pageProps = { data: SPOKES[slug] }; }
+    else PageComponent = ConsultaCnaeMei;
+  }
   else if (path === '/ferramentas/consulta-cnae-mei') PageComponent = ConsultaCnaeMei;
   else if (path === '/blog') PageComponent = BlogList;
   else if (path.startsWith('/blog/categoria/')) {
