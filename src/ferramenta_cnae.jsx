@@ -586,14 +586,21 @@ function SpokeCard({ nome, slug, cnae }) {
    Os espaços ao redor do "·" são obrigatórios: dão a oportunidade de quebra de linha
    (nomes de palavra única emendados por "·" viram uma linha só e estouram). */
 function CompactList({ items }) {
+  // item pode ser string (texto puro) ou { label, href } (vira link quando há página)
   return (
     <p style={{ fontFamily: FONTS.body, fontSize: 14.5, lineHeight: 2, color: BRAND.inkSoft, margin: 0, textWrap: 'pretty', overflowWrap: 'anywhere' }}>
-      {items.map((label, i) => (
-        <React.Fragment key={label}>
-          <span style={{ color: BRAND.ink, fontWeight: 600 }}>{label}</span>
-          {i < items.length - 1 ? <span style={{ color: BRAND.inkMute }}>{' · '}</span> : null}
-        </React.Fragment>
-      ))}
+      {items.map((item, i) => {
+        const label = typeof item === 'string' ? item : item.label;
+        const href = typeof item === 'string' ? null : item.href;
+        return (
+          <React.Fragment key={label}>
+            {href
+              ? <a href={href} className="cnae-reglink" style={{ color: BRAND.ink, fontWeight: 600, textDecoration: 'none' }}>{label}</a>
+              : <span style={{ color: BRAND.ink, fontWeight: 600 }}>{label}</span>}
+            {i < items.length - 1 ? <span style={{ color: BRAND.inkMute }}>{' · '}</span> : null}
+          </React.Fragment>
+        );
+      })}
     </p>
   );
 }
@@ -602,9 +609,16 @@ function NaoMeiIndex() {
   const m = useIsMobile();
   const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15.5 : 17, letterSpacing: -0.3, color: BRAND.ink, margin: '0 0 14px' };
   const hint = { fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute };
-  const spokes = Object.values(SPOKES);                        // spokes em destaque (mais buscadas, com página)
-  const spokeCnaes = new Set(spokes.map((s) => s.cnae));
-  const restReg = REGULATED.filter((r) => !spokeCnaes.has(r.cnae)).map((r) => r.area);
+  const allSpokes = Object.values(SPOKES);
+  const cards = allSpokes.filter((s) => s.kwVol >= 480);       // destaque: mais buscadas (vol ≥ 480)
+  const linkSpokes = allSpokes.filter((s) => s.kwVol < 480);   // cauda-longa: hyperlink na lista "Outras" (tem página, mas fora do grid)
+  const spokeCnaes = new Set(allSpokes.map((s) => s.cnae));
+  // "Outras profissões regulamentadas": spokes cauda-longa (com link) + reguladas sem página (texto puro)
+  const restRegText = REGULATED.filter((r) => !spokeCnaes.has(r.cnae)).map((r) => r.area);
+  const otherReg = [
+    ...linkSpokes.map((s) => ({ label: s.nome, href: `/ferramentas/consulta-cnae-mei/${s.slug}` })),
+    ...restRegText.map((area) => ({ label: area })),
+  ];
   const vedadas = FORBIDDEN.map((f) => capFirst(f.categoria));
   return (
     <section data-anchor id="nao-pode" style={{ background: BRAND.paper, padding: m ? '4px 20px 52px' : '8px 56px 76px' }}>
@@ -622,12 +636,12 @@ function NaoMeiIndex() {
         {/* destaque: as mais buscadas, com página */}
         <h3 style={h3}>Mais buscadas <span style={hint}>· clique pra ver por quê</span></h3>
         <div style={{ display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(3, 1fr)', gap: m ? 10 : 12 }}>
-          {spokes.map((s) => <SpokeCard key={s.slug} nome={s.nome} slug={s.slug} cnae={s.cnae} />)}
+          {cards.map((s) => <SpokeCard key={s.slug} nome={s.nome} slug={s.slug} cnae={s.cnae} />)}
         </div>
 
-        {/* resto: listas compactas (leitura leve, tudo indexável) */}
-        <h3 style={{ ...h3, marginTop: m ? 28 : 36 }}>Outras profissões regulamentadas</h3>
-        <CompactList items={restReg} />
+        {/* resto: lista compacta — cauda-longa vira hyperlink (tem página), sem página fica texto */}
+        <h3 style={{ ...h3, marginTop: m ? 28 : 36 }}>Outras profissões regulamentadas <span style={hint}>· clique pra ver por quê</span></h3>
+        <CompactList items={otherReg} />
 
         <h3 style={{ ...h3, marginTop: m ? 26 : 32 }}>Atividades vedadas por natureza</h3>
         <CompactList items={vedadas} />
@@ -695,6 +709,8 @@ const CNAE_STYLE = `
   .cnae-chip:hover { transform: translateY(-1px); background: #FFDDD2; border-color: #F87453; color: #C13E2E; }
   .cnae-clearbtn { transition: background .14s ease, color .14s ease; }
   .cnae-clearbtn:hover { background: #EFEAE2; color: #10111A; }
+  .cnae-reglink { border-bottom: 1px solid rgba(16,17,26,0.18); transition: color .14s ease, border-color .14s ease; }
+  .cnae-reglink:hover { color: #C13E2E; border-color: #F87453; }
   .cnae-catbtn { transition: background .15s ease; outline: none; }
   .cnae-catbtn:hover { background: #FCFAF6; }
   .cnae-catbtn:focus-visible { box-shadow: inset 0 0 0 2px #F87453; border-radius: 16px; }
