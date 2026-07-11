@@ -602,7 +602,7 @@ function NaoMeiIndex() {
   const m = useIsMobile();
   const h3 = { fontFamily: FONTS.display, fontWeight: 700, fontSize: m ? 15.5 : 17, letterSpacing: -0.3, color: BRAND.ink, margin: '0 0 14px' };
   const hint = { fontFamily: FONTS.body, fontWeight: 600, fontSize: m ? 12.5 : 13.5, color: BRAND.inkMute };
-  const spokes = Object.values(SPOKES);                        // as 6 em destaque
+  const spokes = Object.values(SPOKES);                        // spokes em destaque (mais buscadas, com página)
   const spokeCnaes = new Set(spokes.map((s) => s.cnae));
   const restReg = REGULATED.filter((r) => !spokeCnaes.has(r.cnae)).map((r) => r.area);
   const vedadas = FORBIDDEN.map((f) => capFirst(f.categoria));
