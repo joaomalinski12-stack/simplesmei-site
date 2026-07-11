@@ -1,0 +1,14 @@
+{
+  "name": "SimplesMEI",
+  "short_name": "SimplesMEI",
+  "description": "A IA que cuida do fiscal do MEI dentro do WhatsApp.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFAF6",
+  "theme_color": "#F87453",
+  "icons": [
+    { "src": "/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}
