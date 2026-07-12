@@ -314,6 +314,65 @@ NFS-e; **CREA só p/ engenharia**, NR-10 é segurança (não condição p/ abrir
 
 **Total publicado após o lote: 56 posts.**
 
+### 2K. Lote 7 — 10 posts (2026-07-11)
+
+Sétimo lote pela skill `seo-content`, com a **3ª passada de conformidade verificada na origem** (4 agentes
+de pesquisa cruzaram cada fato YMYL em gov.br/Receita/PGFN/Sebrae **antes** de escrever). Snapshot
+Ubersuggest (Brasil, pt, jul/2026), cruzado com os **56 publicados**. Mix: 4 gaps **fiscais/processo**
+(inclui a maior keyword do lote) + 5 **nichos de profissão** (demo NFS-e) + 1 quick-win de CNAE.
+
+| # | Slug | Keyword principal | Vol/mês | SD | Frente / Categoria |
+|---|---|---|---|---|---|
+| 1 | `nota-fiscal-avulsa-mei` | nota fiscal avulsa mei | **4.400** | 37 | Nota fiscal (o *avulsa* vs. NFS-e própria) |
+| 2 | `certidao-negativa-mei` | certidão negativa mei | 590 | **14** | Regularização (regularidade fiscal) |
+| 3 | `reabrir-mei` | reabrir mei | 390 | 26 | Regularização (pós-baixa/exclusão) |
+| 4 | `mei-professor-particular` | mei professor particular | 170 | 17 | Profissões e nichos |
+| 5 | `mei-pedreiro` | mei pedreiro | 170 | 16 | Profissões e nichos |
+| 6 | `mei-artesao` | mei artesanato | 110 | 22 | Profissões e nichos |
+| 7 | `mei-esteticista` | mei esteticista | 90 | 22 | Profissões e nichos |
+| 8 | `mei-costureira` | mei costureira | 70 | 22 | Profissões e nichos |
+| 9 | `quantos-cnae-mei` | quantos cnae o mei pode ter | 70 | **7** | Primeiros passos (cluster CNAE) |
+| 10 | `mei-pet-shop` | mei pet shop | 50 | 14 | Profissões e nichos (cross-link spoke veterinário) |
+
+**Cruzamento (sem canibalização):** `nota-fiscal-avulsa` (o conceito *avulsa* — MEI emite a própria, não avulsa)
+≠ `como-emitir-nota-fiscal-mei` (o *como*) ≠ `mei-obrigado-emitir-nota-fiscal` (o *se/quando*) ≠
+`nota-fiscal-eletronica-mei` (o *tipo*); `certidao-negativa` (regularidade/CND) ≠ `como-consultar-debitos-do-mei`
+(ver o que deve); `reabrir-mei` (voltar após baixa/exclusão) ≠ `como-dar-baixa-no-mei` (fechar) ≠
+`como-regularizar-o-mei`; `quantos-cnae` (o *limite* 1+15) ≠ `cnae-do-mei` (o *que é*/como escolher); nichos
+novos (professor particular, pedreiro, artesão, esteticista, costureira, pet shop) ≠ nichos já cobertos
+(diarista, entregador, motorista-app, salão/manicure/cabeleireiro, eletricista, fotógrafo, caminhoneiro, rural).
+`esteticista` (estética de beleza) ≠ `salao-de-beleza` (cabeleireiro/manicure); `pet-shop` (comércio+banho/tosa)
+cross-linka a spoke `/ferramentas/consulta-cnae-mei/veterinario` (veterinário NÃO é MEI).
+
+**Descartados:** `como saber se sou mei` (390, **SD 40** — SERP de consulta/gov, coberto parcial por
+`cartao-cnpj-mei`); `mei loja virtual` (50, SD 32 — comercial/transacional); `mei barbeiro` (40, SD 25);
+`mei mecanico` (40), `mei pintor` (30), `mei influencer` (20), `mei maquiadora`/`doceira`/`sorveteria` (≤10 —
+volume baixo demais); `mei manicure` (70 — **canibaliza** `mei-para-salao-de-beleza`); `das complementar mei`
+(50, SD 16 — conceito fuzzy, adiado); `carta de exclusão simples`/`mei revendedora`/`mei comida caseira`/`mei
+pode vender bebida alcoólica` (volume 0).
+
+**Fatos-chave verificados na fonte (3ª passada, 4 agentes):** *Nota avulsa* — MEI TEM CNPJ e emite a
+PRÓPRIA nota; serviço = NFS-e Nacional (obrigatória p/ MEI desde 01/09/2023, Res. CGSN 169/2022, direto
+gov.br/nfse sem certificado); "avulsa" (NFA-e) só entra p/ PRODUTO como plano B estadual quando falta emissor
+de NF-e, e **varia por UF** (DF não oferece). *Certidão negativa* — federal é CONJUNTA (Receita+PGFN),
+grátis/na hora, validade **180 dias**; CPD-EN (positiva c/ efeitos de negativa) sai com débito
+suspenso/garantido (ex.: parcelamento em dia) e vale como CND; FGTS-CRF (Caixa, 30d, só MEI com empregado);
+CNDT trabalhista (TST). *Reabrir* — baixa NÃO reativa → novo MEI/novo CNPJ, e a dívida migra p/ o CPF;
+excluído/desenquadrado sem baixa → mesmo CNPJ, reenquadra no SIMEI **só em janeiro** após regularizar.
+*Quantos CNAE* — 1 principal + até 15 secundárias = **16**, todas no Anexo XI (gov.br); serviço → +ISS/NFS-e,
+produto → +ICMS/NF-e. *Nichos (Anexo XI lido direto):* professor particular = "Professor(a) particular
+independente" **8599-6/99** (serviço; escola regular 8513/8520 NÃO é MEI); pedreiro = "Pedreiro independente"
+**4399-1/03** obras de alvenaria (serviço; chapisco/emboço/reboco = 4330-4/99; sem CREA, só engenharia);
+costureira = 3 ocupações: sob medida **1412-6/02** (serviço), confecção em série **1412-6/01** (produto+ICMS),
+conserto **9529-1/99** (serviço); artesão = CNAE por material (couro 1529-7/00, madeira 1629-3/01, cerâmica
+2349-4/99…) produto/NF-e, SICAB opcional; esteticista = "Esteticista independente" **9602-5/02** (serviço;
+Lei 13.643/2018; não-invasivo pode, invasivo/saúde regulamentada não); pet shop = comércio **4789-0/04**
+(produto) + banho/tosa **9609-2/08** (serviço), veterinário NÃO é MEI (CRMV) — cross-linka a spoke. Agentes
+CORRIGIRAM hipóteses erradas de CNAE (professor 8592→8599-6/99; costureira 1412-6/03→1412-6/02; conserto
+9529-1/02→9529-1/99).
+
+**Total publicado após o lote: 66 posts.**
+
 ## Histórico de execução
 
 - **2026-06-28** — Fundação técnica parcial: `canonical`, `robots` meta, `og:url`/`og:image`/`twitter:image`
