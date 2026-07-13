@@ -10,8 +10,8 @@ import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 /* número de produção do WhatsApp Business (formato 55 + DDD + número, sem + nem espaços) */
 const WA_NUMBER = '5511978024355';
-/* porta = fundo preto da marca com texto/ícone no mint do DS (decisão do
-   dono em 2026-07-12; antes era o verde do WhatsApp #25D366). */
+/* porta = fundo mint do DS com texto/ícone branco (decisão do dono em
+   2026-07-12; antes era o verde do WhatsApp #25D366). */
 const DOOR_GREEN = BRAND.mint;
 const DOOR_GREEN_DEEP = BRAND.mintDeep;
 
@@ -66,18 +66,17 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
         target="_blank"
         rel="noopener noreferrer"
         style={{
-          background: BRAND.ink, color: DOOR_GREEN, textDecoration: 'none',
+          background: DOOR_GREEN, color: '#fff', textDecoration: 'none',
           padding: S.pad, borderRadius: S.radius,
           fontFamily: FONTS.body, fontWeight: 700, fontSize: S.font, letterSpacing: -0.1,
           display: block ? 'flex' : 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: S.gap,
           width: block ? '100%' : undefined,
           whiteSpace: block ? 'normal' : 'nowrap', textAlign: 'center', lineHeight: 1.25,
           minHeight: 44, boxSizing: 'border-box',
-          border: '1px solid rgba(86,209,163,0.35)',
-          boxShadow: '0 12px 30px -10px rgba(16,17,26,0.55)',
+          boxShadow: '0 12px 30px -10px rgba(86,209,163,0.55), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
         }}
       >
-        <WhatsAppIcon size={S.icon} color={DOOR_GREEN}/>
+        <WhatsAppIcon size={S.icon} color="#fff"/>
         {label}
         <span style={{ opacity: 0.78, fontWeight: 500, marginLeft: -2 }}>→</span>
       </a>
