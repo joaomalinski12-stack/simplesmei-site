@@ -119,12 +119,15 @@ function DoorNote({ onDark = false }) {
    preto da marca com texto e ícone no mint do DS) que aparece quando a pessoa
    rola a página: some no herói (que já tem a porta grande) e
    acompanha o resto do scroll. Só mobile — no desktop a porta da
-   nav está sempre visível. */
+   nav está sempre visível. Quando o pill entra, a porta do header sai
+   (mesmo gatilho FAB_SCROLL — nunca os dois ao mesmo tempo). */
+const FAB_SCROLL = 520;
+
 function FloatingDoor({ text = DOOR_TEXT.comecar }) {
   const m = useIsMobile();
   const [on, setOn] = React.useState(false);
   React.useEffect(() => {
-    const onScroll = () => setOn(window.scrollY > 520);
+    const onScroll = () => setOn(window.scrollY > FAB_SCROLL);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -211,11 +214,12 @@ function RecursosMenu({ items }) {
    Logo · âncoras que ancoram de verdade · porta sempre visível. */
 function NavV5() {
   const [solid, setSolid] = React.useState(false);
+  const [fabZone, setFabZone] = React.useState(false); // pill flutuante visível → porta do header sai (mobile)
   const [open, setOpen] = React.useState(false);
   const m = useIsMobile();
-  
+
   React.useEffect(() => {
-    const onScroll = () => setSolid(window.scrollY > 24);
+    const onScroll = () => { setSolid(window.scrollY > 24); setFabZone(window.scrollY > FAB_SCROLL); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -276,7 +280,14 @@ function NavV5() {
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <Door label={m ? 'Testar' : 'Testar no WhatsApp'} text={DOOR_TEXT.comecar} size="sm"/>
+        <div style={{
+          opacity: m && fabZone ? 0 : 1,
+          transform: m && fabZone ? 'translateY(-6px)' : 'none',
+          pointerEvents: m && fabZone ? 'none' : 'auto',
+          transition: 'opacity .25s ease, transform .25s ease',
+        }}>
+          <Door label={m ? 'Testar' : 'Testar no WhatsApp'} text={DOOR_TEXT.comecar} size="sm"/>
+        </div>
         
         <button 
           className="navv5-mobile-btn"
