@@ -4,37 +4,36 @@ import { SecHead } from './preco_cta.jsx';
 import { BRAND, useIsMobile } from './tokens.jsx';
 
 /* SimplesMEI — Site V5 · DEPOIMENTOS (prova social)
-   Cards no TestimonialCard compartilhado (retrato = placeholder listrado,
-   sem rosto falso). Posição: entre o bento e o preço.
+   Cards no TestimonialCard compartilhado, todos no MESMO formato e cor
+   (sem destaque coral, sem chip de métrica — quebravam em duas linhas).
+   Citações balanceadas (~145 chars) pra os cards ficarem parelhos.
+   Posição: entre o bento e o preço.
 
-   Pessoas reais, com autorização do dono. Os TEXTOS são rascunho de copy
-   aguardando validação de cada um — ajustar à fala real se eles mudarem.
+   Pessoas reais, com autorização do dono; fotos 160×160 em public/depoimentos/.
+   Os TEXTOS são rascunho aguardando validação de cada um.
    Nada aqui vira estrela/nota em schema (proibido).
-   Nota de honestidade: Greyce é MEI de COMÉRCIO (roupas) e o produto só
-   emite NFS-e de serviço — o depoimento dela não cita emissão de nota. */
+   O produto emite nota pra MEI de comércio também (confirmado pelo dono em
+   2026-07-12) — por isso a Greyce fala de emissão. */
 
-/* fotos: enviadas pelo dono (autorizadas), recortadas 160×160 em public/depoimentos/ */
+const linkStyle = { color: BRAND.coralDeep, fontWeight: 600, textDecoration: 'none' };
+
 const DEPOS = [
   {
-    quote: 'A FeriadosAPI é assinatura: todo mês, as mesmas notas pros mesmos clientes. Configurei a recorrência uma vez e esqueci — a NFS-e chega emitida no meu WhatsApp, no dia certo.',
+    quote: 'A FeriadosAPI é assinatura: todo mês, as mesmas notas pros mesmos clientes. Configurei a recorrência uma vez e a nota sai sozinha, no dia certo.',
     name: 'João Bini',
-    role: 'CEO · feriadosapi.com.br',
-    metric: 'notas no automático',
+    role: <>CEO · <a href="https://feriadosapi.com" target="_blank" rel="noopener noreferrer" style={linkStyle}>feriadosapi.com</a></>,
     photo: '/depoimentos/joao-bini.jpg',
   },
   {
-    quote: 'Abri meu MEI com a IA me guiando pelo WhatsApp e hoje é ela que me segura: pergunto quando vence o DAS, quanto falta pro teto, e a resposta vem na hora, em português de gente.',
+    quote: 'Eu vendo roupa na internet e a nota era meu pesadelo. Agora peço no WhatsApp e sai na hora — e tiro dúvida de DAS e de teto na mesma conversa.',
     name: 'Greyce Fernandes',
-    role: 'Vende roupas na internet · MEI',
-    metric: 'DAS e teto em dia',
-    tone: 'coral',
+    role: 'Vende roupas online · MEI',
     photo: '/depoimentos/greyce-fernandes.jpg',
   },
   {
-    quote: 'Cada turma nova era uma tarde no portal, emitindo nota por nota. Agora eu mando “emite pra fulana” e a NFS-e volta em segundos, com o PDF pronto pra enviar pro aluno.',
+    quote: 'Cada turma nova era uma tarde emitindo nota por nota no portal. Hoje eu mando “emite pra fulana” e a nota volta em segundos, com o PDF pro aluno.',
     name: 'Lia Mara',
     role: 'Cursos educacionais · MEI',
-    metric: 'nota em segundos',
     photo: '/depoimentos/lia-mara.jpg',
   },
 ];
@@ -51,7 +50,7 @@ function DepoimentosV5() {
         />
         <div style={{ marginTop: m ? 24 : 36, display: 'grid', gridTemplateColumns: m ? '1fr' : 'repeat(3, 1fr)', gap: m ? 14 : 16, alignItems: 'stretch' }}>
           {DEPOS.map((d, i) => (
-            <TestimonialCard key={i} quote={d.quote} name={d.name} role={d.role} metric={d.metric} tone={d.tone} photo={d.photo}/>
+            <TestimonialCard key={i} quote={d.quote} name={d.name} role={d.role} photo={d.photo}/>
           ))}
         </div>
       </div>

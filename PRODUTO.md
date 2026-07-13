@@ -38,6 +38,8 @@ de conhecimento (gov.br, Sebrae, prefeituras).
 Conversa natural → nota emitida. Ex.: *"emitir 4 mil pra Hook Marketing, consultoria em
 marketing digital"* → a IA identifica o cliente, classifica o serviço, projeta o impacto no
 teto, emite a NFS-e e devolve **número + PDF**. Tempo médio < 30 s.
+Também emite nota pra MEI de **comércio** (confirmado pelo dono em 2026-07-12 — a copy pode
+citar emissão pra quem vende produto, não só serviço).
 
 ### 4. Recorrência automática (pago) ⭐ — o diferencial
 Configura uma vez e esquece: a nota fixa do mesmo cliente sai sozinha todo mês, no dia certo.
