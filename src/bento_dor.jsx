@@ -70,9 +70,9 @@ function BentoCell({ kicker, title, desc, doorText, style, children }) {
       <span style={{
         position: 'absolute', top: 16, right: 16, width: 26, height: 26, borderRadius: '50%',
         background: DOOR_GREEN, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-        boxShadow: '0 6px 14px -6px rgba(37,211,102,0.55)',
+        boxShadow: '0 6px 14px -6px rgba(86,209,163,0.55)',
       }}>
-        <WhatsAppIcon size={15}/>
+        <WhatsAppIcon size={15} color={BRAND.ink}/>
       </span>
 
       <div style={{ marginBottom: 14, paddingRight: 30 }}>

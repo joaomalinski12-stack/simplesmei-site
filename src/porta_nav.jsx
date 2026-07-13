@@ -10,8 +10,10 @@ import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
 /* número de produção do WhatsApp Business (formato 55 + DDD + número, sem + nem espaços) */
 const WA_NUMBER = '5511978024355';
-const DOOR_GREEN = '#25D366';
-const DOOR_GREEN_DEEP = '#1fae54';
+/* verde da porta = mint do DS (decisão do dono em 2026-07-12; antes era o
+   verde do WhatsApp #25D366). Texto/ícone em ink pra contraste. */
+const DOOR_GREEN = BRAND.mint;
+const DOOR_GREEN_DEEP = BRAND.mintDeep;
 
 /* Textos pré-carregados por cena (direcional — copy final é do produto) */
 const DOOR_TEXT = {
@@ -64,17 +66,17 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
         target="_blank"
         rel="noopener noreferrer"
         style={{
-          background: DOOR_GREEN, color: '#fff', textDecoration: 'none',
+          background: DOOR_GREEN, color: BRAND.ink, textDecoration: 'none',
           padding: S.pad, borderRadius: S.radius,
           fontFamily: FONTS.body, fontWeight: 700, fontSize: S.font, letterSpacing: -0.1,
           display: block ? 'flex' : 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: S.gap,
           width: block ? '100%' : undefined,
           whiteSpace: block ? 'normal' : 'nowrap', textAlign: 'center', lineHeight: 1.25,
           minHeight: 44, boxSizing: 'border-box',
-          boxShadow: '0 12px 30px -10px rgba(37,211,102,0.5), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
+          boxShadow: '0 12px 30px -10px rgba(86,209,163,0.55), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
         }}
       >
-        <WhatsAppIcon size={S.icon}/>
+        <WhatsAppIcon size={S.icon} color={BRAND.ink}/>
         {label}
         <span style={{ opacity: 0.78, fontWeight: 500, marginLeft: -2 }}>→</span>
       </a>
@@ -102,7 +104,7 @@ function Door({ label = 'Testar no WhatsApp', text = DOOR_TEXT.comecar, size = '
 function DoorNote({ onDark = false }) {
   return (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-      <span style={{ width: 8, height: 8, borderRadius: '50%', background: DOOR_GREEN, flexShrink: 0, boxShadow: '0 0 0 4px rgba(37,211,102,0.18)' }}/>
+      <span style={{ width: 8, height: 8, borderRadius: '50%', background: DOOR_GREEN, flexShrink: 0, boxShadow: '0 0 0 4px rgba(86,209,163,0.22)' }}/>
       <span style={{
         fontFamily: FONTS.mono, fontSize: 10.5, fontWeight: 700, letterSpacing: 0.4,
         color: onDark ? '#84858F' : BRAND.inkSoft, textTransform: 'uppercase',
