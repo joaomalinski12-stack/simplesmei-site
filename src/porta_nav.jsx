@@ -112,8 +112,9 @@ function DoorNote({ onDark = false }) {
 }
 
 /* ─── PORTA FLUTUANTE (mobile) ─────────────────────────────
-   Botão fixo de WhatsApp que aparece quando a pessoa rola a página
-   (padrão jota.ai): some no herói (que já tem a porta grande) e
+   Pill fixo centralizado ("Chame a Simples" + logo WhatsApp, fundo
+   preto da marca com conteúdo coral) que aparece quando a pessoa
+   rola a página: some no herói (que já tem a porta grande) e
    acompanha o resto do scroll. Só mobile — no desktop a porta da
    nav está sempre visível. */
 function FloatingDoor({ text = DOOR_TEXT.comecar }) {
@@ -131,20 +132,24 @@ function FloatingDoor({ text = DOOR_TEXT.comecar }) {
       href={waHref(text)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Falar com o SimplesMEI no WhatsApp"
+      aria-label="Chame a Simples no WhatsApp"
       style={{
-        position: 'fixed', right: 16, bottom: 16, zIndex: 90,
-        width: 56, height: 56, borderRadius: '50%',
-        background: DOOR_GREEN,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        boxShadow: '0 14px 32px -8px rgba(37,211,102,0.60), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
-        transform: on ? 'translateY(0) scale(1)' : 'translateY(90px) scale(0.6)',
+        position: 'fixed', left: '50%', bottom: 16, zIndex: 90,
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 9,
+        background: BRAND.ink, color: BRAND.coral,
+        padding: '14px 24px', borderRadius: 999, minHeight: 48,
+        fontFamily: FONTS.body, fontWeight: 700, fontSize: 15, letterSpacing: -0.1,
+        textDecoration: 'none', whiteSpace: 'nowrap',
+        border: '1px solid rgba(248,116,83,0.35)',
+        boxShadow: '0 16px 36px -10px rgba(16,17,26,0.55)',
+        transform: on ? 'translateX(-50%) translateY(0) scale(1)' : 'translateX(-50%) translateY(90px) scale(0.9)',
         opacity: on ? 1 : 0,
         pointerEvents: on ? 'auto' : 'none',
         transition: 'transform .3s cubic-bezier(.2,.8,.3,1), opacity .3s ease',
       }}
     >
-      <WhatsAppIcon size={28}/>
+      <WhatsAppIcon size={20} color={BRAND.coral}/>
+      Chame a Simples
     </a>
   );
 }
