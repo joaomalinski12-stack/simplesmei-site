@@ -141,19 +141,18 @@ function FloatingDoor({ text = DOOR_TEXT.comecar }) {
       style={{
         position: 'fixed', left: '50%', bottom: 16, zIndex: 90,
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 9,
-        background: BRAND.ink, color: BRAND.mint,
+        background: BRAND.coral, color: '#fff',
         padding: '14px 24px', borderRadius: 999, minHeight: 48,
         fontFamily: FONTS.body, fontWeight: 700, fontSize: 15, letterSpacing: -0.1,
         textDecoration: 'none', whiteSpace: 'nowrap',
-        border: '1px solid rgba(86,209,163,0.35)',
-        boxShadow: '0 16px 36px -10px rgba(16,17,26,0.55)',
+        boxShadow: '0 16px 36px -10px rgba(248,116,83,0.65), 0 1.5px 0 ' + BRAND.coralDeep + ' inset',
         transform: on ? 'translateX(-50%) translateY(0) scale(1)' : 'translateX(-50%) translateY(90px) scale(0.9)',
         opacity: on ? 1 : 0,
         pointerEvents: on ? 'auto' : 'none',
         transition: 'transform .3s cubic-bezier(.2,.8,.3,1), opacity .3s ease',
       }}
     >
-      <WhatsAppIcon size={20} color={BRAND.mint}/>
+      <WhatsAppIcon size={20} color="#fff"/>
       Chame a Simples
     </a>
   );
