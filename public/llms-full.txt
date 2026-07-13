@@ -43,7 +43,7 @@ A inteligência artificial opera através de integrações no backend para ofere
 ## Filosofia de Engenharia e UX
 
 ### UX Conversacional
-Toda a interação de produto é projetada ao redor da conversa. O call-to-action (CTA) principal do site oficial abre links diretos ("deep links") para o WhatsApp já com uma primeira mensagem estruturada. O MEI interage apenas pelo WhatsApp, resolvendo a gestão do MEI — nota fiscal, DAS e teto — sem portal, sem app e sem planilha.
+Toda a interação de produto é projetada ao redor da conversa. O call-to-action (CTA) principal do site oficial abre links diretos ("deep links") para o WhatsApp já com uma primeira mensagem estruturada. O MEI interage apenas pelo WhatsApp, resolvendo a gestão do MEI (nota fiscal, DAS e teto) sem portal, sem app e sem planilha.
 
 ### Posicionamento ("Brand Voice")
 O SimplesMEI nunca finge ser um humano. A marca se posiciona abertamente como uma **Inteligência Artificial** potente e resolutiva. A transparência na comunicação não prevê invenções como "fale com nosso time contábil"; é sempre a IA que trabalha ativamente em prol do cliente.

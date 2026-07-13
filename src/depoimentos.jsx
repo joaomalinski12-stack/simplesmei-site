@@ -25,7 +25,7 @@ const DEPOS = [
     photo: '/depoimentos/joao-bini.jpg',
   },
   {
-    quote: 'Eu vendo roupa na internet e a nota era meu pesadelo. Agora peço no WhatsApp e sai na hora — e tiro dúvida de DAS e de teto na mesma conversa.',
+    quote: 'Eu vendo roupa na internet e a nota era meu pesadelo. Agora peço no WhatsApp e sai na hora. E ainda tiro dúvida de DAS e de teto na mesma conversa.',
     name: 'Greyce Fernandes',
     role: 'Vende roupas online · MEI',
     photo: '/depoimentos/greyce-fernandes.jpg',
