@@ -126,6 +126,27 @@
   .v5-cell .v5-cell-hint { opacity: 0; transition: opacity .2s ease; }
   .v5-cell:hover .v5-cell-hint { opacity: 1; }
 
+  /* ── Pill flutuante (mobile): cometa verde girando no contorno, sempre
+        ativo — mesmo desenho da borda dos bento cards (.v5-cell) ── */
+  .v5-fab::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(from var(--v5-angle),
+      #F87453 0deg,
+      #F87453 264deg,
+      #56D1A3 332deg,
+      #8FE9C8 356deg,
+      #F87453 360deg);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+    animation: v5-fab-spin 4s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes v5-fab-spin { from { --v5-angle: 0deg; } to { --v5-angle: 360deg; } }
+  @media (prefers-reduced-motion: reduce) { .v5-fab::before { animation: none; } }
+
   /* ── Signature animation keyframes ── */
   @keyframes v5-rise { from { opacity: 0; transform: translateY(-9px); } to { opacity: 1; transform: translateY(0); } }
 

@@ -134,6 +134,7 @@ function FloatingDoor({ text = DOOR_TEXT.comecar }) {
   if (!m) return null;
   return (
     <a
+      className="v5-fab"
       href={waHref(text)}
       target="_blank"
       rel="noopener noreferrer"
@@ -145,7 +146,6 @@ function FloatingDoor({ text = DOOR_TEXT.comecar }) {
         padding: '14px 24px', borderRadius: 999, minHeight: 48,
         fontFamily: FONTS.body, fontWeight: 700, fontSize: 15, letterSpacing: -0.1,
         textDecoration: 'none', whiteSpace: 'nowrap',
-        boxShadow: '0 16px 36px -10px rgba(248,116,83,0.65), 0 1.5px 0 ' + BRAND.coralDeep + ' inset',
         transform: on ? 'translateX(-50%) translateY(0) scale(1)' : 'translateX(-50%) translateY(90px) scale(0.9)',
         opacity: on ? 1 : 0,
         pointerEvents: on ? 'auto' : 'none',
