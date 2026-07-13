@@ -111,6 +111,44 @@ function DoorNote({ onDark = false }) {
   );
 }
 
+/* ─── PORTA FLUTUANTE (mobile) ─────────────────────────────
+   Botão fixo de WhatsApp que aparece quando a pessoa rola a página
+   (padrão jota.ai): some no herói (que já tem a porta grande) e
+   acompanha o resto do scroll. Só mobile — no desktop a porta da
+   nav está sempre visível. */
+function FloatingDoor({ text = DOOR_TEXT.comecar }) {
+  const m = useIsMobile();
+  const [on, setOn] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setOn(window.scrollY > 520);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  if (!m) return null;
+  return (
+    <a
+      href={waHref(text)}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com o SimplesMEI no WhatsApp"
+      style={{
+        position: 'fixed', right: 16, bottom: 16, zIndex: 90,
+        width: 56, height: 56, borderRadius: '50%',
+        background: DOOR_GREEN,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        boxShadow: '0 14px 32px -8px rgba(37,211,102,0.60), 0 1.5px 0 ' + DOOR_GREEN_DEEP + ' inset',
+        transform: on ? 'translateY(0) scale(1)' : 'translateY(90px) scale(0.6)',
+        opacity: on ? 1 : 0,
+        pointerEvents: on ? 'auto' : 'none',
+        transition: 'transform .3s cubic-bezier(.2,.8,.3,1), opacity .3s ease',
+      }}
+    >
+      <WhatsAppIcon size={28}/>
+    </a>
+  );
+}
+
 /* seta do dropdown (gira ao abrir) */
 function Chevron({ open }) {
   return (
@@ -294,4 +332,4 @@ function NavV5() {
   );
 }
 
-export { WA_NUMBER, DOOR_GREEN, DOOR_GREEN_DEEP, DOOR_TEXT, waHref, Door, DoorNote, NavV5 };
+export { WA_NUMBER, DOOR_GREEN, DOOR_GREEN_DEEP, DOOR_TEXT, waHref, Door, DoorNote, FloatingDoor, NavV5 };

@@ -302,11 +302,11 @@ function HeroV5() {
             <Mono color={BRAND.coralDeep} size={11}>A IA que cuida do fiscal do MEI · dentro do WhatsApp</Mono>
           </div>
           <h1 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 'clamp(34px, 9.4vw, 52px)' : 66, lineHeight: 1.0, letterSpacing: m ? '-0.025em' : -2.2, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>
-            O trabalho do contador.<br/><span style={{ color: BRAND.coralDeep }}>Sem a conta do contador.</span>
+            Gestão do MEI<br/><span style={{ color: BRAND.coralDeep }}>no seu WhatsApp.</span>
           </h1>
           {/* UMA legenda da cena (~12 palavras), não a descrição inteira */}
           <p style={{ fontFamily: FONTS.body, fontSize: m ? 17 : 21, lineHeight: 1.5, color: BRAND.inkSoft, margin: '24px 0 0', maxWidth: 432, textWrap: 'pretty' }}>
-            Você manda do seu jeito. <strong style={{ color: BRAND.ink, fontWeight: 700 }}>A IA emite a nota e cuida do seu imposto.</strong>
+            Você manda do seu jeito. <strong style={{ color: BRAND.ink, fontWeight: 700 }}>A IA emite a nota fiscal e cuida do DAS, do teto e do resto.</strong>
           </p>
           <p style={{ fontFamily: FONTS.body, fontSize: 15.5, lineHeight: 1.5, color: BRAND.inkSoft, margin: '16px 0 0' }}>
             <strong style={{ color: BRAND.ink, fontWeight: 700 }}>34 dias grátis.</strong> Depois, a partir de <strong style={{ color: BRAND.coralDeep, fontWeight: 700 }}>R$ 39,90/mês</strong>.

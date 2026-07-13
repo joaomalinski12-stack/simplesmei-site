@@ -449,7 +449,7 @@ function Footer() {
         <div>
           <Logo inverted size={24}/>
           <p style={{ fontSize: 12.5, lineHeight: 1.6, marginTop: 14, color: '#9D9EA5', maxWidth: 280 }}>
-            A contabilidade do MEI dentro do WhatsApp. Sem app, sem planilha, sem dor de cabeça.
+            A gestão do MEI dentro do WhatsApp. Sem app, sem planilha, sem dor de cabeça.
           </p>
         </div>
         {[
@@ -909,7 +909,7 @@ function ChatCnaeCard() {
 /* ─────────────────────────────────────────────
    Testimonial card (shared)
    ───────────────────────────────────────────── */
-function TestimonialCard({ quote, name, role, metric, tone = 'paper' }) {
+function TestimonialCard({ quote, name, role, metric, tone = 'paper', photo }) {
   const isHL = tone === 'coral';
   return (
     <div style={{
@@ -928,7 +928,14 @@ function TestimonialCard({ quote, name, role, metric, tone = 'paper' }) {
         marginTop: 22, paddingTop: 18,
         borderTop: `1px solid ${isHL ? '#FFDDD2' : BRAND.sandDeep}`,
       }}>
-        <Portrait size={40} label="foto"/>
+        {photo ? (
+          <img src={photo} alt={`Foto de ${name}`} width={40} height={40} loading="lazy" style={{
+            width: 40, height: 40, borderRadius: '50%', objectFit: 'cover',
+            border: `1.5px solid ${isHL ? '#FFDDD2' : BRAND.sandDeep}`, flexShrink: 0,
+          }}/>
+        ) : (
+          <Portrait size={40} label="foto"/>
+        )}
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 14, letterSpacing: -0.2 }}>{name}</div>
           <div style={{ fontSize: 11.5, color: BRAND.inkSoft, marginTop: 2 }}>{role}</div>

@@ -2,7 +2,8 @@ import React from 'react';
 import { BentoV5 } from './bento_dor.jsx';
 import { HeroV5, TrustRowV5 } from './heroi.jsx';
 import { Footer, LockIcon } from './logo_footer.jsx';
-import { DOOR_TEXT, Door, NavV5 } from './porta_nav.jsx';
+import { DepoimentosV5 } from './depoimentos.jsx';
+import { DOOR_TEXT, Door, FloatingDoor, NavV5 } from './porta_nav.jsx';
 import { Mono } from './tiles.jsx';
 import { BRAND, FONTS, useIsMobile } from './tokens.jsx';
 
@@ -51,7 +52,7 @@ function PriceV5() {
           <div style={{ padding: m ? '28px 22px' : '40px 44px', minWidth: 0 }}>
             <Mono color={BRAND.coralDeep} size={11}>tudo incluso</Mono>
             <div style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: 28, letterSpacing: -0.8, color: BRAND.ink, marginTop: 8, lineHeight: 1.06 }}>
-              O contador inteiro cabe numa conversa.
+              A gestão do MEI inteira cabe numa conversa.
             </div>
             <ul style={{ listStyle: 'none', padding: 0, margin: '22px 0 0', display: 'grid', gridTemplateColumns: m ? '1fr' : '1fr 1fr', gap: '12px 20px' }}>
               {perks.map((p, i) => (
@@ -155,7 +156,7 @@ const FAQ_ITEMS = [
     a: (
       <>
         Pra rotina do MEI — emitir nota, controlar o DAS e o teto — não. O MEI é dispensado de
-        contabilidade formal, e o SimplesMEI cuida dessa parte no WhatsApp. Se um dia o negócio
+        contabilidade formal, e o SimplesMEI cuida dessa gestão no WhatsApp. Se um dia o negócio
         crescer além do MEI, aí um contador entra; até lá, a IA resolve.
       </>
     ),
@@ -344,11 +345,13 @@ function SiteV5() {
       <HeroV5/>
       <TrustRowV5/>
       <BentoV5/>
+      <DepoimentosV5/>
       <PriceV5/>
       <SegurancaV5/>
       <FaqV5/>
       <FinalCTA/>
       <Footer/>
+      <FloatingDoor/>
     </div>
   );
 }
