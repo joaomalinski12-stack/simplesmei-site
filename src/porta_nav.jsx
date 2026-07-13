@@ -134,7 +134,7 @@ function FloatingDoor({ text = DOOR_TEXT.comecar }) {
   if (!m) return null;
   return (
     <a
-      className="v5-fab"
+      className={'v5-fab' + (on ? ' v5-fab-on' : '')}
       href={waHref(text)}
       target="_blank"
       rel="noopener noreferrer"
