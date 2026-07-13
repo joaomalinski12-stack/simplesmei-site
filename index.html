@@ -126,26 +126,21 @@
   .v5-cell .v5-cell-hint { opacity: 0; transition: opacity .2s ease; }
   .v5-cell:hover .v5-cell-hint { opacity: 1; }
 
-  /* ── Pill flutuante (mobile): cometa verde girando no contorno, sempre
-        ativo — mesmo desenho da borda dos bento cards (.v5-cell) ── */
+  /* ── Pill flutuante (mobile): aura mint constante + brilho varrendo
+        (sheen) de tempos em tempos — o "mágico" do botão ── */
+  .v5-fab {
+    overflow: hidden;
+    box-shadow: 0 0 24px rgba(143,233,200,0.75), 0 0 6px rgba(86,209,163,0.5);
+  }
   .v5-fab::before {
     content: ""; position: absolute; inset: 0; border-radius: inherit;
-    padding: 2px;
-    background: conic-gradient(from var(--v5-angle),
-      #F87453 0deg,
-      #F87453 120deg,
-      #56D1A3 300deg,
-      #8FE9C8 352deg,
-      #F87453 360deg);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-    animation: v5-fab-spin 4s linear infinite;
+    background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.35) 44%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.35) 56%, transparent 68%);
+    background-size: 260% 100%; background-repeat: no-repeat;
+    animation: v5-sheen 2.8s ease-in-out infinite;
     pointer-events: none;
   }
-  @keyframes v5-fab-spin { from { --v5-angle: 0deg; } to { --v5-angle: 360deg; } }
-  @media (prefers-reduced-motion: reduce) { .v5-fab::before { animation: none; } }
+  @keyframes v5-sheen { 0% { background-position: 130% 0; } 55% { background-position: -130% 0; } 100% { background-position: -130% 0; } }
+  @media (prefers-reduced-motion: reduce) { .v5-fab::before { animation: none; background: none; } }
 
   /* ── Signature animation keyframes ── */
   @keyframes v5-rise { from { opacity: 0; transform: translateY(-9px); } to { opacity: 1; transform: translateY(0); } }
