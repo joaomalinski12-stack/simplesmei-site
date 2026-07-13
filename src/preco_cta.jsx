@@ -274,10 +274,9 @@ function FaqV5() {
       borderRadius: 18, padding: m ? '20px 20px' : '24px 24px', maxWidth: m ? '100%' : 380,
     }}>
       <div style={{ fontFamily: FONTS.display, fontWeight: 700, fontSize: 18, color: BRAND.ink, letterSpacing: -0.3, lineHeight: 1.2 }}>Ainda com dúvida?</div>
-      <p style={{ margin: '8px 0 16px', fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.55, color: BRAND.inkSoft, textWrap: 'pretty' }}>
-        Pergunta pra IA no WhatsApp. Ela responde na hora, qualquer dia, qualquer hora.
+      <p style={{ margin: '8px 0 0', fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.55, color: BRAND.inkSoft, textWrap: 'pretty' }}>
+        Pergunta pra IA no WhatsApp: é só tocar no botão do topo. Ela responde na hora, qualquer dia, qualquer hora.
       </p>
-      <Door label="perguntar pra IA" text="tenho uma dúvida sobre o SimplesMEI" size="md" block align="left" preview/>
     </div>
   );
   return (
@@ -308,7 +307,8 @@ function FaqV5() {
   );
 }
 
-/* ─── CTA FINAL (escuro) — a última porta ─── */
+/* ─── CTA FINAL (escuro) — fechamento em texto; a porta fica no header
+   e no pill flutuante do mobile (decisão do dono em 2026-07-12) ─── */
 function FinalCTA() {
   const m = useIsMobile();
   return (
@@ -316,7 +316,6 @@ function FinalCTA() {
       <div style={{
         maxWidth: 1240, margin: '0 auto', background: BRAND.ink, borderRadius: m ? 22 : 28,
         padding: m ? '36px 24px' : '60px 56px', position: 'relative', overflow: 'hidden',
-        display: 'grid', gridTemplateColumns: m ? '1fr' : '1.25fr 1fr', gap: m ? 28 : 44, alignItems: 'center',
       }}>
         <div className="v5-comet-line" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4 }}/>
         <div style={{ position: 'absolute', bottom: -160, right: -90, width: 460, height: 460, borderRadius: '50%', background: `radial-gradient(circle, rgba(248,116,83,0.24) 0%, transparent 64%)`, pointerEvents: 'none' }}/>
@@ -326,11 +325,8 @@ function FinalCTA() {
             Manda a sua primeira nota hoje.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.55, color: '#9D9EA5', margin: '16px 0 0', maxWidth: 420 }}>
-            Abre a conversa com a frase já digitada. Você escreve do seu jeito. A IA emite, envia pro cliente e cuida do DAS, da recorrência e do teto. Sozinha.
+            Abre a conversa pelo botão do topo. Você escreve do seu jeito. A IA emite, envia pro cliente e cuida do DAS, da recorrência e do teto. Sozinha.
           </p>
-        </div>
-        <div style={{ position: 'relative', display: 'flex', justifyContent: m ? 'flex-start' : 'flex-start' }}>
-          <Door label="quero começar" text={DOOR_TEXT.comecar} size={m ? 'lg' : 'xl'} block={m} preview onDark/>
         </div>
       </div>
     </section>

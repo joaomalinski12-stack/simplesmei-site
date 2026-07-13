@@ -1,5 +1,4 @@
 import React from 'react';
-import { DOOR_TEXT, Door, DoorNote } from './porta_nav.jsx';
 import { Mono } from './tiles.jsx';
 import { BRAND, ChatShell, CheckSeal, FONTS, PhoneFrame, useIsMobile } from './tokens.jsx';
 
@@ -311,10 +310,6 @@ function HeroV5() {
           <p style={{ fontFamily: FONTS.body, fontSize: 15.5, lineHeight: 1.5, color: BRAND.inkSoft, margin: '16px 0 0' }}>
             <strong style={{ color: BRAND.ink, fontWeight: 700 }}>34 dias grátis.</strong> Depois, a partir de <strong style={{ color: BRAND.coralDeep, fontWeight: 700 }}>R$ 39,90/mês</strong>.
           </p>
-          <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 14 }}>
-            <Door label="emitir minha primeira nota grátis" text={DOOR_TEXT.hero} size={m ? 'lg' : 'xl'} block={m} preview/>
-            <DoorNote/>
-          </div>
         </div>
 
         {/* coluna celular — o protagonista */}
