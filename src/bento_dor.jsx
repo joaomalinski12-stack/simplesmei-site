@@ -69,10 +69,10 @@ function BentoCell({ kicker, title, desc, doorText, style, children }) {
       {/* selo persistente: sou uma entrada */}
       <span style={{
         position: 'absolute', top: 16, right: 16, width: 26, height: 26, borderRadius: '50%',
-        background: DOOR_GREEN, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-        boxShadow: '0 6px 14px -6px rgba(86,209,163,0.55)',
+        background: BRAND.ink, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+        boxShadow: '0 6px 14px -6px rgba(16,17,26,0.5)',
       }}>
-        <WhatsAppIcon size={15} color={BRAND.ink}/>
+        <WhatsAppIcon size={15} color={DOOR_GREEN}/>
       </span>
 
       <div style={{ marginBottom: 14, paddingRight: 30 }}>
