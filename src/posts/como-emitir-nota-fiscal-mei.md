@@ -90,7 +90,11 @@ Quer ver esse fluxo em detalhe? Veja como funciona [emitir nota fiscal pelo What
 
 Acontece: errou o valor, o tomador ou a descrição. A regra geral é direta — **dentro do prazo permitido pelo sistema, você cancela a nota errada e emite uma nova correta**. Cada município (e o Emissor Nacional) tem uma janela própria para cancelamento; passou dela, o caminho costuma ser a **substituição** da nota, não o cancelamento simples. Em alguns casos, depois de a competência fechar, o ajuste pode exigir uma carta de correção ou retificação.
 
+O passo a passo do cancelamento em si, com os prazos de cada sistema e o que fazer quando a janela já fechou, está em [como cancelar nota fiscal do MEI](/blog/cancelar-nota-fiscal-mei).
+
 Por isso o melhor cancelamento é o que você não precisa fazer: **confira tomador, valor e descrição antes de clicar em emitir**. É o tipo de checagem que some quando a nota nasce de uma frase verificada no WhatsApp em vez de um formulário preenchido às pressas.
+
+E se você ainda não abriu o MEI, mas precisa entregar uma nota agora, existe a saída da [nota fiscal avulsa](/blog/nota-fiscal-avulsa-mei), emitida pela prefeitura ou pelo estado sem CNPJ próprio.
 
 ## Nota fiscal x DAS: não confunda
 

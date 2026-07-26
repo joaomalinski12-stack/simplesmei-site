@@ -66,6 +66,8 @@ O portal mostra um resumo dos seus dados. Confira tudo e clique em **Confirmar**
 
 Formalizar é só o começo. A partir daí você precisa [emitir nota](/blog/como-emitir-nota-fiscal-mei), [pagar o DAS](/blog/das-do-mei) todo mês e [não estourar o teto](/blog/limite-do-mei) de faturamento do MEI (R$ 81 mil por ano) — passar disso te [desenquadra](/blog/desenquadramento-do-mei) e pode gerar cobrança retroativa.
 
+Há também três providências que costumam vir logo depois do CNPJ sair, e que ninguém avisa na hora: definir o [nome fantasia](/blog/nome-fantasia-mei) do negócio, abrir uma [conta PJ](/blog/conta-pj-mei) para separar o dinheiro da empresa do seu, e verificar se a sua atividade exige [alvará de funcionamento](/blog/alvara-mei) na sua cidade.
+
 É aqui que o [**SimplesMEI**](/) entra. A nossa inteligência artificial cuida do fiscal pelo WhatsApp: você manda *"emite uma nota de 500 para a Marina"* e ela emite a nota, classifica o serviço e **vigia o seu teto automaticamente** — sem planilha, sem portal. E se você ainda não abriu o MEI, dá para **começar a abertura de graça** direto pela conversa, com a IA te guiando passo a passo.
 
 Ainda com dúvida sobre nota, DAS ou teto? Veja as [perguntas frequentes](/#faq) do SimplesMEI.

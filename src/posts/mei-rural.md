@@ -63,4 +63,4 @@ O [**SimplesMEI**](/) é uma **IA que cuida do fiscal do MEI dentro do WhatsApp*
 
 > No campo, tempo é plantio e colheita, não fila de portal. A IA cuida do que é repetitivo — lembrar do **DAS**, organizar o **faturamento** da safra, emitir a **nota** para a cooperativa — enquanto você toca a produção. As decisões previdenciárias sensíveis (como a de segurado especial) continuam sendo confirmadas por você no INSS.
 
-Para se aprofundar, comece por [o que é o MEI](/blog/o-que-e-mei), veja [como abrir o MEI](/blog/como-abrir-mei) e entenda [a aposentadoria do MEI](/blog/aposentadoria-mei) que o DAS garante. O MEI Rural é a porta de entrada do pequeno produtor para a formalização — com CNPJ, INSS e nota, sem sair do regime familiar.
+Para se aprofundar, comece por [o que é o MEI](/blog/o-que-e-mei), veja [como abrir o MEI](/blog/como-abrir-mei) e entenda [a aposentadoria do MEI](/blog/aposentadoria-mei) que o DAS garante. O MEI Rural é a porta de entrada do pequeno produtor para a formalização — com CNPJ, INSS e nota, sem sair do regime familiar. Se o foco é cuidado de animais de estimação, veja [MEI pet shop](/blog/mei-pet-shop).

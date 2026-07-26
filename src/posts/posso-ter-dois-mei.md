@@ -45,7 +45,7 @@ Nesse cenário, valem duas leituras:
 
 ## MEI pode ser sócio de outra empresa?
 
-Não. Além de não poder ter dois MEIs, o Microempreendedor Individual **não pode ser sócio, titular ou administrador de outra empresa**. Se ele entra numa sociedade, perde o enquadramento e é **desenquadrado** do MEI. É a mesma lógica: a categoria foi desenhada para quem tem **um** pequeno negócio próprio, não para acumular participações.
+Não. Além de não poder ter dois MEIs, o Microempreendedor Individual **não pode ser sócio, titular ou administrador de outra empresa**. Se ele entra numa sociedade, perde o enquadramento e é **desenquadrado** do MEI. É a mesma lógica: a categoria foi desenhada para quem tem **um** pequeno negócio próprio, não para acumular participações. As exceções e o que acontece com quem já é sócio estão em [MEI pode ser sócio de empresa](/blog/mei-pode-ser-socio-de-empresa).
 
 O que o MEI **pode** fazer é ter um emprego com **carteira assinada** em paralelo — ser CLT e MEI ao mesmo tempo é permitido. Essa possibilidade (e o que muda no INSS e no imposto) está em [MEI pode ter carteira assinada](/blog/mei-pode-ter-carteira-assinada).
 

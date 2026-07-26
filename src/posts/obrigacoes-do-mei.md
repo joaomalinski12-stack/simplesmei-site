@@ -51,6 +51,8 @@ Sim. O **DAS** é a guia única mensal do **MEI** e é a obrigação que mais ap
 
 O valor é fixo, mas **muda a cada virada de ano**, porque a parte do INSS acompanha o salário mínimo. Por isso não cravamos aqui o número de 2026: confira o valor atual no Portal do Empreendedor antes de pagar. Atrasar gera juros, multa e — o que mais machuca — **perda dos direitos previdenciários** daquele mês. O passo a passo completo de como gerar e pagar está em [o DAS mensal](/blog/das-do-mei).
 
+Ficar em dia também é o que permite tirar a [certidão negativa de débitos](/blog/certidao-negativa-mei), documento que bancos, licitações e clientes maiores costumam pedir para fechar contrato.
+
 ## O MEI precisa fazer declaração anual?
 
 Sim. Toda empresa **MEI** entrega a **DASN-SIMEI** (Declaração Anual do Simples Nacional para o MEI) **uma vez por ano, até 31 de maio**, informando o faturamento bruto do ano anterior. É gratuita, feita no Portal do Empreendedor, e **obrigatória mesmo se você faturou zero** no ano.

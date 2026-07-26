@@ -71,4 +71,4 @@ O [**SimplesMEI**](/) é uma **IA que cuida do fiscal do MEI dentro do WhatsApp*
 
 > No salão, tempo é cadeira ocupada. A proposta da IA é resolver o fiscal entre um cliente e outro, por mensagem: abrir o MEI, emitir a nota na hora que pedirem e manter o DAS em dia — sem você largar a tesoura ou o pincel para encarar um portal do governo.
 
-Para completar, veja [as atividades permitidas ao MEI](/blog/atividades-permitidas-mei), [como emitir nota fiscal](/blog/como-emitir-nota-fiscal-mei) e, se for contratar, [se o MEI pode ter funcionário](/blog/mei-pode-ter-funcionario). Beleza é serviço de MEI por excelência — barato, formalizado e com direitos.
+Para completar, veja [as atividades permitidas ao MEI](/blog/atividades-permitidas-mei), [como emitir nota fiscal](/blog/como-emitir-nota-fiscal-mei) e, se for contratar, [se o MEI pode ter funcionário](/blog/mei-pode-ter-funcionario). Beleza é serviço de MEI por excelência — barato, formalizado e com direitos. Para os procedimentos estéticos especificamente, veja [MEI esteticista](/blog/mei-esteticista).

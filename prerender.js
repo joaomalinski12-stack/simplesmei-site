@@ -64,34 +64,43 @@ for (const route of routes) {
     });
   }
 
+  /* O sufixo de marca só entra se couber no limite da SERP (~60 chars).
+     Ele fica no FIM, então quando o título estoura é ele o primeiro a ser cortado:
+     aparecia como "… · Simples" e ainda empurrava o texto útil pra beira do corte.
+     Nenhum title de post passa de 60 sozinho (o maior tem 59), então basta condicionar
+     o sufixo pra 81 das 114 páginas pararem de truncar, sem reescrever título nenhum. */
+  const LIMITE_TITLE = 60;
+  const comMarca = (t, sufixo = ' · SimplesMEI') =>
+    (t.length + sufixo.length <= LIMITE_TITLE ? t + sufixo : t);
+
   // Custom SEO tags per route
-  let title = 'Emita a nota fiscal do MEI pelo WhatsApp · SimplesMEI';
+  let title = comMarca('Emita a nota fiscal do MEI pelo WhatsApp');
   let description = 'Emita a nota fiscal do seu MEI por uma mensagem no WhatsApp. A IA cuida do DAS, da recorrência e do teto — sem portal, sem app, sem contador.';
   let canonicalPath = route;
 
   if (route === '/termos') {
-    title = 'Termos de Uso · SimplesMEI';
+    title = comMarca('Termos de Uso');
     description = 'Termos de uso do serviço SimplesMEI. Saiba como nossa inteligência artificial interage via WhatsApp para facilitar o dia a dia do Microempreendedor Individual.';
   } else if (route === '/privacidade') {
-    title = 'Política de Privacidade · SimplesMEI';
+    title = comMarca('Política de Privacidade');
     description = 'Política de Privacidade e LGPD do SimplesMEI. Transparência sobre o uso de dados, não-treinamento de IA pública e proteção do seu MEI.';
   } else if (route === '/sobre') {
-    title = 'Sobre a Empresa · SimplesMEI';
+    title = comMarca('Sobre a Empresa');
     description = 'Conheça a história da SimplesMEI e nossa missão de usar inteligência artificial no WhatsApp para desburocratizar a contabilidade no Brasil.';
   } else if (route === '/imprensa') {
-    title = 'Imprensa · SimplesMEI';
+    title = comMarca('Imprensa');
     description = 'Media kit, contatos para a mídia e informações sobre a SimplesMEI para veículos de imprensa.';
   } else if (route === '/carreiras') {
-    title = 'Carreiras · SimplesMEI';
+    title = comMarca('Carreiras');
     description = 'Trabalhe conosco na SimplesMEI. Buscamos talentos em engenharia, design e IA para transformar a contabilidade no Brasil.';
   } else if (route === '/contato') {
-    title = 'Contato · SimplesMEI';
+    title = comMarca('Contato');
     description = 'Fale com o suporte da SimplesMEI via WhatsApp ou E-mail. Estamos aqui para ajudar o seu MEI.';
   } else if (route === '/lista-de-espera') {
-    title = 'Lista de espera · SimplesMEI';
+    title = comMarca('Lista de espera');
     description = 'Entre na lista de espera do SimplesMEI, a IA que cuida do fiscal do seu MEI no WhatsApp. A gente te avisa assim que abrir as primeiras vagas.';
   } else if (route === '/ferramentas/consulta-cnae-mei') {
-    title = 'Consulta CNAE MEI grátis: sua atividade pode ser MEI? · SimplesMEI';
+    title = comMarca('Consulta CNAE MEI grátis: sua atividade pode ser MEI?');
     description = 'Consulta CNAE MEI grátis: digite sua profissão e veja na hora se pode ser MEI, qual o CNAE e o imposto. Lista oficial das 466 ocupações permitidas ao MEI.';
     // @graph próprio da ferramenta: BreadcrumbList + WebApplication + FAQPage (FAQ idêntico ao da página).
     const graph = {
@@ -146,7 +155,7 @@ for (const route of routes) {
     };
     html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>\n</head>`);
   } else if (route === '/ferramentas') {
-    title = 'Ferramentas grátis para o MEI: CNAE, atividades e mais · SimplesMEI';
+    title = comMarca('Ferramentas grátis para o MEI: CNAE, atividades e mais');
     description = 'Ferramentas grátis pra o MEI, sem cadastro: descubra se sua atividade pode ser MEI, qual o CNAE e o imposto. Feitas pela IA que cuida do fiscal do MEI no WhatsApp.';
     const graph = {
       "@context": "https://schema.org",
@@ -164,7 +173,12 @@ for (const route of routes) {
     const s = SPOKES[slug];
     if (s) {
       const sigla = s.conselho.split(' (')[0];
-      title = `${s.nome} pode ser MEI? CNAE, imposto e o que fazer (2026) · SimplesMEI`;
+      /* A keyword-alvo do spoke é "<profissão> pode ser MEI" e ela NUNCA sai do título.
+         O que se ajusta é a cauda: "Representante comercial" sozinho já come 37 chars,
+         então escolhemos a cauda mais informativa que ainda cabe nos 60. */
+      const baseSpoke = `${s.nome} pode ser MEI?`;
+      const caudas = [' CNAE, imposto e o que fazer (2026)', ' CNAE e o que fazer (2026)', ' O que fazer em 2026', ''];
+      title = comMarca(baseSpoke + (caudas.find((c) => (baseSpoke + c).length <= LIMITE_TITLE) ?? ''));
       description = `${s.nome} NÃO pode ser MEI: é profissão regulamentada (${sigla}). Veja o CNAE ${s.cnae}, o porquê e como ter CNPJ e emitir nota.`;
       const url = `https://simplesmei.net/ferramentas/consulta-cnae-mei/${slug}`;
       const graph = {
@@ -185,7 +199,7 @@ for (const route of routes) {
       html = html.replace('</head>', `<script type="application/ld+json">\n${JSON.stringify(graph, null, 2)}\n</script>\n</head>`);
     }
   } else if (route === '/blog') {
-    title = 'Guias do MEI: nota fiscal, DAS, teto e benefícios · SimplesMEI';
+    title = comMarca('Guias do MEI: nota fiscal, DAS, teto e benefícios');
     description = 'Nota fiscal, DAS, teto, INSS e regularização do MEI, sem juridiquês. Guias práticos pra resolver cada dúvida do seu CNPJ — tudo num lugar só.';
     // Trilha visível (Início › Blog) → BreadcrumbList. A CollectionPage/ItemList já vem do componente (no #root).
     const breadcrumb = {
@@ -201,7 +215,7 @@ for (const route of routes) {
     const cslug = route.replace('/blog/categoria/', '');
     const cat = CATS.find(c => c.slug === cslug);
     if (cat) {
-      title = `${cat.name} · Guias do MEI · SimplesMEI`;
+      title = comMarca(`${cat.name} · Guias do MEI`);
       description = `${cat.desc}. Guias do MEI sobre ${cat.name.toLowerCase()}, sem juridiquês.`;
       // BreadcrumbList aqui; a CollectionPage/ItemList já vem do componente (no #root).
       const breadcrumb = {
@@ -218,7 +232,7 @@ for (const route of routes) {
   } else if (route.startsWith('/blog/')) {
     const slug = route.replace('/blog/', '');
     if (blogMeta[slug]) {
-      title = `${blogMeta[slug].title} · SimplesMEI`;
+      title = comMarca(blogMeta[slug].title);
       description = blogMeta[slug].description || title;
       
       // Injeta JSON-LD de Artigo

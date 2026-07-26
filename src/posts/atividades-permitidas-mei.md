@@ -38,13 +38,15 @@ A lista oficial tem **centenas de ocupações**, então não dá para decorar. M
 
 | Área | Exemplos de ocupações permitidas |
 | --- | --- |
-| Serviços de beleza | Cabeleireiro(a), manicure/pedicure, maquiador(a), barbeiro, esteticista |
+| Serviços de beleza | Cabeleireiro(a), manicure/pedicure, maquiador(a), barbeiro, [esteticista](/blog/mei-esteticista), [salão de beleza](/blog/mei-para-salao-de-beleza) |
 | Tecnologia e digital | Editor(a) de vídeo, técnico(a) de manutenção de computador, instrutor(a) de informática, digitador(a) |
-| Construção e reparos | Eletricista, encanador, pintor de paredes, pedreiro, instalador(a) |
-| Comércio (varejo) | Vendedor(a) a domicílio, comerciante de roupas, de cosméticos, de alimentos |
+| Construção e reparos | [Eletricista](/blog/mei-eletricista), encanador, pintor de paredes, [pedreiro](/blog/mei-pedreiro), instalador(a) |
+| Comércio (varejo) | Vendedor(a) a domicílio, comerciante de roupas, de cosméticos, de alimentos, [vendedor em marketplace](/blog/mei-vender-no-mercado-livre) |
 | Alimentação | Salgadeiro(a), confeiteiro(a), cozinheiro(a), vendedor(a) ambulante de alimentos |
-| Confecção e artesanato | Costureiro(a), bordadeiro(a), artesão(ã), tapeceiro(a) |
-| Serviços gerais | Diarista, jardineiro, motoboy, fotógrafo(a), DJ, professor(a) particular |
+| Confecção e artesanato | [Costureiro(a)](/blog/mei-costureira), bordadeiro(a), [artesão(ã)](/blog/mei-artesao), tapeceiro(a) |
+| Transporte e entrega | [Motoboy e entregador](/blog/mei-para-entregador), [motorista de aplicativo](/blog/mei-para-motorista-de-aplicativo), [caminhoneiro autônomo](/blog/mei-caminhoneiro), taxista |
+| Animais e rural | [Pet shop](/blog/mei-pet-shop), banhista e tosador(a), [atividades rurais](/blog/mei-rural) |
+| Serviços gerais | [Diarista](/blog/mei-diarista), jardineiro, [fotógrafo(a)](/blog/mei-fotografo), DJ, [professor(a) particular](/blog/mei-professor-particular) |
 
 Aqui o foco é só um: **cabe ou não cabe no MEI**. A tabela mostra o tipo de ocupação que está prevista na lista, não a escolha técnica do código — essa parte (qual CNAE casa com cada ocupação e como selecionar o seu) está detalhada em [o que é o CNAE e como escolher o seu](/blog/cnae-do-mei).
 
@@ -80,7 +82,7 @@ O MEI pode exercer **mais de uma atividade**: são **1 ocupação principal** ma
 
 Um exemplo: um MEI da área audiovisual pode ter como **principal** *"Fotógrafo(a)"* e, como **secundária**, *"Editor(a) de vídeo"* — desde que as duas estejam na lista no momento da abertura. Assim ele emite nota certa para os dois serviços.
 
-A dica prática: **cadastre de cara tudo o que você faz**. Enquanto uma ocupação não estiver no seu cadastro, você não emite nota corretamente para ela. Dá para incluir depois, pelo Portal do Empreendedor, mas é um passo a mais.
+A dica prática: **cadastre de cara tudo o que você faz**. Enquanto uma ocupação não estiver no seu cadastro, você não emite nota corretamente para ela. Dá para incluir depois, pelo Portal do Empreendedor, mas é um passo a mais. A conta de quantos códigos cabem no seu CNPJ, e o que acontece quando você passa disso, está em [quantos CNAE o MEI pode ter](/blog/quantos-cnae-mei).
 
 ## Como consultar a lista oficial de atividades do MEI?
 

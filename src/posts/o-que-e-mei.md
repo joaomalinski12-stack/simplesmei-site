@@ -81,7 +81,7 @@ Abrir o **MEI é gratuito**. O custo é mensal: o **DAS**, uma guia única com v
 
 Como a maior parte do DAS é amarrada ao salário mínimo, **o valor é reajustado a cada virada de ano**. Por isso não cravamos aqui um número exato: confira o valor atual no [Portal do Empreendedor](https://www.gov.br/empresas-e-negocios/pt-br/empreendedor) antes de pagar. O importante é o conceito — é um valor baixo e previsível, e é ele que mantém o seu CNPJ ativo e os seus direitos garantidos. Entenda a fundo no guia do [DAS do MEI](/blog/das-do-mei).
 
-Cuidado com golpe: se alguém cobrar para **abrir** o seu MEI, é fraude. A abertura é 100% gratuita no Portal do Empreendedor.
+Cuidado com golpe: se alguém cobrar para **abrir** o seu MEI, é fraude. A abertura é 100% gratuita no Portal do Empreendedor. E antes de contratar ajuda mensal, vale entender se [o MEI precisa de contador](/blog/mei-precisa-de-contador): a lei dispensa, e boa parte das obrigações cabe em poucos minutos por mês. O que muda de valores e regras na virada do ano está reunido em [o que muda no MEI em 2026](/blog/mei-2026).
 
 ## Quais os limites e obrigações do MEI?
 

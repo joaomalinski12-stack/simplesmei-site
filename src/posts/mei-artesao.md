@@ -77,4 +77,4 @@ Você é bom em criar peças — não em lidar com prazo de DAS e dúvida fiscal
 
 > Bateu a dúvida — *"tô chegando no teto?"* ou *"como declaro o que vendi?"* — e a IA **responde na hora**, de olho no seu faturamento pra você não estourar o limite sem perceber. Precisa incluir outro CNAE? Ela também te guia na abertura e nas mudanças.
 
-Assim você foca no ateliê e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de artesão de graça.
+Assim você foca no ateliê e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de artesão de graça. Se o seu trabalho envolve costura sob medida ou ajuste, veja [MEI costureira](/blog/mei-costureira).

@@ -54,7 +54,7 @@ Ou seja, você paga pouco e tem cobertura — mas no piso. Quem quer benefício 
 Importante conhecer os limites para não se frustrar:
 
 - **Aposentadoria por tempo de contribuição:** com os 5%, o MEI se aposenta **por idade**. Para contar tempo em aposentadorias que exigem, ele precisa **complementar** com mais 15% (totalizando 20% do salário mínimo).
-- **FGTS e seguro-desemprego:** não são direitos do MEI (empresário), e sim de trabalhador **com carteira assinada**. Quem é MEI **e** CLT tem esses direitos pelo emprego, não pelo MEI — veja [MEI pode ter carteira assinada](/blog/mei-pode-ter-carteira-assinada).
+- **FGTS e seguro-desemprego:** não são direitos do MEI (empresário), e sim de trabalhador **com carteira assinada**. Quem é MEI **e** CLT tem esses direitos pelo emprego, não pelo MEI — veja [MEI pode ter carteira assinada](/blog/mei-pode-ter-carteira-assinada) e o detalhe de [por que o MEI não tem FGTS](/blog/mei-tem-direito-a-fgts).
 - **Benefício acima do mínimo:** só com contribuição complementar.
 
 Saber disso ajuda a planejar: se a aposentadoria maior importa, a complementação é o caminho.

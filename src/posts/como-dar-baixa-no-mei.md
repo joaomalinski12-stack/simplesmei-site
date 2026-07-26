@@ -96,7 +96,7 @@ Se o seu caso é o segundo — faturamento acima de **R$ 81.000 por ano**, contr
 
 Sim, dá para **reabrir o MEI** depois de uma baixa. Não existe quarentena ou prazo de carência para voltar a se formalizar. Mas atenção a um ponto que confunde muita gente: ao reabrir, você recebe um **CNPJ novo**, porque a baixa extingue o número anterior em definitivo — a reabertura cria outra empresa, não ressuscita a antiga. As **pendências antigas** (DAS e declarações) seguem vinculadas ao seu **CPF** e precisam estar resolvidas, porque podem travar a nova inscrição.
 
-O processo de reabertura é o mesmo da abertura inicial, feito no Portal do Empreendedor com a conta gov.br. Se você está nesse momento de recomeço, vale revisar o passo a passo de [como abrir o MEI](/blog/como-abrir-mei) para escolher a atividade certa de novo.
+O processo de reabertura é o mesmo da abertura inicial, feito no Portal do Empreendedor com a conta gov.br. Se você está nesse momento de recomeço, vale revisar o passo a passo de [como abrir o MEI](/blog/como-abrir-mei) para escolher a atividade certa de novo, e o guia específico de [como reabrir o MEI](/blog/reabrir-mei), que cobre o que fazer com as pendências do CNPJ antigo.
 
 A lição: a baixa não é uma porta sem volta. Mas ela funciona melhor — e a volta é mais fácil — quando você sai **com tudo quitado**, em vez de deixar dívida para trás.
 

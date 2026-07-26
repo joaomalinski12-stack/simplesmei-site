@@ -72,4 +72,4 @@ Vender ração e dar banho o dia todo já ocupa suas mãos — emitir dois tipos
 
 > Terminou um banho e tosa? Manda *"emite nota de R$ 80 de banho e tosa"* e a IA **emite a NFS-e** na conversa. Ela também **tira dúvidas sobre o DAS** e acompanha o faturamento, de olho no teto.
 
-Assim você foca nos bichos e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de pet shop de graça.
+Assim você foca nos bichos e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de pet shop de graça. Se a sua atividade com animais é de criação e não de banho e tosa, veja [MEI rural](/blog/mei-rural).

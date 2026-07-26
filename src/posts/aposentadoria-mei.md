@@ -71,6 +71,8 @@ O passo a passo, em nível geral (confirme o procedimento atual no Meu INSS):
 
 Sim. O tempo como **MEI** **soma** com períodos de **carteira assinada**, de **autônomo** ou de qualquer outra contribuição ao INSS — desde que tudo esteja **devidamente recolhido**. A Previdência enxerga a sua vida contributiva inteira, não um cofrinho separado por tipo de trabalho. O que importa é cada mês ter sido pago e registrado.
 
+Vale o caminho inverso também: quem **já se aposentou** pode abrir MEI e voltar a faturar, com um detalhe importante dependendo do tipo de aposentadoria, explicado em [aposentado pode ser MEI](/blog/aposentado-pode-ser-mei).
+
 Na prática, isso significa que anos de CLT antes de virar MEI **não se perdem**: eles entram na conta da aposentadoria junto com os meses de DAS. O risco é o contrário — **meses que não foram recolhidos** (DAS atrasado, períodos sem contribuir) simplesmente **não contam**. Por isso o histórico no **Meu INSS** (o extrato CNIS) é o documento a conferir: é lá que você vê, mês a mês, o que entrou e o que ficou de fora.
 
 ### Como conferir o seu histórico de contribuições

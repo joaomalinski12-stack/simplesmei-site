@@ -78,4 +78,4 @@ Entre costurar, ajustar e atender cliente, decidir "isso é NFS-e ou NF-e?" é a
 
 > Você manda *"emite nota de R$ 120 de ajuste de vestido"* e a IA **emite a NFS-e** na conversa. Ela também **tira dúvidas sobre o DAS** — inclusive qual nota usar quando o trabalho é confecção pra vender — e fica de olho no faturamento.
 
-Assim você foca na máquina de costura e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de graça.
+Assim você foca na máquina de costura e deixa a papelada com a IA. Se está começando, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de graça. Se parte do que você vende é peça autoral feita à mão, veja [MEI artesão](/blog/mei-artesao).

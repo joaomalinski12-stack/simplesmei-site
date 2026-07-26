@@ -86,4 +86,4 @@ Eletricista bom vive **na rua**, entre uma instalação e outra — o último lu
 
 > Terminou o serviço no cliente? Manda uma mensagem tipo *"emite nota de R$ 250 de instalação elétrica pro cliente João"* e a IA **emite a NFS-e** ali mesmo. Ela também tira **dúvidas sobre o DAS** e fica de olho no seu faturamento — tudo pela conversa, sem app e sem portal.
 
-Assim você foca no que sabe fazer (o serviço elétrico) e deixa a papelada com a IA. Se está começando agora, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de eletricista de graça — depois é só manter a nota e o DAS em dia.
+Assim você foca no que sabe fazer (o serviço elétrico) e deixa a papelada com a IA. Se está começando agora, veja [o que é o MEI](/blog/o-que-e-mei) e abra o seu CNPJ de eletricista de graça — depois é só manter a nota e o DAS em dia. Se o serviço entra em obra e reforma, veja também [MEI pedreiro](/blog/mei-pedreiro).
