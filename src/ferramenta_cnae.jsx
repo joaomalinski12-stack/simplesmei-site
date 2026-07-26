@@ -5,6 +5,7 @@ import { Door, NavV5 } from './porta_nav.jsx';
 import { Footer } from './logo_footer.jsx';
 import { OCCUPATIONS, CATS, EXEMPLOS, POPULAR, NOT_MEI, FAQ_ITEMS, buscar, norm, ocCurto } from './data/cnae_mei.js';
 import { detectNaoMei, REGULATED, FORBIDDEN } from './data/cnae_naomei.js';
+import { escolherModo } from './data/cnae_decisao.js';
 import { SPOKES } from './data/spokes.js';
 
 /* ════════════════════════════════════════════════════════════════════════
@@ -363,7 +364,7 @@ function NaoMeiState({ nao }) {
       </h3>
       <p style={{ fontFamily: FONTS.body, fontSize: m ? 15 : 16, lineHeight: 1.6, color: BRAND.inkSoft, margin: '12px 0 0', textWrap: 'pretty' }}>
         {reg
-          ? <><b style={{ color: BRAND.ink }}>{nao.label}</b> é uma <b style={{ color: BRAND.ink }}>profissão regulamentada</b> (tem conselho de classe), e a lei não permite exercê-la como MEI.</>
+          ? <><b style={{ color: BRAND.ink }}>{nao.label}</b> é uma <b style={{ color: BRAND.ink }}>profissão regulamentada</b>{nao.conselho ? <>, fiscalizada pelo <b style={{ color: BRAND.ink }}>{nao.conselho}</b></> : <> (tem registro profissional obrigatório)</>}, e a lei não permite exercê-la como MEI.</>
           : <>É uma atividade <b style={{ color: BRAND.ink }}>vedada ao MEI</b> por natureza — <b style={{ color: BRAND.ink }}>{nao.label}</b> fica fora da lista oficial de ocupações.</>}
       </p>
       {nao.cnae && (
@@ -437,6 +438,74 @@ function ResultsState({ results, query, smart }) {
       )}
       <div style={{ marginTop: m ? 24 : 32 }}>
         <WaitlistBand topOc={results[0].oc} topCnae={results[0].cnae} />
+      </div>
+    </div>
+  );
+}
+
+/* ── estado: ACHEI PARECIDO, MAS SEM CERTEZA ────────────────────────────────
+   A ferramenta antes só tinha "pode" e "não pode": como ela sempre acha a ocupação
+   mais próxima entre as 466, respondia com cara de certeza mesmo quando a atividade
+   não está na lista ("doula" saía como Diarista). Aqui ela admite a dúvida.
+
+   Duas saídas, e a escolha importa: quem escreveu pouco recebe o pedido de detalhe
+   (medido: "faço unha em gel" resolve pra Manicure). Quem JÁ se explicou e mesmo
+   assim não casou não recebe "conta mais" — isso viraria loop sem saída, porque o
+   caso provável é a atividade não estar nas 466 mesmo. Esse recebe a rota de saída. */
+function IncertoState({ results, query, pedirDetalhe, onPick }) {
+  const m = useIsMobile();
+  const shown = results.slice(0, 4);
+  return (
+    <div>
+      <div style={{
+        background: '#fff', border: `1px solid ${BRAND.sandDeep}`, borderRadius: 20,
+        padding: m ? '26px 22px' : '34px 38px', maxWidth: 640, margin: '0 auto',
+      }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: BRAND.sand, padding: '6px 13px 6px 7px', borderRadius: 999, marginBottom: 16 }}>
+          <span style={{ width: 20, height: 20, borderRadius: '50%', background: BRAND.inkMid, color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, lineHeight: 1 }}>?</span>
+          <Mono color={BRAND.inkSoft} size={10.5}>Não achei exato</Mono>
+        </div>
+        <h3 style={{ fontFamily: FONTS.display, fontWeight: 800, fontSize: m ? 20 : 23, lineHeight: 1.2, letterSpacing: -0.5, color: BRAND.ink, margin: 0, textWrap: 'balance' }}>
+          {pedirDetalhe
+            ? <>Não tenho certeza sobre “{query.trim()}”.</>
+            : <>“{query.trim()}” provavelmente não está na lista do MEI.</>}
+        </h3>
+        <p style={{ fontFamily: FONTS.body, fontSize: m ? 15 : 16, lineHeight: 1.6, color: BRAND.inkSoft, margin: '12px 0 0', textWrap: 'pretty' }}>
+          {pedirDetalhe
+            ? <>Me conta um pouco mais do que você faz no dia a dia, com as suas palavras. Coisas como <b style={{ color: BRAND.ink }}>“faço unha em gel”</b> ou <b style={{ color: BRAND.ink }}>“entrego comida de moto”</b> costumam bastar pra eu achar o CNAE certo.</>
+            : <>Procurei pelas <b style={{ color: BRAND.ink }}>466 ocupações</b> permitidas e não achei uma que corresponda. Nesse caso o caminho costuma ser outro regime, em geral uma <b style={{ color: BRAND.ink }}>Microempresa (ME)</b> no Simples Nacional. Vale confirmar com um contador.</>}
+        </p>
+        {shown.length > 0 && (
+          <div style={{ marginTop: m ? 20 : 24 }}>
+            <Mono color={BRAND.inkMute} size={10.5}>Seria alguma destas?</Mono>
+            <ul style={{ listStyle: 'none', margin: '12px 0 0', padding: 0, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              {shown.map((it) => (
+                <li key={it.oc + it.cnae}>
+                  <button onClick={() => onPick(ocCurto(it.oc))} className="cnae-chip" style={{
+                    background: BRAND.paper, color: BRAND.ink, border: `1px solid ${BRAND.sandDeep}`,
+                    padding: '9px 15px', borderRadius: 999, cursor: 'pointer', minHeight: 44,
+                    fontFamily: FONTS.body, fontSize: m ? 13.5 : 14, fontWeight: 600,
+                    letterSpacing: -0.1, textAlign: 'left',
+                  }}>{ocCurto(it.oc)}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <a
+          href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/quero-ser-mei/atividades-permitidas"
+          target="_blank" rel="noopener noreferrer"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20,
+            fontFamily: FONTS.body, fontSize: 14, fontWeight: 700, color: BRAND.coralDeep,
+            textDecoration: 'none', borderBottom: `2px solid ${BRAND.coralSoft}`, paddingBottom: 2,
+          }}
+        >
+          Ver a lista oficial de atividades do MEI <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div style={{ marginTop: m ? 20 : 26 }}>
+        <WaitlistBand />
       </div>
     </div>
   );
@@ -762,7 +831,7 @@ const OCC_BY_KEY = new Map(OCCUPATIONS.map((o) => [o.oc + '|' + o.cnae, o]));
 export function ConsultaCnaeMei() {
   const m = useIsMobile();
   const [query, setQuery] = useState('');
-  const [sem, setSem] = useState({ q: '', state: 'idle', hits: [], naomei: null }); // busca semântica
+  const [sem, setSem] = useState({ q: '', state: 'idle', hits: [], naomei: null, naoTop: null, confident: false }); // busca semântica
   const inputRef = useRef(null);
   const cache = useRef(new Map());
 
@@ -778,23 +847,26 @@ export function ConsultaCnaeMei() {
   // Busca SEMÂNTICA (debounce) — só no cliente. Falha/offline/sem-chave → cai no lexical.
   useEffect(() => {
     const q = query.trim();
-    if (norm(q).length < 2) { setSem({ q: query, state: 'idle', hits: [], naomei: null }); return; }
-    if (cache.current.has(q)) { const c = cache.current.get(q); setSem({ q: query, state: 'done', hits: c.hits, naomei: c.naomei }); return; }
+    if (norm(q).length < 2) { setSem({ q: query, state: 'idle', hits: [], naomei: null, naoTop: null, confident: false }); return; }
+    if (cache.current.has(q)) { const c = cache.current.get(q); setSem({ q: query, state: 'done', ...c }); return; }
     let alive = true;
-    setSem((s) => ({ q: query, state: 'loading', hits: s.q === query ? s.hits : [], naomei: s.q === query ? s.naomei : null }));
+    setSem((s) => (s.q === query
+      ? { ...s, state: 'loading' }
+      : { q: query, state: 'loading', hits: [], naomei: null, naoTop: null, confident: false }));
     const t = setTimeout(async () => {
       try {
         const r = await fetch(`/api/cnae-busca?q=${encodeURIComponent(q)}`);
         const j = await r.json();
         if (!alive) return;
         if (j && j.ok && Array.isArray(j.results)) {
-          const c = { hits: j.results, naomei: j.naomei || null };
+          // `confident` vem do servidor (score + destaque sobre as demais) — ver api/_busca_core.js
+          const c = { hits: j.results, naomei: j.naomei || null, naoTop: j.naoTop || null, confident: !!j.confident };
           cache.current.set(q, c);
-          setSem({ q: query, state: 'done', hits: c.hits, naomei: c.naomei });
+          setSem({ q: query, state: 'done', ...c });
         } else {
-          setSem({ q: query, state: 'off', hits: [], naomei: null });
+          setSem({ q: query, state: 'off', hits: [], naomei: null, naoTop: null, confident: false });
         }
-      } catch (e) { if (alive) setSem({ q: query, state: 'off', hits: [], naomei: null }); }
+      } catch (e) { if (alive) setSem({ q: query, state: 'off', hits: [], naomei: null, naoTop: null, confident: false }); }
     }, 280);
     return () => { alive = false; clearTimeout(t); };
   }, [query]);
@@ -811,32 +883,17 @@ export function ConsultaCnaeMei() {
     return [...lexical, ...extra];
   }, [lexical, sem, query]);
 
-  const trimmed = norm(query);
-  const semSettled = sem.q === query && sem.state !== 'loading';
-  // semântico "confiante" de que É permitida (≥ 0.66) — usado só pra desempatar quando a busca cheira a não-MEI.
-  const semConfident = sem.q === query && sem.state === 'done' && sem.hits[0] && sem.hits[0].score >= 0.66;
-  // veredicto semântico de NÃO-MEI (só vem quando venceu o permitido com margem, no servidor)
-  const semNao = (sem.q === query && sem.state === 'done' && sem.naomei) ? sem.naomei : null;
-
-  // qual objeto não-MEI mostrar: lexical (instantâneo, certeza) tem prioridade; senão o semântico
-  const naoVerdict = nao || semNao;
-
-  let mode;
-  if (!trimmed) {
-    mode = 'empty';
-  } else if (!nao) {
-    // sem sinal LEXICAL de não-MEI
-    if (lexical.length) mode = 'results';          // match de prefixo em ocupação real → permitida
-    else if (!semSettled) mode = 'searching';
-    else if (semNao) mode = 'naomei';              // o semântico afirmou não-MEI (paráfrase: "desenvolvo apps")
-    else if (combined.length) mode = 'results';    // hits semânticos permitidos
-    else mode = 'none';
-  } else {
-    // cheira a não-MEI pelo lexical: o semântico confirma se, na verdade, é permitida (ex.: "artigos médicos")
-    if (!semSettled) mode = 'searching';
-    else if (semConfident) mode = 'results';
-    else mode = 'naomei';
-  }
+  // O veredito mora em cnae_decisao.js (funções puras), não aqui — é o mesmo código que
+  // scripts/check_naomei_regressao.mjs roda na bateria. Aqui só montamos a entrada.
+  const { modo: mode, naoVerdict, pedirDetalhe } = useMemo(() => escolherModo({
+    query,
+    lexicalCount: lexical.length,
+    temHits: combined.length > 0,
+    nao,
+    sem: sem.q === query
+      ? { estado: sem.state, confident: sem.confident, hits: sem.hits, naomei: sem.naomei, naoTop: sem.naoTop }
+      : { estado: 'loading', confident: false, hits: [], naomei: null, naoTop: null },
+  }), [query, lexical.length, combined.length, nao, sem]);
 
   const smart = mode === 'results' && combined.length > lexical.length; // o semântico acrescentou algo
 
@@ -873,6 +930,7 @@ export function ConsultaCnaeMei() {
             {mode === 'empty' && <EmptyState onPick={pick} />}
             {mode === 'searching' && <SearchingState query={query} />}
             {mode === 'results' && <ResultsState key={query} results={combined} query={query} smart={smart} />}
+            {mode === 'incerto' && <IncertoState key={query} results={combined} query={query} pedirDetalhe={pedirDetalhe} onPick={pick} />}
             {mode === 'naomei' && naoVerdict && <NaoMeiState nao={naoVerdict} />}
             {mode === 'none' && <NoResultState query={query} />}
           </div>

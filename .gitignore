@@ -29,3 +29,6 @@ pnpm-debug.log*
 
 # claude code — só as settings pessoais (rules/ e skills/ SÃO versionados)
 .claude/settings.local.json
+
+# cache de embeddings da bateria de regressão (regenerável)
+scripts/.cache-embeddings.json

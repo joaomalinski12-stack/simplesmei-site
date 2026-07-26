@@ -6,18 +6,16 @@
    índice do bot, convertido por scripts/build_cnae_embeddings.py) e devolve o top-k
    acima do piso. A chave fica na env var GEMINI_API_KEY (Vercel), nunca no bundle.
 
+   A DECISÃO em si (limiares, veredito não-MEI, confiança) mora em ./_busca_core.js,
+   compartilhada com a bateria de regressão — aqui só tem I/O.
+
    Falha graciosa: sem chave / erro na API / query vazia → { ok:false }, e o
    front cai no buscador lexical (offline) que já existe. */
 import INDEX from './_cnae_index.js';
 import NAOMEI from './_naomei_index.js';
+import { decidir } from './_busca_core.js';
 
 const MODEL = 'gemini-embedding-001';
-
-// Detecção semântica NÃO-MEI: só afirmamos "não pode" quando a query está claramente
-// mais perto de uma âncora não-MEI do que de qualquer ocupação permitida. Alta precisão
-// (falso-bloqueio é o pior erro) → exige score alto E margem sobre o melhor permitido.
-const NAOMEI_MATCH = 0.66;   // piso do score da âncora não-MEI
-const NAOMEI_MARGIN = 0.05;  // quanto a âncora precisa vencer o melhor permitido (a margem separa nao×permitido)
 
 // decodifica os vetores uma vez por instância quente
 let IDX = null;
@@ -67,47 +65,10 @@ export default async function handler(req, res) {
     const qv = new Float32Array(idx.dim);
     for (let i = 0; i < idx.dim; i++) qv[i] = (raw[i] || 0) / norm;
 
-    const { count, dim, flat, items } = idx;
-    const scored = new Array(count);
-    for (let i = 0; i < count; i++) {
-      const off = i * dim;
-      let s = 0;
-      for (let d = 0; d < dim; d++) s += flat[off + d] * qv[d];
-      scored[i] = { i, s };
-    }
-    scored.sort((a, b) => b.s - a.s);
-
-    const floor = idx.search_floor ?? 0.6;
-    const match = idx.match_threshold ?? 0.66;
-    const results = [];
-    for (const { i, s } of scored) {
-      if (s < floor) break;
-      const it = items[i];
-      results.push({ oc: it.oc, cnae: it.cnae, trib: it.trib, score: Number(s.toFixed(4)) });
-      if (results.length >= 8) break;
-    }
-    const bestMei = scored.length ? scored[0].s : 0;
-
-    // melhor âncora NÃO-MEI
-    const nao = idx.nao;
-    let naomei = null;
-    if (nao && nao.count) {
-      let bi = -1, bs = -Infinity;
-      for (let i = 0; i < nao.count; i++) {
-        const off = i * nao.dim;
-        let s = 0;
-        for (let d = 0; d < nao.dim; d++) s += nao.flat[off + d] * qv[d];
-        if (s > bs) { bs = s; bi = i; }
-      }
-      // só afirma "não pode ser MEI" com score alto E margem sobre o melhor permitido
-      if (bi >= 0 && bs >= NAOMEI_MATCH && bs >= bestMei + NAOMEI_MARGIN) {
-        const it = nao.items[bi];
-        naomei = { tipo: it.tipo, label: it.label, cnae: it.cnae, cnaeNome: it.cnaeNome, score: Number(bs.toFixed(4)) };
-      }
-    }
+    const veredito = decidir(qv, idx);
 
     res.setHeader('Cache-Control', 'public, s-maxage=86400, max-age=600');
-    return res.status(200).json({ ok: true, confident: results[0] ? results[0].score >= match : false, results, naomei });
+    return res.status(200).json({ ok: true, ...veredito });
   } catch (e) {
     return res.status(200).json({ ok: false, error: 'upstream' });
   }

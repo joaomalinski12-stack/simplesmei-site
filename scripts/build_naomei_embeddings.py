@@ -33,13 +33,20 @@ SRC = SITE_ROOT / "src" / "data" / "naomei.json"
 OUT = SITE_ROOT / "api" / "_naomei_index.js"
 
 
-def _anchor_text(e: dict) -> str:
-    """Texto embeddado. Usa `anchor` explícito se houver; senão `label. keys`."""
+def _anchor_texts(e: dict) -> list[str]:
+    """Textos embeddados da entrada — um vetor POR âncora, todos apontando pro mesmo
+    item. Âncora curta e específica ("Cirurgião, cirurgia, cirurgião ortopédico…")
+    casa muito melhor que um textão que tenta cobrir a profissão inteira: o vetor
+    médio de 30 especialidades não fica perto de nenhuma delas.
+
+    Ordem: `anchors` (lista) > `anchor` (string, retrocompat) > `label. keys`."""
     label = e.get("area") or e.get("categoria") or ""
+    if e.get("anchors"):
+        return [a.strip() for a in e["anchors"] if a.strip()]
     if e.get("anchor"):
-        return e["anchor"].strip()
+        return [e["anchor"].strip()]
     keys = ", ".join(e.get("keys") or [])
-    return f"{label}. {keys}".strip().rstrip(".") + "."
+    return [f"{label}. {keys}".strip().rstrip(".") + "."]
 
 
 def main() -> int:
@@ -51,18 +58,21 @@ def main() -> int:
         entries.append(("vedada", e.get("categoria", ""), e))
     print(f"📚 {len(entries)} âncoras não-MEI em {SRC.name}")
 
+    # cada entrada vira 1+ vetores (uma por âncora); items[] anda junto com vecs[],
+    # então N âncoras da mesma profissão repetem o mesmo payload — o consumidor só
+    # pega o argmax e não precisa saber que houve mais de uma.
     vecs, items = [], []
-    for i, (tipo, label, e) in enumerate(entries, 1):
-        v = embeddings_service.embed_document_sync(_anchor_text(e))
-        vecs.append(v)
-        items.append({
-            "tipo": tipo,
-            "label": label,
-            "cnae": e.get("cnae", ""),
-            "cnaeNome": e.get("cnaeNome", ""),
-        })
-        if i % 10 == 0 or i == len(entries):
-            print(f"  embed {i}/{len(entries)}…", flush=True)
+    for tipo, label, e in entries:
+        for texto in _anchor_texts(e):
+            vecs.append(embeddings_service.embed_document_sync(texto))
+            items.append({
+                "tipo": tipo,
+                "label": label,
+                "conselho": e.get("conselho", ""),
+                "cnae": e.get("cnae", ""),
+                "cnaeNome": e.get("cnaeNome", ""),
+            })
+            print(f"  embed {len(vecs)}  [{label}] {texto[:56]}…", flush=True)
 
     mat = np.asarray(vecs, dtype=np.float32)
     norms = np.linalg.norm(mat, axis=1, keepdims=True)

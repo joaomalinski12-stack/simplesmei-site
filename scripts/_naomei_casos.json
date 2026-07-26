@@ -1,0 +1,830 @@
+{
+  "_meta": {
+    "nota": "Bateria de regressao da Consulta CNAE. Rode scripts/check_naomei_regressao.mjs sempre que mexer em naomei.json, nas ancoras ou nos limiares de api/_busca_core.js.",
+    "esperado": "naomei = tem que dizer \"nao pode ser MEI\" | permitida = tem que mostrar resultado confiante | incerto = nao esta nas 466, tem que admitir duvida em vez de chutar",
+    "as466": "As 466 ocupacoes permitidas NAO ficam aqui: o script as gera de src/data/cnae_occupations.js, entao nunca dessincronizam. Nenhuma delas pode cair em \"naomei\".",
+    "parafrase": "Casos marcados parafrase=true descrevem a atividade sem dizer o nome da profissao — sao os que testam a camada semantica sozinha. Nem todos passam; ver TOLERANCIA no script.",
+    "atualizado_em": "2026-07-26",
+    "conhecido": "casos com conhecido=true sao limitacoes ja medidas e aceitas: o script avisa mas nao reprova. Nao apague — apagar some com a divida, avisar mantem ela a vista."
+  },
+  "casos": [
+    {
+      "q": "cirurgiao ortopedico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "ortopedista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "cirurgião ortopédico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "sou cirurgiao",
+      "esperado": "naomei"
+    },
+    {
+      "q": "pediatra",
+      "esperado": "naomei"
+    },
+    {
+      "q": "dermatologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "cardiologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "ginecologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "neurologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "oftalmologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "otorrinolaringologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "urologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "endocrinologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "gastroenterologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "oncologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "radiologista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "anestesista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "psiquiatra",
+      "esperado": "naomei"
+    },
+    {
+      "q": "geriatra",
+      "esperado": "naomei"
+    },
+    {
+      "q": "medico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "médico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "clinico geral",
+      "esperado": "naomei"
+    },
+    {
+      "q": "medico do trabalho",
+      "esperado": "naomei"
+    },
+    {
+      "q": "sou medico e quero abrir mei",
+      "esperado": "naomei"
+    },
+    {
+      "q": "faco consultas medicas",
+      "esperado": "naomei"
+    },
+    {
+      "q": "dentista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "odontologia",
+      "esperado": "naomei"
+    },
+    {
+      "q": "cirurgiao dentista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "ortodontista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "endodontista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "odontopediatra",
+      "esperado": "naomei"
+    },
+    {
+      "q": "protetico dentario",
+      "esperado": "naomei"
+    },
+    {
+      "q": "advogado",
+      "esperado": "naomei"
+    },
+    {
+      "q": "contador",
+      "esperado": "naomei"
+    },
+    {
+      "q": "contabilidade",
+      "esperado": "naomei"
+    },
+    {
+      "q": "engenheiro",
+      "esperado": "naomei"
+    },
+    {
+      "q": "engenheiro civil",
+      "esperado": "naomei"
+    },
+    {
+      "q": "agronomo",
+      "esperado": "naomei"
+    },
+    {
+      "q": "arquiteto",
+      "esperado": "naomei"
+    },
+    {
+      "q": "urbanista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "psicologo",
+      "esperado": "naomei"
+    },
+    {
+      "q": "psicanalista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "psicoterapeuta",
+      "esperado": "naomei"
+    },
+    {
+      "q": "nutricionista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "fisioterapeuta",
+      "esperado": "naomei"
+    },
+    {
+      "q": "veterinario",
+      "esperado": "naomei"
+    },
+    {
+      "q": "jornalista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "reporter",
+      "esperado": "naomei"
+    },
+    {
+      "q": "fonoaudiologo",
+      "esperado": "naomei"
+    },
+    {
+      "q": "enfermeira",
+      "esperado": "naomei"
+    },
+    {
+      "q": "tecnico de enfermagem",
+      "esperado": "naomei"
+    },
+    {
+      "q": "biomedico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "corretor de imoveis",
+      "esperado": "naomei"
+    },
+    {
+      "q": "corretor de seguros",
+      "esperado": "naomei"
+    },
+    {
+      "q": "economista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "personal trainer",
+      "esperado": "naomei"
+    },
+    {
+      "q": "farmaceutico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "terapeuta ocupacional",
+      "esperado": "naomei"
+    },
+    {
+      "q": "assistente social",
+      "esperado": "naomei"
+    },
+    {
+      "q": "quimico industrial",
+      "esperado": "naomei"
+    },
+    {
+      "q": "estatistico",
+      "esperado": "naomei"
+    },
+    {
+      "q": "geologo",
+      "esperado": "naomei"
+    },
+    {
+      "q": "bibliotecaria",
+      "esperado": "naomei"
+    },
+    {
+      "q": "zootecnista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "biologo",
+      "esperado": "naomei"
+    },
+    {
+      "q": "tradutor juramentado",
+      "esperado": "naomei"
+    },
+    {
+      "q": "despachante aduaneiro",
+      "esperado": "naomei"
+    },
+    {
+      "q": "vigilante",
+      "esperado": "naomei"
+    },
+    {
+      "q": "representante comercial",
+      "esperado": "naomei"
+    },
+    {
+      "q": "publicitario",
+      "esperado": "naomei"
+    },
+    {
+      "q": "programador",
+      "esperado": "naomei"
+    },
+    {
+      "q": "desenvolvedor de software",
+      "esperado": "naomei"
+    },
+    {
+      "q": "desenvolvo aplicativos",
+      "esperado": "naomei"
+    },
+    {
+      "q": "comercio atacadista",
+      "esperado": "naomei"
+    },
+    {
+      "q": "importacao",
+      "esperado": "naomei"
+    },
+    {
+      "q": "aluguel de imoveis",
+      "esperado": "naomei"
+    },
+    {
+      "q": "cervejaria",
+      "esperado": "naomei"
+    },
+    {
+      "q": "transporte intermunicipal",
+      "esperado": "naomei"
+    },
+    {
+      "q": "usina solar",
+      "esperado": "naomei"
+    },
+    {
+      "q": "atendo pacientes no meu consultorio e receito remedio",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco consultas e peco exames",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco limpeza e restauracao de dente",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "coloco aparelho nos dentes dos pacientes",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "entro com processo trabalhista para clientes",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco defesa em audiencia judicial",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco a declaracao de imposto de renda dos outros",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "cuido da escrituracao fiscal das empresas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco projeto estrutural de predio e assino a art",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco planta e projeto de casas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco terapia e atendimento emocional",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "monto dieta e plano alimentar para emagrecer",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco reabilitacao de quem operou o joelho",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "atendo cachorro e gato doente e faco castracao",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "escrevo materias e reportagens para jornal",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "crio campanha de propaganda para marcas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "trato problema de fala e gagueira",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "aplico injecao e faco curativo em casa",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco exame de sangue em laboratorio",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "vendo casas e apartamentos para clientes e ganho comissao",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "vendo seguro de carro e plano de saude",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "dou treino de musculacao na academia",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "manipulo formula e vendo medicamento",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco reabilitacao ocupacional de pacientes",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "atendo familias em vulnerabilidade e faco laudo social",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco analise quimica de amostras em laboratorio",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco analise estatistica de pesquisa",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco prospeccao e laudo de solo e rochas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "organizo e cataloga acervo de biblioteca",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "cuido da nutricao e producao de rebanho",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco laudo ambiental e estudo de fauna",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "traduzo documento oficial do ingles",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "cuido do desembaraco de carga importada",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "faco seguranca patrimonial armada em empresa",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "represento industrias e tiro pedido para lojas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "vendo mercadoria em grande quantidade para lojistas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "desenvolvo aplicativos e sites sob encomenda",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "crio sistema web para empresas",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "trago produto da china para revender aqui",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "empresto dinheiro a juros",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "vendo arma e municao",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "produzo cerveja artesanal na minha fabrica",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "alugo os apartamentos que sao meus",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "vendo energia da minha usina solar",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "levo passageiros de van entre estados",
+      "esperado": "naomei",
+      "parafrase": true
+    },
+    {
+      "q": "comerciante de artigos medicos e ortopedicos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "vendo artigos ortopedicos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "vendo material medico",
+      "esperado": "permitida"
+    },
+    {
+      "q": "locador de material medico",
+      "esperado": "permitida"
+    },
+    {
+      "q": "reparador de equipamentos medico-hospitalares",
+      "esperado": "permitida"
+    },
+    {
+      "q": "locacao de equipamentos medicos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "cuidador de idosos e enfermos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "cuidadora de idosos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "contador de historias",
+      "esperado": "permitida"
+    },
+    {
+      "q": "humorista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "serigrafista publicitario",
+      "esperado": "permitida"
+    },
+    {
+      "q": "instalador de paineis publicitarios",
+      "esperado": "permitida"
+    },
+    {
+      "q": "carro de som publicitario",
+      "esperado": "permitida"
+    },
+    {
+      "q": "esteticista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "depiladora",
+      "esperado": "permitida"
+    },
+    {
+      "q": "manicure",
+      "esperado": "permitida"
+    },
+    {
+      "q": "faco unha em casa",
+      "esperado": "permitida"
+    },
+    {
+      "q": "maquiadora",
+      "esperado": "permitida"
+    },
+    {
+      "q": "cabeleireira",
+      "esperado": "permitida"
+    },
+    {
+      "q": "barbeiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "comerciante de artigos de optica",
+      "esperado": "permitida"
+    },
+    {
+      "q": "comerciante de cosmeticos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "pet shop",
+      "esperado": "permitida"
+    },
+    {
+      "q": "tosador de animais",
+      "esperado": "permitida"
+    },
+    {
+      "q": "professor particular",
+      "esperado": "permitida"
+    },
+    {
+      "q": "instrutor de idiomas",
+      "esperado": "permitida"
+    },
+    {
+      "q": "instrutor de informatica",
+      "esperado": "permitida"
+    },
+    {
+      "q": "instrutor de musica",
+      "esperado": "permitida"
+    },
+    {
+      "q": "vendo marmita",
+      "esperado": "permitida"
+    },
+    {
+      "q": "conserto celular",
+      "esperado": "permitida"
+    },
+    {
+      "q": "pedreiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "eletricista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "encanador",
+      "esperado": "permitida"
+    },
+    {
+      "q": "motoboy",
+      "esperado": "permitida"
+    },
+    {
+      "q": "diarista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "fotografo",
+      "esperado": "permitida"
+    },
+    {
+      "q": "confeiteira",
+      "esperado": "permitida"
+    },
+    {
+      "q": "costureira",
+      "esperado": "permitida"
+    },
+    {
+      "q": "artesa",
+      "esperado": "permitida"
+    },
+    {
+      "q": "padeiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "salgadeira",
+      "esperado": "permitida"
+    },
+    {
+      "q": "doceira",
+      "esperado": "permitida"
+    },
+    {
+      "q": "pizzaiolo",
+      "esperado": "permitida"
+    },
+    {
+      "q": "jardineiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "piscineiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "borracheiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "mecanico de veiculos",
+      "esperado": "permitida"
+    },
+    {
+      "q": "chaveiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "tatuador",
+      "esperado": "permitida"
+    },
+    {
+      "q": "sorveteiro",
+      "esperado": "permitida"
+    },
+    {
+      "q": "transportador escolar",
+      "esperado": "permitida"
+    },
+    {
+      "q": "taxista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "mototaxista",
+      "esperado": "permitida"
+    },
+    {
+      "q": "guia de turismo",
+      "esperado": "permitida"
+    },
+    {
+      "q": "agente de viagens",
+      "esperado": "permitida"
+    },
+    {
+      "q": "dj",
+      "esperado": "permitida"
+    },
+    {
+      "q": "doula",
+      "esperado": "incerto"
+    },
+    {
+      "q": "atuario",
+      "esperado": "naomei",
+      "nota": "passou a bloquear em jul/2026, quando Leiloeiro/Atuária entraram em naomei.json com base legal"
+    },
+    {
+      "q": "streamer",
+      "esperado": "incerto"
+    },
+    {
+      "q": "museologo",
+      "esperado": "incerto"
+    },
+    {
+      "q": "arquivista",
+      "esperado": "incerto"
+    },
+    {
+      "q": "sociologo",
+      "esperado": "incerto"
+    },
+    {
+      "q": "gestor de trafego",
+      "esperado": "incerto"
+    },
+    {
+      "q": "acompanho gestante no parto dando apoio emocional",
+      "esperado": "incerto",
+      "conhecido": true,
+      "nota": "MISS CONHECIDO: doula nao esta nas 466 e nao e regulamentada, mas o texto cai perto de 'Cuidador de idosos e enfermos' (0.685) COM destaque alto (0.057) — passa nos dois portoes. Nao da pra corrigir por limiar sem derrubar acerto real; so entrando com o dado."
+    },
+    {
+      "q": "cuido das redes sociais de lojas e faco os posts",
+      "esperado": "incerto"
+    },
+    {
+      "q": "conduzo leilao de bens e cobro comissao",
+      "esperado": "naomei",
+      "nota": "passou a bloquear em jul/2026, quando Leiloeiro/Atuária entraram em naomei.json com base legal"
+    },
+    {
+      "q": "faco transmissao ao vivo de jogos na internet",
+      "esperado": "incerto"
+    },
+    {
+      "q": "calculo risco e reserva tecnica para seguradora",
+      "esperado": "naomei",
+      "nota": "passou a bloquear em jul/2026, quando Leiloeiro/Atuária entraram em naomei.json com base legal"
+    }
+  ]
+}
