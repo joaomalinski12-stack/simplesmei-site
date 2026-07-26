@@ -22,7 +22,7 @@ import { join } from 'node:path';
 import fm from 'front-matter';
 import { CATS } from './src/blog_cats.js';
 import { FAQ_ITEMS } from './src/data/cnae_mei.js';
-import { SPOKES } from './src/data/spokes.js';
+import { SPOKES, SPOKES_ATUALIZADO_EM } from './src/data/spokes.js';
 
 const routes = ['/', '/termos', '/privacidade', '/sobre', '/imprensa', '/carreiras', '/contato', '/lista-de-espera', '/ferramentas', '/ferramentas/consulta-cnae-mei', '/blog'];
 for (const slug of Object.keys(SPOKES)) routes.push(`/ferramentas/consulta-cnae-mei/${slug}`);
@@ -313,26 +313,54 @@ try {
   
   // Remove o fechamento da tag
   sitemap = sitemap.replace('</urlset>', '');
-  
-  // Hub de ferramentas + consulta de CNAE + spokes de profissão ("X pode ser MEI?")
-  sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
-  sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas/consulta-cnae-mei</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+
+  /* <lastmod> tem que ser a data em que o CONTEÚDO mudou, não a do build.
+     Antes usávamos `new Date()` em 41 URLs (hub do blog, hubs de categoria, spokes e
+     páginas de ferramenta), então um deploy de CSS re-carimbava todas como "modificadas
+     hoje" — é assim que o Google aprende a ignorar o lastmod do site inteiro.
+     Agora cada data vem do conteúdo, e quando não existe fonte honesta o campo
+     simplesmente não sai: sitemap sem lastmod é válido e melhor que lastmod falso. */
+  const url = (loc, { lastmod, changefreq, priority }) =>
+    `  <url>\n    <loc>${loc}</loc>\n` +
+    (lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : '') +
+    `    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
+
+  const dia = (d) => new Date(d).toISOString().split('T')[0];
+  // `updated` vence `date`: é o campo que o ciclo de refresh bumpa quando o post muda
+  // de substância (ver a skill seo-content). Sem nenhum dos dois, não inventamos data.
+  const dataDoPost = (slug) => {
+    const a = blogMeta[slug];
+    const d = a.updated || a.date;
+    return d ? dia(d) : null;
+  };
+  const maisRecente = (datas) => datas.filter(Boolean).sort().pop() || null;
+
+  // Ferramentas: são aplicação, não conteúdo datado — sem fonte honesta de data, sai sem lastmod.
+  sitemap += url('https://simplesmei.net/ferramentas', { changefreq: 'monthly', priority: '0.7' });
+  sitemap += url('https://simplesmei.net/ferramentas/consulta-cnae-mei', { changefreq: 'monthly', priority: '0.8' });
+  // Spokes: a data é declarada à mão em spokes.js, junto do conteúdo que ela descreve.
   for (const slug of Object.keys(SPOKES)) {
-    sitemap += `  <url>\n    <loc>https://simplesmei.net/ferramentas/consulta-cnae-mei/${slug}</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+    sitemap += url(`https://simplesmei.net/ferramentas/consulta-cnae-mei/${slug}`,
+      { lastmod: SPOKES_ATUALIZADO_EM, changefreq: 'monthly', priority: '0.7' });
   }
 
-  // Adiciona a listagem principal do blog
-  sitemap += `  <url>\n    <loc>https://simplesmei.net/blog</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
+  // Blog: a listagem muda quando entra ou muda um post, então herda a data do mais recente.
+  const todasAsDatas = Object.keys(blogMeta).map(dataDoPost);
+  sitemap += url('https://simplesmei.net/blog',
+    { lastmod: maisRecente(todasAsDatas), changefreq: 'daily', priority: '0.9' });
 
-  // Adiciona os posts individuais
   for (const slug of Object.keys(blogMeta)) {
-    const date = blogMeta[slug].date ? new Date(blogMeta[slug].date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0];
-    sitemap += `  <url>\n    <loc>https://simplesmei.net/blog/${slug}</loc>\n    <lastmod>${date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+    sitemap += url(`https://simplesmei.net/blog/${slug}`,
+      { lastmod: dataDoPost(slug), changefreq: 'monthly', priority: '0.8' });
   }
 
-  // Adiciona os hubs de categoria
+  // Hub de categoria: mesma lógica, restrita aos posts daquela categoria.
   for (const c of CATS) {
-    sitemap += `  <url>\n    <loc>https://simplesmei.net/blog/categoria/${c.slug}</loc>\n    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
+    const daCategoria = Object.keys(blogMeta)
+      .filter((slug) => blogMeta[slug].category === c.name)
+      .map(dataDoPost);
+    sitemap += url(`https://simplesmei.net/blog/categoria/${c.slug}`,
+      { lastmod: maisRecente(daCategoria), changefreq: 'weekly', priority: '0.7' });
   }
 
   // Fecha a tag novamente

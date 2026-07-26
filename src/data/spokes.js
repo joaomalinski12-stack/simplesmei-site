@@ -13,6 +13,13 @@
    Por isso a alternativa é informativa ("procure um contador"), sem prometer o que o
    produto não faz. */
 
+/* Data em que o CONTEÚDO destes spokes mudou de verdade — vira o <lastmod> deles no
+   sitemap. Mantida à mão (mesmo padrão do `atualizado_em` de naomei.json) porque o
+   build da Vercel usa clone raso e não consegue ler a data de commit do arquivo.
+   BUMPE ao editar resposta/motivo/alternativa/faq de qualquer spoke; NÃO bumpe por
+   mudança de layout ou refactor, senão o lastmod volta a mentir. */
+export const SPOKES_ATUALIZADO_EM = '2026-07-11';
+
 export const SPOKES = {
   psicologo: {
     slug: 'psicologo',
