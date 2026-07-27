@@ -115,6 +115,22 @@ Alternativa mais curta: `Your MEI paperwork, handled in WhatsApp` (38)
 | **Distrito** | 55 | https://materiais.distrito.me/cadastro-startups | ✅ feito |
 | **startupbase.io** | 24 | https://startupbase.io | ✅ feito |
 
+### Segundo lote, gratuitos (checados 26/07/2026)
+
+| onde | DA | link | observação |
+|---|---|---|---|
+| **StartupRanking** | 74 | https://www.startupranking.com/join | listagem gratuita; bloqueia bot (403), abre no navegador |
+| **IndieHackers** | 59 | https://www.indiehackers.com/products/new | plataforma de comunidade, perfil de produto grátis. Encaixa: é SaaS bootstrapped |
+| **Google Perfil da Empresa** | alto | https://www.google.com/business/ | grátis. Não é backlink clássico, mas é dos sinais de entidade mais fortes |
+| **LaunchingNext** | 39 | https://www.launchingnext.com/submit/ | tem opção **$0** (a página oferece $0, $1, $5 e $15; o pago só fura fila) |
+
+**Wikidata** (https://www.wikidata.org/wiki/Special:NewItem) é gratuito e alimenta o painel de
+conhecimento do Google, mas exige **notoriedade**: item de startup pré-lançamento costuma ser
+deletado por editor. Só vale depois de ter cobertura de imprensa que sirva de fonte.
+
+**SourceForge** (DA 93) foi descartado: é para software de código aberto, não encaixa em produto
+que roda no WhatsApp.
+
 ### Guarde para o dia do lançamento
 
 | onde | DA | link |
