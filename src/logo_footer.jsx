@@ -451,6 +451,25 @@ function Footer() {
           <p style={{ fontSize: 12.5, lineHeight: 1.6, marginTop: 14, color: '#9D9EA5', maxWidth: 280 }}>
             A gestão do MEI dentro do WhatsApp. Sem app, sem planilha, sem dor de cabeça.
           </p>
+          {/* Selo do StartupBase. O SVG é 300x80: os atributos width/height mantêm a
+              proporção (sem layout shift ao carregar) e o maxWidth impede que ele
+              estoure a coluna, que no mobile é meia tela. */}
+          <a
+            href="https://startupbase.io/products/simplesmei?utm_source=startupbase&utm_medium=badge&utm_campaign=launch-badge-neutral"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-block', marginTop: 18 }}
+          >
+            <img
+              src="https://statics.startupbase.io/site/badges/launched-on-sb-neutral.svg"
+              alt="SimplesMEI lançado no StartupBase"
+              width={206}
+              height={55}
+              loading="lazy"
+              decoding="async"
+              style={{ display: 'block', width: '100%', maxWidth: 206, height: 'auto' }}
+            />
+          </a>
         </div>
         {[
           { h: 'Produto', l: [{label: 'Como funciona', href: '/#como-funciona'}, {label: 'Preço', href: '/#preco'}, {label: 'Segurança', href: '/#seguranca'}, {label: 'Ferramentas', href: '/ferramentas'}] },
