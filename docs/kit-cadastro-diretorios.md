@@ -102,6 +102,44 @@ Alternativa mais curta: `Your MEI paperwork, handled in WhatsApp` (38)
 
 ---
 
+## Onde cadastrar (links verificados em 26/07/2026)
+
+### Cadastro direto, faça agora
+
+| onde | DA | link | status |
+|---|---|---|---|
+| **BetaList** | 59 | https://betalist.com/submit | ✅ abre |
+| **F6S** | 74 | https://www.f6s.com | ✅ abre (crie a conta e depois o perfil da startup) |
+| **LinkedIn** (página da empresa) | alto | https://www.linkedin.com/company/setup/new/ | ✅ abre |
+| **SaaSHub** | 44 | https://www.saashub.com/submit | 🔒 bloqueia bot, abre no navegador |
+| **Distrito** | 55 | https://materiais.distrito.me/cadastro-startups | ✅ feito |
+| **startupbase.io** | 24 | https://startupbase.io | ✅ feito |
+
+### Guarde para o dia do lançamento
+
+| onde | DA | link |
+|---|---|---|
+| **Product Hunt** | 90 | https://www.producthunt.com/posts/new |
+| **AlternativeTo** | 87 | https://alternativeto.net/manage/new-app/ |
+
+Os dois bloqueiam requisição automatizada (403), o que é normal. Abrem no navegador.
+**Product Hunt é tiro único**: não gaste com waitlist.
+
+### Imprensa (pauta, não cadastro)
+
+**Startupi** (DA 61, https://startupi.com.br) e **StartSe** (DA 58, https://www.startse.com).
+Não têm formulário de listagem: entram por história, e só quando houver uma.
+
+### Não confirmado
+
+**StartupBase da ABStartups** (`abstartups.com.br`, DA 57): não achei URL de cadastro que
+funcione. O subdomínio `startupbase.abstartups.com.br` dá 404, a página explicativa não expõe
+formulário e o `portal.abstartups.com.br/planos` sugere associação paga. Se você achar o
+caminho gratuito, vale pelo DA e pelo público. **Não confundir com `startupbase.io`**, que é
+outro produto, internacional, DA 24.
+
+---
+
 ## Notas de preenchimento
 
 - **Estágio:** marque *pre-launch* / *coming soon* / *waitlist*, nunca *live*. Os CTAs do site
