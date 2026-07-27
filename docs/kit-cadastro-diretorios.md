@@ -102,6 +102,71 @@ Alternativa mais curta: `Your MEI paperwork, handled in WhatsApp` (38)
 
 ---
 
+## Controle: o que já tem e o que falta
+
+Estado em **26/07/2026**. Baseline pra comparar depois: **DA 7 · 33 domínios referenciando, todos
+spam** (auditoria em [[seo-baseline-jul-2026]]).
+
+### Feito
+
+| site | DA | perfil | link de volta? |
+|---|---|---|---|
+| **startupbase.io** | 24 | ✅ no ar | ❌ **não linka.** Ver alerta abaixo |
+| **Distrito** | 55 | ✅ cadastrado | ⏳ não consegui verificar de fora |
+| **StartupRanking** | 74 | 🔄 arquivo de verificação no ar | falta clicar **Claim Startup** |
+
+> ⚠️ **startupbase.io não devolve link.** Inspecionei `startupbase.io/products/simplesmei`:
+> os únicos links externos da página são anunciantes deles e as redes sociais do próprio
+> StartupBase. `simplesmei.net` não aparece nem como link nem como texto. A página ainda é
+> `noindex,follow`, então nem ela mesma entra no índice do Google.
+> Como o selo está no nosso rodapé (`src/logo_footer.jsx`), a troca hoje é **unilateral**:
+> damos link sitewide nas 114 páginas e não recebemos nenhum.
+> **O que fazer:** entrar no perfil e conferir se o campo de site foi preenchido, e se o link
+> só aparece depois do claim aprovado. Se continuar sem link, o certo é tirar o selo do rodapé
+> ou marcar como `rel="nofollow"`.
+
+### A fazer, gratuitos
+
+| ordem | site | DA | link | por quê |
+|---|---|---|---|---|
+| 1 | **F6S** | 74 | https://www.f6s.com | maior DA da lista, cadastro próprio, não exige produto no ar |
+| 2 | **StartupRanking** | 74 | (terminar o claim) | verificação já feita, falta 1 clique |
+| 3 | **BetaList** | 59 | https://betalist.com/submit | feito pra pré-lançamento com waitlist |
+| 4 | **IndieHackers** | 59 | https://www.indiehackers.com/products/new | comunidade, traz tráfego de referência além do link |
+| 5 | **LinkedIn** | alto | https://www.linkedin.com/company/setup/new/ | 2 min, sinal de entidade forte |
+| 6 | **Google Perfil da Empresa** | alto | https://www.google.com/business/ | grátis, tem CNPJ e endereço em SP pra sustentar |
+| 7 | **SaaSHub** | 44 | https://www.saashub.com/submit | complementar |
+| 8 | **LaunchingNext** | 39 | https://www.launchingnext.com/submit/ | opção $0 existe, o pago só fura fila |
+
+### Depois do lançamento
+
+| site | DA | link |
+|---|---|---|
+| **Product Hunt** | 90 | https://www.producthunt.com/posts/new |
+| **AlternativeTo** | 87 | https://alternativeto.net/manage/new-app/ |
+
+### Regra de parada
+
+**Pare em 8 a 10 cadastros.** Os concorrentes que já ocupam a página 1 das nossas SERPs têm
+`cruzeirodosulcontabilidade.com.br` **DA 5 com 14 domínios** (7ª posição) e `monetizando.blog.br`
+**DA 7 com 22 domínios** (10ª). Não é volume de link que separa. Passando de ~10 diretórios o
+retorno some e o perfil começa a parecer manipulado.
+
+**Ritmo:** 3 a 5 links legítimos por mês. Domínio novo saltando de 33 pra 200 é padrão de spam.
+
+### Confira ao cadastrar
+
+Em todo diretório, depois de aprovado, cheque **se o link de volta existe de verdade**:
+
+```bash
+# troque pela URL do seu perfil
+curl -s "URL_DO_PERFIL" | grep -o 'simplesmei\.net' | head -1
+```
+
+Se não aparecer, o cadastro não está te dando backlink nenhum, como aconteceu no startupbase.io.
+
+---
+
 ## Onde cadastrar (links verificados em 26/07/2026)
 
 ### Cadastro direto, faça agora
